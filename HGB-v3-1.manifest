@@ -1,0 +1,496 @@
+{
+  "name": "HGB v3.1",
+  "revision": "0.0.1",
+  "wip": true,
+  "game": "Heavy Gear Blitz!",
+  "genre": "sci-fi",
+  "publisher": "Dream Pod 9",
+  "url": "https://www.dp9.com/",
+  "notes": "",
+  "manifest": {
+    "assetTaxonomy": {
+      "Combat Group": {
+        "allowed": {
+          "classifications": []
+        },
+        "stats": {
+          "Actions": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 2,
+            "group": "Accounting",
+            "visibility": "normal",
+            "tracked": true,
+            "groupOrder": 1
+          },
+          "Secondary Unit?": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "path": [
+                      "{self}"
+                    ],
+                    "trait": "Unit§Secondary Unit"
+                  }
+                ]
+              }
+            },
+            "group": "Combat Group Options",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
+          },
+          "Points": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 1,
+            "group": "Accounting",
+            "groupOrder": 1,
+            "visibility": "normal",
+            "tracked": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Unit§Primary Unit"
+          ]
+        }
+      },
+      "Faction": {
+        "allowed": {
+          "classifications": [
+            "Sub-list"
+          ]
+        }
+      },
+      "Model": {
+        "aspects": {
+          "Type": "game piece"
+        },
+        "stats": {
+          "Points": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 1,
+            "group": "Accounting",
+            "visibility": "normal",
+            "tracked": true
+          },
+          "Actions": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 2,
+            "group": "Accounting",
+            "visibility": "normal",
+            "tracked": true
+          },
+          "reconMax": {
+            "statType": "numeric",
+            "value": 999,
+            "group": "Hidden",
+            "visibility": "hidden"
+          },
+          "specialOperationsMax": {
+            "statType": "numeric",
+            "value": 999,
+            "group": "Hidden",
+            "visibility": "hidden"
+          },
+          "fortificationsMax": {
+            "statType": "numeric",
+            "value": 999,
+            "group": "Hidden",
+            "visibility": "hidden"
+          },
+          "fireSupportMax": {
+            "statType": "numeric",
+            "value": 999,
+            "group": "Hidden",
+            "visibility": "hidden"
+          },
+          "generalPurposeMax": {
+            "statType": "numeric",
+            "value": 999,
+            "group": "Hidden",
+            "visibility": "hidden"
+          },
+          "strikeMax": {
+            "statType": "numeric",
+            "value": 999,
+            "group": "Hidden",
+            "visibility": "hidden"
+          }
+        },
+        "rules": {
+          "Too many of this model in this type of unit.": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "operator": "AND",
+                "not": false,
+                "actionable": false
+              },
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Unit Type",
+                    "processed",
+                    "term",
+                    "current"
+                  ]
+                ],
+                "operator": "AND",
+                "not": false,
+                "actionable": false
+              },
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "{0string}"
+                  ]
+                ],
+                "max": [
+                  "{self}",
+                  "stats",
+                  "{1string}",
+                  "value"
+                ],
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "error",
+            "evaluate": "AND"
+          },
+          "doublePrimaryAvailability": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "item"
+                  ]
+                ],
+                "value": "Unit§Primary Unit",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "fireSupportMax",
+                    "value"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "fortificationsMax",
+                    "value"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "generalPurposeMax",
+                    "value"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "reconMax",
+                    "value"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "specialOperationsMax",
+                    "value"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "strikeMax",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": 1,
+                "iterations": 1
+              }
+            ]
+          }
+        }
+      },
+      "Sub-list": {},
+      "Unit": {
+        "allowed": {
+          "classifications": [
+            "Model"
+          ]
+        },
+        "stats": {
+          "Points": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 1,
+            "group": "Accounting",
+            "visibility": "normal",
+            "tracked": true
+          },
+          "Actions": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 2,
+            "group": "Accounting",
+            "visibility": "normal",
+            "tracked": true
+          },
+          "Unit Type": {
+            "statType": "rank",
+            "value": "General Purpose",
+            "ranks": {
+              "General Purpose": {
+                "order": 0,
+                "term": "generalPurposeMax"
+              },
+              "Strike": {
+                "order": 1,
+                "term": "strikeMax"
+              },
+              "Fire Support": {
+                "order": 2,
+                "term": "fireSupportMax"
+              },
+              "Recon": {
+                "order": 3,
+                "term": "reconMax"
+              },
+              "Special Operations": {
+                "order": 4,
+                "term": "specialOperationsMax"
+              },
+              "Fortifications": {
+                "order": 5,
+                "term": "fortificationsMax"
+              }
+            },
+            "statOrder": 3,
+            "group": "Accounting",
+            "visibility": "normal",
+            "dynamic": true
+          }
+        },
+        "rules": {}
+      }
+    },
+    "assetCatalog": {
+      "Combat Group§Combat Group": {},
+      "Faction§Caprice": {},
+      "Faction§Earth": {},
+      "Faction§North": {},
+      "Faction§South": {},
+      "Model§Example Model": {
+        "stats": {
+          "Points": {
+            "value": 10
+          },
+          "Actions": {
+            "value": 1
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          }
+        },
+        "rules": {
+          "doublePrimaryAvailability": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "item"
+                  ]
+                ],
+                "value": "Unit§Primary Unit",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "fireSupportMax",
+                    "value"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "generalPurposeMax",
+                    "value"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "reconMax",
+                    "value"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "strikeMax",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": 1,
+                "iterations": 1
+              }
+            ]
+          }
+        }
+      },
+      "Roster§Force": {
+        "stats": {
+          "Points": {
+            "statType": "numeric",
+            "label": "Points Total",
+            "value": 0,
+            "statOrder": 2,
+            "group": "Accounting",
+            "visibility": "normal",
+            "tracked": true
+          },
+          "Combat Group": {
+            "statType": "numeric",
+            "label": "Combat Groups",
+            "value": 0,
+            "statOrder": 3,
+            "group": "Accounting",
+            "visibility": "normal",
+            "tracked": true
+          },
+          "Points Limit": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 1,
+            "group": "Accounting",
+            "visibility": "normal",
+            "dynamic": true
+          }
+        },
+        "allowed": {
+          "classifications": [
+            "Combat Group",
+            "Faction"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Combat Group§Combat Group"
+          ]
+        }
+      },
+      "Sub-list§Northern Lights Federation": {},
+      "Unit§Primary Unit": {
+        "stats": {
+          "Actions": {
+            "min": 4,
+            "max": 6
+          }
+        }
+      },
+      "Unit§Secondary Unit": {
+        "stats": {
+          "Actions": {
+            "min": 1,
+            "max": 2
+          }
+        },
+        "rules": {
+          "LargePrimary": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "assets",
+                    "item",
+                    "Unit§Primary Unit",
+                    "stats",
+                    "Actions",
+                    "value"
+                  ]
+                ],
+                "max": 6,
+                "min": 5,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Actions",
+                    "max"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 3,
+                "iterations": 1
+              }
+            ]
+          }
+        }
+      }
+    },
+    "gameModes": {},
+    "theme": {}
+  },
+  "dependencies": []
+}
