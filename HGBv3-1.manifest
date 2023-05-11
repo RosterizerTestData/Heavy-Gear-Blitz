@@ -1,12 +1,13 @@
 {
   "name": "HGB v3.1",
   "revision": "0.0.1",
-  "wip": true,
   "game": "Heavy Gear Blitz!",
   "genre": "sci-fi",
   "publisher": "Dream Pod 9",
   "url": "https://www.dp9.com/",
   "notes": "",
+  "wip": true,
+  "dependencies": [],
   "manifest": {
     "assetTaxonomy": {
       "Combat Group": {
@@ -23,31 +24,7 @@
             "tracked": true,
             "groupOrder": 1
           },
-          "Secondary Unit?": {
-            "statType": "rank",
-            "value": "-",
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "traits": [
-                  {
-                    "path": [
-                      "{self}"
-                    ],
-                    "trait": "Unit§Secondary Unit"
-                  }
-                ]
-              }
-            },
-            "group": "Combat Group Options",
-            "groupOrder": 2,
-            "visibility": "normal",
-            "dynamic": true
-          },
-          "Points": {
+          "TV": {
             "statType": "numeric",
             "value": 0,
             "statOrder": 1,
@@ -63,6 +40,9 @@
           ]
         }
       },
+      "Duelist Upgrade": {
+        "templateClass": "Upgrade"
+      },
       "Faction": {
         "allowed": {
           "classifications": [
@@ -70,26 +50,77 @@
           ]
         }
       },
+      "Gear": {
+        "templateClass": "Model",
+        "stats": {
+          "Type": {
+            "value": "Gear"
+          }
+        }
+      },
+      "Leader": {
+        "stats": {
+          "Initiative": {
+            "statType": "numeric",
+            "format": "{v}+",
+            "value": 0,
+            "statOrder": 3,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 2
+          },
+          "CG Leaders": {
+            "statType": "numeric",
+            "value": 0,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
+          },
+          "TV": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 1,
+            "group": "Accounting",
+            "groupOrder": 1,
+            "visibility": "normal",
+            "tracked": true
+          },
+          "Rank": {
+            "statType": "term",
+            "value": null,
+            "statOrder": 2,
+            "group": "Profile",
+            "groupOrder": 2,
+            "visibility": "normal"
+          },
+          "SP": {
+            "statType": "numeric",
+            "label": "CP",
+            "value": 1,
+            "statOrder": 4,
+            "group": "Profile",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "tracked": true
+          }
+        },
+        "aspects": {
+          "Unique": true
+        }
+      },
       "Model": {
         "aspects": {
           "Type": "game piece"
         },
         "stats": {
-          "Points": {
-            "statType": "numeric",
-            "value": 0,
-            "statOrder": 1,
-            "group": "Accounting",
-            "visibility": "normal",
-            "tracked": true
-          },
           "Actions": {
             "statType": "numeric",
             "value": 0,
             "statOrder": 2,
             "group": "Accounting",
             "visibility": "normal",
-            "tracked": true
+            "tracked": true,
+            "groupOrder": 2
           },
           "reconMax": {
             "statType": "numeric",
@@ -126,6 +157,238 @@
             "value": 999,
             "group": "Hidden",
             "visibility": "hidden"
+          },
+          "Roles": {
+            "statType": "term",
+            "value": null,
+            "statOrder": 2,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "Traits": {
+            "statType": "term",
+            "value": null,
+            "statOrder": 12,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "Mounted Weapons": {
+            "statType": "term",
+            "value": null,
+            "statOrder": 11,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "React Weapons": {
+            "statType": "term",
+            "value": null,
+            "statOrder": 10,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "H/S": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 6,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "Arm": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 5,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "Type": {
+            "statType": "rank",
+            "value": null,
+            "ranks": {
+              "Gear": {
+                "order": 0
+              },
+              "Infantry": {
+                "order": 1
+              },
+              "Strider": {
+                "order": 2
+              },
+              "Cavalry": {
+                "order": 3
+              },
+              "Vehicle": {
+                "order": 4
+              },
+              "Drone": {
+                "order": 5
+              },
+              "Terrain": {
+                "order": 6
+              },
+              "Area Terrain": {
+                "order": 7
+              },
+              "Building": {
+                "order": 8
+              }
+            },
+            "statOrder": 13,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "MR": {
+            "statType": "numeric",
+            "format": "W/G: {v}",
+            "value": 0,
+            "statOrder": 4,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "EW": {
+            "statType": "numeric",
+            "format": "{v}+",
+            "value": 2,
+            "statOrder": 7,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "GU": {
+            "statType": "numeric",
+            "format": "{v}+",
+            "value": 2,
+            "statOrder": 7,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "PI": {
+            "statType": "numeric",
+            "format": "{v}+",
+            "value": 2,
+            "statOrder": 7,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "HT": {
+            "statType": "numeric",
+            "format": "{v}\"",
+            "value": 1.5,
+            "statOrder": 14,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "SP": {
+            "statType": "numeric",
+            "value": null,
+            "statOrder": 3,
+            "group": "Accounting",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "tracked": true
+          },
+          "Leader": {
+            "statType": "numeric",
+            "label": "Officer Ranks",
+            "value": 0,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true,
+            "min": 0,
+            "max": 1
+          },
+          "Officer?": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "1": {
+                "order": 1
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "statOrder": 1,
+            "group": "Model Options",
+            "groupOrder": 3,
+            "visibility": "normal",
+            "dynamic": true
+          },
+          "Duelist": {
+            "statType": "rank",
+            "label": "Duelist?",
+            "value": "-",
+            "ranks": {
+              "1": {
+                "order": 1,
+                "tracking": {
+                  "Duelist": 1
+                }
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "statOrder": 2,
+            "group": "Model Options",
+            "groupOrder": 3,
+            "visibility": "normal",
+            "dynamic": true,
+            "tracked": true
+          },
+          "ModelName": {
+            "statType": "term",
+            "label": "Model",
+            "value": null,
+            "statOrder": 1,
+            "group": "Profile",
+            "groupOrder": 1,
+            "visibility": "normal"
+          },
+          "TV": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 1,
+            "group": "Accounting",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "tracked": true
+          },
+          "Veteran?": {
+            "statType": "rank",
+            "label": "Veteran? +2TV",
+            "value": "-",
+            "ranks": {
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Vet"
+                  }
+                ],
+                "tracking": {
+                  "TV": 2
+                }
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "statOrder": 3,
+            "group": "Model Options",
+            "groupOrder": 3,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "rules": {
@@ -242,6 +505,309 @@
                 "iterations": 1
               }
             ]
+          },
+          "independentOperatorsMustBeDuelists": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "designation"
+                  ]
+                ],
+                "value": "Duelist (Independent)",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 2,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Duelist",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 1,
+                "iterations": 1
+              }
+            ]
+          },
+          "addPaidGrenades": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "classification",
+                    "Standard Upgrade",
+                    "item"
+                  ]
+                ],
+                "value": "Standard Upgrade§Light Hand Grenades (LHG) +0.5TV",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "classification",
+                    "Standard Upgrade",
+                    "item"
+                  ]
+                ],
+                "value": "Standard Upgrade§Medium Hand Grenades (MHG) +1TV",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": {
+                  "item": "Weapon§HG"
+                },
+                "iterations": 1
+              }
+            ]
+          },
+          "independentDuelistsCantLead": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "item"
+                  ]
+                ],
+                "value": "Combat Group§Duelist (Independent)",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 6,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "disallowed",
+                    "items"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Duelist Upgrade§Lead by Example",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "disallowed",
+                    "items"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Leader§2iC",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "disallowed",
+                    "items"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Leader§CGL",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "disallowed",
+                    "items"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Leader§Force Leader (CGL)",
+                "iterations": 1
+              }
+            ]
+          },
+          "officersGetRanksAndCPs": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Officer?",
+                    "value"
+                  ]
+                ],
+                "value": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 5,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "allowed",
+                    "classifications"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Leader",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "SP",
+                    "label"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "CP",
+                "iterations": 1
+              }
+            ]
+          },
+          "duelistsGetOptionsAndMustBeVeterans": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Duelist",
+                    "value"
+                  ]
+                ],
+                "value": "1",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 4,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "allowed",
+                    "classifications"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Duelist Upgrade",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Veteran?",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 1,
+                "iterations": 1
+              }
+            ]
+          },
+          "Conscripts Can't Be Veterans.": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Conscript"
+                  ]
+                ],
+                "max": 1,
+                "operator": "SUM",
+                "not": false,
+                "actionable": true,
+                "note": "Should add the tally of Vet and Conscript; if the total is >1, it will error.",
+                "equation": {
+                  "operator": "T+O",
+                  "value": [
+                    "{self}",
+                    "tally",
+                    "Vet"
+                  ]
+                }
+              }
+            ],
+            "failState": "error",
+            "evaluate": "AND"
+          }
+        },
+        "allowed": {
+          "classifications": [
+            "Standard Upgrade"
+          ],
+          "items": []
+        }
+      },
+      "Model/Weapon Property": {
+        "stats": {},
+        "aspects": {
+          "Visibility": "active",
+          "Order Traits A–Z": true,
+          "Unique": true
+        }
+      },
+      "Standard Upgrade": {
+        "templateClass": "Upgrade",
+        "aspects": {
+          "Visibility": "active"
+        },
+        "stats": {
+          "TV": {
+            "tracked": true
           }
         }
       },
@@ -253,14 +819,6 @@
           ]
         },
         "stats": {
-          "Points": {
-            "statType": "numeric",
-            "value": 0,
-            "statOrder": 1,
-            "group": "Accounting",
-            "visibility": "normal",
-            "tracked": true
-          },
           "Actions": {
             "statType": "numeric",
             "value": 0,
@@ -302,22 +860,310 @@
             "group": "Accounting",
             "visibility": "normal",
             "dynamic": true
+          },
+          "TV": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 1,
+            "group": "Accounting",
+            "visibility": "normal",
+            "tracked": true
           }
         },
         "rules": {}
+      },
+      "Upgrade": {
+        "stats": {
+          "TV": {
+            "statType": "numeric",
+            "value": null,
+            "group": "Accounting",
+            "visibility": "normal",
+            "tracked": true
+          }
+        }
+      },
+      "Veteran Upgrade": {
+        "templateClass": "Upgrade"
+      },
+      "Weapon": {
+        "stats": {
+          "Range": {
+            "statType": "term",
+            "value": null,
+            "statOrder": 2,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "Traits": {
+            "statType": "term",
+            "value": null,
+            "statOrder": 4,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "Mode": {
+            "statType": "term",
+            "value": null,
+            "statOrder": 5,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "Damage": {
+            "statType": "term",
+            "value": null,
+            "statOrder": 3,
+            "group": "Profile",
+            "visibility": "normal",
+            "groupOrder": 1
+          },
+          "Name": {
+            "statType": "term",
+            "value": null,
+            "statOrder": 1,
+            "group": "Profile",
+            "groupOrder": 1,
+            "visibility": "normal"
+          }
+        },
+        "aspects": {
+          "Type": "game piece"
+        }
       }
     },
     "assetCatalog": {
-      "Combat Group§Combat Group": {},
-      "Faction§Caprice": {},
-      "Faction§Earth": {},
-      "Faction§North": {},
-      "Faction§South": {},
+      "Combat Group§Combat Group": {
+        "stats": {
+          "Add Secondary Unit?": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "path": [
+                      "{self}"
+                    ],
+                    "trait": "Unit§Secondary Unit"
+                  }
+                ]
+              }
+            },
+            "group": "Combat Group Options",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
+          },
+          "CG Leaders": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true,
+            "min": 1,
+            "max": 1
+          },
+          "2iC": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 2,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true,
+            "max": 1
+          }
+        }
+      },
+      "Combat Group§Duelist (Independent)": {
+        "stats": {
+          "Actions": {
+            "min": 1
+          },
+          "Model": {
+            "statType": "numeric",
+            "value": 0,
+            "group": "Hidden",
+            "visibility": "normal",
+            "tracked": true,
+            "min": 1,
+            "max": 1
+          },
+          "Unit Type": {
+            "statType": "rank",
+            "value": "General Purpose",
+            "ranks": {
+              "General Purpose": {
+                "order": 0,
+                "term": "generalPurposeMax"
+              },
+              "Strike": {
+                "order": 1,
+                "term": "strikeMax"
+              },
+              "Fire Support": {
+                "order": 2,
+                "term": "fireSupportMax"
+              },
+              "Recon": {
+                "order": 3,
+                "term": "reconMax"
+              },
+              "Special Operations": {
+                "order": 4,
+                "term": "specialOperationsMax"
+              },
+              "Fortifications": {
+                "order": 5,
+                "term": "fortificationsMax"
+              }
+            },
+            "statOrder": 3,
+            "group": "Accounting",
+            "visibility": "normal",
+            "dynamic": true
+          }
+        },
+        "allowed": {
+          "classifications": [
+            "Model"
+          ]
+        },
+        "rules": {},
+        "removed": {
+          "assets": {
+            "traits": [
+              "Unit§Primary Unit"
+            ]
+          }
+        }
+      },
+      "Duelist Upgrade§Ace Gunner +1TV": {
+        "text": "When using an autocannon, this model does not suffer the -1D6 modifier when using the Split trait for attacks against multiple models.",
+        "stats": {
+          "TV": {
+            "value": 1
+          }
+        }
+      },
+      "Duelist Upgrade§Add Agile (Placeholder)": {},
+      "Duelist Upgrade§Add Auto (Placeholder)": {},
+      "Duelist Upgrade§Add Precise (Placeholder)": {},
+      "Duelist Upgrade§Add Shield (Placeholder)": {},
+      "Duelist Upgrade§Add Stable (Placeholder)": {},
+      "Duelist Upgrade§Advanced Control System (Placeholder)": {},
+      "Duelist Upgrade§Dual Melee Weapons (Placeholder)": {},
+      "Duelist Upgrade§Duelist Melee Upgrade (Placeholder)": {},
+      "Duelist Upgrade§ECM Upgrade (Placeholder)": {},
+      "Duelist Upgrade§Lead by Example": {
+        "text": "- Once per round, for each duelist, whenever a duelist\ndamages an enemy model, give one SP to one model\nin formation with the duelist.\n- This SP does not convert to a CP. If not used, this SP\nis removed during cleanup.",
+        "aspects": {
+          "Unique": true
+        }
+      },
+      "Duelist Upgrade§Trick Shot (Placeholder)": {},
+      "Leader§2iC": {
+        "stats": {
+          "Rank": {
+            "value": "Second in Command"
+          },
+          "Initiative": {
+            "value": 5
+          },
+          "TV": {
+            "value": 1
+          }
+        },
+        "rules": {}
+      },
+      "Leader§CGL": {
+        "stats": {
+          "Rank": {
+            "value": "Combat Group Leader"
+          },
+          "Initiative": {
+            "value": 5
+          },
+          "CG Leaders": {
+            "value": 1
+          },
+          "SP": {
+            "value": 1
+          }
+        },
+        "rules": {}
+      },
+      "Leader§CO": {
+        "stats": {
+          "Rank": {
+            "value": "Commanding Officer"
+          },
+          "Initiative": {
+            "value": 4
+          },
+          "CG Leaders": {
+            "value": 1
+          },
+          "TV": {
+            "value": 3
+          }
+        }
+      },
+      "Leader§Force Leader (CGL)": {
+        "stats": {
+          "Rank": {
+            "value": "Force Leader"
+          },
+          "Initiative": {
+            "value": 5
+          },
+          "CG Leaders": {
+            "value": 1
+          }
+        },
+        "text": ""
+      },
+      "Leader§TFC": {
+        "stats": {
+          "Initiative": {
+            "value": 3
+          },
+          "CG Leaders": {
+            "value": 1
+          },
+          "Rank": {
+            "value": "Task Force Commander"
+          },
+          "TV": {
+            "value": 5
+          }
+        }
+      },
+      "Leader§XO": {
+        "stats": {
+          "TV": {
+            "value": 3
+          },
+          "Initiative": {
+            "value": 4
+          },
+          "CG Leaders": {
+            "value": 1
+          },
+          "Rank": {
+            "value": "Executive Officer"
+          }
+        }
+      },
       "Model§Example Model": {
         "stats": {
-          "Points": {
-            "value": 10
-          },
           "Actions": {
             "value": 1
           },
@@ -335,6 +1181,10 @@
           },
           "strikeMax": {
             "value": 1
+          },
+          "SP": {},
+          "TV": {
+            "value": 10
           }
         },
         "rules": {
@@ -387,19 +1237,262 @@
               }
             ]
           }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Amphib",
+            "Weapon§AC"
+          ]
         }
+      },
+      "Model/Weapon Property§/": {
+        "text": "**Combination Weapon**  \nWeapons separated by a forward slash ( / ) are combination \nweapons. One example is the LAC/LGL. This would be a \nlight autocannon with a light grenade launcher (usually \nunderslung). This is there more as a hobby reference. The \nspecific part(s) that represents a combination weapon is \ndifferent from other weapons. For example, a LAC/LGL is \nvisually distinguishable from a LAC.\n\nEach weapon belonging to the combination weapon \nworks independently from the other. Firing each weapon \nrequires its own Action and they do not fire together just \nbecause they are a combination weapon. However, some \nupgrades, such as a few found in the duelist upgrade \noptions, do pertain to upgrading combination weapons."
+      },
+      "Model/Weapon Property§AA": {
+        "stats": {},
+        "text": "Weapons with the AA trait receive +1D6 for ranged attacks \nagainst elevated VTOLs and airstrike counters. This model \nmay retaliate against an airstrike counter when they \nperform an airstrike."
+      },
+      "Model/Weapon Property§Advanced": {
+        "stats": {},
+        "text": "When a weapon with the Advanced trait attacks, add +1 to \nthe result rolled (+1 R)."
+      },
+      "Model/Weapon Property§Agile": {
+        "stats": {},
+        "text": "Attacks targeting this model will miss on a margin of \nsuccess of zero (MOS:0)."
+      },
+      "Model/Weapon Property§AI": {
+        "stats": {},
+        "text": "**Anti-Infantry**  \nWeapons with the AI trait may deal more than two damage \nto infantry on a successful attack. These weapons also \nhave a bonus of +1D6 against infantry and cavalry models."
+      },
+      "Model/Weapon Property§Airdrop": {
+        "stats": {},
+        "text": "Combat groups composed entirely of models with the \nAirdrop trait may deploy using the airdrop deployment \noption. See **Airdrop Deployment** (p17)."
+      },
+      "Model/Weapon Property§Amphib": {
+        "text": "**Amphibious**  \nThis model may move over water terrain at its full MR."
+      },
+      "Model/Weapon Property§AMS": {
+        "text": "**Anti-Missile System**  \nThis model may reroll defense rolls against all indirect \nattacks and airstrikes."
+      },
+      "Model/Weapon Property§AOE:X": {
+        "stats": {},
+        "text": "**Area-of-Effect**  \nWeapons with the AOE:X trait may be used to attack an \narea with a radius of X inches around a target point. You \nwill need to declare a target point and measure radius \nfrom there. All models in the radius, friend or foe, become \ntargets. If the attack is centered on one model, then that \nmodel becomes the primary target. All other models \nwithin the area are considered secondary targets. Attack \nrolls against secondary targets have a -1d6 modifier. One \nopposed roll is performed for each targeted model.\n\nAn AOE attack may target a point on the battlefield instead \nof a model (i.e., to maximize the number of secondary \ntargets). There is no need to roll against a target point. It \nis automatic.\n\nIf the attack is indirect (sensor locked, or forward \nobserved), then it goes over any intervening terrain and \nis only blocked by overhanging cover that may be above \na target model. More specifically, ‘full’ medium or heavy \noverhanging cover because attacks will normally go \nthrough light cover (tree branches do not stop munitions).\n\nIf the attack is direct (LOS or sensor lock), then targets \nbehind full medium or heavy cover cannot be hit. For \nexample, a model completely behind a large rock, from \nthe perspective of the shooter, cannot be hit by a rocket \npack fired directly because the large rock is in the way. \nThis will more commonly only apply to secondary targets \nbecause you would normally have LOS to a primary target \nif you were shooting at it directly. One exception to that \nwould be if you shoot through full light cover at a target \nwhich you have sensor locked."
+      },
+      "Model/Weapon Property§AP:X": {
+        "text": "**Armor Piercing**  \nArmor piercing weapons are able to do damage on a \nsuccessful attack even when the damage does not exceed \nthe enemy’s armor. See **Armor Piercing** (p30)."
+      },
+      "Model/Weapon Property§APEX": {
+        "text": "Add +1 to this weapon’s base damage. Multiple sources of \nApex are cumulative."
+      },
+      "Model/Weapon Property§Auto": {
+        "text": "A weapon with this trait may be used for retaliation once \nper round without spending an action point. If this is a \ncombination weapon, then only one of the weapons may \nbe used in this way per round."
+      },
+      "Model/Weapon Property§Aux": {
+        "text": "Weapons and traits with the Aux trait are unavailable \nwhen this model is crippled or haywired."
+      },
+      "Model/Weapon Property§B": {
+        "text": "**Back Arc**  \nWeapons with this trait can only be fired at targets within \nthis model’s back arc (the back 180 degrees of the model)."
+      },
+      "Model/Weapon Property§Blast": {
+        "text": "- If an attacking model has LOS to a target, indirect \nattacks with this weapon ignore the bonus defense \ndice for cover.\n - A fire mission may also receive this benefit if the \nforward observer, or the attacking model has LOS to \nthe target(s)."
+      },
+      "Model/Weapon Property§Brace": {
+        "text": "This weapon may only be fired if the model is braced."
+      },
+      "Model/Weapon Property§Brawl:X": {
+        "text": "- A Brawl:X trait on a weapon will modify attack rolls by \nXD6 when using that weapon.\n - A Brawl:X trait on a model will modify all melee rolls \nthat model makes by XD6.\n\nMultiple instances of the Brawl:X trait are cumulative."
+      },
+      "Model/Weapon Property§Burst:X": {
+        "text": "Add a +XD6 modifier to any attack roll made with this \nweapon (generally +1D6 or +2D6)."
+      },
+      "Model/Weapon Property§CBS": {
+        "text": "**Counter-Battery Sensors**  \nA model with the CBS trait may use a counterstrike \nreaction. See **Counterstrike** (p33)."
+      },
+      "Model/Weapon Property§Climber": {
+        "text": "This trait allows a model to climb terrain features at its full \nMovement Rate (MR). See **Climbing** (p23)."
+      },
+      "Model/Weapon Property§Comms": {
+        "text": "Commanders with the Comms trait do not need to roll \nfor orders, when all the recipients of the order are in \nformation with this model. They will still have to roll an \nopposed roll when there are jamming attempts made \nagainst their orders. Also, if a roll is required, due to one \nof the models being out of formation, and the roll fails, \nthen the order fails for all models in its entirety.\n\nCommanders in formation with a model that has the \nComms trait may use the Comms trait of that model and \ntheir EW skill in place of their own when issuing orders."
+      },
+      "Model/Weapon Property§Conscript": {
+        "text": "If this model is not in formation with a commander, all of \nits skills are +1 TN. This model may not be a commander \nand commanders may never take upgrades that give them \nthe Conscript trait. Models with the Conscript trait may \nnot be upgraded with the Vet trait."
+      },
+      "Model/Weapon Property§Corrosion": {
+        "text": "When an attack with the Corrosion trait hits a model, \napply damage as normal and then place a corrosion token \nnext to the model.\n\nIn each cleanup phase, each model with a corrosion token \nrolls one die. If the roll meets or exceeds a threshold of \n4+, the model will take one damage. If not removed by \na patch action, a corrosion token will stay on the model \nuntil the game ends or the model is destroyed. A model \ncan only have one corrosion token at a time."
+      },
+      "Model/Weapon Property§Demo:X": {
+        "text": "A weapon with the Demo:X trait will allow certain \nweapons to damage buildings, terrain and fortifications \nmore efficiently than other weapons.\n\nWhen attacking a building, terrain feature or fortification, \nif the margin of success is 0 (MOS:0) or better the weapon \nwill do the amount of damage equal to X. If regular \ndamage calculations would result in more damage, then \nthat may be used instead."
+      },
+      "Model/Weapon Property§ECCM": {
+        "text": "This model is equipped with an electronic counter-countermeasure system. This model and all friendly \nmodels within 6 inches gain +1D6 to all EW rolls. This \neffect is not cumulative with additional ECCM traits.\n\nModels with the ECCM trait can also perform ECCM \nfirewall reactions."
+      },
+      "Model/Weapon Property§ECM": {
+        "text": "This model possesses an electronic counter-measure \nsystem. A model with this trait may use the following trait \nenabled actions and reactions:\n - ECM Jam\n - ECM Attack\n - ECM Defense"
+      },
+      "Model/Weapon Property§ECM+": {
+        "text": "This model has an enhanced electronic counter-measure \nsystem. A model with this trait may use the following trait \nenabled actions and reactions:\n - ECM Jam\n - ECM Attack\n - ECM Defense\n\nIn addition, its ECM defense is always \nin effect unless it is haywired."
+      },
+      "Model/Weapon Property§Field Armor": {
+        "text": "This model suffers one less damage from each attack to \na minimum of one damage. Field Armor reduces damage \nfrom the Armor Piercing trait, but it does not apply to \nother effects such as Fire, Corrosion or Haywire."
+      },
+      "Model/Weapon Property§Fire:X": {
+        "text": "When an attack with the Fire:X trait hits, apply damage as \nnormal, then roll XD6. For each die that meets or exceeds \na threshold of 4+, apply one additional damage. After this \nroll there are no further effects."
+      },
+      "Model/Weapon Property§Flak": {
+        "text": "Weapons with the Flak trait add a +2D6 modifier to attack \nrolls targeting elevated VTOLs and airstrike counters."
+      },
+      "Model/Weapon Property§Frag": {
+        "text": "**Fragmentation Ammunition**  \nWeapons with the Frag trait will add a +2D6 modifier to \nits attack rolls."
+      },
+      "Model/Weapon Property§Guided": {
+        "text": "This weapon has increased accuracy when used for \na fire mission with a target designator. See **Target \nDesignator** (p50)."
+      },
+      "Model/Weapon Property§Hands": {
+        "text": "This model has additional upgrade options available and \nlimited climbing ability. See **Climbing** (p23)."
+      },
+      "Model/Weapon Property§Haywire": {
+        "text": "When an attack with the Haywire trait hits, apply damage \nas normal, then place a haywire token next to the model \nand roll 1D6. On a result of 4 or better, the model takes \none additional damage.\n\nA model with a haywired token counts as being haywired \nand suffers -1D6 on all PI, GU and EW rolls for the rest \nof the round. Haywired tokens are removed during the \ncleanup phase. A Haywired token may not be removed by \nthe patch action."
+      },
+      "Model/Weapon Property§Jetpack:X": {
+        "text": "This model can launch into the air, replacing a normal \nMove with a jetpack move.\n - You must move in a straight line horizontally up to \nX inches.\n - You may only turn the model before or after \ncompleting a jetpack move.\n - You may only perform Actions before or after \ncompleting a jetpack move.\n - Move over walls, or on to and off of elevations up to \nX inches in height without climbing.\n - Ignore difficult and dangerous ground during the \nmiddle of your jetpack move. Difficult or dangerous \nground only applies if you finish a jetpack move on \nsuch terrain."
+      },
+      "Model/Weapon Property§Jump Jets:X": {
+        "text": "This model can execute a powered jump over obstacles \nwhile using another movement type. You may not perform \nActions in the middle of a jump.\n - Jump over walls, or on to and off of elevations, up to \nX inches in height without climbing."
+      },
+      "Model/Weapon Property§LA:X": {
+        "text": "**Limited Ammo**  \nWeapons with the LA:X trait may only be fired X times \nbefore running out of ammunition. Mark this model with a \ntoken to indicate the ammunition remaining."
+      },
+      "Model/Weapon Property§Link": {
+        "text": "Weapons with the Link trait add a +1D6 modifier to any \nattack roll made with this weapon."
+      },
+      "Model/Weapon Property§Lumbering": {
+        "text": "This model does not receive the +1D6 defense roll \nmodifier for being at top speed."
+      },
+      "Model/Weapon Property§Medic": {
+        "text": "Medics may use the patch action. A medic may not use an \nattack action, be a forward observer, use ECM or ECCM \ntraits for ECM attacks, ECM jamming and firewalls, or \nperform detailed scans. However, they may retaliate if \nthey are fired upon. A medic may not capture objectives, \nbe an objective, or be any type of leader or commander.\n\nWhen a medic is the primary target of an attack, \nimmediately mark the attacking model with a token. \nAll attacks on this marked model receive a free reroll. \nRemove this token during the cleanup phase."
+      },
+      "Model/Weapon Property§Mine:X": {
+        "text": "A model with the Mine:X trait may plant mines on the \nbattlefield. The model has X number of mines. Planted \nmines use 40mm round markers or bases. See **Mines and \nMinefields** (p24)."
+      },
+      "Model/Weapon Property§Occupancy:X Type": {
+        "text": "The Occupancy:X trait is used during deployment. \nBuildings with this trait will specify the type and amount \nof other models which may be inside it during its \ndeployment. By default, this trait also lets you know how \nmany models can fit inside a building sold by DP9.\n\n**Squads**: This model may hold up to X infantry squads.\n - 3 Infantry teams, infantry singles, or drones may be \nsubstituted in place of one infantry squad.\n\nModels do not have to spend any actions in order to enter \nor exit a building."
+      },
+      "Model/Weapon Property§Offroad": {
+        "text": "Models with this trait may travel over difficult surfaces \nat their full MR. This does not apply to water terrain and \ndoes not benefit climbing."
+      },
+      "Model/Weapon Property§Or": {
+        "text": "This trait is always accompanied by multiple ammunition \ntypes or additional firing modes. The player must choose \none type to use when attacking."
+      },
+      "Model/Weapon Property§Precise": {
+        "text": "Ranged weapons with the Precise trait add +1 to the result \nrolled (+1 R) when in optimal range.\n\nMelee weapons with the Precise trait add +1 to the result \nrolled (+1 R).\n\nMultiple sources of Precise are not cumulative."
+      },
+      "Model/Weapon Property§Prox": {
+        "text": "**Proximity**  \nWeapons with the Prox trait may be used to perform a \ndirect attack against all models around this model, within \nthe weapon’s listed range.\n - All possible targets (friend or foe) are considered \nprimary targets.\n - This weapon cannot be used to attack elevated VTOLs \nunless the model using it is also an elevated VTOL.\n - Elevated VTOLs cannot use this weapon to attack \nnon-elevated VTOLs.\n - This weapon cannot be used to attack buildings, \nterrain or area terrain."
+      },
+      "Model/Weapon Property§R": {
+        "text": "**Right Arc**  \nA weapon with this trait can only be fired at targets within \nthis model’s right arc (the right 180 degrees of the model)."
+      },
+      "Model/Weapon Property§Reach:X": {
+        "text": "This melee weapon can attack a target X inches from its \nbase. This is not a ranged attack."
+      },
+      "Model/Weapon Property§React": {
+        "text": "A weapon with this trait can be used for retaliations. Weapons listed under the React Weapons Column of a model table are considered to have the React trait."
+      },
+      "Model/Weapon Property§React+": {
+        "text": "This model may perform a Reaction once per round \nwithout spending an action point.\n\nYou may also use this trait to focus. To focus, spend 1 \nadditional action point, or sacrifice your React+ trait for \nthe round to gain a +1D6 modifier to one direct attack \nor melee attack. This cannot be used for indirect attacks."
+      },
+      "Model/Weapon Property§Repair": {
+        "text": "This model may use the patch action."
+      },
+      "Model/Weapon Property§Resist:C": {
+        "text": "**Resistant to Corrosion**  \nThis model does not receive the extra damage that comes \nfrom the Corrosion trait."
+      },
+      "Model/Weapon Property§Resist:F": {
+        "text": "**Resistant to Fire**  \nThis model does not receive the extra damage that comes \nfrom the Fire trait."
+      },
+      "Model/Weapon Property§Resist:H": {
+        "text": "**Resistant to Haywire**  \nThis model does not roll for additional damage after being \nhaywired. However, it still suffers the haywired status."
+      },
+      "Model/Weapon Property§SatUp": {
+        "text": "**Satellite Uplink**  \nIncrease this model’s EW skill by one for all **independent**\nEW rolls. This is not cumulative with additional SatUps."
+      },
+      "Model/Weapon Property§Sensor Boom": {
+        "text": "This model may check LOS and sensor lock from a point \nup to 1” away from its silhouette. This only applies to \nindirect attacks, forward observations, ECM attacks, ECM \njamming and detailed scan actions."
+      },
+      "Model/Weapon Property§Sensors:X": {
+        "text": "This model has two features in addition to the regular \nsensor rules noted in **Sensor Lock** (p11).\n - This model has a sensor range of “X” inches.\n - Models in formation may use this model’s sensor \nlocks for ranged attacks."
+      },
+      "Model/Weapon Property§Shield": {
+        "text": "This model may reroll defense rolls if the attack originated \nfrom within its front arc."
+      },
+      "Model/Weapon Property§Silent": {
+        "text": "Models do not lose the hidden status when attacking with \na weapon that has the Silent trait."
+      },
+      "Model/Weapon Property§Smoke": {
+        "text": "A model with the Smoke trait may spend an action point \nto discharge smoke. See **Discharge Smoke** (p32)."
+      },
+      "Model/Weapon Property§SP:+1": {
+        "text": "This model will gain one Skill Point (SP) in addition to \nany it may have from other sources. If the model is a \ncommander, it will instead gain one Command Point (CP)."
+      },
+      "Model/Weapon Property§Split": {
+        "text": "When attacking with this weapon, this model may target \ntwo separate models.\n - Treat each target as a primary target.\n - Targets must be within 6 inches of each other.\n - The attacker suffers -1D6 on each attack roll."
+      },
+      "Model/Weapon Property§Spray": {
+        "text": "Models attacked with this weapon do not gain defense \nmodifiers from partial cover. This weapon cannot be fired \nthrough full light cover."
+      },
+      "Model/Weapon Property§Stable": {
+        "text": "This model receives +1D6 to direct and indirect attack \nrolls while at combat speed or at top speed.\n\nMultiple sources of Stable are not cumulative."
+      },
+      "Model/Weapon Property§Stationary": {
+        "text": "This model is always braced, cannot move or turn, and \nmay not perform hide actions or evade reactions."
+      },
+      "Model/Weapon Property§Stealth": {
+        "text": "Enemy models cannot sensor lock this model until it is \nwithin half their sensor range. For example, a model with \na standard sensor range of 18 inches can only sensor lock \na model with the Stealth trait at 9 inches or less."
+      },
+      "Model/Weapon Property§Sub": {
+        "text": "**Submersible**  \nThis model uses its full MR through water. While in water, \nthis model has partial cover.\n\nModels with the Sub trait may also used the submerged \ndeployment option. See **Submerged Deployment** (p17)."
+      },
+      "Model/Weapon Property§Supply": {
+        "text": "Models with this trait may use the reload action to \nreplenish ammunition for a weapon with the LA:X trait."
+      },
+      "Model/Weapon Property§T": {
+        "text": "**Turret**  \nA turret mounted weapon has 360 degree rotation and \ncan be used to fire within any arc.\nTurrets do not remove the back arc modifier when this \nmodel is attacked."
+      },
+      "Model/Weapon Property§TD": {
+        "text": "**Target Designator**  \nA target designator is a precision laser marking device \nwhich steers guided weapons to a target.\n\nIn order to designate a target with the TD trait, a model \nmust successfully perform a forward observation action \nwith LOS **and** sensor lock.\n\nAfter the forward observation, fire missions using guided \nweapons receive +1D6 on the attack roll in addition to the \nstandard +1D6 bonus from the forward observation. Both \nbonuses apply against the primary target only."
+      },
+      "Model/Weapon Property§Towed": {
+        "text": "One model with this trait may be towed behind a gear, \nstrider or vehicle with the W or G movement type. Models \nwith the VTOL trait cannot be used to tow.\n\nTowing uses all the rules associated with transports with \nthe following exceptions:\n - The towing model cannot move more than 6 inches \nfor each move.\n - The towed model is placed behind the model towing \nit, facing aft. It does not go inside a transport.\n - The towed model may be attacked normally.\n - The towed model cannot perform any Actions while \nit is being towed."
+      },
+      "Model/Weapon Property§Transport:X Type": {
+        "text": "Models with this trait will specify the amount (X) and type \nof other models which they are able to transport.\n\n**Types**:\n - X Drones: This model may transport X number of \nuniversal drones.\n - X Squads: This model may transport up to X number \nof infantry squads.\n    - 3 infantry teams, infantry singles, or drones may be \ntransported in place of one infantry squad.\n - X Gears: This model may transport X number of gears \nor X number of infantry squads.\n    - 3 infantry teams, infantry singles, or 3 drones may \nbe transported instead of one gear.\nModels of the correct type may embark onto or disembark \nfrom a transport during the transport’s activation. \nIndividual models cannot embark and disembark on the \nsame round.\n\n**Embark**: A transport may embark one or more models \nwhen they are within one inch of them.\n - Once the models have embarked onto the transport, \nremove them from the battlefield and place them \nto one side. They are considered to be inside the \ntransport after they embark.\n - Models inside a transport cannot attack other models \nunless otherwise noted.\n - Only models with the VTOL trait may embark on \nelevated VTOLs.\n\n**Disembark**: A transport may also disembark one or more \nmodels.\n - Disembarked models are placed in base contact with \nthe transport they disembarked from.\n - Transporting models must be braced or at combat \nspeed in order to disembark other models.\n - Only models with the Airdrop or VTOL trait may \ndisembark from elevated VTOLs.\n\n**Destroyed Transports**: All models within a transport are \ndisgorged immediately if the transport is destroyed.\n - Place each model within one inch of the transport.\n -  Each model will perform an exclusive roll with two \ndice, using their PI skill. Each die that fails results in \none damage. If a transport is overkilled the roll will \nrequire four dice.\n - Disgorged models are immobilized.\n - Models disgorged onto a surface which they cannot \nenter, such as deep water for most infantry, are \nimmediately destroyed."
+      },
+      "Model/Weapon Property§Vet": {
+        "text": "**Veteran**  \nThis model is considered a veteran. It has one Skill Point \n(SP) and may purchase upgrades from the standard and \nveteran upgrade lists.",
+        "stats": {
+          "SP": {
+            "statType": "numeric",
+            "value": 1,
+            "visibility": "hidden",
+            "tracked": true
+          }
+        }
+      },
+      "Model/Weapon Property§VTOL": {
+        "text": "**Vertical Take-Off and Landing**  \nVTOLs like helicopters and hoppers can take to the air. \nOnce per Move, models with the VTOL trait may choose \nwhether to be elevated or at Nap Of the Earth (NOE).\n\n**NOE**: While at NOE a model moves using the hover \nmovement type, or any other movement type that is \navailable to that model.\n\n**Elevated VTOLs**:\n - Are required to be marked as being elevated.\n - Treat all surfaces as open surfaces. Elevated VTOLs \ncan fly over any terrain feature. They are assumed to \nbe above all terrain features.\n - Ignore mines and minefields.\n - All measurements are made to and from the elevated \nVTOL’s base or silhouette, and not from an elevated \nlocation above the table.\n - Do not obscure LOS and cannot be used as cover.\n - May be moved through as long as the Move does not \nend with any bases or models on top of each other.\n\n**When elevated VTOLs attack models on the ground**:\n - They gain the elevation bonus for attack (-1 TN).\n - Cannot attack with melee or proximity weapons.\n - LOS from the elevated VTOL ignores terrain that is \nnot within 1” of the target. Targets on the ground \ncannot use cover unless they are within one inch of it.\n\n**When models on the ground attack elevated VTOLs**:\n - Elevated VTOLs gain a defense bonus of +1D6 against \nany ranged attacks.\n - Cannot be attacked with melee or proximity weapons.\n - Cannot be attacks with weapons that have the Spray trait, such as flamers (LFL, MFL or HFL).\n - Cannot gain defense bonuses from cover or smoke.\n - Cannot gain defense bonuses from ECM defense unless it originates from other elevated VTOLs.\n - LOS to an elevated VTOL, from a model on the \nground, ignores all terrain that the attacking model is \nnot within 1” of.\n\n**When Elevated VTOLs attack other Elevated VTOLs**:\n - Cover is not available.\n - LOS is never obscured.\n - Elevated VTOLs still gain +1D6 for defense against \nranged attacks.\n - Elevated VTOLs attacking other elevated VTOLs do \nnot gain -1TN for being elevated.\n - Can be attacked via melee or proximity weapons from \nother elevated VTOLs."
+      },
+      "Model/Weapon Property§Vuln:C": {
+        "text": "**Vulnerable to Corrosion**  \nThis model automatically suffers damage from the \nCorrosion trait without a roll."
+      },
+      "Model/Weapon Property§Vuln:F": {
+        "text": "**Vulnerable to Fire**  \nThis model automatically suffers damage from the Fire \ntrait without a roll."
+      },
+      "Model/Weapon Property§Vuln:H": {
+        "text": "**Vulnerable to Haywire**  \nThis model automatically suffers damage from the \nHaywire trait and ECM attacks without a roll."
       },
       "Roster§Force": {
         "stats": {
-          "Points": {
-            "statType": "numeric",
-            "label": "Points Total",
-            "value": 0,
-            "statOrder": 2,
-            "group": "Accounting",
-            "visibility": "normal",
-            "tracked": true
-          },
           "Combat Group": {
             "statType": "numeric",
             "label": "Combat Groups",
@@ -409,13 +1502,70 @@
             "visibility": "normal",
             "tracked": true
           },
-          "Points Limit": {
+          "maxCO": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 3,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true,
+            "min": 0,
+            "max": 1
+          },
+          "maxTFC": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 2,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true,
+            "min": 0,
+            "max": 1
+          },
+          "maxXO": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 4,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true,
+            "min": 0,
+            "max": 1
+          },
+          "maxFL": {
+            "statType": "numeric",
+            "value": 0,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true,
+            "min": 0,
+            "max": 1
+          },
+          "TV Limit": {
             "statType": "numeric",
             "value": 0,
             "statOrder": 1,
             "group": "Accounting",
             "visibility": "normal",
             "dynamic": true
+          },
+          "TV": {
+            "statType": "numeric",
+            "label": "TV Total",
+            "value": 0,
+            "statOrder": 2,
+            "group": "Accounting",
+            "visibility": "normal",
+            "tracked": true
+          },
+          "Duelist": {
+            "statType": "numeric",
+            "value": 0,
+            "group": "Hidden",
+            "visibility": "normal",
+            "tracked": true,
+            "min": 0,
+            "max": 1
           }
         },
         "allowed": {
@@ -428,9 +1578,104 @@
           "traits": [
             "Combat Group§Combat Group"
           ]
+        },
+        "keywords": {
+          "Tags": [
+            "usesHands"
+          ]
         }
       },
-      "Sub-list§Northern Lights Federation": {},
+      "Standard Upgrade§Add Smoke +1TV": {
+        "text": "Models may purchase the Smoke trait for 1 TV. Models \nwith the VTOL trait cannot purchase smoke upgrades.",
+        "stats": {
+          "TV": {
+            "value": 1,
+            "tracked": true
+          }
+        },
+        "rules": {},
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Smoke"
+          ]
+        },
+        "aspects": {
+          "Unique": true
+        }
+      },
+      "Standard Upgrade§Anti-Air (AA) (Placeholder)": {
+        "text": "- Add the AA trait to an autocannon, rotary cannon, \nlaser cannon or rotary laser cannon for 1 TV.\n - Swap any Anti-Tank Missile (ATM) to an Anti-Air \nMissile (AAM) of the same class for 0 TV."
+      },
+      "Standard Upgrade§Grenade Swap (Placeholder)": {
+        "text": "Models may swap their hand grenades for panzerfausts \nor vice versa. This costs 0 TV. The swapped item must be \nof the same class, such as L, M, or H.",
+        "keywords": {
+          "Tags": []
+        }
+      },
+      "Standard Upgrade§Hand Grenades (Placeholder)": {
+        "text": "Only models which have the Hands trait can purchase \nhand grenade upgrades.\n - Two models may purchase Light Hand Grenades \n(LHG) for 1 TV (total).\n - One model may purchase Medium Hand Grenades \n(MHG) for 1 TV.",
+        "keywords": {
+          "Tags": []
+        }
+      },
+      "Standard Upgrade§Light Hand Grenades (LHG) +0.5TV": {
+        "stats": {
+          "TV": {
+            "value": 0.5
+          }
+        },
+        "rules": {
+          "addTraitHG": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": {
+                  "item": "Weapon§HG"
+                },
+                "iterations": 1
+              }
+            ]
+          }
+        },
+        "assets": {
+          "traits": []
+        },
+        "aspects": {
+          "Visibility": "active"
+        }
+      },
+      "Standard Upgrade§Medium Hand Grenades (MHG) +1TV": {
+        "stats": {
+          "TV": {
+            "value": 1
+          }
+        },
+        "assets": {
+          "traits": []
+        },
+        "rules": {}
+      },
+      "Standard Upgrade§Melee Swap (Placeholder)": {
+        "text": "For gears and striders with the Hands trait only: One Light \n(L) or Medium (M) melee weapon with the React trait can \nbe swapped for an equal class melee weapon for 0 TV. I.e., \na LCW can be swapped for a LVB or a LSG. This upgrade \ndoes not include shaped explosives or infantry combat \nweapons. Those weapons cannot be swapped.\n - The only trait associated with the original weapon \nthat transfers over to the new melee weapon is the \nReact trait (or it simply stays under the React column \nof a model’s profile when it is swapped). Other traits \ndo not swap with it. I.e., a LCW (React, Brawl:1) will \nbecome a LVB (React), or a LSG (React). The Brawl:1 \ntrait does not carry over to the new weapon."
+      },
+      "Standard Upgrade§Panzerfausts (Placeholder)": {
+        "text": "Only models which have the Hands trait can purchase \npanzerfaust upgrades.\n - Two models may purchase Light Panzerfausts (LPZ) \nfor 1 TV (total).\n - One models may purchase Medium Panzerfausts \n(MPZ) for 1 TV."
+      },
+      "Standard Upgrade§Shaped Explosives (Placeholder)": {
+        "text": "Only models with the Hands trait or the infantry movement \ntype can purchase shaped explosives.\n - Two models may purchase Light Shaped Explosives \n(LSE) for 1 TV (total).\n - One model may purchase Medium Shaped Explosives \n(MSE) for 1 TV"
+      },
+      "Standard Upgrade§Sidearms (Placeholder)": {
+        "text": "Only models with the Hands trait can purchase sidearms. \nThese weapons come with the React trait.\n - Add a Light Pistol (LP) or a Light Submachine Gun \n(LSMG) to two models for 1 TV (total)."
+      },
       "Unit§Primary Unit": {
         "stats": {
           "Actions": {
@@ -487,10 +1732,1233 @@
             ]
           }
         }
+      },
+      "Veteran Upgrade§Add AMS (Placeholder)": {},
+      "Veteran Upgrade§Add ECCM (Placeholder)": {},
+      "Veteran Upgrade§Add Field Armor (Placeholder)": {},
+      "Veteran Upgrade§Add Reach (Placeholder)": {},
+      "Veteran Upgrade§Add Resist:C (Placeholder)": {},
+      "Veteran Upgrade§add Resist:F (Placeholder)": {},
+      "Veteran Upgrade§Add Resist:H (Placeholder)": {},
+      "Veteran Upgrade§Brawler (Placeholder)": {},
+      "Veteran Upgrade§Dual Guns (Placeholder)": {},
+      "Veteran Upgrade§Improved Gunnery (Placeholder)": {},
+      "Veteran Upgrade§Veteran Melee Upgrade (Placeholder)": {},
+      "Weapon§AAM": {
+        "stats": {
+          "Name": {
+            "value": "Anti-Air Missile"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "Flak, Guided"
+          },
+          "Mode": {
+            "value": "Direct, Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Flak",
+            "Model/Weapon Property§Guided"
+          ]
+        }
+      },
+      "Weapon§ABM": {
+        "stats": {
+          "Name": {
+            "value": "Air Burst Missile"
+          },
+          "Range": {
+            "value": "24-48/96"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Traits": {
+            "value": "AI, AOE:3, Blast, Guided"
+          },
+          "Mode": {
+            "value": "Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Guided"
+          ]
+        }
+      },
+      "Weapon§AC": {
+        "stats": {
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Traits": {
+            "value": "Burst:1, Split (OR) Precise"
+          },
+          "Mode": {
+            "value": "Direct"
+          },
+          "Name": {
+            "value": "Autocannon",
+            "groupOrder": 1
+          },
+          "AA Upgrade": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§AA"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Burst:X",
+            "Model/Weapon Property§Split",
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§Or"
+          ]
+        }
+      },
+      "Weapon§AG": {
+        "stats": {
+          "Name": {
+            "value": "Artillery Gun"
+          },
+          "Range": {
+            "value": "24-48/96"
+          },
+          "Damage": {
+            "value": "9/10/11"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast, AP:1, Demo:2"
+          },
+          "Mode": {
+            "value": "Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Demo:X"
+          ]
+        }
+      },
+      "Weapon§AM": {
+        "stats": {
+          "Name": {
+            "value": "Artillery Missile"
+          },
+          "Range": {
+            "value": "24-48/96"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast, AP:1, Guided"
+          },
+          "Mode": {
+            "value": "Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Guided"
+          ]
+        }
+      },
+      "Weapon§APGL": {
+        "stats": {
+          "Name": {
+            "value": "Anti-Personnel Grenade Launchers"
+          },
+          "Range": {
+            "value": "0-3/-"
+          },
+          "Damage": {
+            "value": "5/6/7"
+          },
+          "Traits": {
+            "value": "AI, Frag, Prox"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§Frag",
+            "Model/Weapon Property§Prox"
+          ]
+        }
+      },
+      "Weapon§APR": {
+        "stats": {
+          "Name": {
+            "value": "Anti-Personnel Rocket"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Traits": {
+            "value": "AI, AOE:3"
+          },
+          "Mode": {
+            "value": "Direct, Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§AOE:X"
+          ]
+        }
+      },
+      "Weapon§AR": {
+        "stats": {
+          "Name": {
+            "value": "Artillery Rocket"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "AOE:3, Demo:2"
+          },
+          "Mode": {
+            "value": "Direct, Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Demo:X"
+          ]
+        }
+      },
+      "Weapon§ATM": {
+        "stats": {
+          "Name": {
+            "value": "Anti-Tank Missile"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "8/9/10"
+          },
+          "Traits": {
+            "value": "AP:2/3/4, Guided"
+          },
+          "Mode": {
+            "value": "Direct, Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Guided"
+          ]
+        }
+      },
+      "Weapon§AVM": {
+        "stats": {
+          "Name": {
+            "value": "Anti-Vehicle Missile"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "5/6/7"
+          },
+          "Traits": {
+            "value": "AP:1, Guided"
+          },
+          "Mode": {
+            "value": "Direct, Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Guided"
+          ]
+        }
+      },
+      "Weapon§BB": {
+        "stats": {
+          "Name": {
+            "value": "Bomb"
+          },
+          "Range": {
+            "value": "0/-"
+          },
+          "Damage": {
+            "value": "8/-/-"
+          },
+          "Traits": {
+            "value": "AOE:4"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X"
+          ]
+        }
+      },
+      "Weapon§BZ": {
+        "stats": {
+          "Name": {
+            "value": "Bazooka"
+          },
+          "Range": {
+            "value": "6-12/24"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "AP:2/3/4"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Weapon§CW": {
+        "stats": {
+          "Name": {
+            "value": "Combat Weapon"
+          },
+          "Range": {
+            "value": "0/-"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "Demo:2"
+          },
+          "Mode": {
+            "value": "Melee"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Demo:X"
+          ]
+        }
+      },
+      "Weapon§FC": {
+        "stats": {
+          "Name": {
+            "value": "Frag Cannon"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "Damage": {
+            "value": "5/6/7"
+          },
+          "Traits": {
+            "value": "Precise, AP:1/2/3 (OR) Frag, AI"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Or",
+            "Model/Weapon Property§Frag",
+            "Model/Weapon Property§AI"
+          ]
+        }
+      },
+      "Weapon§FG": {
+        "stats": {
+          "Name": {
+            "value": "Field Gun"
+          },
+          "Range": {
+            "value": "12-24/48"
+          },
+          "Damage": {
+            "value": "9/10/11"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast (OR) AP:3/4/5"
+          },
+          "Mode": {
+            "value": "Direct, Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Or",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Weapon§FL": {
+        "stats": {
+          "Name": {
+            "value": "Flamer"
+          },
+          "Range": {
+            "value": "0-9/18"
+          },
+          "Damage": {
+            "value": "3/4/5"
+          },
+          "Traits": {
+            "value": "AI, Fire:2/3/4, Burst:1, Spray"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§Fire:X",
+            "Model/Weapon Property§Burst:X",
+            "Model/Weapon Property§Spray"
+          ]
+        }
+      },
+      "Weapon§FM": {
+        "stats": {
+          "Name": {
+            "value": "Field Mortar"
+          },
+          "Range": {
+            "value": "18-36/72"
+          },
+          "Damage": {
+            "value": "8/9/10"
+          },
+          "Traits": {
+            "value": "AOE:4, Blast"
+          },
+          "Mode": {
+            "value": "Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast"
+          ]
+        }
+      },
+      "Weapon§GL": {
+        "stats": {
+          "Name": {
+            "value": "Grenade Launcher"
+          },
+          "Range": {
+            "value": "6-12/24"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast, AP:1, Burst:1"
+          },
+          "Mode": {
+            "value": "Direct, Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Burst:X"
+          ]
+        }
+      },
+      "Weapon§GM": {
+        "stats": {
+          "Name": {
+            "value": "Guided Mortar"
+          },
+          "Range": {
+            "value": "18-36/72"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast, Guided"
+          },
+          "Mode": {
+            "value": "Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Guided"
+          ]
+        }
+      },
+      "Weapon§HG": {
+        "stats": {
+          "Name": {
+            "value": "Hand Grenades"
+          },
+          "Range": {
+            "value": "3-6/9"
+          },
+          "Damage": {
+            "value": "8/9/10"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast, AP:1"
+          },
+          "Mode": {
+            "value": "Direct, Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Weapon§ICW": {
+        "stats": {
+          "Name": {
+            "value": "Infantry Combat Weapon"
+          },
+          "Range": {
+            "value": "0/-"
+          },
+          "Damage": {
+            "value": "4/5/6"
+          },
+          "Traits": {
+            "value": "AI"
+          },
+          "Mode": {
+            "value": "Melee"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI"
+          ]
+        }
+      },
+      "Weapon§IGL": {
+        "stats": {
+          "Name": {
+            "value": "Infantry Grenade Launcher"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "Damage": {
+            "value": "5/6/7"
+          },
+          "Traits": {
+            "value": "AOE:2, Blast (OR) AP:1"
+          },
+          "Mode": {
+            "value": "Direct, Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Or",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Weapon§IL": {
+        "stats": {
+          "Name": {
+            "value": "Infantry Laser"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "3/4/5"
+          },
+          "Traits": {
+            "value": "AI, Advanced, Burst:1"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§Advanced",
+            "Model/Weapon Property§Burst:X"
+          ]
+        }
+      },
+      "Weapon§IM": {
+        "stats": {
+          "Name": {
+            "value": "Infantry Mortar"
+          },
+          "Range": {
+            "value": "12-24/48"
+          },
+          "Damage": {
+            "value": "4/5/6"
+          },
+          "Traits": {
+            "value": "AOE:2, Blast, AI"
+          },
+          "Mode": {
+            "value": "Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AI"
+          ]
+        }
+      },
+      "Weapon§IR": {
+        "stats": {
+          "Name": {
+            "value": "Infantry Rifle"
+          },
+          "Range": {
+            "value": "6-24/48"
+          },
+          "Damage": {
+            "value": "4/5/6"
+          },
+          "Traits": {
+            "value": "Precise, AI"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§AI"
+          ]
+        }
+      },
+      "Weapon§IS": {
+        "stats": {
+          "Name": {
+            "value": "Infantry Support Weapon"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "4/5/6"
+          },
+          "Traits": {
+            "value": "-"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        }
+      },
+      "Weapon§IW": {
+        "stats": {
+          "Name": {
+            "value": "Infantry Weapon"
+          },
+          "Range": {
+            "value": "0-9/18"
+          },
+          "Damage": {
+            "value": "3/4/5"
+          },
+          "Traits": {
+            "value": "AI, Burst:1"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§Burst:X"
+          ]
+        }
+      },
+      "Weapon§LC": {
+        "stats": {
+          "Name": {
+            "value": "Laser Cannon"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Traits": {
+            "value": "Precise, Advanced"
+          },
+          "Mode": {
+            "value": "Direct"
+          },
+          "AA Upgrade": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§AA"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§Advanced"
+          ]
+        }
+      },
+      "Weapon§MG": {
+        "stats": {
+          "Name": {
+            "value": "Machine Gun"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "Damage": {
+            "value": "3/4/5"
+          },
+          "Traits": {
+            "value": "AI, Burst:2, Split"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§Burst:X",
+            "Model/Weapon Property§Split"
+          ]
+        }
+      },
+      "Weapon§P": {
+        "stats": {
+          "Name": {
+            "value": "Pistol"
+          },
+          "Range": {
+            "value": "0-12/24"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Traits": {
+            "value": "Precise"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise"
+          ]
+        }
+      },
+      "Weapon§PA": {
+        "stats": {
+          "Name": {
+            "value": "Particle Accelerator"
+          },
+          "Range": {
+            "value": "6-24/48"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "Haywire, Advanced"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Haywire",
+            "Model/Weapon Property§Advanced"
+          ]
+        }
+      },
+      "Weapon§PL": {
+        "stats": {
+          "Name": {
+            "value": "Pulse Laser"
+          },
+          "Range": {
+            "value": "6-24/48"
+          },
+          "Traits": {
+            "value": "Burst:1, Advanced (OR) AP:2/3/4, Apex, Advanced"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Burst:X",
+            "Model/Weapon Property§Advanced",
+            "Model/Weapon Property§Or",
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§APEX"
+          ]
+        }
+      },
+      "Weapon§PZ": {
+        "stats": {
+          "Name": {
+            "value": "Panzerfaust"
+          },
+          "Range": {
+            "value": "3-6/9"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "AP:2/3/4"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Weapon§RC": {
+        "stats": {
+          "Name": {
+            "value": "Rotary Cannon"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "5/6/7"
+          },
+          "Traits": {
+            "value": "Burst:2, Split"
+          },
+          "Mode": {
+            "value": "Direct"
+          },
+          "AA Upgrade": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§AA"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Burst:X",
+            "Model/Weapon Property§Split"
+          ]
+        }
+      },
+      "Weapon§RF": {
+        "stats": {
+          "Name": {
+            "value": "Rifle"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Traits": {
+            "value": "Precise"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise"
+          ]
+        }
+      },
+      "Weapon§RG": {
+        "stats": {
+          "Name": {
+            "value": "Railgun"
+          },
+          "Range": {
+            "value": "12-48/96"
+          },
+          "Damage": {
+            "value": "4/5/6"
+          },
+          "Traits": {
+            "value": "Precise, Advanced, AP:4/5/6"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§Advanced",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Weapon§RL": {
+        "stats": {
+          "Name": {
+            "value": "Rotary Laser"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "5/6/7"
+          },
+          "Traits": {
+            "value": "Advanced, Burst:2, Split"
+          },
+          "Mode": {
+            "value": "Direct"
+          },
+          "AA Upgrade": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§AA"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "statOrder": 1,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Advanced",
+            "Model/Weapon Property§Burst:X",
+            "Model/Weapon Property§Split"
+          ]
+        }
+      },
+      "Weapon§RP": {
+        "stats": {
+          "Name": {
+            "value": "Rocket Pack"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "AOE:3, AP:1"
+          },
+          "Mode": {
+            "value": "Direct, Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Weapon§SC": {
+        "stats": {
+          "Name": {
+            "value": "Snub Cannon"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "Damage": {
+            "value": "8/9/10"
+          },
+          "Traits": {
+            "value": "AP:2/3/4, Demo:3"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Demo:X"
+          ]
+        }
+      },
+      "Weapon§SE": {
+        "stats": {
+          "Name": {
+            "value": "Shaped Explosives"
+          },
+          "Range": {
+            "value": "0/-"
+          },
+          "Damage": {
+            "value": "8/9/10"
+          },
+          "Traits": {
+            "value": "AP:2/3/4, Demo:4, Brawl:-1"
+          },
+          "Mode": {
+            "value": "Melee"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Demo:X",
+            "Model/Weapon Property§Brawl:X"
+          ]
+        }
+      },
+      "Weapon§SG": {
+        "stats": {
+          "Name": {
+            "value": "Spike Gun"
+          },
+          "Traits": {
+            "value": "AP:3/4/5"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Range": {
+            "value": "0/-"
+          },
+          "Mode": {
+            "value": "Melee"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Weapon§SMG": {
+        "stats": {
+          "Name": {
+            "value": "Submachine Gun"
+          },
+          "Range": {
+            "value": "0-9/18"
+          },
+          "Damage": {
+            "value": "5/6/7"
+          },
+          "Traits": {
+            "value": "Burst:2"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Burst:X"
+          ]
+        }
+      },
+      "Weapon§TG": {
+        "stats": {
+          "Name": {
+            "value": "Tank Gun"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "9/10/11"
+          },
+          "Traits": {
+            "value": "AP:3/4/5, Demo:2"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Demo:X"
+          ]
+        }
+      },
+      "Weapon§VB": {
+        "stats": {
+          "Name": {
+            "value": "Vibro-Blade"
+          },
+          "Traits": {
+            "value": "AP:2/3/4"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Range": {
+            "value": "0/-"
+          },
+          "Mode": {
+            "value": "Melee"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X"
+          ]
+        }
       }
     },
     "gameModes": {},
     "theme": {}
-  },
-  "dependencies": []
+  }
 }
