@@ -397,6 +397,14 @@
             "visibility": "hidden",
             "tracked": true,
             "max": 1
+          },
+          "Swappable Ex. Weapon": {
+            "statType": "numeric",
+            "value": 0,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true,
+            "max": 1
           }
         },
         "rules": {
@@ -1238,14 +1246,17 @@
             "Weapon§AC"
           ],
           "included": [
-            "Weapon§VB"
+            "Weapon§VB",
+            "Weapon§HG"
           ]
         },
         "allowed": {
           "items": [
             "Weapon§CW",
             "Weapon§SG",
-            "Weapon§VB"
+            "Weapon§VB",
+            "Weapon§HG",
+            "Weapon§PZ"
           ]
         }
       },
@@ -1635,7 +1646,14 @@
                   ]
                 ],
                 "actionType": "add",
-                "value": "Weapon§HG",
+                "value": {
+                  "item": "Weapon§HG",
+                  "stats": {
+                    "Swappable Ex. Weapon": {
+                      "value": 0
+                    }
+                  }
+                },
                 "iterations": 1
               }
             ]
@@ -1674,7 +1692,14 @@
                   ]
                 ],
                 "actionType": "add",
-                "value": "Weapon§PZ",
+                "value": {
+                  "item": "Weapon§PZ",
+                  "stats": {
+                    "Swappable Ex. Weapon": {
+                      "value": 0
+                    }
+                  }
+                },
                 "iterations": 1
               }
             ]
@@ -1704,7 +1729,14 @@
                   ]
                 ],
                 "actionType": "add",
-                "value": "Weapon§HG",
+                "value": {
+                  "item": "Weapon§HG",
+                  "stats": {
+                    "Swappable Ex. Weapon": {
+                      "value": 0
+                    }
+                  }
+                },
                 "iterations": 1
               }
             ]
@@ -1740,7 +1772,14 @@
                   ]
                 ],
                 "actionType": "add",
-                "value": "Weapon§PZ",
+                "value": {
+                  "item": "Weapon§PZ",
+                  "stats": {
+                    "Swappable Ex. Weapon": {
+                      "value": 0
+                    }
+                  }
+                },
                 "iterations": 1
               }
             ]
@@ -1749,9 +1788,6 @@
       },
       "Standard Upgrade§Melee Swap (Placeholder)": {
         "text": "For gears and striders with the Hands trait only: One Light \n(L) or Medium (M) melee weapon with the React trait can \nbe swapped for an equal class melee weapon for 0 TV. I.e., \na LCW can be swapped for a LVB or a LSG. This upgrade \ndoes not include shaped explosives or infantry combat \nweapons. Those weapons cannot be swapped.\n - The only trait associated with the original weapon \nthat transfers over to the new melee weapon is the \nReact trait (or it simply stays under the React column \nof a model’s profile when it is swapped). Other traits \ndo not swap with it. I.e., a LCW (React, Brawl:1) will \nbecome a LVB (React), or a LSG (React). The Brawl:1 \ntrait does not carry over to the new weapon."
-      },
-      "Standard Upgrade§Panzerfausts (Placeholder)": {
-        "text": "Only models which have the Hands trait can purchase \npanzerfaust upgrades.\n - Two models may purchase Light Panzerfausts (LPZ) \nfor 1 TV (total).\n - One models may purchase Medium Panzerfausts \n(MPZ) for 1 TV."
       },
       "Standard Upgrade§Shaped Explosives (Placeholder)": {
         "text": "Only models with the Hands trait or the infantry movement \ntype can purchase shaped explosives.\n - Two models may purchase Light Shaped Explosives \n(LSE) for 1 TV (total).\n - One model may purchase Medium Shaped Explosives \n(MSE) for 1 TV"
@@ -2366,6 +2402,13 @@
           },
           "Mode": {
             "value": "Direct, Indirect"
+          },
+          "Swappable Ex. Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
           }
         },
         "assets": {
@@ -2716,6 +2759,13 @@
           },
           "Mode": {
             "value": "Direct"
+          },
+          "Swappable Ex. Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
           }
         },
         "assets": {
