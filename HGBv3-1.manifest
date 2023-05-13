@@ -389,6 +389,14 @@
             "groupOrder": 3,
             "visibility": "normal",
             "dynamic": true
+          },
+          "Swappable Melee Weapon": {
+            "statType": "numeric",
+            "value": 0,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true,
+            "max": 1
           }
         },
         "rules": {
@@ -536,57 +544,6 @@
                 ],
                 "actionType": "set",
                 "value": 1,
-                "iterations": 1
-              }
-            ]
-          },
-          "addPaidGrenades": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "classification",
-                    "Standard Upgrade",
-                    "item"
-                  ]
-                ],
-                "value": "Standard Upgrade§Light Hand Grenades (LHG) +0.5TV",
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "classification",
-                    "Standard Upgrade",
-                    "item"
-                  ]
-                ],
-                "value": "Standard Upgrade§Medium Hand Grenades (MHG) +1TV",
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": {
-                  "item": "Weapon§HG"
-                },
                 "iterations": 1
               }
             ]
@@ -783,6 +740,41 @@
             ],
             "failState": "error",
             "evaluate": "AND"
+          },
+          "addPaidGrenades": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "classification",
+                    "Standard Upgrade",
+                    "keywords"
+                  ]
+                ],
+                "value": "isGrenade",
+                "contains": true,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Weapon§HG",
+                "iterations": 1
+              }
+            ]
           }
         },
         "allowed": {
@@ -803,7 +795,8 @@
       "Standard Upgrade": {
         "templateClass": "Upgrade",
         "aspects": {
-          "Visibility": "active"
+          "Visibility": "active",
+          "Unique": true
         },
         "stats": {
           "TV": {
@@ -1243,6 +1236,16 @@
             "Model/Weapon Property§Airdrop",
             "Model/Weapon Property§Amphib",
             "Weapon§AC"
+          ],
+          "included": [
+            "Weapon§VB"
+          ]
+        },
+        "allowed": {
+          "items": [
+            "Weapon§CW",
+            "Weapon§SG",
+            "Weapon§VB"
           ]
         }
       },
@@ -1612,12 +1615,6 @@
           "Tags": []
         }
       },
-      "Standard Upgrade§Hand Grenades (Placeholder)": {
-        "text": "Only models which have the Hands trait can purchase \nhand grenade upgrades.\n - Two models may purchase Light Hand Grenades \n(LHG) for 1 TV (total).\n - One model may purchase Medium Hand Grenades \n(MHG) for 1 TV.",
-        "keywords": {
-          "Tags": []
-        }
-      },
       "Standard Upgrade§Light Hand Grenades (LHG) +0.5TV": {
         "stats": {
           "TV": {
@@ -1638,9 +1635,7 @@
                   ]
                 ],
                 "actionType": "add",
-                "value": {
-                  "item": "Weapon§HG"
-                },
+                "value": "Weapon§HG",
                 "iterations": 1
               }
             ]
@@ -1651,6 +1646,39 @@
         },
         "aspects": {
           "Visibility": "active"
+        },
+        "keywords": {
+          "Tags": []
+        }
+      },
+      "Standard Upgrade§Light Panzerfausts (LPZ) +0.5TV": {
+        "stats": {
+          "TV": {
+            "value": 0.5
+          }
+        },
+        "assets": {
+          "traits": []
+        },
+        "rules": {
+          "addTraitPZ": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Weapon§PZ",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Standard Upgrade§Medium Hand Grenades (MHG) +1TV": {
@@ -1662,7 +1690,62 @@
         "assets": {
           "traits": []
         },
-        "rules": {}
+        "rules": {
+          "addTraitHG": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Weapon§HG",
+                "iterations": 1
+              }
+            ]
+          }
+        },
+        "keywords": {
+          "Tags": []
+        }
+      },
+      "Standard Upgrade§Medium Panzerfausts (MPZ) +1TV": {
+        "stats": {
+          "TV": {
+            "value": 1
+          }
+        },
+        "assets": {
+          "traits": []
+        },
+        "keywords": {
+          "Tags": []
+        },
+        "rules": {
+          "addTraitPZ": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Weapon§PZ",
+                "iterations": 1
+              }
+            ]
+          }
+        }
       },
       "Standard Upgrade§Melee Swap (Placeholder)": {
         "text": "For gears and striders with the Hands trait only: One Light \n(L) or Medium (M) melee weapon with the React trait can \nbe swapped for an equal class melee weapon for 0 TV. I.e., \na LCW can be swapped for a LVB or a LSG. This upgrade \ndoes not include shaped explosives or infantry combat \nweapons. Those weapons cannot be swapped.\n - The only trait associated with the original weapon \nthat transfers over to the new melee weapon is the \nReact trait (or it simply stays under the React column \nof a model’s profile when it is swapped). Other traits \ndo not swap with it. I.e., a LCW (React, Brawl:1) will \nbecome a LVB (React), or a LSG (React). The Brawl:1 \ntrait does not carry over to the new weapon."
@@ -2092,6 +2175,13 @@
           },
           "Mode": {
             "value": "Melee"
+          },
+          "Swappable Melee Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
           }
         },
         "assets": {
@@ -2876,6 +2966,13 @@
           },
           "Mode": {
             "value": "Melee"
+          },
+          "Swappable Melee Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
           }
         },
         "assets": {
@@ -2949,6 +3046,13 @@
           },
           "Mode": {
             "value": "Melee"
+          },
+          "Swappable Melee Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
           }
         },
         "assets": {
