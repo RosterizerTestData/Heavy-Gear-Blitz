@@ -405,6 +405,14 @@
             "visibility": "hidden",
             "tracked": true,
             "max": 1
+          },
+          "Swappable AA Weapon": {
+            "statType": "numeric",
+            "value": 0,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true,
+            "max": 1
           }
         },
         "rules": {
@@ -1620,12 +1628,6 @@
       "Standard Upgrade§Anti-Air (AA) (Placeholder)": {
         "text": "- Add the AA trait to an autocannon, rotary cannon, \nlaser cannon or rotary laser cannon for 1 TV.\n - Swap any Anti-Tank Missile (ATM) to an Anti-Air \nMissile (AAM) of the same class for 0 TV."
       },
-      "Standard Upgrade§Grenade Swap (Placeholder)": {
-        "text": "Models may swap their hand grenades for panzerfausts \nor vice versa. This costs 0 TV. The swapped item must be \nof the same class, such as L, M, or H.",
-        "keywords": {
-          "Tags": []
-        }
-      },
       "Standard Upgrade§Light Hand Grenades (LHG) +0.5TV": {
         "stats": {
           "TV": {
@@ -1700,6 +1702,60 @@
                     }
                   }
                 },
+                "iterations": 1
+              }
+            ]
+          }
+        }
+      },
+      "Standard Upgrade§Light Pistol (LP) +0.5TV": {
+        "stats": {
+          "TV": {
+            "value": 0.5
+          }
+        },
+        "rules": {
+          "addTraitLP": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Weapon§P",
+                "iterations": 1
+              }
+            ]
+          }
+        }
+      },
+      "Standard Upgrade§Light Submachine Gun (LSMG) +0.5TV": {
+        "stats": {
+          "TV": {
+            "value": 0.5
+          }
+        },
+        "rules": {
+          "addTraitSMG": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Weapon§SMG",
                 "iterations": 1
               }
             ]
@@ -1786,14 +1842,8 @@
           }
         }
       },
-      "Standard Upgrade§Melee Swap (Placeholder)": {
-        "text": "For gears and striders with the Hands trait only: One Light \n(L) or Medium (M) melee weapon with the React trait can \nbe swapped for an equal class melee weapon for 0 TV. I.e., \na LCW can be swapped for a LVB or a LSG. This upgrade \ndoes not include shaped explosives or infantry combat \nweapons. Those weapons cannot be swapped.\n - The only trait associated with the original weapon \nthat transfers over to the new melee weapon is the \nReact trait (or it simply stays under the React column \nof a model’s profile when it is swapped). Other traits \ndo not swap with it. I.e., a LCW (React, Brawl:1) will \nbecome a LVB (React), or a LSG (React). The Brawl:1 \ntrait does not carry over to the new weapon."
-      },
       "Standard Upgrade§Shaped Explosives (Placeholder)": {
         "text": "Only models with the Hands trait or the infantry movement \ntype can purchase shaped explosives.\n - Two models may purchase Light Shaped Explosives \n(LSE) for 1 TV (total).\n - One model may purchase Medium Shaped Explosives \n(MSE) for 1 TV"
-      },
-      "Standard Upgrade§Sidearms (Placeholder)": {
-        "text": "Only models with the Hands trait can purchase sidearms. \nThese weapons come with the React trait.\n - Add a Light Pistol (LP) or a Light Submachine Gun \n(LSMG) to two models for 1 TV (total)."
       },
       "Unit§Primary Unit": {
         "stats": {
