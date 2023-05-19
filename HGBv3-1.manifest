@@ -113,15 +113,6 @@
           "Type": "game piece"
         },
         "stats": {
-          "Actions": {
-            "statType": "numeric",
-            "value": 0,
-            "statOrder": 2,
-            "group": "Accounting",
-            "visibility": "normal",
-            "tracked": true,
-            "groupOrder": 2
-          },
           "reconMax": {
             "statType": "numeric",
             "value": 999,
@@ -198,14 +189,6 @@
             "visibility": "normal",
             "groupOrder": 1
           },
-          "Arm": {
-            "statType": "numeric",
-            "value": 0,
-            "statOrder": 5,
-            "group": "Profile",
-            "visibility": "normal",
-            "groupOrder": 1
-          },
           "Type": {
             "statType": "rank",
             "value": null,
@@ -252,37 +235,10 @@
             "visibility": "normal",
             "groupOrder": 1
           },
-          "EW": {
-            "statType": "numeric",
-            "format": "{v}+",
-            "value": 2,
-            "statOrder": 7,
-            "group": "Profile",
-            "visibility": "normal",
-            "groupOrder": 1
-          },
-          "GU": {
-            "statType": "numeric",
-            "format": "{v}+",
-            "value": 2,
-            "statOrder": 7,
-            "group": "Profile",
-            "visibility": "normal",
-            "groupOrder": 1
-          },
-          "PI": {
-            "statType": "numeric",
-            "format": "{v}+",
-            "value": 2,
-            "statOrder": 7,
-            "group": "Profile",
-            "visibility": "normal",
-            "groupOrder": 1
-          },
           "HT": {
             "statType": "numeric",
             "format": "{v}\"",
-            "value": 1.5,
+            "value": null,
             "statOrder": 14,
             "group": "Profile",
             "visibility": "normal",
@@ -413,6 +369,55 @@
             "visibility": "hidden",
             "tracked": true,
             "max": 1
+          },
+          "GU": {
+            "statType": "numeric",
+            "format": "{v}+",
+            "value": 2,
+            "statOrder": 7,
+            "group": "Profile",
+            "groupOrder": 1,
+            "visibility": "normal",
+            "tracked": true
+          },
+          "PI": {
+            "statType": "numeric",
+            "format": "{v}+",
+            "value": 2,
+            "statOrder": 8,
+            "group": "Profile",
+            "groupOrder": 1,
+            "visibility": "normal",
+            "tracked": true
+          },
+          "EW": {
+            "statType": "numeric",
+            "format": "{v}+",
+            "value": 2,
+            "statOrder": 9,
+            "group": "Profile",
+            "groupOrder": 1,
+            "visibility": "normal",
+            "tracked": true
+          },
+          "Arm": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 5,
+            "group": "Profile",
+            "groupOrder": 1,
+            "visibility": "normal",
+            "tracked": true
+          },
+          "Actions": {
+            "statType": "numeric",
+            "value": 0,
+            "statOrder": 2,
+            "group": "Accounting",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "tracked": true,
+            "max": 3
           }
         },
         "rules": {
@@ -757,22 +762,54 @@
             "failState": "error",
             "evaluate": "AND"
           },
-          "addPaidGrenades": {
+          "veteransGetOptions": {
             "evals": [
               {
                 "paths": [
                   [
                     "{self}",
-                    "assets",
-                    "classification",
-                    "Standard Upgrade",
-                    "keywords"
+                    "tally",
+                    "Vet"
                   ]
                 ],
-                "value": "isGrenade",
-                "contains": true,
+                "min": 1,
                 "operator": "AND",
                 "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 7,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "allowed",
+                    "classifications"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Veteran Upgrade",
+                "iterations": 1
+              }
+            ]
+          },
+          "minEWis2+": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "min": 2,
+                "operator": "AND",
+                "not": true,
                 "actionable": true
               }
             ],
@@ -783,12 +820,195 @@
                 "paths": [
                   [
                     "{self}",
-                    "traits"
+                    "stats",
+                    "EW",
+                    "value"
                   ]
                 ],
-                "actionType": "add",
-                "value": "Weapon§HG",
-                "iterations": 1
+                "actionType": "set",
+                "value": 2,
+                "iterations": 1,
+                "note": "Sets EW to 2 (if it tests lower)"
+              }
+            ]
+          },
+          "minGUis2+": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "GU",
+                    "value"
+                  ]
+                ],
+                "min": 2,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "GU",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 2,
+                "iterations": 1,
+                "note": "Set GU to 2 (if it tests to lower than that)."
+              }
+            ]
+          },
+          "minPIis2+": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "PI",
+                    "value"
+                  ]
+                ],
+                "min": 2,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "PI",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 2,
+                "iterations": 1,
+                "note": "Set PI to 2 (if it tests lower)."
+              }
+            ]
+          },
+          "maxGUis6+": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "GU",
+                    "value"
+                  ]
+                ],
+                "max": 6,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "GU",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 6,
+                "iterations": 1,
+                "note": "Sets GU to 6 (if it tests higher)"
+              }
+            ]
+          },
+          "maxPIis6+": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "PI",
+                    "value"
+                  ]
+                ],
+                "max": 6,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "PI",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 6,
+                "iterations": 1,
+                "note": "Sets PI to 6 (if it tests higher)"
+              }
+            ]
+          },
+          "maxEWis6+": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "max": 6,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 6,
+                "iterations": 1,
+                "note": "Sets EW to 6 (if it tests higher)"
               }
             ]
           }
@@ -817,6 +1037,14 @@
         "stats": {
           "TV": {
             "tracked": true
+          }
+        }
+      },
+      "Strider": {
+        "templateClass": "Model",
+        "stats": {
+          "Type": {
+            "value": "Strider"
           }
         }
       },
@@ -889,6 +1117,14 @@
             "group": "Accounting",
             "visibility": "normal",
             "tracked": true
+          }
+        }
+      },
+      "Vehicle": {
+        "templateClass": "Model",
+        "stats": {
+          "Type": {
+            "value": "Vehicle"
           }
         }
       },
@@ -1067,7 +1303,15 @@
       "Duelist Upgrade§Add Precise (Placeholder)": {},
       "Duelist Upgrade§Add Shield (Placeholder)": {},
       "Duelist Upgrade§Add Stable (Placeholder)": {},
-      "Duelist Upgrade§Advanced Control System (Placeholder)": {},
+      "Duelist Upgrade§Advanced Control System": {
+        "text": "Gain +1 action point. This upgrade costs 2 TV for models with an armor of 7 or lower and 3 TV for models with an armor of 8 or higher. Models may not upgrade to having more than 3 action points.",
+        "stats": {
+          "Actions": {
+            "value": 1,
+            "statType": "numeric"
+          }
+        }
+      },
       "Duelist Upgrade§Dual Melee Weapons (Placeholder)": {},
       "Duelist Upgrade§Duelist Melee Upgrade (Placeholder)": {},
       "Duelist Upgrade§ECM Upgrade (Placeholder)": {},
@@ -1078,6 +1322,104 @@
         }
       },
       "Duelist Upgrade§Trick Shot (Placeholder)": {},
+      "Gear§Example Adv Gear": {
+        "stats": {
+          "TV": {
+            "value": 10
+          },
+          "Actions": {
+            "value": 2
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Traits": {
+            "value": "Hands"
+          },
+          "React Weapons": {
+            "value": "LAC, LVB, LHG"
+          },
+          "GU": {
+            "value": 3
+          },
+          "PI": {
+            "value": 3
+          },
+          "EW": {
+            "value": 3
+          }
+        },
+        "constraints": {
+          "any": []
+        },
+        "assets": {
+          "included": [
+            "Weapon§HG",
+            "Weapon§VB"
+          ],
+          "traits": [
+            "Weapon§AC"
+          ]
+        },
+        "allowed": {
+          "items": [
+            "Weapon§HG",
+            "Weapon§PZ",
+            "Weapon§CW",
+            "Weapon§SG",
+            "Weapon§VB"
+          ]
+        }
+      },
+      "Gear§Example Gear": {
+        "stats": {
+          "TV": {
+            "value": 10
+          },
+          "Actions": {
+            "value": 1
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Traits": {
+            "value": "Hands"
+          },
+          "React Weapons": {
+            "value": "LAC, LVB, LHG"
+          },
+          "GU": {
+            "value": 3
+          },
+          "PI": {
+            "value": 3
+          },
+          "EW": {
+            "value": 3
+          }
+        },
+        "constraints": {
+          "any": []
+        },
+        "assets": {
+          "included": [
+            "Weapon§HG",
+            "Weapon§VB"
+          ],
+          "traits": [
+            "Weapon§AC"
+          ]
+        },
+        "allowed": {
+          "items": [
+            "Weapon§HG",
+            "Weapon§PZ",
+            "Weapon§CW",
+            "Weapon§SG",
+            "Weapon§VB"
+          ]
+        }
+      },
       "Leader§2iC": {
         "stats": {
           "Rank": {
@@ -1169,103 +1511,6 @@
           "Rank": {
             "value": "Executive Officer"
           }
-        }
-      },
-      "Model§Example Model": {
-        "stats": {
-          "Actions": {
-            "value": 1
-          },
-          "fireSupportMax": {
-            "value": 1
-          },
-          "fortificationsMax": {
-            "value": 0
-          },
-          "reconMax": {
-            "value": 1
-          },
-          "specialOperationsMax": {
-            "value": 0
-          },
-          "strikeMax": {
-            "value": 1
-          },
-          "SP": {},
-          "TV": {
-            "value": 10
-          }
-        },
-        "rules": {
-          "doublePrimaryAvailability": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "item"
-                  ]
-                ],
-                "value": "Unit§Primary Unit",
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "fireSupportMax",
-                    "value"
-                  ],
-                  [
-                    "{self}",
-                    "stats",
-                    "generalPurposeMax",
-                    "value"
-                  ],
-                  [
-                    "{self}",
-                    "stats",
-                    "reconMax",
-                    "value"
-                  ],
-                  [
-                    "{self}",
-                    "stats",
-                    "strikeMax",
-                    "value"
-                  ]
-                ],
-                "actionType": "modify",
-                "value": 1,
-                "iterations": 1
-              }
-            ]
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Airdrop",
-            "Model/Weapon Property§Amphib",
-            "Weapon§AC"
-          ],
-          "included": [
-            "Weapon§VB",
-            "Weapon§HG"
-          ]
-        },
-        "allowed": {
-          "items": [
-            "Weapon§CW",
-            "Weapon§SG",
-            "Weapon§VB",
-            "Weapon§HG",
-            "Weapon§PZ"
-          ]
         }
       },
       "Model/Weapon Property§/": {
@@ -1615,11 +1860,28 @@
             "tracked": true
           }
         },
-        "rules": {},
+        "rules": {
+          "addTraitSmoke": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Model/Weapon Property§Smoke",
+                "iterations": 1
+              }
+            ]
+          }
+        },
         "assets": {
-          "traits": [
-            "Model/Weapon Property§Smoke"
-          ]
+          "traits": []
         },
         "aspects": {
           "Unique": true
@@ -1668,7 +1930,9 @@
           "Visibility": "active"
         },
         "keywords": {
-          "Tags": []
+          "Tags": [
+            "usesHands"
+          ]
         }
       },
       "Standard Upgrade§Light Panzerfausts (LPZ) +0.5TV": {
@@ -1706,6 +1970,11 @@
               }
             ]
           }
+        },
+        "keywords": {
+          "Tags": [
+            "usesHands"
+          ]
         }
       },
       "Standard Upgrade§Light Pistol (LP) +0.5TV": {
@@ -1733,6 +2002,43 @@
               }
             ]
           }
+        },
+        "keywords": {
+          "Tags": [
+            "usesHands"
+          ]
+        }
+      },
+      "Standard Upgrade§Light Shaped Explosives (LSE) +0.5TV": {
+        "stats": {
+          "TV": {
+            "value": 0.5
+          }
+        },
+        "rules": {
+          "addTraitSE": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Weapon§SE",
+                "iterations": 1
+              }
+            ]
+          }
+        },
+        "keywords": {
+          "Tags": [
+            "usesHands"
+          ]
         }
       },
       "Standard Upgrade§Light Submachine Gun (LSMG) +0.5TV": {
@@ -1760,6 +2066,11 @@
               }
             ]
           }
+        },
+        "keywords": {
+          "Tags": [
+            "usesHands"
+          ]
         }
       },
       "Standard Upgrade§Medium Hand Grenades (MHG) +1TV": {
@@ -1799,7 +2110,9 @@
           }
         },
         "keywords": {
-          "Tags": []
+          "Tags": [
+            "usesHands"
+          ]
         }
       },
       "Standard Upgrade§Medium Panzerfausts (MPZ) +1TV": {
@@ -1812,7 +2125,9 @@
           "traits": []
         },
         "keywords": {
-          "Tags": []
+          "Tags": [
+            "usesHands"
+          ]
         },
         "rules": {
           "addTraitPZ": {
@@ -1842,8 +2157,53 @@
           }
         }
       },
-      "Standard Upgrade§Shaped Explosives (Placeholder)": {
-        "text": "Only models with the Hands trait or the infantry movement \ntype can purchase shaped explosives.\n - Two models may purchase Light Shaped Explosives \n(LSE) for 1 TV (total).\n - One model may purchase Medium Shaped Explosives \n(MSE) for 1 TV"
+      "Standard Upgrade§Medium Shaped Explosives (MSE) +1TV": {
+        "stats": {
+          "TV": {
+            "value": 1
+          }
+        },
+        "rules": {
+          "addTraitSE": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "SE",
+                "iterations": 1
+              }
+            ]
+          }
+        },
+        "keywords": {
+          "Tags": [
+            "usesHands"
+          ]
+        }
+      },
+      "Strider§Example Strider": {
+        "stats": {
+          "GU": {
+            "value": 3
+          },
+          "PI": {
+            "value": 3
+          },
+          "EW": {
+            "value": 3
+          },
+          "HT": {
+            "value": 2
+          }
+        }
       },
       "Unit§Primary Unit": {
         "stats": {
@@ -1902,7 +2262,71 @@
           }
         }
       },
-      "Veteran Upgrade§Add AMS (Placeholder)": {},
+      "Vehicle§Example Vehicle": {
+        "stats": {
+          "HT": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
+          },
+          "Actions": {
+            "value": 1
+          },
+          "React Weapons": {
+            "value": "AC"
+          },
+          "GU": {
+            "value": 3
+          },
+          "PI": {
+            "value": 3
+          },
+          "EW": {
+            "value": 3
+          }
+        },
+        "constraints": {
+          "none": [
+            "usesHands"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Weapon§AC"
+          ]
+        }
+      },
+      "Veteran Upgrade§Add AMS": {
+        "stats": {
+          "TV": {
+            "value": 1
+          }
+        },
+        "aspects": {
+          "Visibility": "active"
+        },
+        "rules": {
+          "addTraitAMS": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Model/Weapon Property§AMS",
+                "iterations": 1
+              }
+            ]
+          }
+        }
+      },
       "Veteran Upgrade§Add ECCM (Placeholder)": {},
       "Veteran Upgrade§Add Field Armor (Placeholder)": {},
       "Veteran Upgrade§Add Reach (Placeholder)": {},
@@ -1911,7 +2335,45 @@
       "Veteran Upgrade§Add Resist:H (Placeholder)": {},
       "Veteran Upgrade§Brawler (Placeholder)": {},
       "Veteran Upgrade§Dual Guns (Placeholder)": {},
-      "Veteran Upgrade§Improved Gunnery (Placeholder)": {},
+      "Veteran Upgrade§Improved Gunnery +2TV/Action": {
+        "rules": {
+          "increaseTVPerActions": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "TV",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": 2,
+                "iterations": [
+                  "{parent}",
+                  "stats",
+                  "Actions",
+                  "value"
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "GU": {
+            "statType": "numeric",
+            "value": -1,
+            "visibility": "hidden",
+            "tracked": true
+          },
+          "TV": {}
+        },
+        "text": "Improve this model’s gunnery skill by one for 2 TV, for each action point that this model has. This cost also increases by 2 TV per additional action purchased via any other upgrades."
+      },
       "Veteran Upgrade§Veteran Melee Upgrade (Placeholder)": {},
       "Weapon§AAM": {
         "stats": {
@@ -1929,6 +2391,13 @@
           },
           "Mode": {
             "value": "Direct, Indirect"
+          },
+          "Swappable AA Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
           }
         },
         "assets": {
@@ -1936,6 +2405,9 @@
             "Model/Weapon Property§Flak",
             "Model/Weapon Property§Guided"
           ]
+        },
+        "keywords": {
+          "Tags": []
         }
       },
       "Weapon§ABM": {
@@ -2163,6 +2635,13 @@
           },
           "Mode": {
             "value": "Direct, Indirect"
+          },
+          "Swappable AA Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
           }
         },
         "assets": {
@@ -2170,6 +2649,9 @@
             "Model/Weapon Property§AP:X",
             "Model/Weapon Property§Guided"
           ]
+        },
+        "keywords": {
+          "Tags": []
         }
       },
       "Weapon§AVM": {
