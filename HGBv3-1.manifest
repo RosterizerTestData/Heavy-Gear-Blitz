@@ -40,6 +40,22 @@
           ]
         }
       },
+      "Direct or Indirect Ranged Weapon": {
+        "templateClass": "Weapon",
+        "stats": {
+          "Mode": {
+            "value": "Direct, Indirect"
+          }
+        }
+      },
+      "Direct Ranged Weapon": {
+        "templateClass": "Weapon",
+        "stats": {
+          "Mode": {
+            "value": "Direct"
+          }
+        }
+      },
       "Duelist Upgrade": {
         "templateClass": "Upgrade"
       },
@@ -55,6 +71,14 @@
         "stats": {
           "Type": {
             "value": "Gear"
+          }
+        }
+      },
+      "Indirect Ranged Weapon": {
+        "templateClass": "Weapon",
+        "stats": {
+          "Mode": {
+            "value": "Indirect"
           }
         }
       },
@@ -106,6 +130,14 @@
         },
         "aspects": {
           "Unique": true
+        }
+      },
+      "Melee Weapon": {
+        "templateClass": "Weapon",
+        "stats": {
+          "Mode": {
+            "value": "Melee"
+          }
         }
       },
       "Model": {
@@ -1290,6 +1322,915 @@
           }
         }
       },
+      "Direct or Indirect Ranged Weapon§AAM": {
+        "stats": {
+          "Name": {
+            "value": "Anti-Air Missile"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "Flak, Guided"
+          },
+          "Swappable AA Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Flak",
+            "Model/Weapon Property§Guided"
+          ]
+        },
+        "keywords": {
+          "Tags": []
+        }
+      },
+      "Direct or Indirect Ranged Weapon§APR": {
+        "stats": {
+          "Name": {
+            "value": "Anti-Personnel Rocket"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Traits": {
+            "value": "AI, AOE:3"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§AOE:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§AR": {
+        "stats": {
+          "Name": {
+            "value": "Artillery Rocket"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "AOE:3, Demo:2"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Demo:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§ATM": {
+        "stats": {
+          "Name": {
+            "value": "Anti-Tank Missile"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "8/9/10"
+          },
+          "Traits": {
+            "value": "AP:2/3/4, Guided"
+          },
+          "Swappable AA Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Guided"
+          ]
+        },
+        "keywords": {
+          "Tags": []
+        }
+      },
+      "Direct or Indirect Ranged Weapon§AVM": {
+        "stats": {
+          "Name": {
+            "value": "Anti-Vehicle Missile"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "5/6/7"
+          },
+          "Traits": {
+            "value": "AP:1, Guided"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Guided"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§FG": {
+        "stats": {
+          "Name": {
+            "value": "Field Gun"
+          },
+          "Range": {
+            "value": "12-24/48"
+          },
+          "Damage": {
+            "value": "9/10/11"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast (OR) AP:3/4/5"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Or",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§GL": {
+        "stats": {
+          "Name": {
+            "value": "Grenade Launcher"
+          },
+          "Range": {
+            "value": "6-12/24"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast, AP:1, Burst:1"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Burst:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§HG": {
+        "stats": {
+          "Name": {
+            "value": "Hand Grenades"
+          },
+          "Range": {
+            "value": "3-6/9"
+          },
+          "Damage": {
+            "value": "8/9/10"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast, AP:1"
+          },
+          "Swappable Ex. Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§IGL": {
+        "stats": {
+          "Name": {
+            "value": "Infantry Grenade Launcher"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "Damage": {
+            "value": "5/6/7"
+          },
+          "Traits": {
+            "value": "AOE:2, Blast (OR) AP:1"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Or",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§RP": {
+        "stats": {
+          "Name": {
+            "value": "Rocket Pack"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "AOE:3, AP:1"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§AC": {
+        "stats": {
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Traits": {
+            "value": "Burst:1, Split (OR) Precise"
+          },
+          "Name": {
+            "value": "Autocannon",
+            "groupOrder": 1
+          },
+          "AA Upgrade": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§AA"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Burst:X",
+            "Model/Weapon Property§Split",
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§Or"
+          ]
+        },
+        "rules": {
+          "addAAtoStats": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "AA Upgrade",
+                    "ranks"
+                  ]
+                ],
+                "value": "1",
+                "contains": true,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Burst:1, Split, AA (OR) Precise, AA",
+                "iterations": 1
+              }
+            ]
+          }
+        }
+      },
+      "Direct Ranged Weapon§APGL": {
+        "stats": {
+          "Name": {
+            "value": "Anti-Personnel Grenade Launchers"
+          },
+          "Range": {
+            "value": "0-3/-"
+          },
+          "Damage": {
+            "value": "5/6/7"
+          },
+          "Traits": {
+            "value": "AI, Frag, Prox"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§Frag",
+            "Model/Weapon Property§Prox"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§BB": {
+        "stats": {
+          "Name": {
+            "value": "Bomb"
+          },
+          "Range": {
+            "value": "0/-"
+          },
+          "Damage": {
+            "value": "8/-/-"
+          },
+          "Traits": {
+            "value": "AOE:4"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§BZ": {
+        "stats": {
+          "Name": {
+            "value": "Bazooka"
+          },
+          "Range": {
+            "value": "6-12/24"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "AP:2/3/4"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§FC": {
+        "stats": {
+          "Name": {
+            "value": "Frag Cannon"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "Damage": {
+            "value": "5/6/7"
+          },
+          "Traits": {
+            "value": "Precise, AP:1/2/3 (OR) Frag, AI"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Or",
+            "Model/Weapon Property§Frag",
+            "Model/Weapon Property§AI"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§FL": {
+        "stats": {
+          "Name": {
+            "value": "Flamer"
+          },
+          "Range": {
+            "value": "0-9/18"
+          },
+          "Damage": {
+            "value": "3/4/5"
+          },
+          "Traits": {
+            "value": "AI, Fire:2/3/4, Burst:1, Spray"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§Fire:X",
+            "Model/Weapon Property§Burst:X",
+            "Model/Weapon Property§Spray"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§IL": {
+        "stats": {
+          "Name": {
+            "value": "Infantry Laser"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "3/4/5"
+          },
+          "Traits": {
+            "value": "AI, Advanced, Burst:1"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§Advanced",
+            "Model/Weapon Property§Burst:X"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§IR": {
+        "stats": {
+          "Name": {
+            "value": "Infantry Rifle"
+          },
+          "Range": {
+            "value": "6-24/48"
+          },
+          "Damage": {
+            "value": "4/5/6"
+          },
+          "Traits": {
+            "value": "Precise, AI"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§AI"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§IS": {
+        "stats": {
+          "Name": {
+            "value": "Infantry Support Weapon"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "4/5/6"
+          },
+          "Traits": {
+            "value": "-"
+          }
+        }
+      },
+      "Direct Ranged Weapon§IW": {
+        "stats": {
+          "Name": {
+            "value": "Infantry Weapon"
+          },
+          "Range": {
+            "value": "0-9/18"
+          },
+          "Damage": {
+            "value": "3/4/5"
+          },
+          "Traits": {
+            "value": "AI, Burst:1"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§Burst:X"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§LC": {
+        "stats": {
+          "Name": {
+            "value": "Laser Cannon"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Traits": {
+            "value": "Precise, Advanced"
+          },
+          "AA Upgrade": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§AA"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§Advanced"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§MG": {
+        "stats": {
+          "Name": {
+            "value": "Machine Gun"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "Damage": {
+            "value": "3/4/5"
+          },
+          "Traits": {
+            "value": "AI, Burst:2, Split"
+          },
+          "Mode": {
+            "value": "Direct"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§Burst:X",
+            "Model/Weapon Property§Split"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§P": {
+        "stats": {
+          "Name": {
+            "value": "Pistol"
+          },
+          "Range": {
+            "value": "0-12/24"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Traits": {
+            "value": "Precise"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§PA": {
+        "stats": {
+          "Name": {
+            "value": "Particle Accelerator"
+          },
+          "Range": {
+            "value": "6-24/48"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "Haywire, Advanced"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Haywire",
+            "Model/Weapon Property§Advanced"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§PL": {
+        "stats": {
+          "Name": {
+            "value": "Pulse Laser"
+          },
+          "Range": {
+            "value": "6-24/48"
+          },
+          "Traits": {
+            "value": "Burst:1, Advanced (OR) AP:2/3/4, Apex, Advanced"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Burst:X",
+            "Model/Weapon Property§Advanced",
+            "Model/Weapon Property§Or",
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§APEX"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§PZ": {
+        "stats": {
+          "Name": {
+            "value": "Panzerfaust"
+          },
+          "Range": {
+            "value": "3-6/9"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "AP:2/3/4"
+          },
+          "Swappable Ex. Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§RC": {
+        "stats": {
+          "Name": {
+            "value": "Rotary Cannon"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "5/6/7"
+          },
+          "Traits": {
+            "value": "Burst:2, Split"
+          },
+          "AA Upgrade": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§AA"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Burst:X",
+            "Model/Weapon Property§Split"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§RF": {
+        "stats": {
+          "Name": {
+            "value": "Rifle"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Traits": {
+            "value": "Precise"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§RG": {
+        "stats": {
+          "Name": {
+            "value": "Railgun"
+          },
+          "Range": {
+            "value": "12-48/96"
+          },
+          "Damage": {
+            "value": "4/5/6"
+          },
+          "Traits": {
+            "value": "Precise, Advanced, AP:4/5/6"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§Advanced",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§RL": {
+        "stats": {
+          "Name": {
+            "value": "Rotary Laser"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "5/6/7"
+          },
+          "Traits": {
+            "value": "Advanced, Burst:2, Split"
+          },
+          "AA Upgrade": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§AA"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "statOrder": 1,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Advanced",
+            "Model/Weapon Property§Burst:X",
+            "Model/Weapon Property§Split"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§SC": {
+        "stats": {
+          "Name": {
+            "value": "Snub Cannon"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "Damage": {
+            "value": "8/9/10"
+          },
+          "Traits": {
+            "value": "AP:2/3/4, Demo:3"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Demo:X"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§SMG": {
+        "stats": {
+          "Name": {
+            "value": "Submachine Gun"
+          },
+          "Range": {
+            "value": "0-9/18"
+          },
+          "Damage": {
+            "value": "5/6/7"
+          },
+          "Traits": {
+            "value": "Burst:2"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Burst:X"
+          ]
+        }
+      },
+      "Direct Ranged Weapon§TG": {
+        "stats": {
+          "Name": {
+            "value": "Tank Gun"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "9/10/11"
+          },
+          "Traits": {
+            "value": "AP:3/4/5, Demo:2"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Demo:X"
+          ]
+        }
+      },
       "Duelist Upgrade§Ace Gunner +1TV": {
         "text": "When using an autocannon, this model does not suffer the -1D6 modifier when using the Split trait for attacks against multiple models.",
         "stats": {
@@ -1353,22 +2294,13 @@
           "any": []
         },
         "assets": {
-          "included": [
-            "Weapon§HG",
-            "Weapon§VB"
-          ],
+          "included": [],
           "traits": [
-            "Weapon§AC"
+            "Direct Ranged Weapon§AC"
           ]
         },
         "allowed": {
-          "items": [
-            "Weapon§HG",
-            "Weapon§PZ",
-            "Weapon§CW",
-            "Weapon§SG",
-            "Weapon§VB"
-          ]
+          "items": []
         }
       },
       "Gear§Example Gear": {
@@ -1403,20 +2335,161 @@
         },
         "assets": {
           "included": [
-            "Weapon§HG",
-            "Weapon§VB"
+            "Melee Weapon§VB",
+            "Direct or Indirect Ranged Weapon§HG"
           ],
           "traits": [
-            "Weapon§AC"
+            "Direct Ranged Weapon§AC"
           ]
         },
         "allowed": {
           "items": [
-            "Weapon§HG",
-            "Weapon§PZ",
-            "Weapon§CW",
-            "Weapon§SG",
-            "Weapon§VB"
+            "Melee Weapon§CW",
+            "Melee Weapon§SG",
+            "Melee Weapon§VB",
+            "Direct or Indirect Ranged Weapon§HG",
+            "Direct Ranged Weapon§PZ"
+          ],
+          "classifications": []
+        }
+      },
+      "Indirect Ranged Weapon§ABM": {
+        "stats": {
+          "Name": {
+            "value": "Air Burst Missile"
+          },
+          "Range": {
+            "value": "24-48/96"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Traits": {
+            "value": "AI, AOE:3, Blast, Guided"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Guided"
+          ]
+        }
+      },
+      "Indirect Ranged Weapon§AG": {
+        "stats": {
+          "Name": {
+            "value": "Air Burst Missile"
+          },
+          "Range": {
+            "value": "24-48/96"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Traits": {
+            "value": "AI, AOE:3, Blast, Guided"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Guided"
+          ]
+        }
+      },
+      "Indirect Ranged Weapon§AM": {
+        "stats": {
+          "Name": {
+            "value": "Artillery Missile"
+          },
+          "Range": {
+            "value": "24-48/96"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast, AP:1, Guided"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Guided"
+          ]
+        }
+      },
+      "Indirect Ranged Weapon§FM": {
+        "stats": {
+          "Name": {
+            "value": "Field Mortar"
+          },
+          "Range": {
+            "value": "18-36/72"
+          },
+          "Damage": {
+            "value": "8/9/10"
+          },
+          "Traits": {
+            "value": "AOE:4, Blast"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast"
+          ]
+        }
+      },
+      "Indirect Ranged Weapon§GM": {
+        "stats": {
+          "Name": {
+            "value": "Guided Mortar"
+          },
+          "Range": {
+            "value": "18-36/72"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast, Guided"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Guided"
+          ]
+        }
+      },
+      "Indirect Ranged Weapon§IM": {
+        "stats": {
+          "Name": {
+            "value": "Infantry Mortar"
+          },
+          "Range": {
+            "value": "12-24/48"
+          },
+          "Damage": {
+            "value": "4/5/6"
+          },
+          "Traits": {
+            "value": "AOE:2, Blast, AI"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AI"
           ]
         }
       },
@@ -1511,6 +2584,137 @@
           "Rank": {
             "value": "Executive Officer"
           }
+        }
+      },
+      "Melee Weapon§CW": {
+        "stats": {
+          "Name": {
+            "value": "Combat Weapon"
+          },
+          "Range": {
+            "value": "0/-"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Traits": {
+            "value": "Demo:2"
+          },
+          "Swappable Melee Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Demo:X"
+          ]
+        }
+      },
+      "Melee Weapon§ICW": {
+        "stats": {
+          "Name": {
+            "value": "Infantry Combat Weapon"
+          },
+          "Range": {
+            "value": "0/-"
+          },
+          "Damage": {
+            "value": "4/5/6"
+          },
+          "Traits": {
+            "value": "AI"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI"
+          ]
+        }
+      },
+      "Melee Weapon§SE": {
+        "stats": {
+          "Name": {
+            "value": "Shaped Explosives"
+          },
+          "Range": {
+            "value": "0/-"
+          },
+          "Damage": {
+            "value": "8/9/10"
+          },
+          "Traits": {
+            "value": "AP:2/3/4, Demo:4, Brawl:-1"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Demo:X",
+            "Model/Weapon Property§Brawl:X"
+          ]
+        }
+      },
+      "Melee Weapon§SG": {
+        "stats": {
+          "Name": {
+            "value": "Spike Gun"
+          },
+          "Traits": {
+            "value": "AP:3/4/5"
+          },
+          "Damage": {
+            "value": "6/7/8"
+          },
+          "Range": {
+            "value": "0/-"
+          },
+          "Swappable Melee Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Melee Weapon§VB": {
+        "stats": {
+          "Name": {
+            "value": "Vibro-Blade"
+          },
+          "Traits": {
+            "value": "AP:2/3/4"
+          },
+          "Damage": {
+            "value": "7/8/9"
+          },
+          "Range": {
+            "value": "0/-"
+          },
+          "Mode": {
+            "value": "Melee"
+          },
+          "Swappable Melee Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X"
+          ]
         }
       },
       "Model/Weapon Property§/": {
@@ -2202,7 +3406,24 @@
           },
           "HT": {
             "value": 2
+          },
+          "React Weapons": {
+            "value": "HAC"
+          },
+          "TV": {
+            "value": 20
+          },
+          "Actions": {
+            "value": 2
+          },
+          "Traits": {
+            "value": "Hands"
           }
+        },
+        "assets": {
+          "traits": [
+            "Direct Ranged Weapon§AC"
+          ]
         }
       },
       "Unit§Primary Unit": {
@@ -2274,7 +3495,7 @@
             "value": 1
           },
           "React Weapons": {
-            "value": "AC"
+            "value": ""
           },
           "GU": {
             "value": 3
@@ -2284,6 +3505,9 @@
           },
           "EW": {
             "value": 3
+          },
+          "Mounted Weapons": {
+            "value": "MAC"
           }
         },
         "constraints": {
@@ -2293,7 +3517,7 @@
         },
         "assets": {
           "traits": [
-            "Weapon§AC"
+            "Direct Ranged Weapon§AC"
           ]
         }
       },
@@ -2374,1275 +3598,7 @@
         },
         "text": "Improve this model’s gunnery skill by one for 2 TV, for each action point that this model has. This cost also increases by 2 TV per additional action purchased via any other upgrades."
       },
-      "Veteran Upgrade§Veteran Melee Upgrade (Placeholder)": {},
-      "Weapon§AAM": {
-        "stats": {
-          "Name": {
-            "value": "Anti-Air Missile"
-          },
-          "Range": {
-            "value": "12-36/72"
-          },
-          "Damage": {
-            "value": "7/8/9"
-          },
-          "Traits": {
-            "value": "Flak, Guided"
-          },
-          "Mode": {
-            "value": "Direct, Indirect"
-          },
-          "Swappable AA Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Flak",
-            "Model/Weapon Property§Guided"
-          ]
-        },
-        "keywords": {
-          "Tags": []
-        }
-      },
-      "Weapon§ABM": {
-        "stats": {
-          "Name": {
-            "value": "Air Burst Missile"
-          },
-          "Range": {
-            "value": "24-48/96"
-          },
-          "Damage": {
-            "value": "6/7/8"
-          },
-          "Traits": {
-            "value": "AI, AOE:3, Blast, Guided"
-          },
-          "Mode": {
-            "value": "Indirect"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AI",
-            "Model/Weapon Property§AOE:X",
-            "Model/Weapon Property§Blast",
-            "Model/Weapon Property§Guided"
-          ]
-        }
-      },
-      "Weapon§AC": {
-        "stats": {
-          "Range": {
-            "value": "6-18/36"
-          },
-          "Damage": {
-            "value": "6/7/8"
-          },
-          "Traits": {
-            "value": "Burst:1, Split (OR) Precise"
-          },
-          "Mode": {
-            "value": "Direct"
-          },
-          "Name": {
-            "value": "Autocannon",
-            "groupOrder": 1
-          },
-          "AA Upgrade": {
-            "statType": "rank",
-            "value": "-",
-            "ranks": {
-              "1": {
-                "order": 1,
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§AA"
-                  }
-                ],
-                "tracking": {
-                  "TV": 1
-                }
-              },
-              "-": {
-                "order": 0
-              }
-            },
-            "group": "Upgrades",
-            "groupOrder": 2,
-            "visibility": "normal",
-            "dynamic": true
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Burst:X",
-            "Model/Weapon Property§Split",
-            "Model/Weapon Property§Precise",
-            "Model/Weapon Property§Or"
-          ]
-        }
-      },
-      "Weapon§AG": {
-        "stats": {
-          "Name": {
-            "value": "Artillery Gun"
-          },
-          "Range": {
-            "value": "24-48/96"
-          },
-          "Damage": {
-            "value": "9/10/11"
-          },
-          "Traits": {
-            "value": "AOE:3, Blast, AP:1, Demo:2"
-          },
-          "Mode": {
-            "value": "Indirect"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AOE:X",
-            "Model/Weapon Property§Blast",
-            "Model/Weapon Property§AP:X",
-            "Model/Weapon Property§Demo:X"
-          ]
-        }
-      },
-      "Weapon§AM": {
-        "stats": {
-          "Name": {
-            "value": "Artillery Missile"
-          },
-          "Range": {
-            "value": "24-48/96"
-          },
-          "Damage": {
-            "value": "7/8/9"
-          },
-          "Traits": {
-            "value": "AOE:3, Blast, AP:1, Guided"
-          },
-          "Mode": {
-            "value": "Indirect"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AOE:X",
-            "Model/Weapon Property§Blast",
-            "Model/Weapon Property§AP:X",
-            "Model/Weapon Property§Guided"
-          ]
-        }
-      },
-      "Weapon§APGL": {
-        "stats": {
-          "Name": {
-            "value": "Anti-Personnel Grenade Launchers"
-          },
-          "Range": {
-            "value": "0-3/-"
-          },
-          "Damage": {
-            "value": "5/6/7"
-          },
-          "Traits": {
-            "value": "AI, Frag, Prox"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AI",
-            "Model/Weapon Property§Frag",
-            "Model/Weapon Property§Prox"
-          ]
-        }
-      },
-      "Weapon§APR": {
-        "stats": {
-          "Name": {
-            "value": "Anti-Personnel Rocket"
-          },
-          "Range": {
-            "value": "6-18/36"
-          },
-          "Damage": {
-            "value": "6/7/8"
-          },
-          "Traits": {
-            "value": "AI, AOE:3"
-          },
-          "Mode": {
-            "value": "Direct, Indirect"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AI",
-            "Model/Weapon Property§AOE:X"
-          ]
-        }
-      },
-      "Weapon§AR": {
-        "stats": {
-          "Name": {
-            "value": "Artillery Rocket"
-          },
-          "Range": {
-            "value": "12-36/72"
-          },
-          "Damage": {
-            "value": "7/8/9"
-          },
-          "Traits": {
-            "value": "AOE:3, Demo:2"
-          },
-          "Mode": {
-            "value": "Direct, Indirect"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AOE:X",
-            "Model/Weapon Property§Demo:X"
-          ]
-        }
-      },
-      "Weapon§ATM": {
-        "stats": {
-          "Name": {
-            "value": "Anti-Tank Missile"
-          },
-          "Range": {
-            "value": "12-36/72"
-          },
-          "Damage": {
-            "value": "8/9/10"
-          },
-          "Traits": {
-            "value": "AP:2/3/4, Guided"
-          },
-          "Mode": {
-            "value": "Direct, Indirect"
-          },
-          "Swappable AA Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AP:X",
-            "Model/Weapon Property§Guided"
-          ]
-        },
-        "keywords": {
-          "Tags": []
-        }
-      },
-      "Weapon§AVM": {
-        "stats": {
-          "Name": {
-            "value": "Anti-Vehicle Missile"
-          },
-          "Range": {
-            "value": "6-18/36"
-          },
-          "Damage": {
-            "value": "5/6/7"
-          },
-          "Traits": {
-            "value": "AP:1, Guided"
-          },
-          "Mode": {
-            "value": "Direct, Indirect"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AP:X",
-            "Model/Weapon Property§Guided"
-          ]
-        }
-      },
-      "Weapon§BB": {
-        "stats": {
-          "Name": {
-            "value": "Bomb"
-          },
-          "Range": {
-            "value": "0/-"
-          },
-          "Damage": {
-            "value": "8/-/-"
-          },
-          "Traits": {
-            "value": "AOE:4"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AOE:X"
-          ]
-        }
-      },
-      "Weapon§BZ": {
-        "stats": {
-          "Name": {
-            "value": "Bazooka"
-          },
-          "Range": {
-            "value": "6-12/24"
-          },
-          "Damage": {
-            "value": "7/8/9"
-          },
-          "Traits": {
-            "value": "AP:2/3/4"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AP:X"
-          ]
-        }
-      },
-      "Weapon§CW": {
-        "stats": {
-          "Name": {
-            "value": "Combat Weapon"
-          },
-          "Range": {
-            "value": "0/-"
-          },
-          "Damage": {
-            "value": "7/8/9"
-          },
-          "Traits": {
-            "value": "Demo:2"
-          },
-          "Mode": {
-            "value": "Melee"
-          },
-          "Swappable Melee Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Demo:X"
-          ]
-        }
-      },
-      "Weapon§FC": {
-        "stats": {
-          "Name": {
-            "value": "Frag Cannon"
-          },
-          "Range": {
-            "value": "3-9/18"
-          },
-          "Damage": {
-            "value": "5/6/7"
-          },
-          "Traits": {
-            "value": "Precise, AP:1/2/3 (OR) Frag, AI"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Precise",
-            "Model/Weapon Property§AP:X",
-            "Model/Weapon Property§Or",
-            "Model/Weapon Property§Frag",
-            "Model/Weapon Property§AI"
-          ]
-        }
-      },
-      "Weapon§FG": {
-        "stats": {
-          "Name": {
-            "value": "Field Gun"
-          },
-          "Range": {
-            "value": "12-24/48"
-          },
-          "Damage": {
-            "value": "9/10/11"
-          },
-          "Traits": {
-            "value": "AOE:3, Blast (OR) AP:3/4/5"
-          },
-          "Mode": {
-            "value": "Direct, Indirect"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AOE:X",
-            "Model/Weapon Property§Blast",
-            "Model/Weapon Property§Or",
-            "Model/Weapon Property§AP:X"
-          ]
-        }
-      },
-      "Weapon§FL": {
-        "stats": {
-          "Name": {
-            "value": "Flamer"
-          },
-          "Range": {
-            "value": "0-9/18"
-          },
-          "Damage": {
-            "value": "3/4/5"
-          },
-          "Traits": {
-            "value": "AI, Fire:2/3/4, Burst:1, Spray"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AI",
-            "Model/Weapon Property§Fire:X",
-            "Model/Weapon Property§Burst:X",
-            "Model/Weapon Property§Spray"
-          ]
-        }
-      },
-      "Weapon§FM": {
-        "stats": {
-          "Name": {
-            "value": "Field Mortar"
-          },
-          "Range": {
-            "value": "18-36/72"
-          },
-          "Damage": {
-            "value": "8/9/10"
-          },
-          "Traits": {
-            "value": "AOE:4, Blast"
-          },
-          "Mode": {
-            "value": "Indirect"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AOE:X",
-            "Model/Weapon Property§Blast"
-          ]
-        }
-      },
-      "Weapon§GL": {
-        "stats": {
-          "Name": {
-            "value": "Grenade Launcher"
-          },
-          "Range": {
-            "value": "6-12/24"
-          },
-          "Damage": {
-            "value": "6/7/8"
-          },
-          "Traits": {
-            "value": "AOE:3, Blast, AP:1, Burst:1"
-          },
-          "Mode": {
-            "value": "Direct, Indirect"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AOE:X",
-            "Model/Weapon Property§Blast",
-            "Model/Weapon Property§AP:X",
-            "Model/Weapon Property§Burst:X"
-          ]
-        }
-      },
-      "Weapon§GM": {
-        "stats": {
-          "Name": {
-            "value": "Guided Mortar"
-          },
-          "Range": {
-            "value": "18-36/72"
-          },
-          "Damage": {
-            "value": "7/8/9"
-          },
-          "Traits": {
-            "value": "AOE:3, Blast, Guided"
-          },
-          "Mode": {
-            "value": "Indirect"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AOE:X",
-            "Model/Weapon Property§Blast",
-            "Model/Weapon Property§Guided"
-          ]
-        }
-      },
-      "Weapon§HG": {
-        "stats": {
-          "Name": {
-            "value": "Hand Grenades"
-          },
-          "Range": {
-            "value": "3-6/9"
-          },
-          "Damage": {
-            "value": "8/9/10"
-          },
-          "Traits": {
-            "value": "AOE:3, Blast, AP:1"
-          },
-          "Mode": {
-            "value": "Direct, Indirect"
-          },
-          "Swappable Ex. Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AOE:X",
-            "Model/Weapon Property§Blast",
-            "Model/Weapon Property§AP:X"
-          ]
-        }
-      },
-      "Weapon§ICW": {
-        "stats": {
-          "Name": {
-            "value": "Infantry Combat Weapon"
-          },
-          "Range": {
-            "value": "0/-"
-          },
-          "Damage": {
-            "value": "4/5/6"
-          },
-          "Traits": {
-            "value": "AI"
-          },
-          "Mode": {
-            "value": "Melee"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AI"
-          ]
-        }
-      },
-      "Weapon§IGL": {
-        "stats": {
-          "Name": {
-            "value": "Infantry Grenade Launcher"
-          },
-          "Range": {
-            "value": "3-9/18"
-          },
-          "Damage": {
-            "value": "5/6/7"
-          },
-          "Traits": {
-            "value": "AOE:2, Blast (OR) AP:1"
-          },
-          "Mode": {
-            "value": "Direct, Indirect"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AOE:X",
-            "Model/Weapon Property§Blast",
-            "Model/Weapon Property§Or",
-            "Model/Weapon Property§AP:X"
-          ]
-        }
-      },
-      "Weapon§IL": {
-        "stats": {
-          "Name": {
-            "value": "Infantry Laser"
-          },
-          "Range": {
-            "value": "6-18/36"
-          },
-          "Damage": {
-            "value": "3/4/5"
-          },
-          "Traits": {
-            "value": "AI, Advanced, Burst:1"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AI",
-            "Model/Weapon Property§Advanced",
-            "Model/Weapon Property§Burst:X"
-          ]
-        }
-      },
-      "Weapon§IM": {
-        "stats": {
-          "Name": {
-            "value": "Infantry Mortar"
-          },
-          "Range": {
-            "value": "12-24/48"
-          },
-          "Damage": {
-            "value": "4/5/6"
-          },
-          "Traits": {
-            "value": "AOE:2, Blast, AI"
-          },
-          "Mode": {
-            "value": "Indirect"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AOE:X",
-            "Model/Weapon Property§Blast",
-            "Model/Weapon Property§AI"
-          ]
-        }
-      },
-      "Weapon§IR": {
-        "stats": {
-          "Name": {
-            "value": "Infantry Rifle"
-          },
-          "Range": {
-            "value": "6-24/48"
-          },
-          "Damage": {
-            "value": "4/5/6"
-          },
-          "Traits": {
-            "value": "Precise, AI"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Precise",
-            "Model/Weapon Property§AI"
-          ]
-        }
-      },
-      "Weapon§IS": {
-        "stats": {
-          "Name": {
-            "value": "Infantry Support Weapon"
-          },
-          "Range": {
-            "value": "6-18/36"
-          },
-          "Damage": {
-            "value": "4/5/6"
-          },
-          "Traits": {
-            "value": "-"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        }
-      },
-      "Weapon§IW": {
-        "stats": {
-          "Name": {
-            "value": "Infantry Weapon"
-          },
-          "Range": {
-            "value": "0-9/18"
-          },
-          "Damage": {
-            "value": "3/4/5"
-          },
-          "Traits": {
-            "value": "AI, Burst:1"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AI",
-            "Model/Weapon Property§Burst:X"
-          ]
-        }
-      },
-      "Weapon§LC": {
-        "stats": {
-          "Name": {
-            "value": "Laser Cannon"
-          },
-          "Range": {
-            "value": "12-36/72"
-          },
-          "Damage": {
-            "value": "6/7/8"
-          },
-          "Traits": {
-            "value": "Precise, Advanced"
-          },
-          "Mode": {
-            "value": "Direct"
-          },
-          "AA Upgrade": {
-            "statType": "rank",
-            "value": "-",
-            "ranks": {
-              "1": {
-                "order": 1,
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§AA"
-                  }
-                ],
-                "tracking": {
-                  "TV": 1
-                }
-              },
-              "-": {
-                "order": 0
-              }
-            },
-            "group": "Upgrades",
-            "groupOrder": 2,
-            "visibility": "normal",
-            "dynamic": true
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Precise",
-            "Model/Weapon Property§Advanced"
-          ]
-        }
-      },
-      "Weapon§MG": {
-        "stats": {
-          "Name": {
-            "value": "Machine Gun"
-          },
-          "Range": {
-            "value": "3-9/18"
-          },
-          "Damage": {
-            "value": "3/4/5"
-          },
-          "Traits": {
-            "value": "AI, Burst:2, Split"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AI",
-            "Model/Weapon Property§Burst:X",
-            "Model/Weapon Property§Split"
-          ]
-        }
-      },
-      "Weapon§P": {
-        "stats": {
-          "Name": {
-            "value": "Pistol"
-          },
-          "Range": {
-            "value": "0-12/24"
-          },
-          "Damage": {
-            "value": "6/7/8"
-          },
-          "Traits": {
-            "value": "Precise"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Precise"
-          ]
-        }
-      },
-      "Weapon§PA": {
-        "stats": {
-          "Name": {
-            "value": "Particle Accelerator"
-          },
-          "Range": {
-            "value": "6-24/48"
-          },
-          "Damage": {
-            "value": "7/8/9"
-          },
-          "Traits": {
-            "value": "Haywire, Advanced"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Haywire",
-            "Model/Weapon Property§Advanced"
-          ]
-        }
-      },
-      "Weapon§PL": {
-        "stats": {
-          "Name": {
-            "value": "Pulse Laser"
-          },
-          "Range": {
-            "value": "6-24/48"
-          },
-          "Traits": {
-            "value": "Burst:1, Advanced (OR) AP:2/3/4, Apex, Advanced"
-          },
-          "Damage": {
-            "value": "6/7/8"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Burst:X",
-            "Model/Weapon Property§Advanced",
-            "Model/Weapon Property§Or",
-            "Model/Weapon Property§AP:X",
-            "Model/Weapon Property§APEX"
-          ]
-        }
-      },
-      "Weapon§PZ": {
-        "stats": {
-          "Name": {
-            "value": "Panzerfaust"
-          },
-          "Range": {
-            "value": "3-6/9"
-          },
-          "Damage": {
-            "value": "7/8/9"
-          },
-          "Traits": {
-            "value": "AP:2/3/4"
-          },
-          "Mode": {
-            "value": "Direct"
-          },
-          "Swappable Ex. Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AP:X"
-          ]
-        }
-      },
-      "Weapon§RC": {
-        "stats": {
-          "Name": {
-            "value": "Rotary Cannon"
-          },
-          "Range": {
-            "value": "6-18/36"
-          },
-          "Damage": {
-            "value": "5/6/7"
-          },
-          "Traits": {
-            "value": "Burst:2, Split"
-          },
-          "Mode": {
-            "value": "Direct"
-          },
-          "AA Upgrade": {
-            "statType": "rank",
-            "value": "-",
-            "ranks": {
-              "1": {
-                "order": 1,
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§AA"
-                  }
-                ],
-                "tracking": {
-                  "TV": 1
-                }
-              },
-              "-": {
-                "order": 0
-              }
-            },
-            "group": "Upgrades",
-            "groupOrder": 2,
-            "visibility": "normal",
-            "dynamic": true
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Burst:X",
-            "Model/Weapon Property§Split"
-          ]
-        }
-      },
-      "Weapon§RF": {
-        "stats": {
-          "Name": {
-            "value": "Rifle"
-          },
-          "Range": {
-            "value": "12-36/72"
-          },
-          "Damage": {
-            "value": "6/7/8"
-          },
-          "Traits": {
-            "value": "Precise"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Precise"
-          ]
-        }
-      },
-      "Weapon§RG": {
-        "stats": {
-          "Name": {
-            "value": "Railgun"
-          },
-          "Range": {
-            "value": "12-48/96"
-          },
-          "Damage": {
-            "value": "4/5/6"
-          },
-          "Traits": {
-            "value": "Precise, Advanced, AP:4/5/6"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Precise",
-            "Model/Weapon Property§Advanced",
-            "Model/Weapon Property§AP:X"
-          ]
-        }
-      },
-      "Weapon§RL": {
-        "stats": {
-          "Name": {
-            "value": "Rotary Laser"
-          },
-          "Range": {
-            "value": "6-18/36"
-          },
-          "Damage": {
-            "value": "5/6/7"
-          },
-          "Traits": {
-            "value": "Advanced, Burst:2, Split"
-          },
-          "Mode": {
-            "value": "Direct"
-          },
-          "AA Upgrade": {
-            "statType": "rank",
-            "value": "-",
-            "ranks": {
-              "1": {
-                "order": 1,
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§AA"
-                  }
-                ],
-                "tracking": {
-                  "TV": 1
-                }
-              },
-              "-": {
-                "order": 0
-              }
-            },
-            "statOrder": 1,
-            "group": "Upgrades",
-            "groupOrder": 2,
-            "visibility": "normal",
-            "dynamic": true
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Advanced",
-            "Model/Weapon Property§Burst:X",
-            "Model/Weapon Property§Split"
-          ]
-        }
-      },
-      "Weapon§RP": {
-        "stats": {
-          "Name": {
-            "value": "Rocket Pack"
-          },
-          "Range": {
-            "value": "6-18/36"
-          },
-          "Damage": {
-            "value": "7/8/9"
-          },
-          "Traits": {
-            "value": "AOE:3, AP:1"
-          },
-          "Mode": {
-            "value": "Direct, Indirect"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AOE:X",
-            "Model/Weapon Property§AP:X"
-          ]
-        }
-      },
-      "Weapon§SC": {
-        "stats": {
-          "Name": {
-            "value": "Snub Cannon"
-          },
-          "Range": {
-            "value": "3-9/18"
-          },
-          "Damage": {
-            "value": "8/9/10"
-          },
-          "Traits": {
-            "value": "AP:2/3/4, Demo:3"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AP:X",
-            "Model/Weapon Property§Demo:X"
-          ]
-        }
-      },
-      "Weapon§SE": {
-        "stats": {
-          "Name": {
-            "value": "Shaped Explosives"
-          },
-          "Range": {
-            "value": "0/-"
-          },
-          "Damage": {
-            "value": "8/9/10"
-          },
-          "Traits": {
-            "value": "AP:2/3/4, Demo:4, Brawl:-1"
-          },
-          "Mode": {
-            "value": "Melee"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AP:X",
-            "Model/Weapon Property§Demo:X",
-            "Model/Weapon Property§Brawl:X"
-          ]
-        }
-      },
-      "Weapon§SG": {
-        "stats": {
-          "Name": {
-            "value": "Spike Gun"
-          },
-          "Traits": {
-            "value": "AP:3/4/5"
-          },
-          "Damage": {
-            "value": "6/7/8"
-          },
-          "Range": {
-            "value": "0/-"
-          },
-          "Mode": {
-            "value": "Melee"
-          },
-          "Swappable Melee Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AP:X"
-          ]
-        }
-      },
-      "Weapon§SMG": {
-        "stats": {
-          "Name": {
-            "value": "Submachine Gun"
-          },
-          "Range": {
-            "value": "0-9/18"
-          },
-          "Damage": {
-            "value": "5/6/7"
-          },
-          "Traits": {
-            "value": "Burst:2"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Burst:X"
-          ]
-        }
-      },
-      "Weapon§TG": {
-        "stats": {
-          "Name": {
-            "value": "Tank Gun"
-          },
-          "Range": {
-            "value": "12-36/72"
-          },
-          "Damage": {
-            "value": "9/10/11"
-          },
-          "Traits": {
-            "value": "AP:3/4/5, Demo:2"
-          },
-          "Mode": {
-            "value": "Direct"
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AP:X",
-            "Model/Weapon Property§Demo:X"
-          ]
-        }
-      },
-      "Weapon§VB": {
-        "stats": {
-          "Name": {
-            "value": "Vibro-Blade"
-          },
-          "Traits": {
-            "value": "AP:2/3/4"
-          },
-          "Damage": {
-            "value": "7/8/9"
-          },
-          "Range": {
-            "value": "0/-"
-          },
-          "Mode": {
-            "value": "Melee"
-          },
-          "Swappable Melee Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
-          }
-        },
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AP:X"
-          ]
-        }
-      }
+      "Veteran Upgrade§Veteran Melee Upgrade (Placeholder)": {}
     },
     "gameModes": {},
     "theme": {}
