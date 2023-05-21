@@ -1322,16 +1322,249 @@
           }
         }
       },
-      "Direct or Indirect Ranged Weapon§AAM": {
+      "Direct or Indirect Ranged Weapon§HAAM": {
         "stats": {
           "Name": {
-            "value": "Anti-Air Missile"
+            "value": "Heavy Anti-Air Missile"
           },
           "Range": {
             "value": "12-36/72"
           },
           "Damage": {
-            "value": "7/8/9"
+            "value": "9"
+          },
+          "Traits": {
+            "value": "Flak, Guided"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Flak",
+            "Model/Weapon Property§Guided"
+          ]
+        },
+        "keywords": {
+          "Tags": []
+        }
+      },
+      "Direct or Indirect Ranged Weapon§HAPR": {
+        "stats": {
+          "Name": {
+            "value": "Heavy Anti-Personnel Rocket"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "8"
+          },
+          "Traits": {
+            "value": "AI, AOE:3"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§AOE:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§HAR": {
+        "stats": {
+          "Name": {
+            "value": "Heavy Artillery Rocket"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "9"
+          },
+          "Traits": {
+            "value": "AOE:3, Demo:2"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Demo:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§HATM": {
+        "stats": {
+          "Name": {
+            "value": "Heavy Anti-Tank Missile"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "10"
+          },
+          "Traits": {
+            "value": "AP:4, Guided"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Guided"
+          ]
+        },
+        "keywords": {
+          "Tags": []
+        }
+      },
+      "Direct or Indirect Ranged Weapon§HAVM": {
+        "stats": {
+          "Name": {
+            "value": "Heavy Anti-Vehicle Missile"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "7"
+          },
+          "Traits": {
+            "value": "AP:1, Guided"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Guided"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§HFG": {
+        "stats": {
+          "Name": {
+            "value": "Heavy Field Gun"
+          },
+          "Range": {
+            "value": "12-24/48"
+          },
+          "Damage": {
+            "value": "11"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast (OR) AP:5"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Or",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§HGL": {
+        "stats": {
+          "Name": {
+            "value": "Heavy Grenade Launcher"
+          },
+          "Range": {
+            "value": "6-12/24"
+          },
+          "Damage": {
+            "value": "8"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast, AP:1, Burst:1"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Burst:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§HHG": {
+        "stats": {
+          "Name": {
+            "value": "Heavy Hand Grenades"
+          },
+          "Range": {
+            "value": "3-6/9"
+          },
+          "Damage": {
+            "value": "10"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast, AP:1"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§HIGL": {
+        "stats": {
+          "Name": {
+            "value": "Heavy Infantry Grenade Launcher"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "Damage": {
+            "value": "7"
+          },
+          "Traits": {
+            "value": "AOE:2, Blast (OR) AP:1"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Or",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§HRP": {
+        "stats": {
+          "Name": {
+            "value": "Heavy Rocket Pack"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "9"
+          },
+          "Traits": {
+            "value": "AOE:3, AP:1"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§LAAM": {
+        "stats": {
+          "Name": {
+            "value": "Light Anti-Air Missile"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "7"
           },
           "Traits": {
             "value": "Flak, Guided"
@@ -1354,16 +1587,16 @@
           "Tags": []
         }
       },
-      "Direct or Indirect Ranged Weapon§APR": {
+      "Direct or Indirect Ranged Weapon§LAPR": {
         "stats": {
           "Name": {
-            "value": "Anti-Personnel Rocket"
+            "value": "Light Anti-Personnel Rocket"
           },
           "Range": {
             "value": "6-18/36"
           },
           "Damage": {
-            "value": "6/7/8"
+            "value": "6"
           },
           "Traits": {
             "value": "AI, AOE:3"
@@ -1376,16 +1609,16 @@
           ]
         }
       },
-      "Direct or Indirect Ranged Weapon§AR": {
+      "Direct or Indirect Ranged Weapon§LAR": {
         "stats": {
           "Name": {
-            "value": "Artillery Rocket"
+            "value": "Light Artillery Rocket"
           },
           "Range": {
             "value": "12-36/72"
           },
           "Damage": {
-            "value": "7/8/9"
+            "value": "7"
           },
           "Traits": {
             "value": "AOE:3, Demo:2"
@@ -1398,19 +1631,19 @@
           ]
         }
       },
-      "Direct or Indirect Ranged Weapon§ATM": {
+      "Direct or Indirect Ranged Weapon§LATM": {
         "stats": {
           "Name": {
-            "value": "Anti-Tank Missile"
+            "value": "Light Anti-Tank Missile"
           },
           "Range": {
             "value": "12-36/72"
           },
           "Damage": {
-            "value": "8/9/10"
+            "value": "8"
           },
           "Traits": {
-            "value": "AP:2/3/4, Guided"
+            "value": "AP:2, Guided"
           },
           "Swappable AA Weapon": {
             "statType": "numeric",
@@ -1430,16 +1663,16 @@
           "Tags": []
         }
       },
-      "Direct or Indirect Ranged Weapon§AVM": {
+      "Direct or Indirect Ranged Weapon§LAVM": {
         "stats": {
           "Name": {
-            "value": "Anti-Vehicle Missile"
+            "value": "Light Anti-Vehicle Missile"
           },
           "Range": {
             "value": "6-18/36"
           },
           "Damage": {
-            "value": "5/6/7"
+            "value": "5"
           },
           "Traits": {
             "value": "AP:1, Guided"
@@ -1452,19 +1685,19 @@
           ]
         }
       },
-      "Direct or Indirect Ranged Weapon§FG": {
+      "Direct or Indirect Ranged Weapon§LFG": {
         "stats": {
           "Name": {
-            "value": "Field Gun"
+            "value": "Light Field Gun"
           },
           "Range": {
             "value": "12-24/48"
           },
           "Damage": {
-            "value": "9/10/11"
+            "value": "9"
           },
           "Traits": {
-            "value": "AOE:3, Blast (OR) AP:3/4/5"
+            "value": "AOE:3, Blast (OR) AP:3"
           }
         },
         "assets": {
@@ -1476,16 +1709,16 @@
           ]
         }
       },
-      "Direct or Indirect Ranged Weapon§GL": {
+      "Direct or Indirect Ranged Weapon§LGL": {
         "stats": {
           "Name": {
-            "value": "Grenade Launcher"
+            "value": "Light Grenade Launcher"
           },
           "Range": {
             "value": "6-12/24"
           },
           "Damage": {
-            "value": "6/7/8"
+            "value": "6"
           },
           "Traits": {
             "value": "AOE:3, Blast, AP:1, Burst:1"
@@ -1500,16 +1733,16 @@
           ]
         }
       },
-      "Direct or Indirect Ranged Weapon§HG": {
+      "Direct or Indirect Ranged Weapon§LHG": {
         "stats": {
           "Name": {
-            "value": "Hand Grenades"
+            "value": "Light Hand Grenades"
           },
           "Range": {
             "value": "3-6/9"
           },
           "Damage": {
-            "value": "8/9/10"
+            "value": "8"
           },
           "Traits": {
             "value": "AOE:3, Blast, AP:1"
@@ -1530,16 +1763,16 @@
           ]
         }
       },
-      "Direct or Indirect Ranged Weapon§IGL": {
+      "Direct or Indirect Ranged Weapon§LIGL": {
         "stats": {
           "Name": {
-            "value": "Infantry Grenade Launcher"
+            "value": "Light Infantry Grenade Launcher"
           },
           "Range": {
             "value": "3-9/18"
           },
           "Damage": {
-            "value": "5/6/7"
+            "value": "5"
           },
           "Traits": {
             "value": "AOE:2, Blast (OR) AP:1"
@@ -1554,16 +1787,270 @@
           ]
         }
       },
-      "Direct or Indirect Ranged Weapon§RP": {
+      "Direct or Indirect Ranged Weapon§LRP": {
         "stats": {
           "Name": {
-            "value": "Rocket Pack"
+            "value": "Light Rocket Pack"
           },
           "Range": {
             "value": "6-18/36"
           },
           "Damage": {
-            "value": "7/8/9"
+            "value": "7"
+          },
+          "Traits": {
+            "value": "AOE:3, AP:1"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§MAAM": {
+        "stats": {
+          "Name": {
+            "value": "Medium Anti-Air Missile"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "8"
+          },
+          "Traits": {
+            "value": "Flak, Guided"
+          },
+          "Swappable AA Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Flak",
+            "Model/Weapon Property§Guided"
+          ]
+        },
+        "keywords": {
+          "Tags": []
+        }
+      },
+      "Direct or Indirect Ranged Weapon§MAPR": {
+        "stats": {
+          "Name": {
+            "value": "Medium Anti-Personnel Rocket"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "7"
+          },
+          "Traits": {
+            "value": "AI, AOE:3"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§AOE:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§MAR": {
+        "stats": {
+          "Name": {
+            "value": "Medium Artillery Rocket"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "8"
+          },
+          "Traits": {
+            "value": "AOE:3, Demo:2"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Demo:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§MATM": {
+        "stats": {
+          "Name": {
+            "value": "Medium Anti-Tank Missile"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Damage": {
+            "value": "9"
+          },
+          "Traits": {
+            "value": "AP:3, Guided"
+          },
+          "Swappable AA Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Guided"
+          ]
+        },
+        "keywords": {
+          "Tags": []
+        }
+      },
+      "Direct or Indirect Ranged Weapon§MAVM": {
+        "stats": {
+          "Name": {
+            "value": "Medium Anti-Vehicle Missile"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "6"
+          },
+          "Traits": {
+            "value": "AP:1, Guided"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Guided"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§MFG": {
+        "stats": {
+          "Name": {
+            "value": "Medium Field Gun"
+          },
+          "Range": {
+            "value": "12-24/48"
+          },
+          "Damage": {
+            "value": "10"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast (OR) AP:4"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Or",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§MGL": {
+        "stats": {
+          "Name": {
+            "value": "Medium Grenade Launcher"
+          },
+          "Range": {
+            "value": "6-12/24"
+          },
+          "Damage": {
+            "value": "7"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast, AP:1, Burst:1"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Burst:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§MHG": {
+        "stats": {
+          "Name": {
+            "value": "Medium Hand Grenades"
+          },
+          "Range": {
+            "value": "3-6/9"
+          },
+          "Damage": {
+            "value": "8"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast, AP:1"
+          },
+          "Swappable Ex. Weapon": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§MIGL": {
+        "stats": {
+          "Name": {
+            "value": "Medium Infantry Grenade Launcher"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "Damage": {
+            "value": "6"
+          },
+          "Traits": {
+            "value": "AOE:2, Blast (OR) AP:1"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Or",
+            "Model/Weapon Property§AP:X"
+          ]
+        }
+      },
+      "Direct or Indirect Ranged Weapon§MRP": {
+        "stats": {
+          "Name": {
+            "value": "Medium Rocket Pack"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Damage": {
+            "value": "8"
           },
           "Traits": {
             "value": "AOE:3, AP:1"
@@ -2336,7 +2823,7 @@
         "assets": {
           "included": [
             "Melee Weapon§VB",
-            "Direct or Indirect Ranged Weapon§HG"
+            "Direct or Indirect Ranged Weapon§LHG"
           ],
           "traits": [
             "Direct Ranged Weapon§AC"
@@ -2347,7 +2834,7 @@
             "Melee Weapon§CW",
             "Melee Weapon§SG",
             "Melee Weapon§VB",
-            "Direct or Indirect Ranged Weapon§HG",
+            "Direct or Indirect Ranged Weapon§LHG",
             "Direct Ranged Weapon§PZ"
           ],
           "classifications": []
