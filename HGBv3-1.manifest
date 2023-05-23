@@ -1044,39 +1044,6 @@
               }
             ]
           },
-          "noHandsLimitsOptions": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Hands"
-                  ]
-                ],
-                "max": 0,
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "constraints",
-                    "none"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "usesHands",
-                "iterations": 1
-              }
-            ]
-          },
           "priceStandardUpgrades": {
             "evals": [],
             "failState": "pass",
@@ -1180,20 +1147,47 @@
                 "iterations": 1
               }
             ]
+          },
+          "noHandsLimitsOptions": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Hands"
+                  ]
+                ],
+                "max": 0,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "constraints",
+                    "none"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Re",
+                "iterations": 1
+              }
+            ]
           }
         },
         "allowed": {
           "classifications": [
-            "Standard Upgrade"
+            "Standard Upgrade",
+            "Standard Upgrade Weapons"
           ],
-          "items": [
-            "Direct or Indirect Ranged Weapon§MHG",
-            "Direct or Indirect Ranged Weapon§LHG",
-            "Direct Ranged Weapon§LPZ",
-            "Direct Ranged Weapon§MPZ",
-            "Melee Weapon§LSE",
-            "Melee Weapon§MSE"
-          ]
+          "items": []
         }
       },
       "Model/Weapon Property": {
@@ -1253,6 +1247,18 @@
           "TV": {
             "tracked": true
           }
+        }
+      },
+      "Standard Upgrade Weapons": {
+        "templateClass": "Weapon",
+        "keywords": {
+          "Tags": []
+        },
+        "constraints": {
+          "all": []
+        },
+        "aspects": {
+          "Unique": true
         }
       },
       "Strider": {
@@ -1605,6 +1611,22 @@
           },
           "Traits": {
             "value": "Flak, Guided"
+          },
+          "Swap for HAAM?": {
+            "statType": "rank",
+            "value": null,
+            "ranks": {
+              "1": {
+                "order": 1
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
@@ -1615,6 +1637,43 @@
         },
         "keywords": {
           "Tags": []
+        },
+        "rules": {
+          "revealOptionWhenSwapped": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap for HAAM?",
+                    "value"
+                  ]
+                ],
+                "value": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap for HAAM?",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct or Indirect Ranged Weapon§HAPR": {
@@ -1674,6 +1733,22 @@
           },
           "Traits": {
             "value": "AP:4, Guided"
+          },
+          "Swap for HAAM?": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "1": {
+                "order": 1
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
@@ -1684,6 +1759,41 @@
         },
         "keywords": {
           "Tags": []
+        },
+        "rules": {
+          "implementSwapForHAAM": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap for HAAM?",
+                    "value"
+                  ]
+                ],
+                "value": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Direct or Indirect Ranged Weapon§HAAM",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct or Indirect Ranged Weapon§HAVM": {
@@ -1839,12 +1949,21 @@
           "Traits": {
             "value": "Flak, Guided"
           },
-          "Swappable AA Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap for LAAM?": {
+            "statType": "rank",
+            "value": null,
+            "ranks": {
+              "1": {
+                "order": 1
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
@@ -1915,12 +2034,21 @@
           "Traits": {
             "value": "AP:2, Guided"
           },
-          "Swappable AA Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap for LAAM?": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "1": {
+                "order": 1
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
@@ -1931,6 +2059,41 @@
         },
         "keywords": {
           "Tags": []
+        },
+        "rules": {
+          "implementSwapForLAAM": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap for LAAM?",
+                    "value"
+                  ]
+                ],
+                "value": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Direct or Indirect Ranged Weapon§LAAM",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct or Indirect Ranged Weapon§LAVM": {
@@ -2093,12 +2256,21 @@
           "Traits": {
             "value": "Flak, Guided"
           },
-          "Swappable AA Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap for MAAM?": {
+            "statType": "rank",
+            "value": null,
+            "ranks": {
+              "1": {
+                "order": 1
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
@@ -2169,12 +2341,21 @@
           "Traits": {
             "value": "AP:3, Guided"
           },
-          "Swappable AA Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap for MAAM?": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "1": {
+                "order": 1
+              },
+              "-": {
+                "order": 0
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
@@ -2185,6 +2366,41 @@
         },
         "keywords": {
           "Tags": []
+        },
+        "rules": {
+          "implementSwapForMAAM": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap for MAAM?",
+                    "value"
+                  ]
+                ],
+                "value": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Direct or Indirect Ranged Weapon§MAAM",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct or Indirect Ranged Weapon§MAVM": {
@@ -4642,10 +4858,10 @@
             "value": 1.5
           },
           "Traits": {
-            "value": "Hands"
+            "value": ""
           },
           "React Weapons": {
-            "value": "LAC, LVB, LHG"
+            "value": ""
           },
           "GU": {
             "value": 3
@@ -4663,7 +4879,19 @@
         "assets": {
           "included": [],
           "traits": [
-            "Direct Ranged Weapon§LAC"
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Direct Ranged Weapon§MAC",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§Burst:X",
+                  "Model/Weapon Property§Split",
+                  "Model/Weapon Property§Precise",
+                  "Model/Weapon Property§Or",
+                  "Model/Weapon Property§React"
+                ]
+              }
+            }
           ]
         },
         "allowed": {
@@ -4701,10 +4929,7 @@
           "any": []
         },
         "assets": {
-          "included": [
-            "Melee Weapon§LVB",
-            "Direct or Indirect Ranged Weapon§LHG"
-          ],
+          "included": [],
           "traits": [
             {
               "item": "Direct Ranged Weapon§LAC",
@@ -4722,11 +4947,7 @@
           ]
         },
         "allowed": {
-          "items": [
-            "Melee Weapon§LCW",
-            "Melee Weapon§LSG",
-            "Melee Weapon§LVB"
-          ],
+          "items": [],
           "classifications": []
         },
         "rules": {
@@ -6043,6 +6264,459 @@
           ]
         }
       },
+      "Standard Upgrade Weapons§Light Hand Grenades (+0.5TV)": {
+        "stats": {
+          "Name": {
+            "value": "Light Hand Grenades"
+          },
+          "Range": {
+            "value": "3-6/9"
+          },
+          "Damage": {
+            "value": "8"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast, AP:1"
+          },
+          "Swappable Ex. Weapon": {
+            "statType": "numeric",
+            "value": 0,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
+          },
+          "TV": {
+            "value": 0.5
+          },
+          "Mode": {
+            "value": "Direct, Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AP:X"
+          ]
+        },
+        "rules": {
+          "renameLHG": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "LHG",
+                "iterations": 1
+              }
+            ]
+          }
+        },
+        "keywords": {
+          "Tags": [
+            "Requires Hands"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": []
+          }
+        }
+      },
+      "Standard Upgrade Weapons§Light Panzerfausts (+0.5TV)": {
+        "stats": {
+          "Name": {
+            "value": "Light Panzerfaust"
+          },
+          "Range": {
+            "value": "3-6/9"
+          },
+          "Damage": {
+            "value": "7"
+          },
+          "Traits": {
+            "value": "AP:2"
+          },
+          "Swappable Ex. Weapon": {
+            "statType": "numeric",
+            "value": 0,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
+          },
+          "Mode": {
+            "value": "Direct"
+          },
+          "TV": {
+            "value": 0.5
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X"
+          ]
+        },
+        "rules": {
+          "renameLPZ": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "LPZ",
+                "iterations": 1
+              }
+            ]
+          }
+        },
+        "keywords": {
+          "Tags": [
+            "Requires Hands"
+          ]
+        }
+      },
+      "Standard Upgrade Weapons§Light Pistol (+0.5TV)": {
+        "stats": {
+          "Name": {
+            "value": "Light Pistol"
+          },
+          "Range": {
+            "value": "0-12/24"
+          },
+          "Damage": {
+            "value": "6"
+          },
+          "Traits": {
+            "value": "Precise"
+          },
+          "Mode": {
+            "value": "Direct"
+          },
+          "TV": {
+            "value": 0.5
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§React"
+          ]
+        },
+        "rules": {
+          "renameLP": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "LP",
+                "iterations": 1
+              }
+            ]
+          }
+        },
+        "keywords": {
+          "Tags": [
+            "Requires Hands"
+          ]
+        }
+      },
+      "Standard Upgrade Weapons§Light Shaped Explosives (+0.5TV)": {
+        "stats": {
+          "Name": {
+            "value": "Light Shaped Explosives"
+          },
+          "Range": {
+            "value": "0/-"
+          },
+          "Damage": {
+            "value": "8"
+          },
+          "Traits": {
+            "value": "AP:2, Demo:4, Brawl:-1"
+          },
+          "Mode": {
+            "value": "Melee"
+          },
+          "TV": {
+            "value": 0.5
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Demo:X",
+            "Model/Weapon Property§Brawl:X"
+          ]
+        },
+        "rules": {
+          "renameLSE": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "LSE",
+                "iterations": 1
+              }
+            ]
+          }
+        },
+        "keywords": {
+          "Tags": [
+            "Requires Hands or Infantry"
+          ]
+        }
+      },
+      "Standard Upgrade Weapons§Light Submachine Gun (+0.5TV)": {
+        "stats": {
+          "Name": {
+            "value": "Light Submachine Gun"
+          },
+          "Range": {
+            "value": "0-9/18"
+          },
+          "Damage": {
+            "value": "5"
+          },
+          "Traits": {
+            "value": "Burst:2"
+          },
+          "Mode": {
+            "value": "Direct"
+          },
+          "TV": {
+            "value": 0.5
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Burst:X",
+            "Model/Weapon Property§React"
+          ]
+        },
+        "rules": {
+          "renameLSMG": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "LSMG",
+                "iterations": 1
+              }
+            ]
+          }
+        },
+        "keywords": {
+          "Tags": [
+            "Requires Hands"
+          ]
+        }
+      },
+      "Standard Upgrade Weapons§Medium Hand Grenades (+1TV)": {
+        "stats": {
+          "Name": {
+            "value": "Medium Hand Grenades"
+          },
+          "Range": {
+            "value": "3-6/9"
+          },
+          "Damage": {
+            "value": "8"
+          },
+          "Traits": {
+            "value": "AOE:3, Blast, AP:1"
+          },
+          "Swappable Ex. Weapon": {
+            "statType": "numeric",
+            "value": 0,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
+          },
+          "TV": {
+            "value": 1
+          },
+          "Mode": {
+            "value": "Direct, Indirect"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AOE:X",
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AP:X"
+          ]
+        },
+        "rules": {
+          "renameMHG": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "MHG",
+                "iterations": 1
+              }
+            ]
+          }
+        },
+        "keywords": {
+          "Tags": [
+            "Requires Hands"
+          ]
+        }
+      },
+      "Standard Upgrade Weapons§Medium Panzerfausts (+1TV)": {
+        "stats": {
+          "Name": {
+            "value": "Medium Panzerfaust"
+          },
+          "Range": {
+            "value": "3-6/9"
+          },
+          "Damage": {
+            "value": "8"
+          },
+          "Traits": {
+            "value": "AP:3"
+          },
+          "Swappable Ex. Weapon": {
+            "statType": "numeric",
+            "value": 0,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true
+          },
+          "Mode": {
+            "value": "Direct"
+          },
+          "TV": {
+            "value": 1
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X"
+          ]
+        },
+        "rules": {
+          "renameMPZ": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "MPZ",
+                "iterations": 1
+              }
+            ]
+          }
+        },
+        "keywords": {
+          "Tags": [
+            "Requires Hands"
+          ]
+        }
+      },
+      "Standard Upgrade Weapons§Medium Shaped Explosives (+1TV)": {
+        "stats": {
+          "Name": {
+            "value": "Medium Shaped Explosives"
+          },
+          "Range": {
+            "value": "0/-"
+          },
+          "Damage": {
+            "value": "9"
+          },
+          "Traits": {
+            "value": "AP:3, Demo:4, Brawl:-1"
+          }
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AP:X",
+            "Model/Weapon Property§Demo:X",
+            "Model/Weapon Property§Brawl:X"
+          ]
+        },
+        "rules": {
+          "renameMSE": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "MSE",
+                "iterations": 1
+              }
+            ]
+          }
+        },
+        "keywords": {
+          "Tags": [
+            "Requires Hands or Infantry"
+          ]
+        }
+      },
       "Standard Upgrade§Add Smoke +1TV": {
         "text": "Models may purchase the Smoke trait for 1 TV. Models \nwith the VTOL trait cannot purchase smoke upgrades.",
         "stats": {
@@ -6080,305 +6754,6 @@
       },
       "Standard Upgrade§Anti-Air (AA) (Placeholder)": {
         "text": "- Add the AA trait to an autocannon, rotary cannon, \nlaser cannon or rotary laser cannon for 1 TV.\n - Swap any Anti-Tank Missile (ATM) to an Anti-Air \nMissile (AAM) of the same class for 0 TV."
-      },
-      "Standard Upgrade§Light Hand Grenades (LHG) +0.5TV": {
-        "stats": {
-          "TV": {
-            "value": 0.5
-          }
-        },
-        "rules": {
-          "addTraitHG": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": {
-                  "item": "Weapon§HG",
-                  "stats": {
-                    "Swappable Ex. Weapon": {
-                      "value": 0
-                    }
-                  }
-                },
-                "iterations": 1
-              }
-            ]
-          }
-        },
-        "assets": {
-          "traits": []
-        },
-        "aspects": {
-          "Visibility": "active"
-        },
-        "keywords": {
-          "Tags": [
-            "usesHands"
-          ]
-        }
-      },
-      "Standard Upgrade§Light Panzerfausts (LPZ) +0.5TV": {
-        "stats": {
-          "TV": {
-            "value": 0.5
-          }
-        },
-        "assets": {
-          "traits": []
-        },
-        "rules": {
-          "addTraitPZ": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": {
-                  "item": "Weapon§PZ",
-                  "stats": {
-                    "Swappable Ex. Weapon": {
-                      "value": 0
-                    }
-                  }
-                },
-                "iterations": 1
-              }
-            ]
-          }
-        },
-        "keywords": {
-          "Tags": [
-            "usesHands"
-          ]
-        }
-      },
-      "Standard Upgrade§Light Pistol (LP) +0.5TV": {
-        "stats": {
-          "TV": {
-            "value": 0.5
-          }
-        },
-        "rules": {
-          "addTraitLP": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Weapon§P",
-                "iterations": 1
-              }
-            ]
-          }
-        },
-        "keywords": {
-          "Tags": [
-            "usesHands"
-          ]
-        }
-      },
-      "Standard Upgrade§Light Shaped Explosives (LSE) +0.5TV": {
-        "stats": {
-          "TV": {
-            "value": 0.5
-          }
-        },
-        "rules": {
-          "addTraitSE": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Weapon§SE",
-                "iterations": 1
-              }
-            ]
-          }
-        },
-        "keywords": {
-          "Tags": [
-            "usesHands"
-          ]
-        }
-      },
-      "Standard Upgrade§Light Submachine Gun (LSMG) +0.5TV": {
-        "stats": {
-          "TV": {
-            "value": 0.5
-          }
-        },
-        "rules": {
-          "addTraitSMG": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Weapon§SMG",
-                "iterations": 1
-              }
-            ]
-          }
-        },
-        "keywords": {
-          "Tags": [
-            "usesHands"
-          ]
-        }
-      },
-      "Standard Upgrade§Medium Hand Grenades (MHG) +1TV": {
-        "stats": {
-          "TV": {
-            "value": 1
-          }
-        },
-        "assets": {
-          "traits": []
-        },
-        "rules": {
-          "addTraitHG": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": {
-                  "item": "Weapon§HG",
-                  "stats": {
-                    "Swappable Ex. Weapon": {
-                      "value": 0
-                    }
-                  }
-                },
-                "iterations": 1
-              }
-            ]
-          }
-        },
-        "keywords": {
-          "Tags": [
-            "usesHands"
-          ]
-        }
-      },
-      "Standard Upgrade§Medium Panzerfausts (MPZ) +1TV": {
-        "stats": {
-          "TV": {
-            "value": 1
-          }
-        },
-        "assets": {
-          "traits": []
-        },
-        "keywords": {
-          "Tags": [
-            "usesHands"
-          ]
-        },
-        "rules": {
-          "addTraitPZ": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": {
-                  "item": "Weapon§PZ",
-                  "stats": {
-                    "Swappable Ex. Weapon": {
-                      "value": 0
-                    }
-                  }
-                },
-                "iterations": 1
-              }
-            ]
-          }
-        }
-      },
-      "Standard Upgrade§Medium Shaped Explosives (MSE) +1TV": {
-        "stats": {
-          "TV": {
-            "value": 1
-          }
-        },
-        "rules": {
-          "addTraitSE": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "SE",
-                "iterations": 1
-              }
-            ]
-          }
-        },
-        "keywords": {
-          "Tags": [
-            "usesHands"
-          ]
-        }
       },
       "Strider§Example Strider": {
         "stats": {
