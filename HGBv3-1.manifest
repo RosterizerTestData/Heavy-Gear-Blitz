@@ -82,6 +82,20 @@
           }
         }
       },
+      "Infantry": {
+        "templateClass": "Model",
+        "stats": {
+          "Type": {
+            "value": "Infantry"
+          },
+          "MR": {
+            "format": "I: {v}"
+          }
+        },
+        "constraints": {
+          "none": []
+        }
+      },
       "Leader": {
         "stats": {
           "Initiative": {
@@ -209,14 +223,6 @@
             "statType": "term",
             "value": null,
             "statOrder": 10,
-            "group": "Profile",
-            "visibility": "normal",
-            "groupOrder": 1
-          },
-          "H/S": {
-            "statType": "numeric",
-            "value": 0,
-            "statOrder": 6,
             "group": "Profile",
             "visibility": "normal",
             "groupOrder": 1
@@ -378,22 +384,6 @@
             "visibility": "normal",
             "dynamic": true
           },
-          "Swappable Melee Weapon": {
-            "statType": "numeric",
-            "value": 0,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true,
-            "max": 1
-          },
-          "Swappable Ex. Weapon": {
-            "statType": "numeric",
-            "value": 0,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true,
-            "max": 1
-          },
           "GU": {
             "statType": "numeric",
             "format": "{v}+",
@@ -442,6 +432,14 @@
             "visibility": "normal",
             "tracked": true,
             "max": 3
+          },
+          "H/S": {
+            "statType": "term",
+            "value": null,
+            "statOrder": 6,
+            "group": "Profile",
+            "groupOrder": 1,
+            "visibility": "normal"
           }
         },
         "rules": {
@@ -1036,110 +1034,6 @@
               }
             ]
           },
-          "priceStandardUpgrades": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 10,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "designation",
-                    "LHG",
-                    "stats",
-                    "TV",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 0.5,
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "designation",
-                    "MHG",
-                    "stats",
-                    "TV",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 1,
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "designation",
-                    "LPZ",
-                    "stats",
-                    "TV",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 0.5,
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "designation",
-                    "MPZ",
-                    "stats",
-                    "TV",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 1,
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "designation",
-                    "LSE",
-                    "stats",
-                    "TV",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 0.5,
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "designation",
-                    "MSE",
-                    "stats",
-                    "TV",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 1,
-                "iterations": 1
-              }
-            ]
-          },
           "noHandsLimitsOptions": {
             "evals": [
               {
@@ -1168,7 +1062,53 @@
                   ]
                 ],
                 "actionType": "add",
-                "value": "Re",
+                "value": "Requires Hands",
+                "iterations": 1
+              }
+            ]
+          },
+          "noHandsAndNotInfantryLimitsOptions": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Hands"
+                  ]
+                ],
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry",
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "constraints",
+                    "none"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Requires Hands or Infantry",
                 "iterations": 1
               }
             ]
@@ -1339,7 +1279,8 @@
           "Type": {
             "value": "Vehicle"
           }
-        }
+        },
+        "rules": {}
       },
       "Veteran Upgrade": {
         "templateClass": "Upgrade"
@@ -1388,7 +1329,7 @@
           },
           "TV": {
             "statType": "numeric",
-            "value": 0,
+            "value": null,
             "statOrder": 1,
             "group": "Accounting",
             "groupOrder": 2,
@@ -1604,15 +1545,15 @@
           "Traits": {
             "value": "Flak, Guided"
           },
-          "Swap for HAAM?": {
+          "Swap for:": {
             "statType": "rank",
             "value": null,
             "ranks": {
-              "1": {
-                "order": 1
-              },
-              "-": {
+              "HATM": {
                 "order": 0
+              },
+              "HAAM": {
+                "order": 1
               }
             },
             "group": "Upgrades",
@@ -1630,43 +1571,7 @@
         "keywords": {
           "Tags": []
         },
-        "rules": {
-          "revealOptionWhenSwapped": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Swap for HAAM?",
-                    "value"
-                  ]
-                ],
-                "value": 1,
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Swap for HAAM?",
-                    "visibility"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "normal",
-                "iterations": 1
-              }
-            ]
-          }
-        }
+        "rules": {}
       },
       "Direct or Indirect Ranged Weapon§HAPR": {
         "stats": {
@@ -1726,15 +1631,15 @@
           "Traits": {
             "value": "AP:4, Guided"
           },
-          "Swap for HAAM?": {
+          "Swap for:": {
             "statType": "rank",
-            "value": "-",
+            "value": "HAAM",
             "ranks": {
-              "1": {
-                "order": 1
-              },
-              "-": {
+              "HAAM": {
                 "order": 0
+              },
+              "HATM": {
+                "order": 1
               }
             },
             "group": "Upgrades",
@@ -1760,11 +1665,11 @@
                   [
                     "{self}",
                     "stats",
-                    "Swap for HAAM?",
+                    "Swap for:",
                     "value"
                   ]
                 ],
-                "value": 1,
+                "value": "HATM",
                 "operator": "AND",
                 "not": false,
                 "actionable": true
@@ -1871,6 +1776,22 @@
           },
           "Traits": {
             "value": "AOE:3, Blast, AP:1"
+          },
+          "Swap for:": {
+            "statType": "rank",
+            "value": "HPZ",
+            "ranks": {
+              "HPZ": {
+                "order": 0
+              },
+              "HHG": {
+                "order": 1
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
@@ -1879,6 +1800,41 @@
             "Model/Weapon Property§Blast",
             "Model/Weapon Property§AP:X"
           ]
+        },
+        "rules": {
+          "implementSwapForHPZ": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap for:",
+                    "value"
+                  ]
+                ],
+                "value": "HHG",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Direct Ranged Weapon§HPZ",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct or Indirect Ranged Weapon§HIGL": {
@@ -1941,15 +1897,15 @@
           "Traits": {
             "value": "Flak, Guided"
           },
-          "Swap for LAAM?": {
+          "Swap for:": {
             "statType": "rank",
             "value": null,
             "ranks": {
-              "1": {
-                "order": 1
-              },
-              "-": {
+              "LATM": {
                 "order": 0
+              },
+              "LAAM": {
+                "order": 1
               }
             },
             "group": "Upgrades",
@@ -2026,15 +1982,15 @@
           "Traits": {
             "value": "AP:2, Guided"
           },
-          "Swap for LAAM?": {
+          "Swap for:": {
             "statType": "rank",
-            "value": "-",
+            "value": "LAAM",
             "ranks": {
-              "1": {
-                "order": 1
-              },
-              "-": {
+              "LAAM": {
                 "order": 0
+              },
+              "LATM": {
+                "order": 1
               }
             },
             "group": "Upgrades",
@@ -2060,11 +2016,11 @@
                   [
                     "{self}",
                     "stats",
-                    "Swap for LAAM?",
+                    "Swap for:",
                     "value"
                   ]
                 ],
-                "value": 1,
+                "value": "LATM",
                 "operator": "AND",
                 "not": false,
                 "actionable": true
@@ -2172,37 +2128,14 @@
           "Traits": {
             "value": "AOE:3, Blast, AP:1"
           },
-          "Swappable Ex. Weapon": {
-            "statType": "numeric",
-            "value": 0,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
-          },
-          "Swap for LHG?": {
+          "Swap for:": {
             "statType": "rank",
-            "value": null,
+            "value": "LPZ",
             "ranks": {
-              "0": {
+              "LPZ": {
                 "order": 0
               },
-              "1": {
-                "order": 1
-              }
-            },
-            "statOrder": 2,
-            "group": "Upgrades",
-            "groupOrder": 2,
-            "visibility": "normal"
-          },
-          "Swap for LPZ?": {
-            "statType": "rank",
-            "value": null,
-            "ranks": {
-              "0": {
-                "order": 0
-              },
-              "1": {
+              "LHG": {
                 "order": 1
               }
             },
@@ -2227,11 +2160,11 @@
                   [
                     "{self}",
                     "stats",
-                    "Swap for LPZ?",
+                    "Swap for:",
                     "value"
                   ]
                 ],
-                "value": 1,
+                "value": "LHG",
                 "operator": "AND",
                 "not": false,
                 "actionable": true
@@ -2249,41 +2182,6 @@
                 ],
                 "actionType": "set",
                 "value": "Direct Ranged Weapon§LPZ",
-                "iterations": 1
-              }
-            ]
-          },
-          "hideUpgradeOptionWhenSwapped": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Swap for LHG?",
-                    "value"
-                  ]
-                ],
-                "value": 1,
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Swap for LHG?",
-                    "visibility"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "hidden",
                 "iterations": 1
               }
             ]
@@ -2350,15 +2248,15 @@
           "Traits": {
             "value": "Flak, Guided"
           },
-          "Swap for MAAM?": {
+          "Swap for:": {
             "statType": "rank",
             "value": null,
             "ranks": {
-              "1": {
-                "order": 1
-              },
-              "-": {
+              "LATM": {
                 "order": 0
+              },
+              "LAAM": {
+                "order": 1
               }
             },
             "group": "Upgrades",
@@ -2435,15 +2333,15 @@
           "Traits": {
             "value": "AP:3, Guided"
           },
-          "Swap for MAAM?": {
+          "Swap for:": {
             "statType": "rank",
-            "value": "-",
+            "value": "MAAM",
             "ranks": {
-              "1": {
-                "order": 1
-              },
-              "-": {
+              "MAAM": {
                 "order": 0
+              },
+              "MATM": {
+                "order": 1
               }
             },
             "group": "Upgrades",
@@ -2469,11 +2367,11 @@
                   [
                     "{self}",
                     "stats",
-                    "Swap for MAAM?",
+                    "Swap for:",
                     "value"
                   ]
                 ],
-                "value": 1,
+                "value": "MATM",
                 "operator": "AND",
                 "not": false,
                 "actionable": true
@@ -2581,12 +2479,21 @@
           "Traits": {
             "value": "AOE:3, Blast, AP:1"
           },
-          "Swappable Ex. Weapon": {
-            "statType": "numeric",
-            "value": 0,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap for:": {
+            "statType": "rank",
+            "value": "MPZ",
+            "ranks": {
+              "MHG": {
+                "order": 0
+              },
+              "MPZ": {
+                "order": 1
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
@@ -2595,6 +2502,41 @@
             "Model/Weapon Property§Blast",
             "Model/Weapon Property§AP:X"
           ]
+        },
+        "rules": {
+          "implementSwapForMPZ": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap for:",
+                    "value"
+                  ]
+                ],
+                "value": "MHG",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Direct Ranged Weapon§MPZ",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct or Indirect Ranged Weapon§MIGL": {
@@ -3119,18 +3061,63 @@
           "Traits": {
             "value": "AP:4"
           },
-          "Swappable Ex. Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap for:": {
+            "statType": "rank",
+            "value": "HHG",
+            "ranks": {
+              "HHG": {
+                "order": 0
+              },
+              "HPZ": {
+                "order": 1
+              }
+            },
+            "statOrder": 1,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§AP:X"
           ]
+        },
+        "rules": {
+          "implementSwapForHHG": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap for:",
+                    "value"
+                  ]
+                ],
+                "value": "HPZ",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Direct or Indirect Ranged Weapon§HHG",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct Ranged Weapon§HRC": {
@@ -3867,31 +3854,14 @@
           "Traits": {
             "value": "AP:2"
           },
-          "Swap for LPZ?": {
+          "Swap for:": {
             "statType": "rank",
-            "value": null,
+            "value": "LHG",
             "ranks": {
-              "0": {
+              "LHG": {
                 "order": 0
               },
-              "1": {
-                "order": 1
-              }
-            },
-            "statOrder": 2,
-            "group": "Upgrades",
-            "groupOrder": 2,
-            "visibility": "normal",
-            "dynamic": true
-          },
-          "Swap for LHG?": {
-            "statType": "rank",
-            "value": null,
-            "ranks": {
-              "0": {
-                "order": 0
-              },
-              "1": {
+              "LPZ": {
                 "order": 1
               }
             },
@@ -3915,11 +3885,11 @@
                   [
                     "{self}",
                     "stats",
-                    "Swap for LHG?",
+                    "Swap for:",
                     "value"
                   ]
                 ],
-                "value": 1,
+                "value": "LPZ",
                 "operator": "AND",
                 "not": false,
                 "actionable": true
@@ -3937,41 +3907,6 @@
                 ],
                 "actionType": "set",
                 "value": "Direct or Indirect Ranged Weapon§LHG",
-                "iterations": 1
-              }
-            ]
-          },
-          "hideUpgradeOptionWhenSwapped": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Swap for LPZ?",
-                    "value"
-                  ]
-                ],
-                "value": 1,
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Swap for LPZ?",
-                    "visibility"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "hidden",
                 "iterations": 1
               }
             ]
@@ -4712,18 +4647,63 @@
           "Traits": {
             "value": "AP:3"
           },
-          "Swappable Ex. Weapon": {
-            "statType": "numeric",
-            "value": 0,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap for:": {
+            "statType": "rank",
+            "value": "MHG",
+            "ranks": {
+              "MPZ": {
+                "order": 0
+              },
+              "MHG": {
+                "order": 1
+              }
+            },
+            "statOrder": 1,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§AP:X"
           ]
+        },
+        "rules": {
+          "implementSwapForMHG": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap for:",
+                    "value"
+                  ]
+                ],
+                "value": "MPZ",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Direct or Indirect Ranged Weapon§MHG",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct Ranged Weapon§MRC": {
@@ -5114,6 +5094,21 @@
           },
           "EW": {
             "value": 3
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "strikeMax": {
+            "value": 1
           }
         },
         "constraints": {
@@ -5135,12 +5130,14 @@
               }
             },
             "Model/Weapon Property§Hands",
+            "Direct or Indirect Ranged Weapon§LHG",
             {
-              "item": "Direct or Indirect Ranged Weapon§LHG",
-              "stats": {
-                "Swap for LPZ?": {
-                  "value": "0"
-                }
+              "item": "Melee Weapon§LCW",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§Demo:X",
+                  "Model/Weapon Property§React"
+                ]
               }
             }
           ]
@@ -5149,74 +5146,7 @@
           "items": [],
           "classifications": []
         },
-        "rules": {
-          "reducePriceForSwap": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 20,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "designation",
-                    "LHG",
-                    "stats",
-                    "TV",
-                    "value"
-                  ],
-                  [
-                    "{self}",
-                    "assets",
-                    "designation",
-                    "LPZ",
-                    "stats",
-                    "TV",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 0,
-                "iterations": 1
-              }
-            ]
-          },
-          "setSwappableStat": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 21,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "designation",
-                    "LHG",
-                    "stats",
-                    "Swappable Ex. Weapon",
-                    "value"
-                  ],
-                  [
-                    "{self}",
-                    "assets",
-                    "designation",
-                    "LPZ",
-                    "stats",
-                    "Swappable Ex. Weapon",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": null,
-                "iterations": 1
-              }
-            ]
-          }
-        }
+        "rules": {}
       },
       "Indirect Ranged Weapon§HABM": {
         "stats": {
@@ -5638,6 +5568,67 @@
           ]
         }
       },
+      "Infantry§Example Infantry": {
+        "stats": {
+          "ModelName": {
+            "value": "Infantry Squad"
+          },
+          "Roles": {
+            "value": "GP"
+          },
+          "Arm": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "2/1"
+          },
+          "TV": {
+            "value": 3
+          },
+          "Actions": {
+            "value": 1
+          },
+          "MR": {
+            "value": 3
+          }
+        },
+        "assets": {
+          "traits": [
+            {
+              "item": "Direct Ranged Weapon§MIW",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  "Model/Weapon Property§Burst:X",
+                  "Model/Weapon Property§React"
+                ]
+              }
+            },
+            {
+              "item": "Direct or Indirect Ranged Weapon§LIGL",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AOE:X",
+                  "Model/Weapon Property§Blast",
+                  "Model/Weapon Property§Or",
+                  "Model/Weapon Property§AP:X",
+                  "Model/Weapon Property§React"
+                ]
+              }
+            },
+            {
+              "item": "Melee Weapon§LICW",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  "Model/Weapon Property§React"
+                ]
+              }
+            },
+            "Direct Ranged Weapon§LIR"
+          ]
+        }
+      },
       "Leader§2iC": {
         "stats": {
           "Rank": {
@@ -5745,18 +5736,100 @@
           "Traits": {
             "value": "Demo:2"
           },
-          "Swappable Melee Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap to:": {
+            "statType": "rank",
+            "value": "HCW",
+            "ranks": {
+              "HCW": {
+                "order": 0
+              },
+              "HSG": {
+                "order": 1
+              },
+              "HVB": {
+                "order": 2
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§Demo:X"
           ]
+        },
+        "rules": {
+          "implementSwapToHSG": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "HSG",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§HSG",
+                "iterations": 1
+              }
+            ]
+          },
+          "implementSwapToHVB": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "HVB",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§HVB",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Melee Weapon§HICW": {
@@ -5817,18 +5890,100 @@
           "Range": {
             "value": "0/-"
           },
-          "Swappable Melee Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap to:": {
+            "statType": "rank",
+            "value": "HSG",
+            "ranks": {
+              "HCW": {
+                "order": 0
+              },
+              "HSG": {
+                "order": 1
+              },
+              "HVB": {
+                "order": 2
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§AP:X"
           ]
+        },
+        "rules": {
+          "implementSwapToHCW": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "HCW",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§HCW",
+                "iterations": 1
+              }
+            ]
+          },
+          "implementSwapToHVB": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "HVB",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§HVB",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Melee Weapon§HVB": {
@@ -5848,18 +6003,100 @@
           "Mode": {
             "value": "Melee"
           },
-          "Swappable Melee Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap to:": {
+            "statType": "rank",
+            "value": "HVB",
+            "ranks": {
+              "HCW": {
+                "order": 0
+              },
+              "HSG": {
+                "order": 1
+              },
+              "HVB": {
+                "order": 2
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§AP:X"
           ]
+        },
+        "rules": {
+          "implementSwapToHCW": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "HCW",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§HCW",
+                "iterations": 1
+              }
+            ]
+          },
+          "implementSwapToHSG": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "HSG",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§HSG",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Melee Weapon§LCW": {
@@ -5876,18 +6113,190 @@
           "Traits": {
             "value": "Demo:2"
           },
-          "Swappable Melee Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap to:": {
+            "statType": "rank",
+            "value": "LCW",
+            "ranks": {
+              "LCW": {
+                "order": 0
+              },
+              "LSG": {
+                "order": 1
+              },
+              "LVB": {
+                "order": 2
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§Demo:X"
           ]
+        },
+        "rules": {
+          "implementSwapToLSG": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LSG",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false,
+                "note": "This is for another rule to add React to the swapped weapon, when appropriate."
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§LSG",
+                "iterations": 1
+              }
+            ]
+          },
+          "implementSwapToLVB": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LVB",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false,
+                "note": "This is for another rule to add React to the swapped weapon, when appropriate."
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§LVB",
+                "iterations": 1
+              }
+            ]
+          },
+          "issuedWeaponHadReact": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToLSG",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToLVB",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ]
+                ],
+                "value": 0,
+                "operator": "OR",
+                "not": true,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 2,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Model/Weapon Property§React",
+                "iterations": 1
+              }
+            ]
+          }
+        },
+        "removed": {
+          "rules": {}
         }
       },
       "Melee Weapon§LICW": {
@@ -5948,18 +6357,185 @@
           "Range": {
             "value": "0/-"
           },
-          "Swappable Melee Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap to:": {
+            "statType": "rank",
+            "value": "LSG",
+            "ranks": {
+              "LCW": {
+                "order": 0
+              },
+              "LSG": {
+                "order": 1
+              },
+              "LVB": {
+                "order": 2
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§AP:X"
           ]
+        },
+        "rules": {
+          "implementSwapToLCW": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LCW",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§LCW",
+                "iterations": 1
+              }
+            ]
+          },
+          "implementSwapToLVB": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LVB",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§LVB",
+                "iterations": 1
+              }
+            ]
+          },
+          "issuedWeaponHadReact": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToLCW",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToLVB",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ]
+                ],
+                "value": 0,
+                "operator": "OR",
+                "not": true,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 2,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Model/Weapon Property§React",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Melee Weapon§LVB": {
@@ -5979,18 +6555,185 @@
           "Mode": {
             "value": "Melee"
           },
-          "Swappable Melee Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap to:": {
+            "statType": "rank",
+            "value": "LVB",
+            "ranks": {
+              "LCW": {
+                "order": 0
+              },
+              "LSG": {
+                "order": 1
+              },
+              "LVB": {
+                "order": 2
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§AP:X"
           ]
+        },
+        "rules": {
+          "implementSwapToLCW": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LCW",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§LCW",
+                "iterations": 1
+              }
+            ]
+          },
+          "implementSwapToLSG": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LSG",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§LSG",
+                "iterations": 1
+              }
+            ]
+          },
+          "issuedWeaponHadReact": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToLCW",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToLSG",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ]
+                ],
+                "value": 0,
+                "operator": "OR",
+                "not": true,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 2,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Model/Weapon Property§React",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Melee Weapon§MCW": {
@@ -6007,18 +6750,100 @@
           "Traits": {
             "value": "Demo:2"
           },
-          "Swappable Melee Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap to:": {
+            "statType": "rank",
+            "value": "MCW",
+            "ranks": {
+              "MCW": {
+                "order": 0
+              },
+              "MSG": {
+                "order": 1
+              },
+              "MVB": {
+                "order": 2
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§Demo:X"
           ]
+        },
+        "rules": {
+          "implementSwapToMSG": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "MSG",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§MSG",
+                "iterations": 1
+              }
+            ]
+          },
+          "implementSwapToMVB": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "MVB",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§MVB",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Melee Weapon§MICW": {
@@ -6079,12 +6904,24 @@
           "Range": {
             "value": "0/-"
           },
-          "Swappable Melee Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap to:": {
+            "statType": "rank",
+            "value": "MSG",
+            "ranks": {
+              "MCW": {
+                "order": 0
+              },
+              "MSG": {
+                "order": 1
+              },
+              "MVB": {
+                "order": 2
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
@@ -6110,18 +6947,100 @@
           "Mode": {
             "value": "Melee"
           },
-          "Swappable Melee Weapon": {
-            "statType": "numeric",
-            "value": 1,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap to:": {
+            "statType": "rank",
+            "value": "MVB",
+            "ranks": {
+              "MCW": {
+                "order": 0
+              },
+              "MSG": {
+                "order": 1
+              },
+              "MVB": {
+                "order": 2
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§AP:X"
           ]
+        },
+        "rules": {
+          "implementSwapToMCW": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "MCW",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§MCW",
+                "iterations": 1
+              }
+            ]
+          },
+          "implementSwapToMSG": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "MSG",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§MSG",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Model/Weapon Property§/": {
@@ -6440,7 +7359,7 @@
             "statType": "numeric",
             "value": 0,
             "group": "Hidden",
-            "visibility": "normal",
+            "visibility": "hidden",
             "tracked": true,
             "min": 0,
             "max": 1
@@ -6476,13 +7395,6 @@
           },
           "Traits": {
             "value": "AOE:3, Blast, AP:1"
-          },
-          "Swappable Ex. Weapon": {
-            "statType": "numeric",
-            "value": 0,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
           },
           "TV": {
             "value": 0.5
@@ -6542,13 +7454,6 @@
           },
           "Traits": {
             "value": "AP:2"
-          },
-          "Swappable Ex. Weapon": {
-            "statType": "numeric",
-            "value": 0,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
           },
           "Mode": {
             "value": "Direct"
@@ -6762,13 +7667,6 @@
           "Traits": {
             "value": "AOE:3, Blast, AP:1"
           },
-          "Swappable Ex. Weapon": {
-            "statType": "numeric",
-            "value": 0,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
-          },
           "TV": {
             "value": 1
           },
@@ -6823,13 +7721,6 @@
           "Traits": {
             "value": "AP:3"
           },
-          "Swappable Ex. Weapon": {
-            "statType": "numeric",
-            "value": 0,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
-          },
           "Mode": {
             "value": "Direct"
           },
@@ -6881,6 +7772,9 @@
           },
           "Traits": {
             "value": "AP:3, Demo:4, Brawl:-1"
+          },
+          "TV": {
+            "value": 1
           }
         },
         "assets": {
@@ -6917,7 +7811,7 @@
         }
       },
       "Standard Upgrade§Add Smoke +1TV": {
-        "text": "Models may purchase the Smoke trait for 1 TV. Models \nwith the VTOL trait cannot purchase smoke upgrades.",
+        "text": "A model with the Smoke trait may spend an action point \nto discharge smoke. See **Discharge Smoke** (p32).",
         "stats": {
           "TV": {
             "value": 1,
@@ -6925,7 +7819,7 @@
           }
         },
         "rules": {
-          "addTraitSmoke": {
+          "renameSmoke": {
             "evals": [],
             "failState": "pass",
             "evaluate": "AND",
@@ -6933,12 +7827,12 @@
               {
                 "paths": [
                   [
-                    "{parent}",
-                    "traits"
+                    "{self}",
+                    "designation"
                   ]
                 ],
-                "actionType": "add",
-                "value": "Model/Weapon Property§Smoke",
+                "actionType": "set",
+                "value": "Smoke",
                 "iterations": 1
               }
             ]
@@ -6949,10 +7843,12 @@
         },
         "aspects": {
           "Unique": true
+        },
+        "keywords": {
+          "Tags": [
+            "No VTOLs"
+          ]
         }
-      },
-      "Standard Upgrade§Anti-Air (AA) (Placeholder)": {
-        "text": "- Add the AA trait to an autocannon, rotary cannon, \nlaser cannon or rotary laser cannon for 1 TV.\n - Swap any Anti-Tank Missile (ATM) to an Anti-Air \nMissile (AAM) of the same class for 0 TV."
       },
       "Strider§Example Strider": {
         "stats": {
