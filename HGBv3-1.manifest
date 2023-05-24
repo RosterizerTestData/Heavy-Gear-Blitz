@@ -5130,16 +5130,7 @@
               }
             },
             "Model/Weapon Property§Hands",
-            "Direct or Indirect Ranged Weapon§LHG",
-            {
-              "item": "Melee Weapon§LCW",
-              "assets": {
-                "traits": [
-                  "Model/Weapon Property§Demo:X",
-                  "Model/Weapon Property§React"
-                ]
-              }
-            }
+            "Direct or Indirect Ranged Weapon§LHG"
           ]
         },
         "allowed": {
@@ -5762,6 +5753,65 @@
           ]
         },
         "rules": {
+          "issuedWeaponHadReact": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToHSG",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToHVB",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ]
+                ],
+                "value": 0,
+                "operator": "OR",
+                "not": true,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 2,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Model/Weapon Property§React",
+                "iterations": 1
+              }
+            ]
+          },
           "implementSwapToHSG": {
             "evals": [
               {
@@ -5777,6 +5827,19 @@
                 "operator": "AND",
                 "not": false,
                 "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
               }
             ],
             "failState": "pass",
@@ -5811,6 +5874,19 @@
                 "operator": "AND",
                 "not": false,
                 "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
               }
             ],
             "failState": "pass",
@@ -5931,6 +6007,19 @@
                 "operator": "AND",
                 "not": false,
                 "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
               }
             ],
             "failState": "pass",
@@ -5965,6 +6054,19 @@
                 "operator": "AND",
                 "not": false,
                 "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
               }
             ],
             "failState": "pass",
@@ -5980,6 +6082,65 @@
                 ],
                 "actionType": "set",
                 "value": "Melee Weapon§HVB",
+                "iterations": 1
+              }
+            ]
+          },
+          "issuedWeaponHadReact": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToHCW",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToHVB",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ]
+                ],
+                "value": 0,
+                "operator": "OR",
+                "not": true,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 2,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Model/Weapon Property§React",
                 "iterations": 1
               }
             ]
@@ -6044,6 +6205,19 @@
                 "operator": "AND",
                 "not": false,
                 "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
               }
             ],
             "failState": "pass",
@@ -6078,6 +6252,19 @@
                 "operator": "AND",
                 "not": false,
                 "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
               }
             ],
             "failState": "pass",
@@ -6093,6 +6280,65 @@
                 ],
                 "actionType": "set",
                 "value": "Melee Weapon§HSG",
+                "iterations": 1
+              }
+            ]
+          },
+          "issuedWeaponHadReact": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToHSG",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToHCW",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ]
+                ],
+                "value": 0,
+                "operator": "OR",
+                "not": true,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 2,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Model/Weapon Property§React",
                 "iterations": 1
               }
             ]
@@ -6271,9 +6517,9 @@
                     "React"
                   ]
                 ],
-                "value": 0,
+                "min": 1,
                 "operator": "AND",
-                "not": false,
+                "not": true,
                 "actionable": true
               }
             ],
@@ -6513,9 +6759,9 @@
                     "React"
                   ]
                 ],
-                "value": 0,
+                "min": 1,
                 "operator": "AND",
-                "not": false,
+                "not": true,
                 "actionable": true
               }
             ],
@@ -6711,9 +6957,9 @@
                     "React"
                   ]
                 ],
-                "value": 0,
+                "min": 1,
                 "operator": "AND",
-                "not": false,
+                "not": true,
                 "actionable": true
               }
             ],
