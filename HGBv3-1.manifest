@@ -394,14 +394,6 @@
             "tracked": true,
             "max": 1
           },
-          "Swappable AA Weapon": {
-            "statType": "numeric",
-            "value": 0,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true,
-            "max": 1
-          },
           "GU": {
             "statType": "numeric",
             "format": "{v}+",
@@ -2186,6 +2178,38 @@
             "group": "Hidden",
             "visibility": "hidden",
             "tracked": true
+          },
+          "Swap for LHG?": {
+            "statType": "rank",
+            "value": null,
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1
+              }
+            },
+            "statOrder": 2,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal"
+          },
+          "Swap for LPZ?": {
+            "statType": "rank",
+            "value": null,
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
@@ -2194,6 +2218,76 @@
             "Model/Weapon Property§Blast",
             "Model/Weapon Property§AP:X"
           ]
+        },
+        "rules": {
+          "implementSwapForLPZ": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap for LPZ?",
+                    "value"
+                  ]
+                ],
+                "value": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Direct Ranged Weapon§LPZ",
+                "iterations": 1
+              }
+            ]
+          },
+          "hideUpgradeOptionWhenSwapped": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap for LHG?",
+                    "value"
+                  ]
+                ],
+                "value": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap for LHG?",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "hidden",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct or Indirect Ranged Weapon§LIGL": {
@@ -3773,18 +3867,115 @@
           "Traits": {
             "value": "AP:2"
           },
-          "Swappable Ex. Weapon": {
-            "statType": "numeric",
-            "value": 0,
-            "group": "Hidden",
-            "visibility": "hidden",
-            "tracked": true
+          "Swap for LPZ?": {
+            "statType": "rank",
+            "value": null,
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1
+              }
+            },
+            "statOrder": 2,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
+          },
+          "Swap for LHG?": {
+            "statType": "rank",
+            "value": null,
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1
+              }
+            },
+            "statOrder": 1,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "normal",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§AP:X"
           ]
+        },
+        "rules": {
+          "implementSwapForLHG": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap for LHG?",
+                    "value"
+                  ]
+                ],
+                "value": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Direct or Indirect Ranged Weapon§LHG",
+                "iterations": 1
+              }
+            ]
+          },
+          "hideUpgradeOptionWhenSwapped": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap for LPZ?",
+                    "value"
+                  ]
+                ],
+                "value": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap for LPZ?",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "hidden",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct Ranged Weapon§LRC": {
@@ -4943,7 +5134,15 @@
                 ]
               }
             },
-            "Model/Weapon Property§Hands"
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Direct or Indirect Ranged Weapon§LHG",
+              "stats": {
+                "Swap for LPZ?": {
+                  "value": "0"
+                }
+              }
+            }
           ]
         },
         "allowed": {
