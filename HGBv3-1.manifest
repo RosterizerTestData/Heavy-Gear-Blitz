@@ -1167,6 +1167,40 @@
             "failState": "pass",
             "evaluate": "AND",
             "order": 3
+          },
+          "VTOLSlimitOptions": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "VTOL"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 86,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "constraints",
+                    "none"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "No VTOLs",
+                "iterations": 1
+              }
+            ]
           }
         },
         "allowed": {
@@ -8525,10 +8559,48 @@
           }
         },
         "rules": {
+          "AddNameToStatTraits": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "lineage"
+                  ]
+                ],
+                "value": "Model",
+                "contains": true,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": [
+                  "{self}",
+                  "designation"
+                ],
+                "iterations": 1
+              }
+            ]
+          },
           "renameSmoke": {
             "evals": [],
             "failState": "pass",
             "evaluate": "AND",
+            "order": 1,
             "actions": [
               {
                 "paths": [
@@ -8670,7 +8742,7 @@
             "value": 3
           },
           "Mounted Weapons": {
-            "value": "MAC"
+            "value": ""
           }
         },
         "constraints": {
@@ -8678,7 +8750,7 @@
         },
         "assets": {
           "traits": [
-            "Direct Ranged Weapon§LAC"
+            "Direct Ranged Weapon§MAC"
           ]
         }
       },
