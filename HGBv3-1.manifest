@@ -7037,6 +7037,19 @@
                 "operator": "AND",
                 "not": false,
                 "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
               }
             ],
             "failState": "pass",
@@ -7071,6 +7084,19 @@
                 "operator": "AND",
                 "not": false,
                 "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
               }
             ],
             "failState": "pass",
@@ -7086,6 +7112,65 @@
                 ],
                 "actionType": "set",
                 "value": "Melee Weapon§MVB",
+                "iterations": 1
+              }
+            ]
+          },
+          "issuedWeaponHadReact": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToMSG",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToMVB",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ]
+                ],
+                "value": 0,
+                "operator": "OR",
+                "not": true,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 2,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Model/Weapon Property§React",
                 "iterations": 1
               }
             ]
@@ -7174,6 +7259,161 @@
           "traits": [
             "Model/Weapon Property§AP:X"
           ]
+        },
+        "rules": {
+          "implementSwapToMVB": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "MVB",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§MVB",
+                "iterations": 1
+              }
+            ]
+          },
+          "implementSwapToMCW": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "MCW",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Melee Weapon§MCW",
+                "iterations": 1
+              }
+            ]
+          },
+          "issuedWeaponHadReact": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToMCW",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToMVB",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ]
+                ],
+                "value": 0,
+                "operator": "OR",
+                "not": true,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 2,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Model/Weapon Property§React",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Melee Weapon§MVB": {
@@ -7234,6 +7474,19 @@
                 "operator": "AND",
                 "not": false,
                 "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
               }
             ],
             "failState": "pass",
@@ -7268,6 +7521,19 @@
                 "operator": "AND",
                 "not": false,
                 "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "value": 0,
+                "operator": "AND",
+                "not": true,
+                "actionable": false
               }
             ],
             "failState": "pass",
@@ -7283,6 +7549,65 @@
                 ],
                 "actionType": "set",
                 "value": "Melee Weapon§MSG",
+                "iterations": 1
+              }
+            ]
+          },
+          "issuedWeaponHadReact": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToMCW",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "implementSwapToMVB",
+                    "evals",
+                    "1",
+                    "result",
+                    "integer"
+                  ]
+                ],
+                "value": 0,
+                "operator": "OR",
+                "not": true,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 2,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Model/Weapon Property§React",
                 "iterations": 1
               }
             ]
