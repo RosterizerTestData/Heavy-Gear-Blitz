@@ -2973,8 +2973,11 @@
           },
           "AA Upgrade": {
             "statType": "rank",
-            "value": "-",
+            "value": "0",
             "ranks": {
+              "0": {
+                "order": 0
+              },
               "1": {
                 "order": 1,
                 "traits": [
@@ -2985,15 +2988,13 @@
                 "tracking": {
                   "TV": 1
                 }
-              },
-              "-": {
-                "order": 0
               }
             },
             "group": "Upgrades",
-            "groupOrder": 2,
+            "groupOrder": 3,
             "visibility": "normal",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": true
           }
         },
         "assets": {
@@ -3013,11 +3014,10 @@
                     "{self}",
                     "stats",
                     "AA Upgrade",
-                    "ranks"
+                    "value"
                   ]
                 ],
                 "value": "1",
-                "contains": true,
                 "operator": "AND",
                 "not": false,
                 "actionable": true
@@ -3235,8 +3235,11 @@
           },
           "AA Upgrade": {
             "statType": "rank",
-            "value": "-",
+            "value": "0",
             "ranks": {
+              "0": {
+                "order": 0
+              },
               "1": {
                 "order": 1,
                 "traits": [
@@ -3247,15 +3250,13 @@
                 "tracking": {
                   "TV": 1
                 }
-              },
-              "-": {
-                "order": 0
               }
             },
             "group": "Upgrades",
-            "groupOrder": 2,
+            "groupOrder": 3,
             "visibility": "normal",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": true
           }
         },
         "assets": {
@@ -3273,11 +3274,10 @@
                     "{self}",
                     "stats",
                     "AA Upgrade",
-                    "ranks"
+                    "value"
                   ]
                 ],
                 "value": "1",
-                "contains": true,
                 "operator": "AND",
                 "not": false,
                 "actionable": true
@@ -3487,8 +3487,11 @@
           },
           "AA Upgrade": {
             "statType": "rank",
-            "value": "-",
+            "value": "0",
             "ranks": {
+              "0": {
+                "order": 0
+              },
               "1": {
                 "order": 1,
                 "traits": [
@@ -3499,15 +3502,13 @@
                 "tracking": {
                   "TV": 1
                 }
-              },
-              "-": {
-                "order": 0
               }
             },
             "group": "Upgrades",
-            "groupOrder": 2,
+            "groupOrder": 3,
             "visibility": "normal",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": true
           }
         },
         "assets": {
@@ -3525,11 +3526,10 @@
                     "{self}",
                     "stats",
                     "AA Upgrade",
-                    "ranks"
+                    "value"
                   ]
                 ],
                 "value": "1",
-                "contains": true,
                 "operator": "AND",
                 "not": false,
                 "actionable": true
@@ -3615,8 +3615,11 @@
           },
           "AA Upgrade": {
             "statType": "rank",
-            "value": "-",
+            "value": "0",
             "ranks": {
+              "0": {
+                "order": 0
+              },
               "1": {
                 "order": 1,
                 "traits": [
@@ -3627,16 +3630,13 @@
                 "tracking": {
                   "TV": 1
                 }
-              },
-              "-": {
-                "order": 0
               }
             },
-            "statOrder": 1,
             "group": "Upgrades",
-            "groupOrder": 2,
+            "groupOrder": 3,
             "visibility": "normal",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": true
           }
         },
         "assets": {
@@ -3655,11 +3655,10 @@
                     "{self}",
                     "stats",
                     "AA Upgrade",
-                    "ranks"
+                    "value"
                   ]
                 ],
                 "value": "1",
-                "contains": true,
                 "operator": "AND",
                 "not": false,
                 "actionable": true
@@ -3765,30 +3764,6 @@
             "value": "Light Autocannon",
             "groupOrder": 1
           },
-          "AA Upgrade": {
-            "statType": "rank",
-            "value": "-",
-            "ranks": {
-              "1": {
-                "order": 1,
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§AA"
-                  }
-                ],
-                "tracking": {
-                  "TV": 1
-                }
-              },
-              "-": {
-                "order": 0
-              }
-            },
-            "group": "Upgrades",
-            "visibility": "normal",
-            "dynamic": true,
-            "groupOrder": 3
-          },
           "Dual Guns? +1TV": {
             "statType": "rank",
             "value": "0",
@@ -3812,6 +3787,31 @@
             "groupOrder": 3,
             "visibility": "hidden",
             "dynamic": true
+          },
+          "AA Upgrade": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§AA"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "normal",
+            "dynamic": true,
+            "tracked": true
           }
         },
         "assets": {
@@ -3823,42 +3823,6 @@
           ]
         },
         "rules": {
-          "addAAtoStats": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "AA Upgrade",
-                    "ranks"
-                  ]
-                ],
-                "value": "1",
-                "contains": true,
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Traits",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "Burst:1, Split, AA (OR) Precise, AA",
-                "iterations": 1
-              }
-            ]
-          },
           "revealDualOptionForVets": {
             "evals": [
               {
@@ -3903,6 +3867,41 @@
                 ],
                 "actionType": "set",
                 "value": "normal",
+                "iterations": 1
+              }
+            ]
+          },
+          "addAAtoStats": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "AA Upgrade",
+                    "value"
+                  ]
+                ],
+                "value": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Burst:1, Split, AA (OR) Precise, AA",
                 "iterations": 1
               }
             ]
@@ -4249,8 +4248,11 @@
           },
           "AA Upgrade": {
             "statType": "rank",
-            "value": "-",
+            "value": "0",
             "ranks": {
+              "0": {
+                "order": 0
+              },
               "1": {
                 "order": 1,
                 "traits": [
@@ -4261,15 +4263,13 @@
                 "tracking": {
                   "TV": 1
                 }
-              },
-              "-": {
-                "order": 0
               }
             },
             "group": "Upgrades",
-            "groupOrder": 2,
+            "groupOrder": 3,
             "visibility": "normal",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": true
           }
         },
         "assets": {
@@ -4287,11 +4287,10 @@
                     "{self}",
                     "stats",
                     "AA Upgrade",
-                    "ranks"
+                    "value"
                   ]
                 ],
                 "value": "1",
-                "contains": true,
                 "operator": "AND",
                 "not": false,
                 "actionable": true
@@ -4575,8 +4574,11 @@
           },
           "AA Upgrade": {
             "statType": "rank",
-            "value": "-",
+            "value": "0",
             "ranks": {
+              "0": {
+                "order": 0
+              },
               "1": {
                 "order": 1,
                 "traits": [
@@ -4587,15 +4589,13 @@
                 "tracking": {
                   "TV": 1
                 }
-              },
-              "-": {
-                "order": 0
               }
             },
             "group": "Upgrades",
-            "groupOrder": 2,
+            "groupOrder": 3,
             "visibility": "normal",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": true
           }
         },
         "assets": {
@@ -4613,11 +4613,10 @@
                     "{self}",
                     "stats",
                     "AA Upgrade",
-                    "ranks"
+                    "value"
                   ]
                 ],
                 "value": "1",
-                "contains": true,
                 "operator": "AND",
                 "not": false,
                 "actionable": true
@@ -4703,8 +4702,11 @@
           },
           "AA Upgrade": {
             "statType": "rank",
-            "value": "-",
+            "value": "0",
             "ranks": {
+              "0": {
+                "order": 0
+              },
               "1": {
                 "order": 1,
                 "traits": [
@@ -4715,16 +4717,13 @@
                 "tracking": {
                   "TV": 1
                 }
-              },
-              "-": {
-                "order": 0
               }
             },
-            "statOrder": 1,
             "group": "Upgrades",
-            "groupOrder": 2,
+            "groupOrder": 3,
             "visibility": "normal",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": true
           }
         },
         "assets": {
@@ -4743,11 +4742,10 @@
                     "{self}",
                     "stats",
                     "AA Upgrade",
-                    "ranks"
+                    "value"
                   ]
                 ],
                 "value": "1",
-                "contains": true,
                 "operator": "AND",
                 "not": false,
                 "actionable": true
@@ -4927,30 +4925,6 @@
             "value": "Medium Autocannon",
             "groupOrder": 1
           },
-          "AA Upgrade": {
-            "statType": "rank",
-            "value": "-",
-            "ranks": {
-              "1": {
-                "order": 1,
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§AA"
-                  }
-                ],
-                "tracking": {
-                  "TV": 1
-                }
-              },
-              "-": {
-                "order": 0
-              }
-            },
-            "group": "Upgrades",
-            "groupOrder": 3,
-            "visibility": "normal",
-            "dynamic": true
-          },
           "Dual Guns? +1TV": {
             "statType": "rank",
             "value": "0",
@@ -4974,6 +4948,31 @@
             "groupOrder": 3,
             "visibility": "hidden",
             "dynamic": true
+          },
+          "AA Upgrade": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§AA"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "normal",
+            "dynamic": true,
+            "tracked": true
           }
         },
         "assets": {
@@ -4985,42 +4984,6 @@
           ]
         },
         "rules": {
-          "addAAtoStats": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "AA Upgrade",
-                    "ranks"
-                  ]
-                ],
-                "value": "1",
-                "contains": true,
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Traits",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "Burst:1, Split, AA (OR) Precise, AA",
-                "iterations": 1
-              }
-            ]
-          },
           "revealDualOptionForVets": {
             "evals": [
               {
@@ -5065,6 +5028,41 @@
                 ],
                 "actionType": "set",
                 "value": "normal",
+                "iterations": 1
+              }
+            ]
+          },
+          "addAAtoStats": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "AA Upgrade",
+                    "value"
+                  ]
+                ],
+                "value": "1",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Burst:1, Split, AA (OR) Precise, AA",
                 "iterations": 1
               }
             ]
@@ -5411,8 +5409,11 @@
           },
           "AA Upgrade": {
             "statType": "rank",
-            "value": "-",
+            "value": "0",
             "ranks": {
+              "0": {
+                "order": 0
+              },
               "1": {
                 "order": 1,
                 "traits": [
@@ -5423,15 +5424,13 @@
                 "tracking": {
                   "TV": 1
                 }
-              },
-              "-": {
-                "order": 0
               }
             },
             "group": "Upgrades",
-            "groupOrder": 2,
+            "groupOrder": 3,
             "visibility": "normal",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": true
           }
         },
         "assets": {
@@ -5449,11 +5448,10 @@
                     "{self}",
                     "stats",
                     "AA Upgrade",
-                    "ranks"
+                    "value"
                   ]
                 ],
                 "value": "1",
-                "contains": true,
                 "operator": "AND",
                 "not": false,
                 "actionable": true
@@ -5737,8 +5735,11 @@
           },
           "AA Upgrade": {
             "statType": "rank",
-            "value": "-",
+            "value": "0",
             "ranks": {
+              "0": {
+                "order": 0
+              },
               "1": {
                 "order": 1,
                 "traits": [
@@ -5749,15 +5750,13 @@
                 "tracking": {
                   "TV": 1
                 }
-              },
-              "-": {
-                "order": 0
               }
             },
             "group": "Upgrades",
-            "groupOrder": 2,
+            "groupOrder": 3,
             "visibility": "normal",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": true
           }
         },
         "assets": {
@@ -5775,11 +5774,10 @@
                     "{self}",
                     "stats",
                     "AA Upgrade",
-                    "ranks"
+                    "value"
                   ]
                 ],
                 "value": "1",
-                "contains": true,
                 "operator": "AND",
                 "not": false,
                 "actionable": true
@@ -5865,8 +5863,11 @@
           },
           "AA Upgrade": {
             "statType": "rank",
-            "value": "-",
+            "value": "0",
             "ranks": {
+              "0": {
+                "order": 0
+              },
               "1": {
                 "order": 1,
                 "traits": [
@@ -5877,16 +5878,13 @@
                 "tracking": {
                   "TV": 1
                 }
-              },
-              "-": {
-                "order": 0
               }
             },
-            "statOrder": 1,
             "group": "Upgrades",
-            "groupOrder": 2,
+            "groupOrder": 3,
             "visibility": "normal",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": true
           }
         },
         "assets": {
@@ -5905,11 +5903,10 @@
                     "{self}",
                     "stats",
                     "AA Upgrade",
-                    "ranks"
+                    "value"
                   ]
                 ],
                 "value": "1",
-                "contains": true,
                 "operator": "AND",
                 "not": false,
                 "actionable": true
