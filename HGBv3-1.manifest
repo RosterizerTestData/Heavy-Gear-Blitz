@@ -1201,6 +1201,165 @@
                 "iterations": 1
               }
             ]
+          },
+          "Is the model not Cav, Gear, Inf, or Strider?": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Cavalry",
+                "operator": "AND",
+                "not": true,
+                "actionable": false
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Gear",
+                "operator": "AND",
+                "not": true,
+                "actionable": false
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry",
+                "operator": "AND",
+                "not": true,
+                "actionable": false
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Strider",
+                "operator": "AND",
+                "not": true,
+                "actionable": false
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "Is the model not Cav, Gear, Inf, or Strider?",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "Is the model not Cav, Gear, Inf, or Strider?",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "Is the model not Cav, Gear, Inf, or Strider?",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "Is the model not Cav, Gear, Inf, or Strider?",
+                    "evals",
+                    "3",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true,
+                "operator": "AND",
+                "not": false,
+                "actionable": false
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 4
+          },
+          "vetButNotCavGearInfOrStriderLimitsOptions": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "Is the model not Cav, Gear, Inf, or Strider?",
+                    "evals",
+                    "4",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": 1,
+                "operator": "SUM",
+                "not": false,
+                "actionable": true,
+                "note": "Each eval returns 1 if the model is not the referenced type; so all have to be 1 to trigger the rule."
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 87,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "constraints",
+                    "none"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Requires Cavalry Gears Infantry or Striders",
+                "iterations": 1
+              }
+            ]
           }
         },
         "allowed": {
@@ -10014,7 +10173,13 @@
       "Veteran Upgrade§Add Resist:C (Placeholder)": {},
       "Veteran Upgrade§add Resist:F (Placeholder)": {},
       "Veteran Upgrade§Add Resist:H (Placeholder)": {},
-      "Veteran Upgrade§Brawler (Placeholder)": {},
+      "Veteran Upgrade§Brawler (Placeholder)": {
+        "keywords": {
+          "Tags": [
+            "Requires Cavalry Gears Infantry or Striders"
+          ]
+        }
+      },
       "Veteran Upgrade§Improved Gunnery +2TV/Action": {
         "rules": {
           "increaseTVPerActions": {
