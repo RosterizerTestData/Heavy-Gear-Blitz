@@ -8788,7 +8788,7 @@
         "text": "A weapon with the Demo:X trait will allow certain \nweapons to damage buildings, terrain and fortifications \nmore efficiently than other weapons.\n\nWhen attacking a building, terrain feature or fortification, \nif the margin of success is 0 (MOS:0) or better the weapon \nwill do the amount of damage equal to X. If regular \ndamage calculations would result in more damage, then \nthat may be used instead."
       },
       "Model/Weapon Property§ECCM": {
-        "text": "This model is equipped with an electronic counter-countermeasure system. This model and all friendly \nmodels within 6 inches gain +1D6 to all EW rolls. This \neffect is not cumulative with additional ECCM traits.\n\nModels with the ECCM trait can also perform ECCM \nfirewall reactions."
+        "text": "This model is equipped with an electronic counter-countermeasure system. This model and all friendly models within 6 inches gain +1D6 to all EW rolls. This effect is not cumulative with additional ECCM traits.\n\nModels with the ECCM trait can also perform ECCM firewall reactions."
       },
       "Model/Weapon Property§ECM": {
         "text": "This model possesses an electronic counter-measure \nsystem. A model with this trait may use the following trait \nenabled actions and reactions:\n - ECM Jam\n - ECM Attack\n - ECM Defense"
@@ -9944,7 +9944,71 @@
           }
         }
       },
-      "Veteran Upgrade§Add ECCM (Placeholder)": {},
+      "Veteran Upgrade§Add ECCM +1TV": {
+        "text": "This model is equipped with an electronic counter-countermeasure system. This model and all friendly models within 6 inches gain +1D6 to all EW rolls. This effect is not cumulative with additional ECCM traits.\n\nModels with the ECCM trait can also perform ECCM firewall reactions.",
+        "stats": {
+          "TV": {
+            "value": 1
+          }
+        },
+        "aspects": {
+          "Unique": true
+        },
+        "rules": {
+          "updateModelStatTraits": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "lineage"
+                  ]
+                ],
+                "value": "Model",
+                "contains": true,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": "ECCM",
+                "iterations": 1
+              }
+            ]
+          },
+          "renameECCM": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "ECCM",
+                "iterations": 1
+              }
+            ]
+          }
+        }
+      },
       "Veteran Upgrade§Add Field Armor (Placeholder)": {},
       "Veteran Upgrade§Add Reach (Placeholder)": {},
       "Veteran Upgrade§Add Resist:C (Placeholder)": {},
