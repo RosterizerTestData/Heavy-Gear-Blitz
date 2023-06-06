@@ -1122,40 +1122,6 @@
               }
             ]
           },
-          "veteransGetOptions": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Vet"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 62,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "allowed",
-                    "classifications"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Veteran Upgrade",
-                "iterations": 1
-              }
-            ]
-          },
           "Think carefully about rule order!": {
             "evals": [],
             "failState": "pass",
@@ -1198,6 +1164,40 @@
                 ],
                 "actionType": "add",
                 "value": "No VTOLs",
+                "iterations": 1
+              }
+            ]
+          },
+          "veteransGetOptions": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 63,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "allowed",
+                    "classifications"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Veteran Upgrade",
                 "iterations": 1
               }
             ]
@@ -1264,12 +1264,56 @@
           "Veteran?": {
             "ranks": {
               "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Vet"
+                  }
+                ],
                 "tracking": {
                   "TV": 2
                 }
               }
             },
             "label": "Veteran? +2TV"
+          }
+        },
+        "rules": {
+          "veteranForceModelsMustBeVets": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{roster}",
+                    "stats",
+                    "Veteran Force?",
+                    "value"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 22,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Veteran?",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 1,
+                "iterations": 1
+              }
+            ]
           }
         }
       },
@@ -1540,9 +1584,9 @@
                     "React"
                   ]
                 ],
-                "max": 0,
+                "min": 1,
                 "operator": "AND",
-                "not": false,
+                "not": true,
                 "actionable": true,
                 "note": "If max of zero \"React\""
               }
@@ -1829,6 +1873,7 @@
             ],
             "failState": "pass",
             "evaluate": "AND",
+            "order": 1,
             "actions": [
               {
                 "paths": [
@@ -1973,6 +2018,7 @@
             ],
             "failState": "pass",
             "evaluate": "AND",
+            "order": 1,
             "actions": [
               {
                 "paths": [
@@ -2180,6 +2226,7 @@
             ],
             "failState": "pass",
             "evaluate": "AND",
+            "order": 1,
             "actions": [
               {
                 "paths": [
@@ -2255,6 +2302,30 @@
           },
           "Traits": {
             "value": "AOE:3, Blast, AP:1, Burst:1"
+          },
+          "Dual Guns? +1TV": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Link"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
@@ -2264,6 +2335,56 @@
             "Model/Weapon Property§AP:X",
             "Model/Weapon Property§Burst:X"
           ]
+        },
+        "rules": {
+          "revealDualOptionForVets": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dual Guns? +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct or Indirect Ranged Weapon§LHG": {
@@ -2324,6 +2445,7 @@
             ],
             "failState": "pass",
             "evaluate": "AND",
+            "order": 1,
             "actions": [
               {
                 "paths": [
@@ -2531,6 +2653,7 @@
             ],
             "failState": "pass",
             "evaluate": "AND",
+            "order": 1,
             "actions": [
               {
                 "paths": [
@@ -2606,6 +2729,30 @@
           },
           "Traits": {
             "value": "AOE:3, Blast, AP:1, Burst:1"
+          },
+          "Dual Guns? +1TV": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Link"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
@@ -2615,6 +2762,56 @@
             "Model/Weapon Property§AP:X",
             "Model/Weapon Property§Burst:X"
           ]
+        },
+        "rules": {
+          "revealDualOptionForVets": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dual Guns? +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct or Indirect Ranged Weapon§MHG": {
@@ -2675,6 +2872,7 @@
             ],
             "failState": "pass",
             "evaluate": "AND",
+            "order": 1,
             "actions": [
               {
                 "paths": [
@@ -3256,6 +3454,7 @@
             ],
             "failState": "pass",
             "evaluate": "AND",
+            "order": 1,
             "actions": [
               {
                 "paths": [
@@ -3586,8 +3785,32 @@
               }
             },
             "group": "Upgrades",
-            "groupOrder": 2,
             "visibility": "normal",
+            "dynamic": true,
+            "groupOrder": 3
+          },
+          "Dual Guns? +1TV": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Link"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "hidden",
             "dynamic": true
           }
         },
@@ -3632,6 +3855,54 @@
                 ],
                 "actionType": "set",
                 "value": "Burst:1, Split, AA (OR) Precise, AA",
+                "iterations": 1
+              }
+            ]
+          },
+          "revealDualOptionForVets": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dual Guns? +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
                 "iterations": 1
               }
             ]
@@ -3695,6 +3966,30 @@
           },
           "Traits": {
             "value": "Precise, AP:1 (OR) Frag, AI"
+          },
+          "Dual Guns? +1TV": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Link"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
@@ -3705,6 +4000,56 @@
             "Model/Weapon Property§Frag",
             "Model/Weapon Property§AI"
           ]
+        },
+        "rules": {
+          "revealDualOptionForVets": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dual Guns? +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct Ranged Weapon§LFL": {
@@ -3720,6 +4065,30 @@
           },
           "Traits": {
             "value": "AI, Fire:2, Burst:1, Spray"
+          },
+          "Dual Guns? +1TV": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Link"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
@@ -3729,6 +4098,56 @@
             "Model/Weapon Property§Burst:X",
             "Model/Weapon Property§Spray"
           ]
+        },
+        "rules": {
+          "revealDualOptionForVets": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dual Guns? +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct Ranged Weapon§LIL": {
@@ -3937,12 +4356,86 @@
           },
           "Traits": {
             "value": "Precise"
+          },
+          "Dual Guns? +1TV": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Link"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§Precise"
           ]
+        },
+        "rules": {
+          "revealDualOptionForVets": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dual Guns? +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct Ranged Weapon§LPA": {
@@ -4049,6 +4542,7 @@
             ],
             "failState": "pass",
             "evaluate": "AND",
+            "order": 1,
             "actions": [
               {
                 "paths": [
@@ -4314,12 +4808,86 @@
           },
           "Traits": {
             "value": "Burst:2"
+          },
+          "Dual Guns? +1TV": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Link"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§Burst:X"
           ]
+        },
+        "rules": {
+          "revealDualOptionForVets": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dual Guns? +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct Ranged Weapon§LTG": {
@@ -4379,8 +4947,32 @@
               }
             },
             "group": "Upgrades",
-            "groupOrder": 2,
+            "groupOrder": 3,
             "visibility": "normal",
+            "dynamic": true
+          },
+          "Dual Guns? +1TV": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Link"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "hidden",
             "dynamic": true
           }
         },
@@ -4425,6 +5017,54 @@
                 ],
                 "actionType": "set",
                 "value": "Burst:1, Split, AA (OR) Precise, AA",
+                "iterations": 1
+              }
+            ]
+          },
+          "revealDualOptionForVets": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dual Guns? +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
                 "iterations": 1
               }
             ]
@@ -4488,6 +5128,30 @@
           },
           "Traits": {
             "value": "Precise, AP:2 (OR) Frag, AI"
+          },
+          "Dual Guns? +1TV": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Link"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
@@ -4498,6 +5162,56 @@
             "Model/Weapon Property§Frag",
             "Model/Weapon Property§AI"
           ]
+        },
+        "rules": {
+          "revealDualOptionForVets": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dual Guns? +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct Ranged Weapon§MFL": {
@@ -4513,6 +5227,30 @@
           },
           "Traits": {
             "value": "AI, Fire:3, Burst:1, Spray"
+          },
+          "Dual Guns? +1TV": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Link"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
@@ -4522,6 +5260,56 @@
             "Model/Weapon Property§Burst:X",
             "Model/Weapon Property§Spray"
           ]
+        },
+        "rules": {
+          "revealDualOptionForVets": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dual Guns? +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct Ranged Weapon§MIL": {
@@ -4730,12 +5518,86 @@
           },
           "Traits": {
             "value": "Precise"
+          },
+          "Dual Guns? +1TV": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Link"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§Precise"
           ]
+        },
+        "rules": {
+          "revealDualOptionForVets": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dual Guns? +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct Ranged Weapon§MPA": {
@@ -4842,6 +5704,7 @@
             ],
             "failState": "pass",
             "evaluate": "AND",
+            "order": 1,
             "actions": [
               {
                 "paths": [
@@ -5107,12 +5970,86 @@
           },
           "Traits": {
             "value": "Burst:2"
+          },
+          "Dual Guns? +1TV": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Link"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§Burst:X"
           ]
+        },
+        "rules": {
+          "revealDualOptionForVets": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dual Guns? +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Direct Ranged Weapon§MTG": {
@@ -5282,7 +6219,16 @@
               }
             },
             "Model/Weapon Property§Hands",
-            "Direct or Indirect Ranged Weapon§LHG"
+            "Direct or Indirect Ranged Weapon§LHG",
+            {
+              "item": "Melee Weapon§LVB",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AP:X",
+                  "Model/Weapon Property§React"
+                ]
+              }
+            }
           ]
         },
         "allowed": {
@@ -8252,6 +9198,30 @@
           },
           "TV": {
             "value": 0.5
+          },
+          "Dual Guns? +1TV": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Link"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
@@ -8275,6 +9245,54 @@
                 ],
                 "actionType": "set",
                 "value": "LP",
+                "iterations": 1
+              }
+            ]
+          },
+          "revealDualOptionForVets": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dual Guns? +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
                 "iterations": 1
               }
             ]
@@ -8359,6 +9377,30 @@
           },
           "TV": {
             "value": 0.5
+          },
+          "Dual Guns? +1TV": {
+            "statType": "rank",
+            "value": "0",
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Link"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "group": "Upgrades",
+            "groupOrder": 3,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
@@ -8382,6 +9424,54 @@
                 ],
                 "actionType": "set",
                 "value": "LSMG",
+                "iterations": 1
+              }
+            ]
+          },
+          "revealDualOptionForVets": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dual Guns? +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
                 "iterations": 1
               }
             ]
@@ -8864,7 +9954,6 @@
       "Veteran Upgrade§add Resist:F (Placeholder)": {},
       "Veteran Upgrade§Add Resist:H (Placeholder)": {},
       "Veteran Upgrade§Brawler (Placeholder)": {},
-      "Veteran Upgrade§Dual Guns (Placeholder)": {},
       "Veteran Upgrade§Improved Gunnery +2TV/Action": {
         "rules": {
           "increaseTVPerActions": {
