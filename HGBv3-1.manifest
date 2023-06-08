@@ -1381,9 +1381,6 @@
                 "iterations": 1
               }
             ]
-          },
-          "test": {
-            "evals": []
           }
         },
         "allowed": {
@@ -1402,7 +1399,7 @@
           "Unique": true
         },
         "rules": {
-          "updateModelStatTraits": {
+          "updateParentStatTraits": {
             "evals": [],
             "failState": "pass",
             "evaluate": "AND",
