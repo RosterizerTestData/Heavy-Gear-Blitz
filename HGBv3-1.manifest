@@ -151,6 +151,13 @@
         "stats": {
           "Mode": {
             "value": "Melee"
+          },
+          "meleeBrawlStat": {
+            "statType": "numeric",
+            "value": 0,
+            "group": "Property Tracking",
+            "visibility": "hidden",
+            "tracked": true
           }
         }
       },
@@ -449,7 +456,7 @@
           "brawlStat": {
             "statType": "numeric",
             "value": 0,
-            "group": "Hidden",
+            "group": "Property Tracking",
             "visibility": "hidden",
             "tracked": true
           }
@@ -1374,6 +1381,9 @@
                 "iterations": 1
               }
             ]
+          },
+          "test": {
+            "evals": []
           }
         },
         "allowed": {
@@ -1393,21 +1403,7 @@
         },
         "rules": {
           "updateModelStatTraits": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "lineage"
-                  ]
-                ],
-                "value": "Model",
-                "contains": true,
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
+            "evals": [],
             "failState": "pass",
             "evaluate": "AND",
             "actions": [
@@ -7009,9 +7005,35 @@
                 "order": 2
               }
             },
+            "statOrder": 1,
             "group": "Upgrades",
             "groupOrder": 2,
             "visibility": "normal",
+            "dynamic": true
+          },
+          "Add Reach:1 +1TV": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Reach:X"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "hidden",
             "dynamic": true
           }
         },
@@ -7173,6 +7195,125 @@
                 "iterations": 1
               }
             ]
+          },
+          "revealReachUpgrade": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 3,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          },
+          "addReachTrait": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 4,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": "Reach:1",
+                "iterations": 1
+              }
+            ]
+          },
+          "removeReach": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 5,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "-",
+                "iterations": 1
+              }
+            ]
           }
         }
       },
@@ -7189,12 +7330,158 @@
           },
           "Traits": {
             "value": "AI"
+          },
+          "Add Reach:1 +1TV": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Reach:X"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§AI"
           ]
+        },
+        "rules": {
+          "revealReachUpgrade": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 3,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          },
+          "addReachTrait": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 4,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": "Reach:1",
+                "iterations": 1
+              }
+            ]
+          },
+          "removeReach": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 5,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "-",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Melee Weapon§HSE": {
@@ -7252,6 +7539,31 @@
             "groupOrder": 2,
             "visibility": "normal",
             "dynamic": true
+          },
+          "Add Reach:1 +1TV": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Reach:X"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
@@ -7412,6 +7724,125 @@
                 "iterations": 1
               }
             ]
+          },
+          "revealReachUpgrade": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 3,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          },
+          "addReachTrait": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 4,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": "Reach:1",
+                "iterations": 1
+              }
+            ]
+          },
+          "removeReach": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 5,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "-",
+                "iterations": 1
+              }
+            ]
           }
         }
       },
@@ -7449,6 +7880,31 @@
             "group": "Upgrades",
             "groupOrder": 2,
             "visibility": "normal",
+            "dynamic": true
+          },
+          "Add Reach:1 +1TV": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Reach:X"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "hidden",
             "dynamic": true
           }
         },
@@ -7610,6 +8066,125 @@
                 "iterations": 1
               }
             ]
+          },
+          "revealReachUpgrade": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 3,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          },
+          "addReachTrait": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 4,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": "Reach:1",
+                "iterations": 1
+              }
+            ]
+          },
+          "removeReach": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 5,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "-",
+                "iterations": 1
+              }
+            ]
           }
         }
       },
@@ -7644,6 +8219,31 @@
             "group": "Upgrades",
             "groupOrder": 2,
             "visibility": "normal",
+            "dynamic": true
+          },
+          "Add Reach:1 +1TV": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Reach:X"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "hidden",
             "dynamic": true
           }
         },
@@ -7807,6 +8407,125 @@
                 "iterations": 1
               }
             ]
+          },
+          "revealReachUpgrade": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 3,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          },
+          "addReachTrait": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 4,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": "Reach:1",
+                "iterations": 1
+              }
+            ]
+          },
+          "removeReach": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 5,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "-",
+                "iterations": 1
+              }
+            ]
           }
         },
         "removed": {
@@ -7826,12 +8545,158 @@
           },
           "Traits": {
             "value": "AI"
+          },
+          "Add Reach:1 +1TV": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Reach:X"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§AI"
           ]
+        },
+        "rules": {
+          "revealReachUpgrade": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 3,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          },
+          "addReachTrait": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 4,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": "Reach:1",
+                "iterations": 1
+              }
+            ]
+          },
+          "removeReach": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 5,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "-",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Melee Weapon§LSE": {
@@ -7888,6 +8753,31 @@
             "group": "Upgrades",
             "groupOrder": 2,
             "visibility": "normal",
+            "dynamic": true
+          },
+          "Add Reach:1 +1TV": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Reach:X"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "hidden",
             "dynamic": true
           }
         },
@@ -8049,6 +8939,125 @@
                 "iterations": 1
               }
             ]
+          },
+          "revealReachUpgrade": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 3,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          },
+          "addReachTrait": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 4,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": "Reach:1",
+                "iterations": 1
+              }
+            ]
+          },
+          "removeReach": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 5,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "-",
+                "iterations": 1
+              }
+            ]
           }
         }
       },
@@ -8086,6 +9095,31 @@
             "group": "Upgrades",
             "groupOrder": 2,
             "visibility": "normal",
+            "dynamic": true
+          },
+          "Add Reach:1 +1TV": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Reach:X"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "hidden",
             "dynamic": true
           }
         },
@@ -8247,6 +9281,125 @@
                 "iterations": 1
               }
             ]
+          },
+          "revealReachUpgrade": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 3,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          },
+          "addReachTrait": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 4,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": "Reach:1",
+                "iterations": 1
+              }
+            ]
+          },
+          "removeReach": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 5,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "-",
+                "iterations": 1
+              }
+            ]
           }
         }
       },
@@ -8281,6 +9434,31 @@
             "group": "Upgrades",
             "groupOrder": 2,
             "visibility": "normal",
+            "dynamic": true
+          },
+          "Add Reach:1 +1TV": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Reach:X"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "hidden",
             "dynamic": true
           }
         },
@@ -8442,6 +9620,125 @@
                 "iterations": 1
               }
             ]
+          },
+          "revealReachUpgrade": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 3,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          },
+          "addReachTrait": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 4,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": "Reach:1",
+                "iterations": 1
+              }
+            ]
+          },
+          "removeReach": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 5,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "-",
+                "iterations": 1
+              }
+            ]
           }
         }
       },
@@ -8458,12 +9755,158 @@
           },
           "Traits": {
             "value": "AI"
+          },
+          "Add Reach:1 +1TV": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Reach:X"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "hidden",
+            "dynamic": true
           }
         },
         "assets": {
           "traits": [
             "Model/Weapon Property§AI"
           ]
+        },
+        "rules": {
+          "revealReachUpgrade": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 3,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          },
+          "addReachTrait": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 4,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": "Reach:1",
+                "iterations": 1
+              }
+            ]
+          },
+          "removeReach": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 5,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "-",
+                "iterations": 1
+              }
+            ]
+          }
         }
       },
       "Melee Weapon§MSE": {
@@ -8520,6 +9963,31 @@
             "group": "Upgrades",
             "groupOrder": 2,
             "visibility": "normal",
+            "dynamic": true
+          },
+          "Add Reach:1 +1TV": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Reach:X"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "hidden",
             "dynamic": true
           }
         },
@@ -8681,6 +10149,125 @@
                 "iterations": 1
               }
             ]
+          },
+          "revealReachUpgrade": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 3,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          },
+          "addReachTrait": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 4,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": "Reach:1",
+                "iterations": 1
+              }
+            ]
+          },
+          "removeReach": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 5,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "-",
+                "iterations": 1
+              }
+            ]
           }
         }
       },
@@ -8718,6 +10305,31 @@
             "group": "Upgrades",
             "groupOrder": 2,
             "visibility": "normal",
+            "dynamic": true
+          },
+          "Add Reach:1 +1TV": {
+            "statType": "rank",
+            "value": "-",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Reach:X"
+                  }
+                ],
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "group": "Upgrades",
+            "groupOrder": 2,
+            "visibility": "hidden",
             "dynamic": true
           }
         },
@@ -8879,6 +10491,93 @@
                 "iterations": 1
               }
             ]
+          },
+          "revealReachUpgrade": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "React"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 3,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "normal",
+                "iterations": 1
+              }
+            ]
+          },
+          "addReachTrait": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Add Reach:1 +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 4,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": "Reach:1",
+                "iterations": 1
+              }
+            ]
+          },
+          "removeReach": {
+            "evals": []
           }
         }
       },
@@ -8938,7 +10637,103 @@
       },
       "Model/Weapon Property§Brawl:X": {
         "text": "- A Brawl:X trait on a weapon will modify attack rolls by XD6 when using that weapon.\n - A Brawl:X trait on a model will modify all melee rolls that model makes by XD6.\n\nMultiple instances of the Brawl:X trait are cumulative.",
-        "rules": {},
+        "rules": {
+          "renameBrawl:": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "Brawl:",
+                "iterations": 1
+              }
+            ]
+          },
+          "appendModelBrawlStat": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "lineage"
+                  ]
+                ],
+                "value": "Model",
+                "contains": true,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 2,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": [
+                  "{parent}",
+                  "stats",
+                  "brawlStat",
+                  "value"
+                ],
+                "iterations": 1
+              }
+            ]
+          },
+          "appendMeleeBrawlStat": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "lineage"
+                  ]
+                ],
+                "value": "Melee Weapon",
+                "contains": true,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 2,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": [
+                  "{parent}",
+                  "stats",
+                  "meleeBrawlStat",
+                  "value"
+                ],
+                "iterations": 1
+              }
+            ]
+          }
+        },
         "stats": {}
       },
       "Model/Weapon Property§Burst:X": {
