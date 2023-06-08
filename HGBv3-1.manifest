@@ -437,6 +437,14 @@
             "groupOrder": 3,
             "visibility": "normal",
             "dynamic": true
+          },
+          "Brawler Upgrade": {
+            "statType": "numeric",
+            "value": 0,
+            "group": "Hidden",
+            "visibility": "hidden",
+            "tracked": true,
+            "max": 1
           }
         },
         "rules": {
@@ -1339,8 +1347,7 @@
                 "value": 1,
                 "operator": "SUM",
                 "not": false,
-                "actionable": true,
-                "note": "Each eval returns 1 if the model is not the referenced type; so all have to be 1 to trigger the rule."
+                "actionable": true
               }
             ],
             "failState": "pass",
@@ -8923,7 +8930,7 @@
         "text": "This weapon may only be fired if the model is braced."
       },
       "Model/Weapon Property§Brawl:X": {
-        "text": "- A Brawl:X trait on a weapon will modify attack rolls by \nXD6 when using that weapon.\n - A Brawl:X trait on a model will modify all melee rolls \nthat model makes by XD6.\n\nMultiple instances of the Brawl:X trait are cumulative."
+        "text": "- A Brawl:X trait on a weapon will modify attack rolls by XD6 when using that weapon.\n - A Brawl:X trait on a model will modify all melee rolls that model makes by XD6.\n\nMultiple instances of the Brawl:X trait are cumulative."
       },
       "Model/Weapon Property§Burst:X": {
         "text": "Add a +XD6 modifier to any attack roll made with this \nweapon (generally +1D6 or +2D6)."
@@ -10073,6 +10080,50 @@
         },
         "rules": {}
       },
+      "Veteran Upgrade§Add +1 Brawler +1TV": {
+        "keywords": {
+          "Tags": [
+            "Requires Cavalry Gears Infantry or Striders"
+          ]
+        },
+        "stats": {
+          "TV": {
+            "value": 1
+          },
+          "Brawler Upgrade": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden"
+          }
+        },
+        "aspects": {
+          "Unique": true
+        },
+        "text": "- A Brawl:X trait on a weapon will modify attack rolls by XD6 when using that weapon.\n - A Brawl:X trait on a model will modify all melee rolls that model makes by XD6.\n\nMultiple instances of the Brawl:X trait are cumulative."
+      },
+      "Veteran Upgrade§Add +2 Brawler +2TV": {
+        "keywords": {
+          "Tags": [
+            "Requires Cavalry Gears Infantry or Striders"
+          ]
+        },
+        "stats": {
+          "TV": {
+            "value": 2
+          },
+          "Brawler Upgrade": {
+            "statType": "numeric",
+            "value": 1,
+            "group": "Hidden",
+            "visibility": "hidden"
+          }
+        },
+        "aspects": {
+          "Unique": true
+        },
+        "text": "- A Brawl:X trait on a weapon will modify attack rolls by XD6 when using that weapon.\n - A Brawl:X trait on a model will modify all melee rolls that model makes by XD6.\n\nMultiple instances of the Brawl:X trait are cumulative."
+      },
       "Veteran Upgrade§Add AMS": {
         "stats": {
           "TV": {
@@ -10173,13 +10224,6 @@
       "Veteran Upgrade§Add Resist:C (Placeholder)": {},
       "Veteran Upgrade§add Resist:F (Placeholder)": {},
       "Veteran Upgrade§Add Resist:H (Placeholder)": {},
-      "Veteran Upgrade§Brawler (Placeholder)": {
-        "keywords": {
-          "Tags": [
-            "Requires Cavalry Gears Infantry or Striders"
-          ]
-        }
-      },
       "Veteran Upgrade§Improved Gunnery +2TV/Action": {
         "rules": {
           "increaseTVPerActions": {
