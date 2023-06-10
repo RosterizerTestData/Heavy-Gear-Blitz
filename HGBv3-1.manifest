@@ -64,13 +64,72 @@
           "classifications": [
             "Sub-list"
           ]
-        }
+        },
+        "templateClass": "Grandparent"
       },
       "Gear": {
         "templateClass": "Non-Veteran Model",
         "stats": {
           "Type": {
             "value": "Gear"
+          }
+        }
+      },
+      "Grandparent": {
+        "rules": {
+          "|** Rules that enforce roster requirements **|": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 40
+          },
+          "|** Rules that act as comments or info evals **|": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 1
+          },
+          "|** Rules that programmatically add assets **|": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 20
+          },
+          "|** Rules that enforce model requirements **|": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 60
+          },
+          "|** Rules that grant legal options **|": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 80
+          },
+          "|** Rules that remove illegal options **|": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 100
+          },
+          "|** Rules that report illegality of configurable options **|": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 120
+          },
+          "|** Rules that rename or edit designations **|": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 140
+          },
+          "|** Rules that edit stat strings **|": {
+            "evals": [],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 160
           }
         }
       },
@@ -462,688 +521,6 @@
           }
         },
         "rules": {
-          "|** Rules that act as comments **|": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 1
-          },
-          "|** Rules that remove illegal options **|": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 80
-          },
-          "Conscripts Can't Be Veterans.": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Conscript"
-                  ]
-                ],
-                "max": 1,
-                "operator": "SUM",
-                "not": false,
-                "actionable": true,
-                "note": "Should add the tally of Vet and Conscript; if the total is >1, it will error.",
-                "equation": {
-                  "operator": "T+O",
-                  "value": [
-                    "{self}",
-                    "tally",
-                    "Vet"
-                  ]
-                }
-              }
-            ],
-            "failState": "error",
-            "evaluate": "AND",
-            "order": 101
-          },
-          "Too many of this model in this type of unit.": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "operator": "AND",
-                "not": false,
-                "actionable": false
-              },
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "stats",
-                    "Unit Type",
-                    "processed",
-                    "term",
-                    "current"
-                  ]
-                ],
-                "operator": "AND",
-                "not": false,
-                "actionable": false
-              },
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "tally",
-                    "{0string}"
-                  ]
-                ],
-                "max": [
-                  "{self}",
-                  "stats",
-                  "{1string}",
-                  "value"
-                ],
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "error",
-            "evaluate": "AND",
-            "order": 102
-          },
-          "|** Rules that report illegality of configurable options **|": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 100
-          },
-          "noHandsAndNotInfantryLimitsOptions": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Hands"
-                  ]
-                ],
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Type",
-                    "value"
-                  ]
-                ],
-                "value": "Infantry",
-                "operator": "AND",
-                "not": true,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 85,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "constraints",
-                    "none"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Requires Hands or Infantry",
-                "iterations": 1
-              }
-            ]
-          },
-          "noHandsLimitsOptions": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Hands"
-                  ]
-                ],
-                "max": 0,
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 84,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "constraints",
-                    "none"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Requires Hands",
-                "iterations": 1
-              }
-            ]
-          },
-          "independentDuelistsCantLead": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "item"
-                  ]
-                ],
-                "value": "Combat Group§Duelist (Independent)",
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 83,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "disallowed",
-                    "items"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Duelist Upgrade§Lead by Example",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "disallowed",
-                    "items"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Leader§2iC",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "disallowed",
-                    "items"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Leader§CGL",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "disallowed",
-                    "items"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Leader§Force Leader (CGL)",
-                "iterations": 1
-              }
-            ]
-          },
-          "maxGUis6+": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "GU",
-                    "value"
-                  ]
-                ],
-                "max": 6,
-                "operator": "AND",
-                "not": true,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 81,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "GU",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 6,
-                "iterations": 1,
-                "note": "Sets GU to 6 (if it tests higher)"
-              }
-            ]
-          },
-          "maxPIis6+": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "PI",
-                    "value"
-                  ]
-                ],
-                "max": 6,
-                "operator": "AND",
-                "not": true,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 81,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "PI",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 6,
-                "iterations": 1,
-                "note": "Sets PI to 6 (if it tests higher)"
-              }
-            ]
-          },
-          "maxEWis6+": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "EW",
-                    "value"
-                  ]
-                ],
-                "max": 6,
-                "operator": "AND",
-                "not": true,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 81,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "EW",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 6,
-                "iterations": 1,
-                "note": "Sets EW to 6 (if it tests higher)"
-              }
-            ]
-          },
-          "minGUis2+": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "GU",
-                    "value"
-                  ]
-                ],
-                "min": 2,
-                "operator": "AND",
-                "not": true,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 82,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "GU",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 2,
-                "iterations": 1,
-                "note": "Set GU to 2 (if it tests to lower than that)."
-              }
-            ]
-          },
-          "minPIis2+": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "PI",
-                    "value"
-                  ]
-                ],
-                "min": 2,
-                "operator": "AND",
-                "not": true,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 82,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "PI",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 2,
-                "iterations": 1,
-                "note": "Set PI to 2 (if it tests lower)."
-              }
-            ]
-          },
-          "minEWis2+": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "EW",
-                    "value"
-                  ]
-                ],
-                "min": 2,
-                "operator": "AND",
-                "not": true,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 82,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "EW",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 2,
-                "iterations": 1,
-                "note": "Sets EW to 2 (if it tests lower)"
-              }
-            ]
-          },
-          "|** Rules that enforce roster requirements **|": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 20
-          },
-          "doublePrimaryAvailability": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "item"
-                  ]
-                ],
-                "value": "Unit§Primary Unit",
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 21,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "fireSupportMax",
-                    "value"
-                  ],
-                  [
-                    "{self}",
-                    "stats",
-                    "fortificationsMax",
-                    "value"
-                  ],
-                  [
-                    "{self}",
-                    "stats",
-                    "generalPurposeMax",
-                    "value"
-                  ],
-                  [
-                    "{self}",
-                    "stats",
-                    "reconMax",
-                    "value"
-                  ],
-                  [
-                    "{self}",
-                    "stats",
-                    "specialOperationsMax",
-                    "value"
-                  ],
-                  [
-                    "{self}",
-                    "stats",
-                    "strikeMax",
-                    "value"
-                  ]
-                ],
-                "actionType": "modify",
-                "value": 1,
-                "iterations": 1
-              }
-            ]
-          },
-          "|** Rules that enforce model requirements **|": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 40
-          },
-          "independentOperatorsMustBeDuelists": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "designation"
-                  ]
-                ],
-                "value": "Duelist (Independent)",
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 41,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Duelist",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 1,
-                "iterations": 1
-              }
-            ]
-          },
-          "duelistsGetOptionsAndMustBeVeterans": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Duelist",
-                    "value"
-                  ]
-                ],
-                "value": "1",
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 42,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "allowed",
-                    "classifications"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Duelist Upgrade",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Veteran?",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 1,
-                "iterations": 1
-              }
-            ]
-          },
-          "|** Rules that grant legal options **|": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 60
-          },
-          "officersGetRanksAndCPs": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Officer?",
-                    "value"
-                  ]
-                ],
-                "value": 1,
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 61,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "allowed",
-                    "classifications"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Leader",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "SP",
-                    "label"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "CP",
-                "iterations": 1
-              }
-            ]
-          },
           "Think carefully about rule order!": {
             "evals": [],
             "failState": "pass",
@@ -1155,74 +532,6 @@
             "failState": "pass",
             "evaluate": "AND",
             "order": 3
-          },
-          "VTOLSlimitOptions": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "VTOL"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 86,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "constraints",
-                    "none"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "No VTOLs",
-                "iterations": 1
-              }
-            ]
-          },
-          "veteransGetOptions": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Vet"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 63,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "allowed",
-                    "classifications"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Veteran Upgrade",
-                "iterations": 1
-              }
-            ]
           },
           "Is the model not Cav, Gear, Inf, or Strider?": {
             "evals": [
@@ -1331,6 +640,86 @@
             "evaluate": "AND",
             "order": 4
           },
+          "Conscripts Can't Be Veterans.": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Conscript"
+                  ]
+                ],
+                "max": 1,
+                "operator": "SUM",
+                "not": false,
+                "actionable": true,
+                "note": "Should add the tally of Vet and Conscript; if the total is >1, it will error.",
+                "equation": {
+                  "operator": "T+O",
+                  "value": [
+                    "{self}",
+                    "tally",
+                    "Vet"
+                  ]
+                }
+              }
+            ],
+            "failState": "error",
+            "evaluate": "AND",
+            "order": 121
+          },
+          "Too many of this model in this type of unit.": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "operator": "AND",
+                "not": false,
+                "actionable": false
+              },
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Unit Type",
+                    "processed",
+                    "term",
+                    "current"
+                  ]
+                ],
+                "operator": "AND",
+                "not": false,
+                "actionable": false
+              },
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "{0string}"
+                  ]
+                ],
+                "max": [
+                  "{self}",
+                  "stats",
+                  "{1string}",
+                  "value"
+                ],
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "error",
+            "evaluate": "AND",
+            "order": 122
+          },
           "vetButNotCavGearInfOrStriderLimitsOptions": {
             "evals": [
               {
@@ -1366,7 +755,7 @@
             ],
             "failState": "pass",
             "evaluate": "AND",
-            "order": 87,
+            "order": 107,
             "actions": [
               {
                 "paths": [
@@ -1378,6 +767,640 @@
                 ],
                 "actionType": "add",
                 "value": "Requires Cavalry Gears Infantry or Striders",
+                "iterations": 1
+              }
+            ]
+          },
+          "VTOLSlimitOptions": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "VTOL"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 106,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "constraints",
+                    "none"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "No VTOLs",
+                "iterations": 1
+              }
+            ]
+          },
+          "noHandsAndNotInfantryLimitsOptions": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Hands"
+                  ]
+                ],
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry",
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 105,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "constraints",
+                    "none"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Requires Hands or Infantry",
+                "iterations": 1
+              }
+            ]
+          },
+          "noHandsLimitsOptions": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Hands"
+                  ]
+                ],
+                "max": 0,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 104,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "constraints",
+                    "none"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Requires Hands",
+                "iterations": 1
+              }
+            ]
+          },
+          "independentDuelistsCantLead": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "item"
+                  ]
+                ],
+                "value": "Combat Group§Duelist (Independent)",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 103,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "disallowed",
+                    "items"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Duelist Upgrade§Lead by Example",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "disallowed",
+                    "items"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Leader§2iC",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "disallowed",
+                    "items"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Leader§CGL",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "disallowed",
+                    "items"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Leader§Force Leader (CGL)",
+                "iterations": 1
+              }
+            ]
+          },
+          "minEWis2+": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "min": 2,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 102,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 2,
+                "iterations": 1,
+                "note": "Sets EW to 2 (if it tests lower)"
+              }
+            ]
+          },
+          "minPIis2+": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "PI",
+                    "value"
+                  ]
+                ],
+                "min": 2,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 102,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "PI",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 2,
+                "iterations": 1,
+                "note": "Set PI to 2 (if it tests lower)."
+              }
+            ]
+          },
+          "minGUis2+": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "GU",
+                    "value"
+                  ]
+                ],
+                "min": 2,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 102,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "GU",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 2,
+                "iterations": 1,
+                "note": "Set GU to 2 (if it tests to lower than that)."
+              }
+            ]
+          },
+          "maxEWis6+": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "max": 6,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 101,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 6,
+                "iterations": 1,
+                "note": "Sets EW to 6 (if it tests higher)"
+              }
+            ]
+          },
+          "maxPIis6+": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "PI",
+                    "value"
+                  ]
+                ],
+                "max": 6,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 101,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "PI",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 6,
+                "iterations": 1,
+                "note": "Sets PI to 6 (if it tests higher)"
+              }
+            ]
+          },
+          "maxGUis6+": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "GU",
+                    "value"
+                  ]
+                ],
+                "max": 6,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 101,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "GU",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 6,
+                "iterations": 1,
+                "note": "Sets GU to 6 (if it tests higher)"
+              }
+            ]
+          },
+          "veteransGetOptions": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Vet"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 83,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "allowed",
+                    "classifications"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Veteran Upgrade",
+                "iterations": 1
+              }
+            ]
+          },
+          "officersGetRanksAndCPs": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Officer?",
+                    "value"
+                  ]
+                ],
+                "value": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 81,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "allowed",
+                    "classifications"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Leader",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "SP",
+                    "label"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "CP",
+                "iterations": 1
+              }
+            ]
+          },
+          "duelistsGetOptionsAndMustBeVeterans": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Duelist",
+                    "value"
+                  ]
+                ],
+                "value": "1",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 62,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "allowed",
+                    "classifications"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Duelist Upgrade",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Veteran?",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 1,
+                "iterations": 1
+              }
+            ]
+          },
+          "independentOperatorsMustBeDuelists": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "designation"
+                  ]
+                ],
+                "value": "Duelist (Independent)",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 61,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Duelist",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 1,
+                "iterations": 1
+              }
+            ]
+          },
+          "doublePrimaryAvailability": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "item"
+                  ]
+                ],
+                "value": "Unit§Primary Unit",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 41,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "fireSupportMax",
+                    "value"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "fortificationsMax",
+                    "value"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "generalPurposeMax",
+                    "value"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "reconMax",
+                    "value"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "specialOperationsMax",
+                    "value"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "strikeMax",
+                    "value"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": 1,
                 "iterations": 1
               }
             ]
