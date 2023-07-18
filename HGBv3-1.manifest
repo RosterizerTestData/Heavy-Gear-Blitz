@@ -12021,7 +12021,7 @@
             "failState": "pass",
             "order": 21
           },
-          "renameBrawl:+1": {
+          "renameVet:+1_Brawl": {
             "actions": [
               {
                 "actionType": "set",
@@ -12032,7 +12032,7 @@
                     "designation"
                   ]
                 ],
-                "value": "Brawl:+1"
+                "value": "Vet: +1 Brawl"
               }
             ],
             "evals": [],
@@ -12103,9 +12103,9 @@
             ],
             "evaluate": "AND",
             "failState": "pass",
-            "order": 1
+            "order": 21
           },
-          "renameBrawl:+2": {
+          "renameVet:+2_Brawl": {
             "actions": [
               {
                 "actionType": "set",
@@ -12116,12 +12116,13 @@
                     "designation"
                   ]
                 ],
-                "value": "Brawl:+2"
+                "value": "Vet: +2 Brawl"
               }
             ],
             "evals": [],
             "evaluate": "AND",
-            "failState": "pass"
+            "failState": "pass",
+            "order": 141
           }
         },
         "stats": {
@@ -12270,7 +12271,8 @@
             ],
             "evals": [],
             "evaluate": "AND",
-            "failState": "pass"
+            "failState": "pass",
+            "order": 61
           }
         },
         "stats": {
