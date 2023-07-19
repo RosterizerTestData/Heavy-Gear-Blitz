@@ -20,6 +20,42 @@
           ]
         },
         "rules": {
+          "mustBeVeteranGroupIfVeteranForce": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Veteran Group?",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Veteran Force?",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 45
+          },
           "This class is for combat group containers; it has a titular asset, and Duelists.": {
             "evals": [],
             "evaluate": "AND",
@@ -44,6 +80,26 @@
             "statType": "numeric",
             "tracked": true,
             "value": 0,
+            "visibility": "normal"
+          },
+          "Veteran Group?": {
+            "dynamic": true,
+            "group": "Accounting",
+            "groupOrder": 1,
+            "ranks": {
+              "0": {
+                "number": 0,
+                "order": 0
+              },
+              "1": {
+                "number": 1,
+                "order": 1
+              }
+            },
+            "statOrder": 3,
+            "statType": "rank",
+            "tracked": true,
+            "value": "0",
             "visibility": "normal"
           }
         },
@@ -383,6 +439,43 @@
             "evaluate": "AND",
             "failState": "pass",
             "order": 62
+          },
+          "ifGroupIsVeteranICanBeToo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Veteran?",
+                    "visibility"
+                  ]
+                ],
+                "value": "normal"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "{parent}",
+                    "stats",
+                    "Veteran Group?",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 64
           },
           "independentDuelistsCantLead": {
             "actions": [
@@ -1094,6 +1187,43 @@
             "failState": "pass",
             "order": 83
           },
+          "veteransShouldShowIt": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Veteran?",
+                    "visibility"
+                  ]
+                ],
+                "value": "normal"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Veteran? stat has been checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Veteran?",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 63
+          },
           "VTOLSlimitOptions": {
             "actions": [
               {
@@ -1422,7 +1552,7 @@
             "statOrder": 3,
             "statType": "rank",
             "value": "0",
-            "visibility": "normal"
+            "visibility": "hidden"
           }
         },
         "templateClass": "Grandparent"
@@ -11016,6 +11146,44 @@
             "usesHands"
           ]
         },
+        "rules": {
+          "noMaxVeteranGroupsInVeteranForce": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Veteran Group?",
+                    "max"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Veteran Force?",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 40
+          }
+        },
         "stats": {
           "Combat Group": {
             "group": "Accounting",
@@ -11107,6 +11275,15 @@
             "tracked": true,
             "value": "0",
             "visibility": "normal"
+          },
+          "Veteran Group?": {
+            "group": "Hidden",
+            "label": "Veteran Groups",
+            "max": 1,
+            "statType": "numeric",
+            "tracked": true,
+            "value": 0,
+            "visibility": "hidden"
           }
         }
       },
