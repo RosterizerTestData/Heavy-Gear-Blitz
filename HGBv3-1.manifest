@@ -440,7 +440,7 @@
             "failState": "pass",
             "order": 62
           },
-          "ifGroupIsVeteranICanBeToo": {
+          "ifGroupIsVeteranThisCanBeToo": {
             "actions": [
               {
                 "actionType": "set",
@@ -687,6 +687,160 @@
             "evaluate": "AND",
             "failState": "pass",
             "order": 19
+          },
+          "Is the model Terrain, Area Terrain, Building, Infantry, Cavalry, or Airstrike?": {
+            "evals": [
+              {
+                "actionable": false,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Terrain"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Area Terrain"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Building"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Cavalry"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Airstrike Counter"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "This will eval \"true\" if the model is any of these; used in \"vetButTerrainBuildingInfantyCavalryOrAirstrikeLimitsOptions\"",
+                "operator": "OR",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "Is the model Terrain, Area Terrain, Building, Infantry, Cavalry, or Airstrike?",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "Is the model Terrain, Area Terrain, Building, Infantry, Cavalry, or Airstrike?",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "Is the model Terrain, Area Terrain, Building, Infantry, Cavalry, or Airstrike?",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "Is the model Terrain, Area Terrain, Building, Infantry, Cavalry, or Airstrike?",
+                    "evals",
+                    "3",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "Is the model Terrain, Area Terrain, Building, Infantry, Cavalry, or Airstrike?",
+                    "evals",
+                    "4",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "Is the model Terrain, Area Terrain, Building, Infantry, Cavalry, or Airstrike?",
+                    "evals",
+                    "5",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 18
           },
           "maxEWis6+": {
             "actions": [
@@ -1102,6 +1256,43 @@
             "failState": "error",
             "order": 122
           },
+          "vetButNoAppropriateGunsLimitsAMS": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "note": "...and if so, adds the relevant tag to the \"none\" constraint.",
+                "paths": [
+                  [
+                    "{self}",
+                    "constraints",
+                    "none"
+                  ]
+                ],
+                "value": "Requires Frag Cannon, Autocannon, Submachine Gun, Machine Gun, or Rotary Cannon"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "Checks to see if the model has no guns that are AMS capable...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "AMSCapableGuns",
+                    "value"
+                  ]
+                ],
+                "value": 0
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 108
+          },
           "vetButNotCavGearInfOrStriderLimitsOptions": {
             "actions": [
               {
@@ -1152,6 +1343,44 @@
             "evaluate": "AND",
             "failState": "pass",
             "order": 107
+          },
+          "vetButTerrainBuildingInfantyCavalryOrAirstrikeLimitsOptions": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "constraints",
+                    "none"
+                  ]
+                ],
+                "value": "No Terrain, Area Terrain, Buildings, Infantry, Cavalry or Airstrike counters."
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "Is the model Terrain, Area Terrain, Building, Infantry, Cavalry, or Airstrike?",
+                    "evals",
+                    "6",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 109
           },
           "veteransGetOptions": {
             "actions": [
@@ -1269,6 +1498,13 @@
             "tracked": true,
             "value": 0,
             "visibility": "normal"
+          },
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 0,
+            "visibility": "hidden"
           },
           "Arm": {
             "group": "Profile",
@@ -1524,6 +1760,9 @@
               },
               "Building": {
                 "order": 8
+              },
+              "Airstrike Counter": {
+                "order": 9
               }
             },
             "statOrder": 13,
@@ -3402,6 +3641,13 @@
             "value": "0",
             "visibility": "normal"
           },
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "8"
           },
@@ -3472,6 +3718,13 @@
           ]
         },
         "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "7"
           },
@@ -3686,6 +3939,13 @@
           ]
         },
         "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "5"
           },
@@ -3915,6 +4175,13 @@
             "value": "0",
             "visibility": "normal"
           },
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "7"
           },
@@ -4087,6 +4354,13 @@
           ]
         },
         "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "7"
           },
@@ -4244,6 +4518,13 @@
             "value": "0",
             "visibility": "normal"
           },
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "6"
           },
@@ -4388,6 +4669,13 @@
           }
         },
         "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "5"
           },
@@ -4701,6 +4989,13 @@
           ]
         },
         "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "3"
           },
@@ -5005,6 +5300,13 @@
             "value": "0",
             "visibility": "normal"
           },
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "5"
           },
@@ -5228,6 +5530,13 @@
           }
         },
         "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "5"
           },
@@ -5409,6 +5718,13 @@
             "value": "0",
             "visibility": "normal"
           },
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "7"
           },
@@ -5553,6 +5869,13 @@
           }
         },
         "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "6"
           },
@@ -5866,6 +6189,13 @@
           ]
         },
         "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "4"
           },
@@ -6170,6 +6500,13 @@
             "value": "0",
             "visibility": "normal"
           },
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "6"
           },
@@ -6393,6 +6730,13 @@
           }
         },
         "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "6"
           },
@@ -6496,7 +6840,7 @@
           "traits": [
             "Model/Weapon Property§Hands",
             {
-              "item": "Direct Ranged Weapon§MAC",
+              "item": "Direct Ranged Weapon§HAC",
               "assets": {
                 "traits": [
                   "Model/Weapon Property§Burst:X",
@@ -6515,6 +6859,9 @@
         "stats": {
           "Actions": {
             "value": 2
+          },
+          "Arm": {
+            "value": 8
           },
           "EW": {
             "value": 3
@@ -6578,6 +6925,9 @@
         "stats": {
           "Actions": {
             "value": 1
+          },
+          "Arm": {
+            "value": 6
           },
           "EW": {
             "value": 3
@@ -11663,6 +12013,13 @@
           }
         },
         "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
           "Damage": {
             "value": "5"
           },
@@ -12323,35 +12680,43 @@
         },
         "text": "Add the Brawl:2 trait or increase an existing Brawl trait by +2."
       },
-      "Veteran Upgrade§Add AMS": {
+      "Veteran Upgrade§Add AMS +1TV": {
         "aspects": {
+          "Unique": true,
           "Visibility": "active"
         },
+        "keywords": {
+          "Tags": [
+            "Requires Frag Cannon, Autocannon, Submachine Gun, Machine Gun, or Rotary Cannon"
+          ]
+        },
         "rules": {
-          "addTraitAMS": {
+          "renameAMS": {
             "actions": [
               {
-                "actionType": "add",
+                "actionType": "set",
                 "iterations": 1,
                 "paths": [
                   [
-                    "{parent}",
-                    "traits"
+                    "{self}",
+                    "designation"
                   ]
                 ],
-                "value": "Model/Weapon Property§AMS"
+                "value": "AMS"
               }
             ],
             "evals": [],
             "evaluate": "AND",
-            "failState": "pass"
+            "failState": "pass",
+            "order": 141
           }
         },
         "stats": {
           "TV": {
             "value": 1
           }
-        }
+        },
+        "text": "**Anti-Missile System**  \nThis model may reroll defense rolls against all indirect attacks and airstrikes."
       },
       "Veteran Upgrade§Add ECCM +1TV": {
         "aspects": {
@@ -12374,7 +12739,8 @@
             ],
             "evals": [],
             "evaluate": "AND",
-            "failState": "pass"
+            "failState": "pass",
+            "order": 141
           },
           "updateModelStatTraits": {
             "actions": [
@@ -12408,7 +12774,8 @@
               }
             ],
             "evaluate": "AND",
-            "failState": "pass"
+            "failState": "pass",
+            "order": 161
           }
         },
         "stats": {
@@ -12418,7 +12785,184 @@
         },
         "text": "This model is equipped with an electronic counter-countermeasure system. This model and all friendly models within 6 inches gain +1D6 to all EW rolls. This effect is not cumulative with additional ECCM traits.\n\nModels with the ECCM trait can also perform ECCM firewall reactions."
       },
-      "Veteran Upgrade§Add Field Armor (Placeholder)": {},
+      "Veteran Upgrade§Add Field Armor +1-4TV": {
+        "aspects": {
+          "Unique": true
+        },
+        "keywords": {
+          "Tags": [
+            "No Terrain, Area Terrain, Buildings, Infantry, Cavalry or Airstrike counters."
+          ]
+        },
+        "rules": {
+          "increaseTVforArmor10": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "TV",
+                    "value"
+                  ]
+                ],
+                "value": 3
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "max": 10,
+                "min": 9,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Arm",
+                    "value"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 63
+          },
+          "increaseTVforArmor12": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "TV",
+                    "value"
+                  ]
+                ],
+                "value": 4
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 11,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Arm",
+                    "value"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 64
+          },
+          "increaseTVforArmor6": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "TV",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "max": 6,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Arm",
+                    "value"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 61
+          },
+          "increaseTVforArmor8": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "TV",
+                    "value"
+                  ]
+                ],
+                "value": 2
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "max": 8,
+                "min": 7,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Arm",
+                    "value"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 62
+          },
+          "renameFieldArmor": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Field Armor"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "text": "This model suffers one less damage from each attack to a minimum of one damage. Field Armor reduces damage from the Armor Piercing trait, but it does not apply to other effects such as Fire, Corrosion or Haywire."
+      },
       "Veteran Upgrade§Add Reach (Placeholder)": {},
       "Veteran Upgrade§Add Resist:C (Placeholder)": {},
       "Veteran Upgrade§add Resist:F (Placeholder)": {},
