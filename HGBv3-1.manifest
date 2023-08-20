@@ -3302,6 +3302,7 @@
             "visibility": "hidden"
           },
           "Auto +1TV": {
+            "dynamic": true,
             "group": "Upgrades",
             "groupOrder": 3,
             "ranks": {
@@ -3320,6 +3321,7 @@
             "visibility": "hidden"
           },
           "Stable +2TV": {
+            "dynamic": true,
             "group": "Upgrades",
             "groupOrder": 3,
             "ranks": {
@@ -3445,7 +3447,7 @@
       },
       "Ranged Weapon, Direct or Indirect, Swappable": {
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -3464,13 +3466,13 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ]
@@ -3482,7 +3484,7 @@
           }
         },
         "stats": {
-          "Swap for:": {
+          "Swap to:": {
             "dynamic": true,
             "group": "Upgrades",
             "groupOrder": 2,
@@ -3709,7 +3711,7 @@
       },
       "Ranged Weapon, Direct, Swappable": {
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -3728,13 +3730,13 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ]
@@ -3746,7 +3748,7 @@
           }
         },
         "stats": {
-          "Swap for:": {
+          "Swap to:": {
             "dynamic": true,
             "group": "Upgrades",
             "groupOrder": 2,
@@ -4252,12 +4254,12 @@
             "failState": "pass",
             "order": 84
           },
-          "concatenateOrClauses": {
+          "ifModifiedConcatenateOrClauses": {
             "actions": [
               {
                 "actionType": "modify",
                 "iterations": 1,
-                "note": "...to Traits, append the contents of Modifications...",
+                "note": "...append the contents of Modifications (to Traits)...",
                 "paths": [
                   [
                     "{self}",
@@ -4338,6 +4340,21 @@
                     "{self}",
                     "tally",
                     "(OR)"
+                  ]
+                ]
+              },
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "...and the weapon has been modified...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Modified",
+                    "value"
                   ]
                 ]
               }
@@ -4449,6 +4466,77 @@
             "evaluate": "AND",
             "failState": "pass",
             "order": 83
+          },
+          "notModifiedConcatenateOrClauses": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...append OR (to Traits)...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "(OR)"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then append the contents of OrClause.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "stats",
+                  "OrClause",
+                  "value"
+                ]
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If there is an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              },
+              {
+                "actionable": true,
+                "min": 1,
+                "not": true,
+                "note": "...and the weapon has NOT been modified...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Modified",
+                    "value"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
           },
           "overwriteTraitsAndOrClause": {
             "actions": [
@@ -4716,6 +4804,7 @@
             "visibility": "hidden"
           },
           "Precise +1TV": {
+            "dynamic": true,
             "group": "Upgrades",
             "groupOrder": 3,
             "ranks": {
@@ -15639,7 +15728,7 @@
           ]
         },
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -15658,17 +15747,17 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ],
-                "value": "HAAM"
+                "value": "HATM"
               }
             ]
           }
@@ -15683,7 +15772,7 @@
           "Range": {
             "value": "12-36/72"
           },
-          "Swap for:": {
+          "Swap to:": {
             "ranks": {
               "HAAM": {
                 "order": 0
@@ -15692,7 +15781,7 @@
                 "order": 1
               }
             },
-            "value": "HATM"
+            "value": "HAAM"
           }
         }
       },
@@ -15711,7 +15800,7 @@
           ]
         },
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -15730,17 +15819,17 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ],
-                "value": "HATM"
+                "value": "HAAM"
               }
             ]
           }
@@ -15755,7 +15844,7 @@
           "Range": {
             "value": "12-36/72"
           },
-          "Swap for:": {
+          "Swap to:": {
             "ranks": {
               "HAAM": {
                 "order": 0
@@ -15764,7 +15853,7 @@
                 "order": 1
               }
             },
-            "value": "HAAM"
+            "value": "HATM"
           }
         }
       },
@@ -15791,7 +15880,7 @@
           ]
         },
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -15810,17 +15899,17 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ],
-                "value": "HHG"
+                "value": "HPZ"
               }
             ]
           }
@@ -15835,7 +15924,7 @@
           "Range": {
             "value": "3-6/9"
           },
-          "Swap for:": {
+          "Swap to:": {
             "ranks": {
               "HHG": {
                 "order": 0
@@ -15844,7 +15933,7 @@
                 "order": 1
               }
             },
-            "value": "HPZ"
+            "value": "HHG"
           }
         }
       },
@@ -15856,7 +15945,7 @@
           ]
         },
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -15875,17 +15964,17 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ],
-                "value": "LAAM"
+                "value": "LATM"
               }
             ]
           }
@@ -15900,7 +15989,7 @@
           "Range": {
             "value": "12-36/72"
           },
-          "Swap for:": {
+          "Swap to:": {
             "ranks": {
               "LAAM": {
                 "order": 0
@@ -15909,7 +15998,183 @@
                 "order": 1
               }
             },
-            "value": "LATM"
+            "value": "LAAM"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect, Swappable§LAAM (LA:2)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Flak",
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property, Variable§LA:X",
+              "stats": {
+                "Modified": {
+                  "value": 1
+                },
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct or Indirect, Swappable§LATM (LA:2)"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LATM"
+              }
+            ]
+          },
+          "setDesignationWithoutReact": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "LAAM"
+              }
+            ],
+            "evals": []
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Light Anti-Air Missile"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Swap to:": {
+            "ranks": {
+              "LAAM": {
+                "order": 0
+              },
+              "LATM": {
+                "order": 1
+              }
+            },
+            "value": "LAAM"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect, Swappable§LAAM, React": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Flak",
+            "Model/Weapon Property§Guided"
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct or Indirect, Swappable§LATM, React"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LATM"
+              }
+            ]
+          },
+          "setDesignationWithoutReact": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "LAAM"
+              }
+            ],
+            "evals": []
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Light Anti-Air Missile"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "StatColumn": {
+            "value": "React"
+          },
+          "Swap to:": {
+            "ranks": {
+              "LAAM": {
+                "order": 0
+              },
+              "LATM": {
+                "order": 1
+              }
+            },
+            "value": "LAAM"
           }
         }
       },
@@ -15928,7 +16193,7 @@
           ]
         },
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -15947,17 +16212,17 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ],
-                "value": "LATM"
+                "value": "LAAM"
               }
             ]
           }
@@ -15972,7 +16237,7 @@
           "Range": {
             "value": "12-36/72"
           },
-          "Swap for:": {
+          "Swap to:": {
             "ranks": {
               "LAAM": {
                 "order": 0
@@ -15981,7 +16246,106 @@
                 "order": 1
               }
             },
-            "value": "LAAM"
+            "value": "LATM"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect, Swappable§LATM (LA:2)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property, Variable§LA:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Modified": {
+                  "value": 1
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct or Indirect, Swappable§LAAM (LA:2)"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LAAM"
+              }
+            ]
+          },
+          "setDesignationWithoutReact": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "LATM"
+              }
+            ],
+            "evals": []
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Light Anti-Tank Missile"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Swap to:": {
+            "ranks": {
+              "LAAM": {
+                "order": 0
+              },
+              "LATM": {
+                "order": 1
+              }
+            },
+            "value": "LATM"
           }
         }
       },
@@ -16000,7 +16364,7 @@
           ]
         },
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -16012,24 +16376,24 @@
                     "item"
                   ]
                 ],
-                "value": "Ranged Weapon, Direct or Indirect, Swappable§LAAM"
+                "value": "Ranged Weapon, Direct or Indirect, Swappable§LAAM, React"
               }
             ],
             "evals": [
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ],
-                "value": "LATM"
+                "value": "LAAM"
               }
             ]
           },
@@ -16063,7 +16427,7 @@
           "StatColumn": {
             "value": "React"
           },
-          "Swap for:": {
+          "Swap to:": {
             "ranks": {
               "LAAM": {
                 "order": 0
@@ -16072,7 +16436,7 @@
                 "order": 1
               }
             },
-            "value": "LAAM"
+            "value": "LATM"
           }
         }
       },
@@ -16099,7 +16463,7 @@
           ]
         },
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -16118,17 +16482,17 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ],
-                "value": "LHG"
+                "value": "LPZ"
               }
             ]
           }
@@ -16143,7 +16507,7 @@
           "Range": {
             "value": "3-6/9"
           },
-          "Swap for:": {
+          "Swap to:": {
             "ranks": {
               "LHG": {
                 "order": 0
@@ -16152,7 +16516,7 @@
                 "order": 1
               }
             },
-            "value": "LPZ"
+            "value": "LHG"
           }
         }
       },
@@ -16164,7 +16528,7 @@
           ]
         },
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -16183,17 +16547,17 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ],
-                "value": "MAAM"
+                "value": "MATM"
               }
             ]
           }
@@ -16208,7 +16572,7 @@
           "Range": {
             "value": "12-36/72"
           },
-          "Swap for:": {
+          "Swap to:": {
             "ranks": {
               "MAAM": {
                 "order": 0
@@ -16217,7 +16581,91 @@
                 "order": 1
               }
             },
-            "value": "MATM"
+            "value": "MAAM"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect, Swappable§MAAM, React": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Flak",
+            "Model/Weapon Property§Guided"
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct or Indirect, Swappable§MATM, React"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "MATM"
+              }
+            ]
+          },
+          "setDesignationWithoutReact": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "MAAM"
+              }
+            ],
+            "evals": []
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Medium Anti-Air Missile"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "StatColumn": {
+            "value": "React"
+          },
+          "Swap to:": {
+            "ranks": {
+              "MAAM": {
+                "order": 0
+              },
+              "MATM": {
+                "order": 1
+              }
+            },
+            "value": "MAAM"
           }
         }
       },
@@ -16236,7 +16684,7 @@
           ]
         },
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -16255,17 +16703,17 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ],
-                "value": "MATM"
+                "value": "MAAM"
               }
             ]
           }
@@ -16280,7 +16728,7 @@
           "Range": {
             "value": "12-36/72"
           },
-          "Swap for:": {
+          "Swap to:": {
             "ranks": {
               "MAAM": {
                 "order": 0
@@ -16289,7 +16737,7 @@
                 "order": 1
               }
             },
-            "value": "MAAM"
+            "value": "MATM"
           }
         }
       },
@@ -16308,7 +16756,7 @@
           ]
         },
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -16320,24 +16768,24 @@
                     "item"
                   ]
                 ],
-                "value": "Ranged Weapon, Direct or Indirect, Swappable§MAAM"
+                "value": "Ranged Weapon, Direct or Indirect, Swappable§MAAM, React"
               }
             ],
             "evals": [
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ],
-                "value": "MATM"
+                "value": "MAAM"
               }
             ]
           },
@@ -16371,7 +16819,7 @@
           "StatColumn": {
             "value": "React"
           },
-          "Swap for:": {
+          "Swap to:": {
             "ranks": {
               "MAAM": {
                 "order": 0
@@ -16380,7 +16828,7 @@
                 "order": 1
               }
             },
-            "value": "MAAM"
+            "value": "MATM"
           }
         }
       },
@@ -16407,7 +16855,7 @@
           ]
         },
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -16426,17 +16874,17 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ],
-                "value": "MHG"
+                "value": "MPZ"
               }
             ]
           }
@@ -16451,7 +16899,7 @@
           "Range": {
             "value": "3-6/9"
           },
-          "Swap for:": {
+          "Swap to:": {
             "ranks": {
               "MHG": {
                 "order": 0
@@ -16460,7 +16908,7 @@
                 "order": 1
               }
             },
-            "value": "MPZ"
+            "value": "MHG"
           }
         }
       },
@@ -16991,6 +17439,61 @@
               }
             }
           ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Light Anti-Personnel Rocket"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect§LAPR (Fire:1)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Fire:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                },
+                "Modified": {
+                  "value": 1
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "setDesignationWithoutReact": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "LAPR"
+              }
+            ],
+            "evals": []
+          }
         },
         "stats": {
           "Damage": {
@@ -20006,7 +20509,7 @@
           ]
         },
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -20025,17 +20528,17 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ],
-                "value": "HPZ"
+                "value": "HHG"
               }
             ]
           }
@@ -20050,7 +20553,7 @@
           "Range": {
             "value": "3-6/9"
           },
-          "Swap for:": {
+          "Swap to:": {
             "ranks": {
               "HHG": {
                 "order": 0
@@ -20059,7 +20562,7 @@
                 "order": 1
               }
             },
-            "value": "HHG"
+            "value": "HPZ"
           }
         }
       },
@@ -20077,7 +20580,7 @@
           ]
         },
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -20096,17 +20599,17 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ],
-                "value": "LPZ"
+                "value": "LHG"
               }
             ]
           }
@@ -20121,7 +20624,7 @@
           "Range": {
             "value": "3-6/9"
           },
-          "Swap for:": {
+          "Swap to:": {
             "ranks": {
               "LHG": {
                 "order": 0
@@ -20130,7 +20633,7 @@
                 "order": 1
               }
             },
-            "value": "LHG"
+            "value": "LPZ"
           }
         }
       },
@@ -20148,7 +20651,7 @@
           ]
         },
         "rules": {
-          "implementSwapFor": {
+          "implementSwapTo": {
             "actions": [
               {
                 "actionType": "set",
@@ -20167,17 +20670,17 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match CURRENT weapon **|",
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap for:",
+                    "Swap to:",
                     "value"
                   ]
                 ],
-                "value": "MPZ"
+                "value": "MHG"
               }
             ]
           }
@@ -20192,7 +20695,7 @@
           "Range": {
             "value": "3-6/9"
           },
-          "Swap for:": {
+          "Swap to:": {
             "ranks": {
               "MHG": {
                 "order": 0
@@ -20201,7 +20704,7 @@
                 "order": 1
               }
             },
-            "value": "MHG"
+            "value": "MPZ"
           }
         }
       },
@@ -23863,7 +24366,7 @@
           }
         }
       },
-      "Standard Upgrade§Add Smoke +1TV": {
+      "Standard Upgrade§Smoke +1TV": {
         "aspects": {
           "Unique": true
         },
