@@ -7023,10 +7023,9 @@
             "value": 999
           },
           "GU": {
-            "format": "-",
-            "statType": "term",
+            "format": "{v}",
             "tracked": false,
-            "value": "-"
+            "value": 0
           },
           "H/S": {
             "value": "8/0"
@@ -7275,7 +7274,8 @@
         "allowed": {
           "items": [
             "Terrain§Turret, Rocket",
-            "Terrain§Turret, Rotary Cannon"
+            "Terrain§Turret, Rotary Cannon",
+            "Terrain§Bunker, Machine Gun"
           ]
         },
         "assets": {
@@ -7380,10 +7380,8 @@
             "value": 999
           },
           "GU": {
-            "format": "-",
-            "statType": "term",
-            "tracked": false,
-            "value": "-"
+            "format": "{v}",
+            "value": 0
           },
           "H/S": {
             "value": "4/0"
@@ -7431,10 +7429,8 @@
             "value": 999
           },
           "GU": {
-            "format": "-",
-            "statType": "term",
-            "tracked": false,
-            "value": "-"
+            "format": "{v}",
+            "value": 0
           },
           "H/S": {
             "value": "4/0"
@@ -7780,10 +7776,8 @@
             "value": 999
           },
           "GU": {
-            "format": "-",
-            "statType": "term",
-            "tracked": false,
-            "value": "-"
+            "format": "{v}",
+            "value": 0
           },
           "H/S": {
             "value": "6/0"
@@ -7831,10 +7825,8 @@
             "value": 999
           },
           "GU": {
-            "format": "-",
-            "statType": "term",
-            "tracked": false,
-            "value": "-"
+            "format": "{v}",
+            "value": 0
           },
           "H/S": {
             "value": "6/0"
@@ -7882,10 +7874,8 @@
             "value": 999
           },
           "GU": {
-            "format": "-",
-            "statType": "term",
-            "tracked": false,
-            "value": "-"
+            "format": "{v}",
+            "value": 0
           },
           "H/S": {
             "value": "4/0"
