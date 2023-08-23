@@ -18,6 +18,231 @@
   "manifest": {
     "assetTaxonomy": {},
     "assetCatalog": {
+      "Drone§Drone, Demo": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Offroad",
+            "Model/Weapon Property§Conscript",
+            "Model/Weapon Property§Vuln:H",
+            "Ranged Weapon, Direct§BB (AP:2, Demo:4)"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 2
+          },
+          "EW": {
+            "value": 6
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "1/0"
+          },
+          "maxDemoDrone": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
+          "ModelName": {
+            "value": "Demo Drone"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 5
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "TV": {
+            "value": 2
+          }
+        },
+        "text": "The Demo Drone may designate one enemy model as the primary target of its bomb if it is in base contact with that model.\n\nAfter the Demo Drone uses its weapon, it is destroyed and removed from the battlefield. Demo Drones destroyed in this way to not count towards an opponent’s victory points, such as from Pave the Way or Wipe Them Out."
+      },
+      "Drone§Drone, Hunter Killer": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Conscript",
+            "Model/Weapon Property§Vuln:H",
+            "Ranged Weapon, Direct§MMG, React"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 2
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "1/0"
+          },
+          "HT": {
+            "value": 0.5
+          },
+          "maxHunterKiller": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
+          "ModelName": {
+            "value": "Hunter Killer"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {},
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 2
+          }
+        }
+      },
+      "Drone§Drone, Recon": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§TD",
+            "Model/Weapon Property§Conscript",
+            "Model/Weapon Property§Vuln:H"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Fortifications",
+              "UA: General Purpose"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 2
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 6
+          },
+          "H/S": {
+            "value": "1/0"
+          },
+          "HT": {
+            "value": 0.5
+          },
+          "maxReconDrone": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
+          "ModelName": {
+            "value": "Recon Drone"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 999
+          },
+          "Roles": {
+            "value": "RC+, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 2
+          }
+        }
+      },
       "Gear§Bricklayer": {
         "allowed": {
           "items": [
