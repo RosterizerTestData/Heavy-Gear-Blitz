@@ -19,6 +19,11 @@
     "assetTaxonomy": {},
     "assetCatalog": {
       "Gear§Bricklayer": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
         "assets": {
           "traits": [
             "Model/Weapon Property§Hands",
@@ -137,6 +142,9 @@
         }
       },
       "Gear§Bricklayer UC": {
+        "allowed": {
+          "items": []
+        },
         "assets": {
           "traits": [
             "Model/Weapon Property§Hands",
@@ -256,6 +264,9 @@
         }
       },
       "Gear§Bricklayer, Assault": {
+        "allowed": {
+          "items": []
+        },
         "assets": {
           "traits": [
             "Model/Weapon Property§Hands",
@@ -1413,6 +1424,11 @@
         }
       },
       "Gear§Grizzly, Engineering": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
         "assets": {
           "traits": [
             "Model/Weapon Property§Hands",
@@ -7147,6 +7163,11 @@
         }
       },
       "Vehicle§Camel (Stinger)": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
         "assets": {
           "traits": [
             "Ranged Weapon, Direct§LMG (T)",
@@ -7244,6 +7265,11 @@
         }
       },
       "Vehicle§Camel Truck": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
         "assets": {
           "traits": [
             "Model/Weapon Property§Supply",
