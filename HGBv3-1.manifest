@@ -9934,6 +9934,101 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect, Swappable§HRP, Task Built": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct, Swappable§HMG, Task Built"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "HMG"
+              }
+            ]
+          },
+          "setDesignationWithoutReact": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "HRP"
+              }
+            ],
+            "evals": []
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Heavy Rocket Pack"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Swap to:": {
+            "ranks": {
+              "Rocket Pack": {
+                "order": 0
+              },
+              "HMG": {
+                "order": 1
+              }
+            },
+            "value": "Rocket Pack"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect, Swappable§LAAM": {
         "assets": {
           "traits": [
@@ -10517,6 +10612,101 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct, Swappable§HMG, Task Built"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "HMG"
+              }
+            ]
+          },
+          "setDesignationWithoutReact": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "LRP"
+              }
+            ],
+            "evals": []
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Light Rocket Pack"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Swap to:": {
+            "ranks": {
+              "Rocket Pack": {
+                "order": 0
+              },
+              "HMG": {
+                "order": 1
+              }
+            },
+            "value": "Rocket Pack"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect, Swappable§MAAM": {
         "assets": {
           "traits": [
@@ -10906,6 +11096,101 @@
               }
             },
             "value": "MHG"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct, Swappable§HMG, Task Built"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "HMG"
+              }
+            ]
+          },
+          "setDesignationWithoutReact": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "MRP"
+              }
+            ],
+            "evals": []
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Medium Rocket Pack"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "Swap to:": {
+            "ranks": {
+              "Rocket Pack": {
+                "order": 0
+              },
+              "HMG": {
+                "order": 1
+              }
+            },
+            "value": "Rocket Pack"
           }
         }
       },
@@ -14492,6 +14777,95 @@
           }
         }
       },
+      "Ranged Weapon, Direct, Swappable§HMG, Task Built": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split"
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "Rocket Pack"
+              }
+            ]
+          },
+          "setDesignationWithoutReact": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "HMG"
+              }
+            ],
+            "evals": []
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "5"
+          },
+          "Name": {
+            "value": "Heavy Machine Gun"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "Swap to:": {
+            "ranks": {
+              "Rocket Pack": {
+                "order": 0
+              },
+              "HMG": {
+                "order": 1
+              }
+            },
+            "value": "HMG"
+          }
+        }
+      },
       "Ranged Weapon, Direct, Swappable§HPZ": {
         "assets": {
           "traits": [
@@ -15515,6 +15889,67 @@
           },
           "Traits": {
             "value": ""
+          }
+        }
+      },
+      "Ranged Weapon, Direct§HMG +1TV": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split"
+          ]
+        },
+        "rules": {
+          "setDesignationWithoutReact": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "HMG"
+              }
+            ],
+            "evals": []
+          }
+        },
+        "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
+          "Damage": {
+            "value": "5"
+          },
+          "Mode": {
+            "value": "Direct"
+          },
+          "Name": {
+            "value": "Heavy Machine Gun"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "Traits": {
+            "value": ""
+          },
+          "TV": {
+            "value": 1
           }
         }
       },
