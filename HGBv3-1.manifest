@@ -4867,48 +4867,6 @@
       }
     },
     "assetCatalog": {
-      "Airstrike Counter§Airstrike, High Explosives": {
-        "assets": {
-          "traits": [
-            "Ranged Weapon, Direct§BB (AP:2, Guided)"
-          ]
-        },
-        "stats": {
-          "GU": {
-            "value": 4
-          },
-          "Model": {
-            "value": "High Explosives"
-          },
-          "PI": {
-            "value": 4
-          },
-          "TV": {
-            "value": 4
-          }
-        }
-      },
-      "Airstrike Counter§Airstrike, Napalm": {
-        "assets": {
-          "traits": [
-            "Ranged Weapon, Direct§BB (AI, Fire, Guided)"
-          ]
-        },
-        "stats": {
-          "GU": {
-            "value": 4
-          },
-          "Model": {
-            "value": "Napalm"
-          },
-          "PI": {
-            "value": 4
-          },
-          "TV": {
-            "value": 4
-          }
-        }
-      },
       "Combat Group§Airstrikes": {
         "allowed": {
           "classifications": [
