@@ -3678,8 +3678,12 @@
         "removed": {
           "stats": {
             "Range": {},
-            "Damage": {},
-            "Mode": {}
+            "Damage": {}
+          }
+        },
+        "stats": {
+          "StatColumn": {
+            "value": "React"
           }
         },
         "templateClass": "Ranged Weapon"
@@ -9334,6 +9338,10 @@
       "Model/Weapon Property§Vuln:H": {
         "text": "**Vulnerable to Haywire**  \nThis model automatically suffers damage from the \nHaywire trait and ECM attacks without a roll."
       },
+      "Ranged Weapon, Combo§HAC/LGL": {},
+      "Ranged Weapon, Combo§HAC/MFL": {},
+      "Ranged Weapon, Combo§HRC (Apex)/HFC": {},
+      "Ranged Weapon, Combo§HSMG/LFC": {},
       "Ranged Weapon, Combo§LAC/LGL": {
         "assets": {
           "traits": [
@@ -9348,6 +9356,12 @@
           }
         }
       },
+      "Ranged Weapon, Combo§LSMG/LAPGL": {},
+      "Ranged Weapon, Combo§MAC/LFC": {},
+      "Ranged Weapon, Combo§MAC/LFL": {},
+      "Ranged Weapon, Combo§MAC/LGL": {},
+      "Ranged Weapon, Combo§MRF/LAPGL": {},
+      "Ranged Weapon, Combo§MSMG/LAPGL": {},
       "Ranged Weapon, Direct or Indirect, Link-upgrade§LAAM (Link)": {
         "assets": {
           "traits": [
