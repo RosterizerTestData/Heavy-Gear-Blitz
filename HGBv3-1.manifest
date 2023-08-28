@@ -497,7 +497,7 @@
                     "traits"
                   ]
                 ],
-                "value": "Model/Weapon Property, Variable§Reach:X"
+                "value": "Model/Weapon Property, Variable§Reach:X, Veteran"
               }
             ],
             "evals": [
@@ -533,53 +533,12 @@
             "failState": "pass",
             "order": 21
           },
-          "makeReachModifiedIfUpgraded": {
-            "actions": [
-              {
-                "actionType": "modify",
-                "iterations": 1,
-                "note": "Then increment the value of the Reach:X Modified stat.",
-                "paths": [
-                  [
-                    "{self}",
-                    "traits",
-                    "item",
-                    "Model/Weapon Property, Variable§Reach:X",
-                    "stats",
-                    "Modified",
-                    "value"
-                  ]
-                ],
-                "value": 1
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the +1 Reach upgrade is checked...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Vet: +1 Reach +1TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 148
-          },
           "makeReachUpgradeVisible": {
             "actions": [
               {
                 "actionType": "set",
                 "iterations": 1,
-                "note": "...and set its visibility to \"normal.\"",
+                "note": "...then set its visibility to \"normal.\"",
                 "paths": [
                   [
                     "{self}",
@@ -686,6 +645,22 @@
                   ]
                 ],
                 "value": 1
+              },
+              {
+                "actionable": true,
+                "min": 1,
+                "not": true,
+                "note": "...and this weapon doesn't already have Link...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "designation",
+                    "Link",
+                    "quantity"
+                  ]
+                ]
               }
             ],
             "evaluate": "AND",
@@ -709,14 +684,7 @@
                 },
                 "traits": [
                   {
-                    "trait": {
-                      "item": "Model/Weapon Property§Link",
-                      "stats": {
-                        "Modified": {
-                          "value": 1
-                        }
-                      }
-                    }
+                    "trait": "Model/Weapon Property§Link, Duelist"
                   }
                 ]
               }
@@ -2699,9 +2667,23 @@
           "propertyAppendDesignationToParentModifications": {
             "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the parent to modified...",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Modified",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
                 "actionType": "modify",
                 "iterations": 1,
-                "note": "...then append the asset's designation to the parent's Modifications stat.",
+                "note": "...and append the asset's designation to the parent's Modifications stat.",
                 "paths": [
                   [
                     "{parent}",
@@ -2733,7 +2715,6 @@
               },
               {
                 "actionable": true,
-                "min": 1,
                 "not": false,
                 "note": "...and the asset is \"modified\"...",
                 "operator": "AND",
@@ -2744,7 +2725,8 @@
                     "Modified",
                     "value"
                   ]
-                ]
+                ],
+                "value": "✓"
               }
             ],
             "evaluate": "AND",
@@ -2792,9 +2774,16 @@
           },
           "Modified": {
             "group": "Hidden",
-            "statType": "numeric",
-            "tracked": true,
-            "value": 0,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1
+              }
+            },
+            "statType": "rank",
+            "value": "-",
             "visibility": "hidden"
           }
         },
@@ -3042,6 +3031,22 @@
                   ]
                 ],
                 "value": "✓"
+              },
+              {
+                "actionable": true,
+                "min": 1,
+                "not": true,
+                "note": "...and there isn't already an Auto...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "designation",
+                    "Auto",
+                    "quantity"
+                  ]
+                ]
               }
             ],
             "evaluate": "AND",
@@ -3078,18 +3083,99 @@
                   ]
                 ],
                 "value": "✓"
+              },
+              {
+                "actionable": true,
+                "min": 1,
+                "not": true,
+                "note": "...and the weapon doesn't already have Stable...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "designation",
+                    "Stable",
+                    "quantity"
+                  ]
+                ]
               }
             ],
             "evaluate": "AND",
             "failState": "pass",
             "order": 84
           },
-          "increaseTVisDuelistStable&Combo": {
+          "autoComboPartsAreAuto": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set self's Auto to checked...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Auto +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and change the upgrade's name to Auto.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Auto +1TV",
+                    "label"
+                  ]
+                ],
+                "value": "Auto"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the parent is a Combo container...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "classification"
+                  ]
+                ],
+                "value": "Ranged Weapon, Combo"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and the parent's Auto upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Auto +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 84
+          },
+          "duelistAutoCosts1TV": {
             "actions": [
               {
                 "actionType": "modify",
                 "iterations": 1,
-                "note": "..then increment TV.",
+                "note": "...then modify TV by 1.",
                 "paths": [
                   [
                     "{self}",
@@ -3104,9 +3190,70 @@
             "evals": [
               {
                 "actionable": true,
-                "min": 1,
                 "not": false,
-                "note": "If this is a Combo weapon...",
+                "note": "If it isn't any part of a Combo, and the Auto upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "duelistAutoEvals",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "duelistAutoEvals",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or if it is a Combo container, and the Auto upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "duelistAutoEvals",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "duelistAutoEvals",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 85
+          },
+          "duelistAutoEvals": {
+            "evals": [
+              {
+                "actionable": false,
+                "min": 1,
+                "not": true,
+                "note": "True if it isn't any part of a Combo.",
                 "operator": "AND",
                 "paths": [
                   [
@@ -3117,9 +3264,60 @@
                 ]
               },
               {
+                "actionable": false,
+                "not": false,
+                "note": "True if it is a Combo container weapon.",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "classification"
+                  ]
+                ],
+                "value": "Ranged Weapon, Combo"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "True if the Auto upgrade has been checked.",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Auto +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 84
+          },
+          "duelistComboStableCosts3TV": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then modify TV by 3.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "TV",
+                    "value"
+                  ]
+                ],
+                "value": 3
+              }
+            ],
+            "evals": [
+              {
                 "actionable": true,
                 "not": false,
-                "note": "...and the Stable upgrade is checked...",
+                "note": "If the Stable upgrade is checked...",
                 "operator": "AND",
                 "paths": [
                   [
@@ -3130,6 +3328,72 @@
                   ]
                 ],
                 "value": "✓"
+              },
+              {
+                "actionable": true,
+                "contains": true,
+                "not": false,
+                "note": "...and this weapon is a Combo...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "classification"
+                  ]
+                ],
+                "value": "Ranged Weapon, Combo"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 84
+          },
+          "duelistStableCosts2TV": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then modify TV by 2.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "TV",
+                    "value"
+                  ]
+                ],
+                "value": 2
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Stable upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Stable +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "min": 1,
+                "not": true,
+                "note": "...and this isn't any part of a Combo...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "/"
+                  ]
+                ]
               }
             ],
             "evaluate": "AND",
@@ -3193,8 +3457,10 @@
                 "paths": [
                   [
                     "{self}",
-                    "tally",
-                    "Auto"
+                    "assets",
+                    "designation",
+                    "Auto",
+                    "quantity"
                   ]
                 ]
               }
@@ -3245,8 +3511,10 @@
                 "paths": [
                   [
                     "{self}",
-                    "tally",
-                    "Stable"
+                    "assets",
+                    "designation",
+                    "Stable",
+                    "quantity"
                   ]
                 ]
               }
@@ -3291,6 +3559,71 @@
             "evaluate": "AND",
             "failState": "pass",
             "order": 141
+          },
+          "stableComboPartsAreStable": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set self's Stable to checked...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Stable +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and change the upgrade's name to Stable.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Stable +2TV",
+                    "label"
+                  ]
+                ],
+                "value": "Stable"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the parent is a Combo container...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "classification"
+                  ]
+                ],
+                "value": "Ranged Weapon, Combo"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and the parent's Stable upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Stable +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 84
           }
         },
         "stats": {
@@ -3311,9 +3644,7 @@
               },
               "✓": {
                 "order": 1,
-                "tracking": {
-                  "TV": 1
-                }
+                "tracking": {}
               }
             },
             "statType": "rank",
@@ -3330,9 +3661,7 @@
               },
               "✓": {
                 "order": 1,
-                "tracking": {
-                  "TV": 2
-                }
+                "tracking": {}
               }
             },
             "statType": "rank",
@@ -3341,6 +3670,19 @@
           }
         },
         "templateClass": "Weapon"
+      },
+      "Ranged Weapon, Combo": {
+        "assets": {
+          "traits": []
+        },
+        "removed": {
+          "stats": {
+            "Range": {},
+            "Damage": {},
+            "Mode": {}
+          }
+        },
+        "templateClass": "Ranged Weapon"
       },
       "Ranged Weapon, Direct": {
         "stats": {
@@ -3380,17 +3722,21 @@
             "evals": [
               {
                 "actionable": true,
-                "min": 1,
                 "not": false,
-                "note": "If the parent is a Vet...",
+                "note": "If the model is a Vet...",
                 "operator": "AND",
                 "paths": [
                   [
-                    "{parent}",
-                    "tally",
-                    "Vet"
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
                   ]
-                ]
+                ],
+                "value": true
               },
               {
                 "actionable": true,
@@ -3403,6 +3749,22 @@
                     "{self}",
                     "tally",
                     "/"
+                  ]
+                ]
+              },
+              {
+                "actionable": true,
+                "min": 1,
+                "not": true,
+                "note": "...and doesn't already have Link...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "designation",
+                    "Link",
+                    "quantity"
                   ]
                 ]
               }
@@ -3430,7 +3792,7 @@
                       "item": "Model/Weapon Property§Link",
                       "stats": {
                         "Modified": {
-                          "value": 1
+                          "value": "✓"
                         }
                       }
                     }
@@ -3519,7 +3881,7 @@
                       "item": "Model/Weapon Property§AA",
                       "stats": {
                         "Modified": {
-                          "value": 1
+                          "value": "✓"
                         }
                       }
                     }
@@ -3542,7 +3904,7 @@
               {
                 "actionType": "set",
                 "iterations": 1,
-                "note": "...reveal the Dual Guns upgrade.",
+                "note": "...reveal the upgrade.",
                 "paths": [
                   [
                     "{self}",
@@ -3557,17 +3919,21 @@
             "evals": [
               {
                 "actionable": true,
-                "min": 1,
                 "not": false,
-                "note": "If the parent is a Vet...",
+                "note": "If the model is a Vet...",
                 "operator": "AND",
                 "paths": [
                   [
-                    "{parent}",
-                    "tally",
-                    "Vet"
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
                   ]
-                ]
+                ],
+                "value": true
               },
               {
                 "actionable": true,
@@ -3580,6 +3946,22 @@
                     "{self}",
                     "tally",
                     "/"
+                  ]
+                ]
+              },
+              {
+                "actionable": true,
+                "min": 1,
+                "not": true,
+                "note": "...and doesn't already have Link...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "designation",
+                    "Link",
+                    "quantity"
                   ]
                 ]
               }
@@ -3607,7 +3989,7 @@
                       "item": "Model/Weapon Property§Link",
                       "stats": {
                         "Modified": {
-                          "value": 1
+                          "value": "✓"
                         }
                       }
                     }
@@ -3644,17 +4026,21 @@
             "evals": [
               {
                 "actionable": true,
-                "min": 1,
                 "not": false,
-                "note": "If the parent is a Vet...",
+                "note": "If the model is a Vet...",
                 "operator": "AND",
                 "paths": [
                   [
-                    "{parent}",
-                    "tally",
-                    "Vet"
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
                   ]
-                ]
+                ],
+                "value": true
               },
               {
                 "actionable": true,
@@ -3667,6 +4053,22 @@
                     "{self}",
                     "tally",
                     "/"
+                  ]
+                ]
+              },
+              {
+                "actionable": true,
+                "min": 1,
+                "not": true,
+                "note": "...and doesn't already have Link...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "designation",
+                    "Link",
+                    "quantity"
                   ]
                 ]
               }
@@ -3694,7 +4096,7 @@
                       "item": "Model/Weapon Property§Link",
                       "stats": {
                         "Modified": {
-                          "value": 1
+                          "value": "✓"
                         }
                       }
                     }
@@ -4248,6 +4650,127 @@
                   ]
                 ],
                 "value": "✓"
+              },
+              {
+                "actionable": true,
+                "min": 1,
+                "not": true,
+                "note": "...and there isn't already a Precise...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "designation",
+                    "Precise",
+                    "quantity"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 84
+          },
+          "duelistComboPreciseCosts2TV": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then modify TV by 2.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "TV",
+                    "value"
+                  ]
+                ],
+                "value": 2
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Precise upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Precise +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "contains": true,
+                "not": false,
+                "note": "...and this weapon is a Combo...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "classification"
+                  ]
+                ],
+                "value": "Ranged Weapon, Combo"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 84
+          },
+          "duelistPreciseCosts1TV": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then modify TV by 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "TV",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Precise upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Precise +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "contains": true,
+                "min": 1,
+                "not": true,
+                "note": "...and this isn't any part of a Combo...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "/"
+                  ]
+                ]
               }
             ],
             "evaluate": "AND",
@@ -4345,7 +4868,6 @@
               },
               {
                 "actionable": true,
-                "min": 1,
                 "not": false,
                 "note": "...and the weapon has been modified...",
                 "operator": "AND",
@@ -4356,64 +4878,139 @@
                     "Modified",
                     "value"
                   ]
-                ]
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 165
-          },
-          "increaseTVifDuelistPreciseAndCombo": {
-            "actions": [
-              {
-                "actionType": "modify",
-                "iterations": 1,
-                "note": "..then increment TV.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "TV",
-                    "value"
-                  ]
-                ],
-                "value": 1
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "min": 1,
-                "not": false,
-                "note": "If this is a Combo weapon...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "/"
-                  ]
-                ]
-              },
-              {
-                "actionable": true,
-                "not": false,
-                "note": "...and the Precise upgrade is checked...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Precise +1TV",
-                    "value"
-                  ]
                 ],
                 "value": "✓"
               }
             ],
             "evaluate": "AND",
             "failState": "pass",
-            "order": 84
+            "order": 165
+          },
+          "isThisAComboOrPartOrWhat": {
+            "evals": [
+              {
+                "actionable": false,
+                "not": false,
+                "note": "True if this is a Combo container.",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "classification"
+                  ]
+                ],
+                "value": "Ranged Weapon, Combo"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "True if this is a Combo part.",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "classification"
+                  ]
+                ],
+                "value": "Ranged Weapon, Combo"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "True if the parent is not a Duelist.",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Duelist",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "True if the parent does not have the Precise upgrade.",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Precise +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 101
+          },
+          "isThisAVetsWeapon": {
+            "evals": [
+              {
+                "actionable": false,
+                "min": 1,
+                "not": false,
+                "note": "Is the Parent model a Vet?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ]
+              },
+              {
+                "actionable": false,
+                "min": 1,
+                "not": false,
+                "note": "If this happens to be part of a Combo weapon, is the parent model a Vet?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "{parent}",
+                    "tally",
+                    "Vet"
+                  ]
+                ]
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Are either of the above true?",
+                "operator": "OR",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 79
           },
           "makePreciseForDuelistsVisible": {
             "actions": [
@@ -4457,8 +5054,10 @@
                 "paths": [
                   [
                     "{self}",
-                    "tally",
-                    "Precise"
+                    "assets",
+                    "designation",
+                    "Precise",
+                    "quantity"
                   ]
                 ]
               }
@@ -4466,6 +5065,97 @@
             "evaluate": "AND",
             "failState": "pass",
             "order": 83
+          },
+          "noDuelistNoPrecise": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then uncheck the Precise upgrade...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Precise +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set it to dynamic again.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Precise +1TV",
+                    "dynamic"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the parent isn't a Duelist...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAComboOrPartOrWhat",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAComboOrPartOrWhat",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or the Combo container doesn't have the Precise upgrade...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAComboOrPartOrWhat",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAComboOrPartOrWhat",
+                    "evals",
+                    "3",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 102
           },
           "notModifiedConcatenateOrClauses": {
             "actions": [
@@ -4520,7 +5210,6 @@
               },
               {
                 "actionable": true,
-                "min": 1,
                 "not": true,
                 "note": "...and the weapon has NOT been modified...",
                 "operator": "AND",
@@ -4531,7 +5220,8 @@
                     "Modified",
                     "value"
                   ]
-                ]
+                ],
+                "value": "✓"
               }
             ],
             "evaluate": "AND",
@@ -4574,7 +5264,7 @@
                 "actionable": true,
                 "min": 1,
                 "not": false,
-                "note": "If the model has an OR...",
+                "note": "If the weapon has an OR...",
                 "operator": "AND",
                 "paths": [
                   [
@@ -4583,11 +5273,89 @@
                     "(OR)"
                   ]
                 ]
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...and it is NOT a Combo container...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "classification"
+                  ]
+                ],
+                "value": "Ranged Weapon, Combo"
               }
             ],
             "evaluate": "AND",
             "failState": "pass",
             "order": 164
+          },
+          "preciseComboPartsArePrecise": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set self's Precise to checked...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Precise +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and change the upgrade's name to Precise.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Precise +1TV",
+                    "label"
+                  ]
+                ],
+                "value": "Precise"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the parent is a Combo container...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "classification"
+                  ]
+                ],
+                "value": "Ranged Weapon, Combo"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and the parent's Precise upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Precise +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 84
           },
           "renameDuelistPreciseUpgradeIfCombo": {
             "actions": [
@@ -4719,6 +5487,7 @@
               {
                 "actionType": "modify",
                 "iterations": 1,
+                "note": "...then modify the designation with the contents of Modifications.",
                 "paths": [
                   [
                     "{self}",
@@ -4738,8 +5507,8 @@
             "evals": [
               {
                 "actionable": true,
-                "min": 1,
                 "not": false,
+                "note": "If the weapon is Modified...",
                 "operator": "AND",
                 "paths": [
                   [
@@ -4748,7 +5517,8 @@
                     "Modified",
                     "value"
                   ]
-                ]
+                ],
+                "value": "✓"
               }
             ],
             "evaluate": "AND",
@@ -4783,10 +5553,16 @@
           },
           "Modified": {
             "group": "Hidden",
-            "statOrder": 1,
-            "statType": "numeric",
-            "tracked": true,
-            "value": 0,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1
+              }
+            },
+            "statType": "rank",
+            "value": "-",
             "visibility": "hidden"
           },
           "Name": {
@@ -4813,9 +5589,7 @@
               },
               "✓": {
                 "order": 1,
-                "tracking": {
-                  "TV": 1
-                }
+                "tracking": {}
               }
             },
             "statType": "rank",
@@ -5034,7 +5808,7 @@
               "item": "Model/Weapon Property, Variable§Demo:X",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 },
                 "NameVariable": {
                   "value": 4
@@ -5146,7 +5920,7 @@
               "item": "Model/Weapon Property§Link",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             },
@@ -5154,7 +5928,7 @@
               "item": "Model/Weapon Property§Split",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -5435,6 +6209,37 @@
         },
         "text": "- Once per round, for each duelist, whenever a duelist\ndamages an enemy model, give one SP to one model\nin formation with the duelist.\n- This SP does not convert to a CP. If not used, this SP\nis removed during cleanup."
       },
+      "Gear§Example": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Combo§LAC/LGL"
+          ]
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "ModelName": {
+            "value": "Example Gear"
+          },
+          "Roles": {
+            "value": "GP+, FS, SK"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
       "Leader§2iC": {
         "stats": {
           "Initiative": {
@@ -5657,7 +6462,7 @@
                   "value": 1
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             },
@@ -5668,7 +6473,7 @@
                   "value": 1
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -6139,7 +6944,7 @@
                   "value": 1
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             },
@@ -6147,7 +6952,7 @@
               "item": "Model/Weapon Property, Variable§Demo:X",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 },
                 "NameVariable": {
                   "value": 4
@@ -6290,7 +7095,7 @@
                   "value": 1
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             },
@@ -6301,7 +7106,7 @@
                   "value": 1
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -6433,7 +7238,7 @@
                   "value": 4
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -6565,7 +7370,7 @@
                   "value": 1
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             },
@@ -6573,7 +7378,7 @@
               "item": "Model/Weapon Property, Variable§Demo:X",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 },
                 "NameVariable": {
                   "value": 4
@@ -6942,7 +7747,7 @@
                   "value": 1
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -7216,7 +8021,7 @@
               "item": "Model/Weapon Property, Variable§Fire:X",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 },
                 "NameVariable": {
                   "value": 2
@@ -7386,7 +8191,7 @@
               "item": "Model/Weapon Property, Variable§AP:X",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 },
                 "NameVariable": {
                   "value": 1
@@ -7400,7 +8205,7 @@
                   "value": 1
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -7646,7 +8451,7 @@
               "item": "Model/Weapon Property§Link",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             },
@@ -7657,7 +8462,7 @@
                   "value": 4
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -8049,6 +8854,52 @@
         },
         "text": "This melee weapon can attack a target X inches from its base. This is not a ranged attack."
       },
+      "Model/Weapon Property, Variable§Reach:X, Veteran": {
+        "rules": {
+          "updateNameVariableFromParentMeleeReachStat": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "NameVariable",
+                    "value"
+                  ]
+                ],
+                "value": [
+                  "{parent}",
+                  "stats",
+                  "meleeReachStat",
+                  "value"
+                ]
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 143
+          }
+        },
+        "stats": {
+          "meleeReachStat": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 0,
+            "visibility": "hidden"
+          },
+          "Modified": {
+            "value": "✓"
+          },
+          "NameVariable": {
+            "format": "Reach:{v}"
+          }
+        },
+        "text": "This melee weapon can attack a target X inches from its base. This is not a ranged attack."
+      },
       "Model/Weapon Property, Variable§Sensors:X": {
         "stats": {
           "NameVariable": {
@@ -8061,6 +8912,11 @@
         "text": "This trait is always accompanied by multiple ammunition \ntypes or additional firing modes. The player must choose \none type to use when attacking."
       },
       "Model/Weapon Property§/": {
+        "removed": {
+          "rules": {
+            "updateParentStatTraits": {}
+          }
+        },
         "text": "**Combination Weapon**  \nWeapons separated by a forward slash ( / ) are combination \nweapons. One example is the LAC/LGL. This would be a \nlight autocannon with a light grenade launcher (usually \nunderslung). This is there more as a hobby reference. The \nspecific part(s) that represents a combination weapon is \ndifferent from other weapons. For example, a LAC/LGL is \nvisually distinguishable from a LAC.\n\nEach weapon belonging to the combination weapon \nworks independently from the other. Firing each weapon \nrequires its own Action and they do not fire together just \nbecause they are a combination weapon. However, some \nupgrades, such as a few found in the duelist upgrade \noptions, do pertain to upgrading combination weapons."
       },
       "Model/Weapon Property§AA": {
@@ -8114,7 +8970,7 @@
         },
         "stats": {
           "Modified": {
-            "value": 1
+            "value": "✓"
           }
         },
         "text": "A weapon with this trait may be used for retaliation once \nper round without spending an action point. If this is a \ncombination weapon, then only one of the weapons may \nbe used in this way per round."
@@ -8284,6 +9140,35 @@
       "Model/Weapon Property§Link": {
         "text": "Weapons with the Link trait add a +1D6 modifier to any \nattack roll made with this weapon."
       },
+      "Model/Weapon Property§Link, Duelist": {
+        "rules": {
+          "renameLink": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Link"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Modified": {
+            "value": "✓"
+          }
+        },
+        "text": "Weapons with the Link trait add a +1D6 modifier to any \nattack roll made with this weapon."
+      },
       "Model/Weapon Property§Lumbering": {
         "text": "This model does not receive the +1D6 defense roll \nmodifier for being at top speed."
       },
@@ -8320,7 +9205,7 @@
         },
         "stats": {
           "Modified": {
-            "value": 1
+            "value": "✓"
           }
         },
         "text": "Ranged weapons with the Precise trait add +1 to the result \nrolled (+1 R) when in optimal range.\n\nMelee weapons with the Precise trait add +1 to the result \nrolled (+1 R).\n\nMultiple sources of Precise are not cumulative."
@@ -8400,7 +9285,7 @@
         },
         "stats": {
           "Modified": {
-            "value": 1
+            "value": "✓"
           }
         },
         "text": "This model receives +1D6 to direct and indirect attack \nrolls while at combat speed or at top speed.\n\nMultiple sources of Stable are not cumulative."
@@ -8449,6 +9334,20 @@
       "Model/Weapon Property§Vuln:H": {
         "text": "**Vulnerable to Haywire**  \nThis model automatically suffers damage from the \nHaywire trait and ECM attacks without a roll."
       },
+      "Ranged Weapon, Combo§LAC/LGL": {
+        "assets": {
+          "traits": [
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC, Combo Part",
+            "Model/Weapon Property§/",
+            "Ranged Weapon, Direct or Indirect, Link-upgrade§LGL, Combo Part"
+          ]
+        },
+        "stats": {
+          "Name": {
+            "value": "Combo LAC & LGL"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect, Link-upgrade§LAAM (Link)": {
         "assets": {
           "traits": [
@@ -8458,7 +9357,7 @@
               "item": "Model/Weapon Property§Link",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -8510,7 +9409,7 @@
               "item": "Model/Weapon Property§Link",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -8567,6 +9466,70 @@
           },
           "Range": {
             "value": "6-12/24"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect, Link-upgrade§LGL, Combo Part": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§/"
+          ]
+        },
+        "rules": {
+          "setDesignationWithoutReact": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "LGL"
+              }
+            ],
+            "evals": []
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Light Grenade Launcher"
+          },
+          "Range": {
+            "value": "6-12/24"
+          },
+          "StatColumn": {
+            "value": "React"
           }
         }
       },
@@ -9124,7 +10087,7 @@
               "item": "Model/Weapon Property, Variable§LA:X",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 },
                 "NameVariable": {
                   "value": 2
@@ -9382,7 +10345,7 @@
                   "value": 2
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -10631,7 +11594,7 @@
               "item": "Model/Weapon Property§T",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             },
@@ -10639,7 +11602,7 @@
               "item": "Model/Weapon Property§Link",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -10774,7 +11737,7 @@
                   "value": 1
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -10866,7 +11829,7 @@
               "item": "Model/Weapon Property§T",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -11954,6 +12917,111 @@
           }
         }
       },
+      "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC, Combo Part": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            "Model/Weapon Property§(OR)",
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§/"
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "Burst:1, Split"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the explicit value of the second clause of the traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "OrClause",
+                    "value"
+                  ]
+                ],
+                "value": "Precise"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          },
+          "setDesignationWithoutReact": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "LAC"
+              }
+            ],
+            "evals": []
+          }
+        },
+        "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Light Autocannon"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC": {
         "assets": {
           "traits": [
@@ -12060,7 +13128,7 @@
               "item": "Model/Weapon Property§B",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -12172,7 +13240,7 @@
               "item": "Model/Weapon Property§L",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -12284,7 +13352,7 @@
               "item": "Model/Weapon Property§R",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -12993,7 +14061,7 @@
               "item": "Model/Weapon Property§T",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             },
@@ -13001,7 +14069,7 @@
               "item": "Model/Weapon Property§Link",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             },
@@ -13009,7 +14077,7 @@
               "item": "Model/Weapon Property§AA",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -14143,7 +15211,7 @@
               "item": "Model/Weapon Property§AI",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             },
@@ -14154,7 +15222,7 @@
                   "value": 2
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             },
@@ -14162,7 +15230,7 @@
               "item": "Model/Weapon Property§Guided",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -14219,7 +15287,7 @@
                   "value": 2
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             },
@@ -14230,7 +15298,7 @@
                   "value": 4
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -14287,7 +15355,7 @@
                   "value": 2
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             },
@@ -14295,7 +15363,7 @@
               "item": "Model/Weapon Property§Guided",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -14699,7 +15767,7 @@
                   "value": 1
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -14861,7 +15929,7 @@
               "item": "Model/Weapon Property§T",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -15570,7 +16638,7 @@
               "item": "Model/Weapon Property§AA",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -15663,7 +16731,7 @@
               "item": "Model/Weapon Property§T",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -16155,7 +17223,7 @@
               "item": "Model/Weapon Property§Silent",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -16293,7 +17361,7 @@
               "item": "Model/Weapon Property§T",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -17350,7 +18418,15 @@
               }
             },
             "Model/Weapon Property§Blast",
-            "Model/Weapon Property§Guided"
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
           ]
         },
         "rules": {
@@ -17557,7 +18633,7 @@
               "item": "Model/Weapon Property§Brace",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -17943,7 +19019,7 @@
               "item": "Model/Weapon Property§Precise",
               "stats": {
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
@@ -17997,7 +19073,7 @@
                   "value": 1
                 },
                 "Modified": {
-                  "value": 1
+                  "value": "✓"
                 }
               }
             }
