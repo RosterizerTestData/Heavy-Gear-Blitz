@@ -9,40 +9,21 @@
   "wip": true,
   "dependencies": [
     {
-      "slug": "VUGK7N",
+      "slug": "T4RZPB",
       "name": "Core System",
       "game": "Heavy Gear Blitz! v3.1",
       "source": ""
     }
   ],
   "manifest": {
-    "assetTaxonomy": {},
+    "assetTaxonomy": {
+      "Veteran Model": {
+        "removed": {
+          "stats": {}
+        }
+      }
+    },
     "assetCatalog": {
-      "Gear§Bricklayer": {
-        "allowed": {
-          "items": [
-            "Ranged Weapon, Direct§HMG +1TV"
-          ]
-        }
-      },
-      "Gear§Bricklayer UC": {
-        "allowed": {
-          "items": []
-        }
-      },
-      "Gear§Bricklayer, Assault": {
-        "allowed": {
-          "items": []
-        }
-      },
-      "Gear§Example North Gear": {},
-      "Gear§Grizzly, Engineering": {
-        "allowed": {
-          "items": [
-            "Ranged Weapon, Direct§HMG +1TV"
-          ]
-        }
-      },
       "Gear§Hunter": {
         "assets": {
           "traits": [
@@ -204,6 +185,92 @@
           }
         }
       },
+      "Gear§Hunter (Bearhunter)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Vuln:H",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built",
+            "Ranged Weapon, Indirect§HIM"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Bearhunter"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/1"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Bearhunter"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
       "Gear§Hunter Gunner": {
         "assets": {
           "traits": [
@@ -360,7 +427,172 @@
             "value": 1
           },
           "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Hunter Para": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LATM (LA:2)",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHeadhunterIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Headhunter...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Para Headhunter"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Para Headhunter"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Headhunter Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Headhunter Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          },
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Para Hunter"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
             "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "Headhunter Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Para Hunter"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
           }
         }
       },
@@ -510,7 +742,7 @@
             "value": 1
           },
           "TV": {
-            "value": 6
+            "value": 8
           }
         }
       },
@@ -675,6 +907,857 @@
           }
         }
       },
+      "Gear§Hunter XMG, Arrow": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Shield",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1)",
+            "Ranged Weapon, Direct or Indirect, Swappable§LATM (LA:2)"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Arrow Hunter XMG"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Specialist Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "brawlStat": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Arrow Hunter XMG"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 11
+          }
+        }
+      },
+      "Gear§Hunter XMG, Assault": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Shield",
+            "Ranged Weapon, Direct§MSC (Precise)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1)",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Assault Hunter XMG"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Specialist Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "brawlStat": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Assault Hunter XMG"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 11
+          }
+        }
+      },
+      "Gear§Hunter XMG, Destroyer": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Shield",
+            "Ranged Weapon, Direct§MBZ",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Hunter"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Specialist Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "brawlStat": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Destroyer Hunter XMG"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
+      "Gear§Hunter XMG, Gunner": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Shield",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Hunter Gunner XMG"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Specialist Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "brawlStat": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Hunter Gunner XMG"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
+      "Gear§Hunter XMG, Rabid": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Shield",
+            "Ranged Weapon, Direct or Indirect, Link-upgrade§LGL, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Rabid Hunter XMG"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Specialist Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "brawlStat": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Rabid Hunter XMG"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
+      "Gear§Hunter XMG, Spearhead": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Shield",
+            "Model/Weapon Property§ECCM",
+            "Model/Weapon Property§Comms",
+            {
+              "item": "Model/Weapon Property§SatUp",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§HAC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Hunter"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Specialist Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "brawlStat": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Spearhead Hunter XMG"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
+      "Gear§Hunter XMG, Wildfire": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Shield",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1)",
+            "Ranged Weapon, Direct or Indirect§LAPR (Fire:1)"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Wildfire Hunter XMG"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Specialist Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "brawlStat": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Wildfire Hunter XMG"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
       "Gear§Hunter Zerstorer": {
         "assets": {
           "traits": [
@@ -809,6 +1892,92 @@
           },
           "Roles": {
             "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Hunter, Armored": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Lumbering",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built",
+            "Ranged Weapon, Indirect§HIM"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Armored Hunter"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/1"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Armored Hunter"
+          },
+          "MR": {
+            "value": 5
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
           },
           "strikeMax": {
             "value": 1
@@ -979,7 +2148,7 @@
             "value": 1
           },
           "TV": {
-            "value": 6
+            "value": 8
           }
         }
       },
@@ -1143,7 +2312,7 @@
             "value": 1
           },
           "TV": {
-            "value": 6
+            "value": 7
           }
         }
       },
@@ -1303,7 +2472,7 @@
             "value": 1
           },
           "TV": {
-            "value": 6
+            "value": 7
           }
         }
       },
@@ -1465,7 +2634,101 @@
             "value": 1
           },
           "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Hunter, Spearhead": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§SP:+1",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§SatUp",
+            "Model/Weapon Property§ECCM",
+            "Model/Weapon Property§Vuln:H",
+            "Ranged Weapon, Direct, AA-upgrade§HAC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Spearhead Hunter"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
             "value": 6
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Spearhead Hunter"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
           }
         }
       },
@@ -1630,66 +2893,3669 @@
             "value": 1
           },
           "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Jaguar": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose"
+            ]
+          }
+        },
+        "rules": {
+          "appendSeccomIfChecked": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...append \"Seccom\" to the designation...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Seccom"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...and to the model name stat.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Seccom"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 160
+          },
+          "eitherJaguarUpgradeBuffsEW": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then improve EW by 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": -1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 99
+          },
+          "renameJaguar": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Jaguar"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          },
+          "renameThunderJaguarIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Thunder Jaguar...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Thunder Jaguar"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Thunder Jaguar"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {},
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Jaguar"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK+, FS"
+          },
+          "Seccom Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 999
+          },
+          "Thunder Jaguar Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
+      "Gear§Jaguar, Arrow": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LATM",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose"
+            ]
+          }
+        },
+        "rules": {
+          "appendSeccomIfChecked": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...append \"Seccom\" to the designation...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Seccom"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...and to the model name stat.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Seccom"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 160
+          },
+          "eitherJaguarUpgradeBuffsEW": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then improve EW by 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": -1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 99
+          },
+          "renameJaguar": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Arrow Jaguar"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          },
+          "renameThunderJaguarIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Thunder Jaguar...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Arrow Thunder Jaguar"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Arrow Thunder Jaguar"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {},
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Arrow Jaguar"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "Seccom Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "Thunder Jaguar Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 11
+          }
+        }
+      },
+      "Gear§Jaguar, Assault": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct§MSC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose"
+            ]
+          }
+        },
+        "rules": {
+          "appendSeccomIfChecked": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...append \"Seccom\" to the designation...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Seccom"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...and to the model name stat.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Seccom"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 160
+          },
+          "eitherJaguarUpgradeBuffsEW": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then improve EW by 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": -1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 99
+          },
+          "renameJaguar": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Assault Jaguar"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          },
+          "renameThunderJaguarIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Thunder Jaguar...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Assault Thunder Jaguar"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Assault Thunder Jaguar"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {},
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Assault Jaguar"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "Seccom Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "Thunder Jaguar Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
+      "Gear§Jaguar, Destroyer": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct§MBZ",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose"
+            ]
+          }
+        },
+        "rules": {
+          "appendSeccomIfChecked": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...append \"Seccom\" to the designation...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Seccom"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...and to the model name stat.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Seccom"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 160
+          },
+          "eitherJaguarUpgradeBuffsEW": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then improve EW by 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": -1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 99
+          },
+          "renameJaguar": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Jaguar"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          },
+          "renameThunderJaguarIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Thunder Jaguar...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Destroyer Thunder Jaguar"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Destroyer Thunder Jaguar"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {},
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Destroyer Jaguar"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "Seccom Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "Thunder Jaguar Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
+      "Gear§Jaguar, Fire": {
+        "allowed": {
+          "items": []
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP (Link), Task Built",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose"
+            ]
+          }
+        },
+        "rules": {
+          "appendSeccomIfChecked": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...append \"Seccom\" to the designation...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Seccom"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...and to the model name stat.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Seccom"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 160
+          },
+          "eitherJaguarUpgradeBuffsEW": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then improve EW by 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": -1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 99
+          },
+          "renameJaguar": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Fire Jaguar"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          },
+          "renameThunderJaguarIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Thunder Jaguar...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Fire Thunder Jaguar"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Fire Thunder Jaguar"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {},
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Fire Jaguar"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "Seccom Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "Thunder Jaguar Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 11
+          }
+        }
+      },
+      "Gear§Jaguar, Flak": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC (AA)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose"
+            ]
+          }
+        },
+        "rules": {
+          "appendSeccomIfChecked": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...append \"Seccom\" to the designation...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Seccom"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...and to the model name stat.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Seccom"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 160
+          },
+          "eitherJaguarUpgradeBuffsEW": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then improve EW by 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": -1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 99
+          },
+          "renameJaguar": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Jaguar"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          },
+          "renameThunderJaguarIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Thunder Jaguar...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Flak Thunder Jaguar"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Flak Thunder Jaguar"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {},
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Flak Jaguar"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "Seccom Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "Thunder Jaguar Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
+      "Gear§Jaguar, Flash": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct, AA-upgrade§LLC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose"
+            ]
+          }
+        },
+        "rules": {
+          "appendSeccomIfChecked": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...append \"Seccom\" to the designation...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Seccom"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...and to the model name stat.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Seccom"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 160
+          },
+          "eitherJaguarUpgradeBuffsEW": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then improve EW by 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": -1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 99
+          },
+          "renameJaguar": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Flash Jaguar"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          },
+          "renameThunderJaguarIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Thunder Jaguar...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Flash Thunder Jaguar"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Flash Thunder Jaguar"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {},
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Flash Jaguar"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "Seccom Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "Thunder Jaguar Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 11
+          }
+        }
+      },
+      "Gear§Jaguar, Pathfinder": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct or Indirect§MHG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Ranged Weapon, Direct§HRF, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct, Swappable§MPZ",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: General Purpose"
+            ]
+          }
+        },
+        "rules": {
+          "appendSeccomIfChecked": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...append \"Seccom\" to the designation...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Seccom"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...and to the model name stat.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Seccom"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 160
+          },
+          "eitherJaguarUpgradeBuffsEW": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then improve EW by 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": -1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 99
+          },
+          "renameJaguar": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Pathfinder Jaguar"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          },
+          "renameThunderJaguarIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Thunder Jaguar...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Pathfinder Thunder Jaguar"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Pathfinder Thunder Jaguar"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {},
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Pathfinder Jaguar"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "Seccom Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "Thunder Jaguar Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 12
+          }
+        }
+      },
+      "Gear§Jaguar, Sniper": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct§HRF, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose"
+            ]
+          }
+        },
+        "rules": {
+          "appendSeccomIfChecked": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...append \"Seccom\" to the designation...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Seccom"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...and to the model name stat.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Seccom"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 160
+          },
+          "eitherJaguarUpgradeBuffsEW": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then improve EW by 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": -1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 99
+          },
+          "renameJaguar": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Sniper Jaguar"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          },
+          "renameThunderJaguarIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Thunder Jaguar...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Sniper Thunder Jaguar"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Sniper Thunder Jaguar"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {},
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Sniper Jaguar"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "Seccom Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "Thunder Jaguar Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 11
+          }
+        }
+      },
+      "Gear§Jaguar, Wildfire": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LAPR (Fire:1)",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose"
+            ]
+          }
+        },
+        "rules": {
+          "appendSeccomIfChecked": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...append \"Seccom\" to the designation...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Seccom"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...and to the model name stat.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Seccom"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 160
+          },
+          "eitherJaguarUpgradeBuffsEW": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then improve EW by 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": -1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or the Seccom Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Seccom Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 99
+          },
+          "renameJaguar": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Arrow Jaguar"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          },
+          "renameThunderJaguarIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Thunder Jaguar...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "WildfireThunder Jaguar"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Arrow Thunder Jaguar"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Thunder Jaguar Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Thunder Jaguar Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {},
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Wildfire Jaguar"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "Seccom Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "Thunder Jaguar Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
+      "Gear§Lynx": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Ranged Weapon, Direct, Link-upgrade§LSMG",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHeadhunterIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Headhunter...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Armored Lynx"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Armored Lynx"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Headhunter Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Armored Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 4
+          },
+          "Armored Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "Arm": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, Swappable§LPZ"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {},
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Lynx"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 4
+          }
+        }
+      },
+      "Gear§Para Hunter": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Combo§LAC/LGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LSG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHeadhunterIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Headhunter...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Para Headhunter"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Para Headhunter"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Headhunter Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Headhunter Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          },
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Hunter"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "Headhunter Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Para Hunter"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Para Hunter, Mortar": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LSG",
+            "Ranged Weapon, Indirect§LFM"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHeadhunterIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Headhunter...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Para Mortar Headhunter"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Para Mortar Headhunter"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Headhunter Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Headhunter Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          },
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Para Mortar Hunter"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "Headhunter Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Para Mortar Hunter"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Para Hunter, Strike": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct§LBZ",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LSG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHeadhunterIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Headhunter...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Para Strike Headhunter"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Para Strike Headhunter"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Headhunter Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Headhunter Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          },
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Para Strike Hunter"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "Headhunter Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Para Strike Hunter"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
             "value": 6
           }
         }
       },
-      "Ranged Weapon, Direct or Indirect, Swappable§HRP, Task Built": {
-        "assets": {
-          "traits": [
-            {
-              "item": "Model/Weapon Property, Variable§AOE:X",
-              "stats": {
-                "NameVariable": {
-                  "value": 3
-                }
-              }
-            },
-            {
-              "item": "Model/Weapon Property, Variable§AP:X",
-              "stats": {
-                "NameVariable": {
-                  "value": 1
-                }
-              }
-            }
+      "Gear§Para Hunter, Wildfire": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
           ]
         },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LSG",
+            "Ranged Weapon, Direct or Indirect§LAPR (Fire:1)",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
         "rules": {
-          "implementSwapTo": {
+          "renameHeadhunterIfChecked": {
             "actions": [
               {
                 "actionType": "set",
                 "iterations": 1,
-                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "note": "...then rename the model Headhunter...",
                 "paths": [
                   [
                     "{self}",
-                    "item"
+                    "designation"
                   ]
                 ],
-                "value": "Ranged Weapon, Direct, Swappable§HMG, Task Built"
+                "value": "Para Wildfire Headhunter"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Para Wildfire Headhunter"
               }
             ],
             "evals": [
               {
                 "actionable": true,
                 "not": false,
-                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "note": "If the Headhunter Upgrade is taken...",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Swap to:",
+                    "Headhunter Upgrade +1TV",
                     "value"
                   ]
                 ],
-                "value": "HMG"
+                "value": "✓"
               }
-            ]
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
           },
-          "setDesignationWithoutReact": {
+          "renameHunter": {
             "actions": [
               {
                 "actionType": "set",
@@ -1700,314 +6566,1328 @@
                     "designation"
                   ]
                 ],
-                "value": "HRP"
+                "value": "Para Wildfire Hunter"
               }
             ],
-            "evals": []
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
           }
         },
         "stats": {
-          "Damage": {
-            "value": "9"
+          "Actions": {
+            "value": 1
           },
-          "Name": {
-            "value": "Heavy Rocket Pack"
+          "Arm": {
+            "value": 6
           },
-          "Range": {
-            "value": "6-18/36"
+          "EW": {
+            "value": 6
           },
-          "Swap to:": {
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "Headhunter Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
             "ranks": {
-              "Rocket Pack": {
+              "-": {
                 "order": 0
               },
-              "HMG": {
-                "order": 1
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
               }
             },
-            "value": "Rocket Pack"
-          }
-        }
-      },
-      "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built": {
-        "assets": {
-          "traits": [
-            {
-              "item": "Model/Weapon Property, Variable§AOE:X",
-              "stats": {
-                "NameVariable": {
-                  "value": 3
-                }
-              }
-            },
-            {
-              "item": "Model/Weapon Property, Variable§AP:X",
-              "stats": {
-                "NameVariable": {
-                  "value": 1
-                }
-              }
-            }
-          ]
-        },
-        "rules": {
-          "implementSwapTo": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
-                "paths": [
-                  [
-                    "{self}",
-                    "item"
-                  ]
-                ],
-                "value": "Ranged Weapon, Direct, Swappable§HMG, Task Built"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Swap to:",
-                    "value"
-                  ]
-                ],
-                "value": "HMG"
-              }
-            ]
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
           },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LRP"
-              }
-            ],
-            "evals": []
-          }
-        },
-        "stats": {
-          "Damage": {
-            "value": "7"
+          "HT": {
+            "value": 1.5
           },
-          "Name": {
-            "value": "Light Rocket Pack"
+          "ModelName": {
+            "value": "Para Wildfire Hunter"
           },
-          "Range": {
-            "value": "6-18/36"
+          "MR": {
+            "value": 6
           },
-          "Swap to:": {
-            "ranks": {
-              "Rocket Pack": {
-                "order": 0
-              },
-              "HMG": {
-                "order": 1
-              }
-            },
-            "value": "Rocket Pack"
-          }
-        }
-      },
-      "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built": {
-        "assets": {
-          "traits": [
-            {
-              "item": "Model/Weapon Property, Variable§AOE:X",
-              "stats": {
-                "NameVariable": {
-                  "value": 3
-                }
-              }
-            },
-            {
-              "item": "Model/Weapon Property, Variable§AP:X",
-              "stats": {
-                "NameVariable": {
-                  "value": 1
-                }
-              }
-            }
-          ]
-        },
-        "rules": {
-          "implementSwapTo": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
-                "paths": [
-                  [
-                    "{self}",
-                    "item"
-                  ]
-                ],
-                "value": "Ranged Weapon, Direct, Swappable§HMG, Task Built"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Swap to:",
-                    "value"
-                  ]
-                ],
-                "value": "HMG"
-              }
-            ]
+          "PI": {
+            "value": 4
           },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MRP"
-              }
-            ],
-            "evals": []
-          }
-        },
-        "stats": {
-          "Damage": {
-            "value": "8"
+          "Roles": {
+            "value": "GP, SK, FS"
           },
-          "Name": {
-            "value": "Medium Rocket Pack"
-          },
-          "Range": {
-            "value": "6-18/36"
-          },
-          "Swap to:": {
-            "ranks": {
-              "Rocket Pack": {
-                "order": 0
-              },
-              "HMG": {
-                "order": 1
-              }
-            },
-            "value": "Rocket Pack"
-          }
-        }
-      },
-      "Ranged Weapon, Direct, Swappable§HMG, Task Built": {
-        "stats": {
-          "Swap to:": {
-            "ranks": {
-              "Rocket Pack": {
-                "order": 0
-              },
-              "HMG": {
-                "order": 1
-              }
-            },
-            "value": "HMG"
-          }
-        }
-      },
-      "Ranged Weapon, Direct§HMG +1TV": {
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AI",
-            {
-              "item": "Model/Weapon Property, Variable§Burst:X",
-              "stats": {
-                "NameVariable": {
-                  "value": 2
-                }
-              }
-            },
-            "Model/Weapon Property§Split"
-          ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HMG"
-              }
-            ],
-            "evals": []
-          }
-        },
-        "stats": {
-          "AMSCapableGuns": {
-            "group": "Hidden",
-            "statType": "numeric",
-            "tracked": true,
-            "value": 1,
-            "visibility": "hidden"
-          },
-          "Damage": {
-            "value": "5"
-          },
-          "Mode": {
-            "value": "Direct"
-          },
-          "Name": {
-            "value": "Heavy Machine Gun"
-          },
-          "Range": {
-            "value": "3-9/18"
-          },
-          "Traits": {
-            "value": ""
+          "strikeMax": {
+            "value": 1
           },
           "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Stripped-Down Hunter": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct§LAPGL",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHeadhunterIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Headhunter...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Stripped-Down Headhunter"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Stripped-Down Headhunter"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Headhunter Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Headhunter Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
             "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "Headhunter Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Stripped-Down Hunter"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 5
+          }
+        }
+      },
+      "Gear§Stripped-Down Hunter Gunner": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct§LAPGL",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHeadhunterIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Headhunter...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Stripped-Down Headhunter Gunner"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Stripped-Down Headhunter Gunner"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Headhunter Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Headhunter Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "Headhunter Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Stripped-Down Hunter Gunner"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 6
+          }
+        }
+      },
+      "Gear§Stripped-Down Hunter UC": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct, Link-upgrade§MFC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct§LAPGL",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHeadhunterIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Headhunter...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Stripped-Down Headhunter UC"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Stripped-Down Headhunter UC"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Headhunter Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Headhunter Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "Headhunter Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Stripped-Down Hunter UC"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 5
+          }
+        }
+      },
+      "Gear§Stripped-Down Hunter, Assault": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct§MSC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct§LAPGL",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHeadhunterIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Headhunter...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Stripped-Down Assault Headhunter"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Stripped-Down Assault Headhunter"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Headhunter Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Headhunter Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          },
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Stripped-Down Assault Hunter"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "Headhunter Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Stripped-Down Assault Hunter"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 6
+          }
+        }
+      },
+      "Gear§Stripped-Down Hunter, Destroyer": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct§MBZ",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct§LAPGL",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHeadhunterIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Headhunter...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Stripped-Down Destroyer Headhunter"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Stripped-Down Destroyer Headhunter"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Headhunter Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Headhunter Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          },
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Stripped-Down Destroyer Hunter"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "Headhunter Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Stripped-Down Destroyer Hunter"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 6
           }
         }
       },
       "Roster§Roster": {},
-      "Vehicle§Camel (Stinger)": {
-        "allowed": {
-          "items": [
-            "Ranged Weapon, Direct§HMG +1TV"
+      "Veteran Gear§Hunter Commando": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Field Armor",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Ranged Weapon, Direct§LBZ",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LSG",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built"
           ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHeadhunterIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Headhunter...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Headhunter Commando"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Headhunter Commando"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Headhunter Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Headhunter Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "Headhunter Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Hunter Commando"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
+          }
         }
       },
-      "Vehicle§Camel Truck": {
-        "allowed": {
-          "items": [
-            "Ranged Weapon, Direct§HMG +1TV"
+      "Veteran Gear§Hunter, Mountain": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Climber",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
+            "Ranged Weapon, Indirect§HIM"
           ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameHeadhunterIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Headhunter...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Mountain Headhunter"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Mountain Headhunter"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Headhunter Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Headhunter Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          },
+          "renameHunter": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Mountain Hunter"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "Headhunter Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Mountain Hunter"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
+      "Veteran Gear§Nemesis Jaguar": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LSG",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: General Purpose",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Nemesis Jaguar"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
+      "Veteran Gear§Nemesis Jaguar, Southern Special": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LSG",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise, Reach:1)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "renameNemesisJaguar": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Southern Special Nemesis Jaguar"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Southern Special Nemesis Jaguar"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 13
+          }
         }
       }
     },

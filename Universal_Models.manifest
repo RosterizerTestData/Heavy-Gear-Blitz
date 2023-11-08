@@ -9,7 +9,7 @@
   "wip": true,
   "dependencies": [
     {
-      "slug": "VUGK7N",
+      "slug": "T4RZPB",
       "name": "Core System",
       "game": "Heavy Gear Blitz! v3.1",
       "source": ""
@@ -18,6 +18,3619 @@
   "manifest": {
     "assetTaxonomy": {},
     "assetCatalog": {
+      "Airstrike Counter§Airstrike, High Explosives": {
+        "assets": {
+          "traits": [
+            "Ranged Weapon, Direct§BB (AP:2, Guided)"
+          ]
+        },
+        "stats": {
+          "GU": {
+            "value": 4
+          },
+          "Model": {
+            "value": "High Explosives"
+          },
+          "PI": {
+            "value": 4
+          },
+          "TV": {
+            "value": 4
+          }
+        }
+      },
+      "Airstrike Counter§Airstrike, Napalm": {
+        "assets": {
+          "traits": [
+            "Ranged Weapon, Direct§BB (AI, Fire, Guided)"
+          ]
+        },
+        "stats": {
+          "GU": {
+            "value": 4
+          },
+          "Model": {
+            "value": "Napalm"
+          },
+          "PI": {
+            "value": 4
+          },
+          "TV": {
+            "value": 4
+          }
+        }
+      },
+      "Cavalry§Armadillo Rider": {
+        "assets": {
+          "traits": [
+            "Ranged Weapon, Direct§MIW",
+            "Melee Weapon, Reach-upgrade§HICW",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Climber",
+            "Melee Weapon, Reach-upgrade§MICW (AP:1, Reach:1)"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Armadillo Rider"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 5
+          }
+        }
+      },
+      "Cavalry§Barnaby Rider": {
+        "assets": {
+          "traits": [
+            "Ranged Weapon, Direct§MIW",
+            "Melee Weapon, Reach-upgrade§HICW",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Climber",
+            "Model/Weapon Property§Agile"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 4
+          },
+          "EW": {
+            "value": 6
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Barnaby Rider"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 4
+          }
+        }
+      },
+      "Cavalry§Jackrabbit": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Ranged Weapon, Direct§LIW",
+            "Ranged Weapon, Direct or Indirect§LIGL",
+            "Melee Weapon, Reach-upgrade§LICW"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "teamsGetBetterH/S": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then append Team to the name...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Name",
+                    "value"
+                  ]
+                ],
+                "value": "Team"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the H/S value to 3/3.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "3/3"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If Team is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Team +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 85
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 3
+          },
+          "EW": {
+            "value": 6
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "2/1"
+          },
+          "HT": {
+            "value": 0.5
+          },
+          "ModelName": {
+            "value": "Jackrabbit"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 11
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP+, RC"
+          },
+          "Team +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 4
+          }
+        }
+      },
+      "Cavalry§Jackrabbit Recon": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Ranged Weapon, Direct§LIW",
+            "Melee Weapon, Reach-upgrade§LICW",
+            "Model/Weapon Property§TD",
+            "Model/Weapon Property§Comms"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "teamsGetBetterH/S": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then append Team to the name...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Name",
+                    "value"
+                  ]
+                ],
+                "value": "Team"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the H/S value to 3/3.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "3/3"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If Team is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Team +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 85
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 3
+          },
+          "EW": {
+            "value": 5
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "2/1"
+          },
+          "HT": {
+            "value": 0.5
+          },
+          "ModelName": {
+            "value": "Jackrabbit Recon"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 10
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP+, RC"
+          },
+          "Team +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 4
+          }
+        }
+      },
+      "Cavalry§Spitz Monowheel": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Ranged Weapon, Direct§LIW",
+            "Ranged Weapon, Direct or Indirect§LIGL",
+            "Melee Weapon, Reach-upgrade§LICW"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "teamsGetBetterH/S": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then append Team to the name...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Name",
+                    "value"
+                  ]
+                ],
+                "value": "Team"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the H/S value to 3/3.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "3/3"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If Team is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Team +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 85
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 4
+          },
+          "EW": {
+            "value": 5
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "2/1"
+          },
+          "HT": {
+            "value": 0.5
+          },
+          "ModelName": {
+            "value": "Spitz Monowheel"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 11
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP+, RC"
+          },
+          "Team +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 4
+          }
+        }
+      },
+      "Cavalry§Wallaby ATV": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Offroad",
+            "Ranged Weapon, Direct§LIW",
+            "Ranged Weapon, Direct or Indirect§LIGL",
+            "Melee Weapon, Reach-upgrade§LICW"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "teamsGetBetterH/S": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then append Team to the name...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Name",
+                    "value"
+                  ]
+                ],
+                "value": "Team"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the H/S value to 3/3.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "3/3"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If Team is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Team +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 85
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 3
+          },
+          "EW": {
+            "value": 6
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "2/1"
+          },
+          "HT": {
+            "value": 0.5
+          },
+          "ModelName": {
+            "value": "Wallaby ATV"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 10
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP+, RC"
+          },
+          "Team +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 4
+          }
+        }
+      },
+      "Drone§Drone, Demo": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Offroad",
+            "Model/Weapon Property§Conscript",
+            "Model/Weapon Property§Vuln:H",
+            "Ranged Weapon, Direct§BB (AP:2, Demo:4)"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 2
+          },
+          "EW": {
+            "value": 6
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "1/0"
+          },
+          "maxDemoDrone": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
+          "ModelName": {
+            "value": "Demo Drone"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 5
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "TV": {
+            "value": 2
+          }
+        },
+        "text": "The Demo Drone may designate one enemy model as the primary target of its bomb if it is in base contact with that model.\n\nAfter the Demo Drone uses its weapon, it is destroyed and removed from the battlefield. Demo Drones destroyed in this way to not count towards an opponent’s victory points, such as from Pave the Way or Wipe Them Out."
+      },
+      "Drone§Drone, Hunter Killer": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Conscript",
+            "Model/Weapon Property§Vuln:H",
+            "Ranged Weapon, Direct§MMG, React"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 2
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "1/0"
+          },
+          "HT": {
+            "value": 0.5
+          },
+          "maxHunterKiller": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
+          "ModelName": {
+            "value": "Hunter Killer"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {},
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 2
+          }
+        }
+      },
+      "Drone§Drone, Recon": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§TD",
+            "Model/Weapon Property§Conscript",
+            "Model/Weapon Property§Vuln:H"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Fortifications",
+              "UA: General Purpose"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 2
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 6
+          },
+          "H/S": {
+            "value": "1/0"
+          },
+          "HT": {
+            "value": 0.5
+          },
+          "maxReconDrone": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
+          "ModelName": {
+            "value": "Recon Drone"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 999
+          },
+          "Roles": {
+            "value": "RC+, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 2
+          }
+        }
+      },
+      "Gear§Bricklayer": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Repair",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Vuln:F",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Melee Weapon§LSE",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Bricklayer Upgrades": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "Hammer": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Reach:1, Demo:4)"
+                  }
+                ]
+              },
+              "Saw Blade": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Brawl:1, Demo:4)"
+                  }
+                ]
+              },
+              "Vibrosword": {
+                "order": 2,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "Hammer",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Bricklayer"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 5
+          }
+        }
+      },
+      "Gear§Bricklayer UC": {
+        "allowed": {
+          "items": []
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Repair",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Vuln:F",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Melee Weapon§LSE",
+            "Ranged Weapon, Direct, Link-upgrade§MFC"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Bricklayer Upgrades": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "Hammer": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Reach:1, Demo:4)"
+                  }
+                ]
+              },
+              "Saw Blade": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Brawl:1, Demo:4)"
+                  }
+                ]
+              },
+              "Vibrosword": {
+                "order": 2,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "Hammer",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "generalPurposeMax": {},
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Bricklayer"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 5
+          }
+        }
+      },
+      "Gear§Bricklayer, Assault": {
+        "allowed": {
+          "items": []
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Repair",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Vuln:F",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Melee Weapon§LSE",
+            "Ranged Weapon, Direct§MSC"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "renameAssaultBricklayer": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Assault Bricklayer"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Bricklayer Upgrades": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "Hammer": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Reach:1, Demo:4)"
+                  }
+                ]
+              },
+              "Saw Blade": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Brawl:1, Demo:4)"
+                  }
+                ]
+              },
+              "Vibrosword": {
+                "order": 2,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "Hammer",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Bricklayer"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 6
+          }
+        }
+      },
+      "Gear§Chargeur": {
+        "assets": {
+          "traits": [
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Repair"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Chargeur Upgrades": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "None": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Brawl:1, Demo:4)"
+                  }
+                ]
+              },
+              "Chainsword": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1, Reach:1)"
+                  }
+                ]
+              },
+              "Claw": {
+                "order": 2,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "None",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Chargeur"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 6
+          }
+        }
+      },
+      "Gear§Cobra, Engineering": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Repair",
+            "Model/Weapon Property§Vuln:F",
+            "Ranged Weapon, Indirect§HIM",
+            "Ranged Weapon, Direct or Indirect, Swappable§MHG",
+            "Melee Weapon§MSE"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "renameEngineeringCobra": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Engineering Cobra"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "Melee Weapon": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "Vibro-Blade": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB"
+                  }
+                ]
+              },
+              "Chainsword": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Brawl:1, Reach:1)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "Vibro-Blade",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Engineering Cobra"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Primary Weapon": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "Heavy Autocannon": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§HAC, React"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "brawlStat": {
+                          "value": 1
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "Strike Upgrade -1TV": {
+                "order": 1,
+                "tracking": {
+                  "TV": -1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§MBZ"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "brawlStat": {
+                          "value": 1
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "Demolisher Hands -1TV": {
+                "order": 2,
+                "tracking": {
+                  "TV": -1
+                },
+                "traits": [
+                  {
+                    "trait": "Melee Weapon§MCW (Link, Demo:4)"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "brawlStat": {
+                          "value": 2
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "Heavy Autocannon",
+            "visibility": "normal"
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
+      "Gear§Druid": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Repair",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Direct§HP",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Demo:4)",
+            "Melee Weapon§LSE",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW (Fire:2)"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Earth allies"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "prefixHydorIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the item with the Hydor prefix.",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Hydor Druid"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Hydor upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Hydor Upgrade -1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Hydor Upgrade -1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Jetpack:X",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        },
+                        "NameVariable": {
+                          "value": 8
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Sub"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Druid"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Druid, Ger": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Repair",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Direct§MBZ",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Demo:4)",
+            "Melee Weapon§LSE",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW (Fire:2)"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Earth allies"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "prefixHydorIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the item with the Hydor prefix.",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Hydor Ger Druid"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Hydor upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Hydor Upgrade -1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          },
+          "renameGerDruid": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Ger Druid"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Hydor Upgrade -1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Jetpack:X",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        },
+                        "NameVariable": {
+                          "value": 8
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Sub"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Ger Druid"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Druid, Ignus": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Repair",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Direct, Link-upgrade§MFL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Demo:4)",
+            "Melee Weapon§LSE",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW (Fire:2)"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Earth allies"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "prefixHydorIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the item with the Hydor prefix.",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Hydor Ignus Druid"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Hydor upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Hydor Upgrade -1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          },
+          "renameIgnusDruid": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Ignus Druid"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Hydor Upgrade -1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Jetpack:X",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        },
+                        "NameVariable": {
+                          "value": 8
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Sub"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Ignus Druid"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Druid, Yeoman": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Repair",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Direct or Indirect§LRP, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Demo:4)",
+            "Melee Weapon§LSE",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW (Fire:2)"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Earth allies"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "prefixHydorIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the item with the Hydor prefix.",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Hydor Yeoman Druid"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Hydor upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Hydor Upgrade -1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          },
+          "renameYeomanDruid": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Yeoman Druid"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Hydor Upgrade -1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Jetpack:X",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        },
+                        "NameVariable": {
+                          "value": 8
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Sub"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Yeoman Druid"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Grizzly, Engineering": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Repair",
+            "Model/Weapon Property§Vuln:F",
+            "Ranged Weapon, Indirect§HIM",
+            "Ranged Weapon, Direct or Indirect, Swappable§MHG",
+            "Melee Weapon§MSE"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "renameEngineeringGrizzly": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Engineering Grizzly"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "Melee Weapon": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "Vibro-Blade": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB"
+                  }
+                ]
+              },
+              "Chainsword": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Brawl:1, Reach:1)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "Vibro-Blade",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Engineering Grizzly"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Primary Weapon": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "Heavy Autocannon": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§HAC, React"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "brawlStat": {
+                          "value": 1
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "Destroyer Upgrade -1TV": {
+                "order": 1,
+                "tracking": {
+                  "TV": -1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§MBZ"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "brawlStat": {
+                          "value": 1
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "Demolisher Hands -1TV": {
+                "order": 2,
+                "tracking": {
+                  "TV": -1
+                },
+                "traits": [
+                  {
+                    "trait": "Melee Weapon§MCW (Link, Demo:4)"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "brawlStat": {
+                          "value": 2
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "Heavy Autocannon",
+            "visibility": "normal"
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
+      "Gear§Python, Badlands": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§React+",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Indirect§MFM",
+            "Ranged Weapon, Direct, AA-upgrade§HAC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "renameBadlandsPython": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Badlands Python"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Badlands Python"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
+      "Gear§Sapeur": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Repair",
+            "Model/Weapon Property§Shield",
+            "Ranged Weapon, Indirect§HIM"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "Demolisher Hands -1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§HAC, React"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "brawlStat": {
+                          "value": 1
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": -1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "brawlStat": {
+                          "value": 2
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "trait": "Melee Weapon§MCW (Link, Demo:4)"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "Hammer": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Brawl:1, Reach:1)"
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Reach:1, Demo:4)"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Sapeur"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
+      "Gear§Stonemason": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Repair",
+            "Model/Weapon Property§Vuln:F",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Melee Weapon§LSE",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Weapon": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "Hammer": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Reach:1, Demo:4)"
+                  }
+                ]
+              },
+              "Mauler Fist": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Brawl:1, Demo:4)"
+                  }
+                ]
+              },
+              "Chainsword": {
+                "order": 2,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1, Reach:1)"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "Hammer",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Stonemason"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 5
+          }
+        }
+      },
+      "Gear§Stonemason Riotmaster": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Repair",
+            "Model/Weapon Property§Vuln:F",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Melee Weapon§LSE",
+            "Ranged Weapon, Direct, Link-upgrade§MFC, React"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Weapon": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "Hammer": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Reach:1, Demo:4)"
+                  }
+                ]
+              },
+              "Mauler Fist": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Brawl:1, Demo:4)"
+                  }
+                ]
+              },
+              "Chainsword": {
+                "order": 2,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1, Reach:1)"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "Hammer",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Stonemason Riotmaster"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 5
+          }
+        }
+      },
+      "Gear§Valence": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Repair",
+            "Model/Weapon Property§Vuln:F",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Melee Weapon§LSE",
+            "Ranged Weapon, Direct§LAPGL",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "generalPurposeMax": {},
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "ModelName": {
+            "value": "Valence"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 5
+          },
+          "Valence Upgrades": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "Hammer": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Reach:1, Demo:4)"
+                  }
+                ]
+              },
+              "Fist or Saw": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Brawl:1, Demo:4)"
+                  }
+                ]
+              },
+              "Claw": {
+                "order": 2,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "Hammer",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Gear§Valence, Demolisher": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Repair",
+            "Model/Weapon Property§Vuln:F",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Melee Weapon§LSE",
+            "Ranged Weapon, Direct§LAPGL",
+            "Ranged Weapon, Direct§MSC"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "renameDemolisherValence": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Demolisher Valence"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "ModelName": {
+            "value": "Demolisher Valence"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 5
+          },
+          "Valence Upgrades": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "Hammer": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Reach:1, Demo:4)"
+                  }
+                ]
+              },
+              "Fist or Saw": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Brawl:1, Demo:4)"
+                  }
+                ]
+              },
+              "Claw": {
+                "order": 2,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "Hammer",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Gear§Valence, Foreman": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Repair",
+            "Model/Weapon Property§Vuln:F",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Melee Weapon§LSE",
+            "Ranged Weapon, Direct§LAPGL",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Model/Weapon Property§Comms"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "renameForemanValence": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Foreman Valence"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "ModelName": {
+            "value": "Foreman Valence"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 6
+          },
+          "Valence Upgrades": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "Hammer": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Reach:1, Demo:4)"
+                  }
+                ]
+              },
+              "Fist or Saw": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Brawl:1, Demo:4)"
+                  }
+                ]
+              },
+              "Claw": {
+                "order": 2,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "Hammer",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Gear§Valence, Sweeper": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Repair",
+            "Model/Weapon Property§Vuln:F",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Melee Weapon§LSE",
+            "Ranged Weapon, Direct§LAPGL",
+            "Ranged Weapon, Direct, Link-upgrade§MFC, React"
+          ]
+        },
+        "keywords": {
+          "Tags": [
+            "Only available to Terra Novans"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "renameSweeperValence": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Sweeper Valence"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "fortificationsMax": {
+            "value": 0
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "ModelName": {
+            "value": "Sweeper Valence"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 0
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 0
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 5
+          },
+          "Valence Upgrades": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "Hammer": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Reach:1, Demo:4)"
+                  }
+                ]
+              },
+              "Fist or Saw": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Brawl:1, Demo:4)"
+                  }
+                ]
+              },
+              "Claw": {
+                "order": 2,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "Hammer",
+            "visibility": "normal"
+          }
+        }
+      },
       "Infantry§Infantry Team": {
         "assets": {
           "traits": [
@@ -3410,10 +7023,9 @@
             "value": 999
           },
           "GU": {
-            "format": "-",
-            "statType": "term",
+            "format": "{v}",
             "tracked": false,
-            "value": "-"
+            "value": 0
           },
           "H/S": {
             "value": "8/0"
@@ -3662,7 +7274,8 @@
         "allowed": {
           "items": [
             "Terrain§Turret, Rocket",
-            "Terrain§Turret, Rotary Cannon"
+            "Terrain§Turret, Rotary Cannon",
+            "Terrain§Bunker, Machine Gun"
           ]
         },
         "assets": {
@@ -3767,10 +7380,8 @@
             "value": 999
           },
           "GU": {
-            "format": "-",
-            "statType": "term",
-            "tracked": false,
-            "value": "-"
+            "format": "{v}",
+            "value": 0
           },
           "H/S": {
             "value": "4/0"
@@ -3818,10 +7429,8 @@
             "value": 999
           },
           "GU": {
-            "format": "-",
-            "statType": "term",
-            "tracked": false,
-            "value": "-"
+            "format": "{v}",
+            "value": 0
           },
           "H/S": {
             "value": "4/0"
@@ -4167,10 +7776,8 @@
             "value": 999
           },
           "GU": {
-            "format": "-",
-            "statType": "term",
-            "tracked": false,
-            "value": "-"
+            "format": "{v}",
+            "value": 0
           },
           "H/S": {
             "value": "6/0"
@@ -4218,10 +7825,8 @@
             "value": 999
           },
           "GU": {
-            "format": "-",
-            "statType": "term",
-            "tracked": false,
-            "value": "-"
+            "format": "{v}",
+            "value": 0
           },
           "H/S": {
             "value": "6/0"
@@ -4269,10 +7874,8 @@
             "value": 999
           },
           "GU": {
-            "format": "-",
-            "statType": "term",
-            "tracked": false,
-            "value": "-"
+            "format": "{v}",
+            "value": 0
           },
           "H/S": {
             "value": "4/0"
@@ -4529,6 +8132,11 @@
         }
       },
       "Vehicle§Camel (Stinger)": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
         "assets": {
           "traits": [
             "Ranged Weapon, Direct§LMG (T)",
@@ -4626,6 +8234,11 @@
         }
       },
       "Vehicle§Camel Truck": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
         "assets": {
           "traits": [
             "Model/Weapon Property§Supply",
