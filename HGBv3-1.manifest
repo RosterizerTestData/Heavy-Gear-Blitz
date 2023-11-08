@@ -252,6 +252,10 @@
         "templateClass": "Non-Veteran Model"
       },
       "Grandparent": {
+        "keywords": {
+          "Keywords": [],
+          "Tags": []
+        },
         "rules": {
           "|** Rules that act as comments or info evals **|": {
             "evals": [],
@@ -948,6 +952,7 @@
           ]
         },
         "aspects": {
+          "Group By": "Keywords",
           "Lock Qty": true,
           "Rename": true,
           "Type": "game piece"
@@ -10263,6 +10268,9 @@
           }
         },
         "text": "This model possesses an electronic counter-measure \nsystem. A model with this trait may use the following trait \nenabled actions and reactions:\n - ECM Jam\n - ECM Attack\n - ECM Defense"
+      },
+      "Model/Weapon Property§ECM+": {
+        "text": "This model has an enhanced electronic counter-measure system. A model with this trait may use the following trait enabled actions and reactions:\n - ECM Jam\n - ECM Attack\n - ECM Defense\n\nIn addition, its ECM defense is always in effect unless it is haywired."
       },
       "Model/Weapon Property§Field Armor": {
         "text": "This model suffers one less damage from each attack to \na minimum of one damage. Field Armor reduces damage \nfrom the Armor Piercing trait, but it does not apply to \nother effects such as Fire, Corrosion or Haywire."

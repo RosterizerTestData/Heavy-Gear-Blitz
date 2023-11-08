@@ -7,9 +7,10 @@
   "url": "https://www.dp9.com/",
   "notes": "",
   "wip": true,
+  "isModule": true,
   "dependencies": [
     {
-      "slug": "T4RZPB",
+      "slug": "VUGK7N",
       "name": "Core System",
       "game": "Heavy Gear Blitz! v3.1",
       "source": ""
@@ -24,6 +25,598 @@
       }
     },
     "assetCatalog": {
+      "Gear§Bobcat": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": -1
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Model/Weapon Property§Comms",
+            {
+              "item": "Model/Weapon Property§ECCM",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Ranged Weapon, Direct, Link-upgrade§LSMG",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Strike",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Bobcat"
+          },
+          "MR": {
+            "value": 9
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP, FS, RC"
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Bobcat (Flakcat)": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": -1
+                }
+              }
+            },
+            "Model/Weapon Property§Comms",
+            {
+              "item": "Model/Weapon Property§ECCM",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§AMS",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC (AA)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Strike",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "renameFlakcat": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Flakcat"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Flakcat"
+          },
+          "MR": {
+            "value": 9
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP, FS, RC"
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Ferret": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": -1
+                }
+              }
+            },
+            "Model/Weapon Property§Comms",
+            {
+              "item": "Model/Weapon Property§ECM",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                },
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct, Link-upgrade§LSMG",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 4
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Ferret"
+          },
+          "MR": {
+            "value": 9
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP, FS, RC"
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Ferret Gunner": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": -1
+                }
+              }
+            },
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                },
+                "NameVariable": {
+                  "value": 36
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 4
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Ferret Gunner"
+          },
+          "MR": {
+            "value": 9
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP, FS, RC"
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Ferret Sniper": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": -1
+                }
+              }
+            },
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                },
+                "NameVariable": {
+                  "value": 36
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct§LRF",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 4
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Ferret Sniper"
+          },
+          "MR": {
+            "value": 9
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP, FS, RC"
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Ferret, Wild": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": -1
+                }
+              }
+            },
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§ECCM",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§Vuln:H",
+            {
+              "item": "Model/Weapon Property§SatUp",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                },
+                "NameVariable": {
+                  "value": 36
+                }
+              }
+            },
+            "Ranged Weapon, Direct, Link-upgrade§LSMG",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "renameFerret": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Wild Ferret"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 4
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Wild Ferret"
+          },
+          "MR": {
+            "value": 9
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP, FS, RC"
+          },
+          "TV": {
+            "value": 6
+          }
+        }
+      },
       "Gear§Hunter": {
         "assets": {
           "traits": [
@@ -5845,6 +6438,258 @@
           }
         }
       },
+      "Gear§Leopard": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Climber",
+            "Ranged Weapon, Combo§MAC/LFC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built",
+            "Ranged Weapon, Direct or Indirect, Swappable§MHG",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MSG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Leopard"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK+, FS"
+          },
+          "strikeMax": {
+            "value": 999
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
+      "Gear§Leopard Flash": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Climber",
+            "Ranged Weapon, Direct, AA-upgrade§MRL, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built",
+            "Ranged Weapon, Direct or Indirect, Swappable§MHG",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MSG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Leopard Flash"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 11
+          }
+        }
+      },
+      "Gear§Leopard Grenadier": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Climber",
+            "Ranged Weapon, Combo§MAC/LGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built",
+            "Ranged Weapon, Direct or Indirect, Swappable§MHG",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MSG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Leopard Grenadier"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
+      "Gear§Leopard Wildfire": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Climber",
+            "Ranged Weapon, Combo§MAC/LFL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built",
+            "Ranged Weapon, Direct or Indirect, Swappable§MHG",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MSG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Leopard Wildfire"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
       "Gear§Lynx": {
         "assets": {
           "traits": [
@@ -7413,6 +8258,1242 @@
           }
         }
       },
+      "Gear§Tiger": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "renameSabertoothIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Sabertooth...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Sabertooth"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Sabertooth"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Sabertooth Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Sabertooth Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          },
+          "renameTiger": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Tiger"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {},
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Tiger"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK"
+          },
+          "Sabertooth Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
+      "Gear§Tiger Pathfinder": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Ranged Weapon, Direct§HRF, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
+            "Ranged Weapon, Direct, Swappable§LPZ",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "renameSabertoothIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Sabertooth...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Sabertooth"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Sabertooth"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Sabertooth Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Sabertooth Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {},
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Tiger Pathfinder"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP, SK, RC"
+          },
+          "Sabertooth Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 11
+          }
+        }
+      },
+      "Gear§Tiger, Assault": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct§MSC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "renameSabertoothIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Sabertooth...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Assault Sabertooth"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Assault Sabertooth"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Sabertooth Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Sabertooth Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          },
+          "renameTiger": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Assault Tiger"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {},
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Assault Tiger"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK"
+          },
+          "Sabertooth Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
+      "Gear§Tiger, Destroyer": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct§MBZ",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "renameSabertoothIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the model Sabertooth...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Destroyer Sabertooth"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Destroyer Sabertooth"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Sabertooth Upgrade is taken...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Sabertooth Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          },
+          "renameTiger": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Destroyer Tiger"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {},
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Destroyer Tiger"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK"
+          },
+          "Sabertooth Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
+      "Gear§Wildcat": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Comms",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Wildcat"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Wildcat Fang": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Comms",
+            "Ranged Weapon, Direct§LBZ",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Wildcat Fang"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Wildcat Gunner": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Comms",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Wildcat Gunner"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Wildcat UC": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Comms",
+            "Ranged Weapon, Direct, Link-upgrade§MFC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built",
+            "Ranged Weapon, Direct, Swappable§LPZ"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Wildcat UC"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Wildcat, Assault": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Comms",
+            "Ranged Weapon, Direct§MSC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "renameWildcat": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Assault Wildcat"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Assault Wildcat"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Wildcat, Pathfinder": {
+        "allowed": {
+          "items": []
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                },
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Ranged Weapon, Direct§MRF, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Fire Support",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "renameWildcat": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Pathfinder Wildcat"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {},
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Pathfinder Wildcat"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 5
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP, SK, RC"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
+      "Gear§Wildcat, Rabid": {
+        "allowed": {
+          "items": []
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§Field Armor",
+            "Ranged Weapon, Direct or Indirect, Link-upgrade§LGL, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "renameWildcat": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Rabid Wildcat"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Rabid Wildcat"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
       "Roster§Roster": {},
       "Veteran Gear§Hunter Commando": {
         "assets": {
@@ -7887,6 +9968,123 @@
           },
           "TV": {
             "value": 13
+          }
+        }
+      },
+      "Veteran Gear§Weasel": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§SatUp",
+            {
+              "item": "Model/Weapon Property§ECM+",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§ECCM",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 36
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 4
+          },
+          "EW": {
+            "value": 3
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Weasel"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP, FS, RC"
+          },
+          "Tattletale Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 9
           }
         }
       }
