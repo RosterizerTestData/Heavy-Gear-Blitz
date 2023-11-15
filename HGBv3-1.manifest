@@ -4678,6 +4678,7 @@
         },
         "stats": {
           "Dual Guns +1TV": {
+            "dynamic": true,
             "group": "Upgrades",
             "ranks": {
               "-": {
@@ -6138,7 +6139,108 @@
             "failState": "pass",
             "order": 141
           },
+          "renameWithCount": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then rename the asset with its formattedCount...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "stats",
+                  "formattedCount",
+                  "processed",
+                  "format",
+                  "current"
+                ]
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...and with its official designation.",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "stats",
+                  "officialDesignation",
+                  "value"
+                ]
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 2,
+                "not": false,
+                "note": "If the number of assets is more than 1...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "quantity"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 143
+          },
           "setDesignationWithoutReact": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "Rename the asset with its official designation.",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "stats",
+                  "officialDesignation"
+                ]
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 142
+          },
+          "updateFormattedCount": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "Set the formattedCount to the quantity.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "formattedCount",
+                    "value"
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "quantity"
+                ]
+              }
+            ],
             "evals": [],
             "evaluate": "AND",
             "failState": "pass",
@@ -6279,6 +6381,13 @@
             "value": null,
             "visibility": "normal"
           },
+          "formattedCount": {
+            "format": "{v}x",
+            "group": "Hidden",
+            "statType": "numeric",
+            "value": null,
+            "visibility": "hidden"
+          },
           "Mode": {
             "group": "Profile",
             "groupOrder": 1,
@@ -6316,6 +6425,12 @@
             "statType": "term",
             "value": null,
             "visibility": "normal"
+          },
+          "officialDesignation": {
+            "group": "Hidden",
+            "statType": "term",
+            "value": null,
+            "visibility": "hidden"
           },
           "OrClause": {
             "group": "Hidden",
@@ -6595,6 +6710,9 @@
           "Name": {
             "value": "Medium Combat Weapon"
           },
+          "officialDesignation": {
+            "value": "MCW"
+          },
           "StatColumn": {
             "value": "React"
           },
@@ -6648,6 +6766,9 @@
           },
           "Name": {
             "value": "Medium Vibro-Blade"
+          },
+          "officialDesignation": {
+            "value": "MVB"
           },
           "StatColumn": {
             "value": "React"
@@ -6711,6 +6832,9 @@
           },
           "Name": {
             "value": "Light Pistol"
+          },
+          "officialDesignation": {
+            "value": "LP"
           },
           "Range": {
             "value": "0-24/48"
@@ -6957,8 +7081,7 @@
       "Gear§Example": {
         "assets": {
           "traits": [
-            "Model/Weapon Property§Hands",
-            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC (AA)"
+            "Model/Weapon Property§Hands"
           ]
         },
         "stats": {
@@ -7205,6 +7328,9 @@
           "Name": {
             "value": "Light Combat Weapon"
           },
+          "officialDesignation": {
+            "value": "LCW"
+          },
           "StatColumn": {
             "value": "React"
           },
@@ -7356,145 +7482,8 @@
           "Name": {
             "value": "Light Combat Weapon"
           },
-          "StatColumn": {
-            "value": "React"
-          },
-          "Swap to:": {
-            "ranks": {
-              "LCW": {
-                "order": 0
-              },
-              "LSG": {
-                "order": 1
-              },
-              "LVB": {
-                "order": 2
-              }
-            },
+          "officialDesignation": {
             "value": "LCW"
-          }
-        }
-      },
-      "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1)": {
-        "assets": {
-          "traits": [
-            {
-              "item": "Model/Weapon Property, Variable§Demo:X",
-              "stats": {
-                "NameVariable": {
-                  "value": 2
-                }
-              }
-            },
-            {
-              "item": "Model/Weapon Property, Variable§Brawl:X",
-              "stats": {
-                "meleeBrawlStat": {
-                  "value": 1
-                },
-                "Modified": {
-                  "value": "✓"
-                }
-              }
-            }
-          ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LCW"
-              }
-            ],
-            "evals": []
-          },
-          "swapToLSG": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...then make it be so.",
-                "paths": [
-                  [
-                    "{self}",
-                    "item"
-                  ]
-                ],
-                "value": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LSG"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If Swap To: is set to LSG...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Swap to:",
-                    "value"
-                  ]
-                ],
-                "value": "LSG"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 81
-          },
-          "swapToLVB": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...then make it happen.",
-                "paths": [
-                  [
-                    "{self}",
-                    "item"
-                  ]
-                ],
-                "value": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If Swap To: is set to LVB...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Swap to:",
-                    "value"
-                  ]
-                ],
-                "value": "LVB"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 81
-          }
-        },
-        "stats": {
-          "Damage": {
-            "value": "7"
-          },
-          "Name": {
-            "value": "Light Combat Weapon"
           },
           "StatColumn": {
             "value": "React"
@@ -7609,6 +7598,9 @@
           "Name": {
             "value": "Light Spike Gun"
           },
+          "officialDesignation": {
+            "value": "LSG"
+          },
           "StatColumn": {
             "value": "React"
           },
@@ -7722,153 +7714,8 @@
           "Name": {
             "value": "Light Vibro-Blade"
           },
-          "StatColumn": {
-            "value": "React"
-          },
-          "Swap to:": {
-            "ranks": {
-              "LCW": {
-                "order": 0
-              },
-              "LSG": {
-                "order": 1
-              },
-              "LVB": {
-                "order": 2
-              }
-            },
+          "officialDesignation": {
             "value": "LVB"
-          }
-        }
-      },
-      "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise, Reach:1)": {
-        "assets": {
-          "traits": [
-            {
-              "item": "Model/Weapon Property, Variable§AP:X",
-              "stats": {
-                "NameVariable": {
-                  "value": 2
-                }
-              }
-            },
-            {
-              "item": "Model/Weapon Property§Precise",
-              "stats": {
-                "Modified": {
-                  "value": "✓"
-                }
-              }
-            },
-            {
-              "item": "Model/Weapon Property, Variable§Reach:X",
-              "stats": {
-                "meleeReachStat": {
-                  "value": 1
-                },
-                "Modified": {
-                  "value": "✓"
-                }
-              }
-            }
-          ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LVB"
-              }
-            ],
-            "evals": []
-          },
-          "swapToLCW": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...then make it happen.",
-                "paths": [
-                  [
-                    "{self}",
-                    "item"
-                  ]
-                ],
-                "value": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If Swap To: is set to LCW...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Swap to:",
-                    "value"
-                  ]
-                ],
-                "value": "LCW"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 81
-          },
-          "swapToLSG": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...then make it be so.",
-                "paths": [
-                  [
-                    "{self}",
-                    "item"
-                  ]
-                ],
-                "value": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LSG"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If Swap To: is set to LSG...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Swap to:",
-                    "value"
-                  ]
-                ],
-                "value": "LSG"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 81
-          }
-        },
-        "stats": {
-          "Damage": {
-            "value": "7"
-          },
-          "Name": {
-            "value": "Light Vibro-Blade"
           },
           "StatColumn": {
             "value": "React"
@@ -7982,6 +7829,9 @@
           },
           "Name": {
             "value": "Medium Combat Weapon"
+          },
+          "officialDesignation": {
+            "value": "MCW"
           },
           "StatColumn": {
             "value": "React"
@@ -8125,6 +7975,9 @@
           },
           "Name": {
             "value": "Medium Combat Weapon"
+          },
+          "officialDesignation": {
+            "value": "MCW"
           },
           "StatColumn": {
             "value": "React"
@@ -8277,6 +8130,9 @@
           "Name": {
             "value": "Medium Combat Weapon"
           },
+          "officialDesignation": {
+            "value": "MCW"
+          },
           "StatColumn": {
             "value": "React"
           },
@@ -8408,6 +8264,9 @@
           },
           "Name": {
             "value": "Medium Combat Weapon"
+          },
+          "officialDesignation": {
+            "value": "MCW"
           },
           "StatColumn": {
             "value": "React"
@@ -8552,6 +8411,9 @@
           "Name": {
             "value": "Medium Combat Weapon"
           },
+          "officialDesignation": {
+            "value": "MCW"
+          },
           "StatColumn": {
             "value": "React"
           },
@@ -8665,6 +8527,9 @@
           "Name": {
             "value": "Medium Spike Gun"
           },
+          "officialDesignation": {
+            "value": "MSG"
+          },
           "StatColumn": {
             "value": "React"
           },
@@ -8777,6 +8642,9 @@
           },
           "Name": {
             "value": "Medium Vibro-Blade"
+          },
+          "officialDesignation": {
+            "value": "MVB"
           },
           "StatColumn": {
             "value": "React"
@@ -8918,6 +8786,9 @@
           "Name": {
             "value": "Medium Vibro-Blade"
           },
+          "officialDesignation": {
+            "value": "MVB"
+          },
           "StatColumn": {
             "value": "React"
           },
@@ -8956,6 +8827,9 @@
           },
           "Name": {
             "value": "Heavy Combat Weapon"
+          },
+          "officialDesignation": {
+            "value": "HCW"
           }
         }
       },
@@ -8997,6 +8871,9 @@
           "Name": {
             "value": "Heavy Combat Weapon"
           },
+          "officialDesignation": {
+            "value": "HCW"
+          },
           "StatColumn": {
             "value": "React"
           }
@@ -9022,6 +8899,9 @@
           "Name": {
             "value": "Heavy Spike Gun"
           },
+          "officialDesignation": {
+            "value": "HSG"
+          },
           "StatColumn": {
             "value": "React"
           }
@@ -9046,6 +8926,9 @@
           },
           "Name": {
             "value": "Heavy Vibro-Blade"
+          },
+          "officialDesignation": {
+            "value": "HVB"
           },
           "StatColumn": {
             "value": "React"
@@ -9094,6 +8977,9 @@
           "Name": {
             "value": "Heavy Vibro-Blade"
           },
+          "officialDesignation": {
+            "value": "HVB"
+          },
           "StatColumn": {
             "value": "React"
           }
@@ -9118,6 +9004,9 @@
           },
           "Name": {
             "value": "Light Combat Weapon"
+          },
+          "officialDesignation": {
+            "value": "LCW"
           }
         }
       },
@@ -9169,6 +9058,9 @@
           },
           "Name": {
             "value": "Light Combat Weapon"
+          },
+          "officialDesignation": {
+            "value": "LCW"
           }
         }
       },
@@ -9191,6 +9083,9 @@
           },
           "Name": {
             "value": "Light Spike Gun"
+          },
+          "officialDesignation": {
+            "value": "LSG"
           }
         }
       },
@@ -9213,6 +9108,9 @@
           },
           "Name": {
             "value": "Medium Combat Weapon"
+          },
+          "officialDesignation": {
+            "value": "MCW"
           }
         }
       },
@@ -9235,6 +9133,9 @@
           },
           "Name": {
             "value": "Medium Spike Gun"
+          },
+          "officialDesignation": {
+            "value": "MSG"
           }
         }
       },
@@ -9250,6 +9151,9 @@
           },
           "Name": {
             "value": "Heavy Infantry Combat Weapon"
+          },
+          "officialDesignation": {
+            "value": "HICW"
           },
           "StatColumn": {
             "value": "React"
@@ -9272,6 +9176,9 @@
           "Name": {
             "value": "Light Infantry Combat Weapon"
           },
+          "officialDesignation": {
+            "value": "LICW"
+          },
           "StatColumn": {
             "value": "React"
           },
@@ -9292,6 +9199,9 @@
           },
           "Name": {
             "value": "Medium Infantry Combat Weapon"
+          },
+          "officialDesignation": {
+            "value": "MICW"
           },
           "Traits": {
             "value": ""
@@ -9351,6 +9261,9 @@
           "Name": {
             "value": "Medium Infantry Combat Weapon"
           },
+          "officialDesignation": {
+            "value": "MICW"
+          },
           "StatColumn": {
             "value": "React"
           },
@@ -9389,6 +9302,9 @@
           },
           "Name": {
             "value": "Medium Infantry Combat Weapon"
+          },
+          "officialDesignation": {
+            "value": "MICW"
           },
           "StatColumn": {
             "value": "React"
@@ -9434,6 +9350,9 @@
           "Name": {
             "value": "Heavy Shaped Explosives"
           },
+          "officialDesignation": {
+            "value": "HSE"
+          },
           "Range": {
             "value": "0/-"
           },
@@ -9477,6 +9396,9 @@
           },
           "Name": {
             "value": "Light Shaped Explosives"
+          },
+          "officialDesignation": {
+            "value": "LSE"
           },
           "Range": {
             "value": "0/-"
@@ -9548,6 +9470,9 @@
           "Name": {
             "value": "Light Shaped Explosives"
           },
+          "officialDesignation": {
+            "value": "LSE"
+          },
           "Range": {
             "value": "0/-"
           },
@@ -9608,6 +9533,9 @@
           "Name": {
             "value": "Medium Combat Weapons"
           },
+          "officialDesignation": {
+            "value": "MCW"
+          },
           "StatColumn": {
             "value": "React"
           }
@@ -9648,6 +9576,9 @@
           },
           "Name": {
             "value": "Medium Shaped Explosives"
+          },
+          "officialDesignation": {
+            "value": "MSE"
           },
           "Range": {
             "value": "0/-"
@@ -9718,6 +9649,9 @@
           },
           "Name": {
             "value": "Medium Shaped Explosives"
+          },
+          "officialDesignation": {
+            "value": "MSE"
           },
           "Range": {
             "value": "0/-"
@@ -10530,6 +10464,9 @@
         "stats": {
           "Name": {
             "value": "Combo HAC and LGL"
+          },
+          "officialDesignation": {
+            "value": "HAC/LGL"
           }
         }
       },
@@ -10544,6 +10481,9 @@
         "stats": {
           "Name": {
             "value": "Combo HAC and MFL"
+          },
+          "officialDesignation": {
+            "value": "HAC/MFL"
           }
         }
       },
@@ -10558,6 +10498,9 @@
         "stats": {
           "Name": {
             "value": "Combo HRC (Apex) and HFC"
+          },
+          "officialDesignation": {
+            "value": "HRC (Apex)/HFC"
           }
         }
       },
@@ -10568,6 +10511,11 @@
             "Model/Weapon Property§/",
             "Melee Weapon, Reach-upgrade, Dual-upgrade§HVB, Combo Part"
           ]
+        },
+        "stats": {
+          "officialDesignation": {
+            "value": "HRC (Apex)/HVB"
+          }
         }
       },
       "Ranged Weapon, Combo§HSMG/LFC": {
@@ -10581,6 +10529,9 @@
         "stats": {
           "Name": {
             "value": "Combo HSMG and LFC"
+          },
+          "officialDesignation": {
+            "value": "HSMG/LFC"
           }
         }
       },
@@ -10595,6 +10546,9 @@
         "stats": {
           "Name": {
             "value": "Combo LAC & LGL"
+          },
+          "officialDesignation": {
+            "value": "LAC/LGL"
           }
         }
       },
@@ -10610,6 +10564,9 @@
         "stats": {
           "Name": {
             "value": "Combo LSMG & LAPGL"
+          },
+          "officialDesignation": {
+            "value": "LSMG/LAPGL"
           }
         }
       },
@@ -10620,6 +10577,11 @@
             "Model/Weapon Property§/",
             "Ranged Weapon, Direct, Link-upgrade§LFC, Combo Part"
           ]
+        },
+        "stats": {
+          "officialDesignation": {
+            "value": "MAC/LFC"
+          }
         }
       },
       "Ranged Weapon, Combo§MAC/LFL": {
@@ -10629,6 +10591,11 @@
             "Model/Weapon Property§/",
             "Ranged Weapon, Direct, Link-upgrade§LFL, Combo Part"
           ]
+        },
+        "stats": {
+          "officialDesignation": {
+            "value": "MAC/LFL"
+          }
         }
       },
       "Ranged Weapon, Combo§MAC/LGL": {
@@ -10638,6 +10605,11 @@
             "Model/Weapon Property§/",
             "Ranged Weapon, Direct or Indirect, Link-upgrade§LGL, Combo Part"
           ]
+        },
+        "stats": {
+          "officialDesignation": {
+            "value": "MAC/LGL"
+          }
         }
       },
       "Ranged Weapon, Combo§MRF/LAPGL": {
@@ -10647,6 +10619,11 @@
             "Model/Weapon Property§/",
             "Ranged Weapon, Direct§LAPGL, Combo Part"
           ]
+        },
+        "stats": {
+          "officialDesignation": {
+            "value": "MRF/LAPGL"
+          }
         }
       },
       "Ranged Weapon, Combo§MSMG/LAPGL": {
@@ -10656,6 +10633,11 @@
             "Model/Weapon Property§/",
             "Ranged Weapon, Direct§LAPGL, Combo Part"
           ]
+        },
+        "stats": {
+          "officialDesignation": {
+            "value": "MSMG/LAPGL"
+          }
         }
       },
       "Ranged Weapon, Direct or Indirect, Link-upgrade§LAAM (Link)": {
@@ -10698,6 +10680,9 @@
           "Name": {
             "value": "Light Anti-Air Missile"
           },
+          "officialDesignation": {
+            "value": "LAAM"
+          },
           "Range": {
             "value": "12-36/72"
           }
@@ -10731,6 +10716,9 @@
           },
           "Name": {
             "value": "Light Anti-Tank Missile"
+          },
+          "officialDesignation": {
+            "value": "LATM"
           },
           "Range": {
             "value": "12-36/72"
@@ -10773,6 +10761,9 @@
           },
           "Name": {
             "value": "Light Grenade Launcher"
+          },
+          "officialDesignation": {
+            "value": "LGL"
           },
           "Range": {
             "value": "6-12/24"
@@ -10838,6 +10829,9 @@
           "Name": {
             "value": "Light Grenade Launcher"
           },
+          "officialDesignation": {
+            "value": "LGL"
+          },
           "Range": {
             "value": "6-12/24"
           },
@@ -10901,6 +10895,9 @@
           "Name": {
             "value": "Light Grenade Launcher"
           },
+          "officialDesignation": {
+            "value": "LGL"
+          },
           "Range": {
             "value": "6-12/24"
           },
@@ -10945,6 +10942,9 @@
           },
           "Name": {
             "value": "Medium Grenade Launcher"
+          },
+          "officialDesignation": {
+            "value": "MGL"
           },
           "Range": {
             "value": "6-12/24"
@@ -11006,6 +11006,9 @@
           "Name": {
             "value": "Medium Grenade Launcher"
           },
+          "officialDesignation": {
+            "value": "MGL"
+          },
           "Range": {
             "value": "6-12/24"
           },
@@ -11062,6 +11065,9 @@
           },
           "Name": {
             "value": "Heavy Anti-Air Missile"
+          },
+          "officialDesignation": {
+            "value": "HAAM"
           },
           "Range": {
             "value": "12-36/72"
@@ -11134,6 +11140,9 @@
           },
           "Name": {
             "value": "Heavy Anti-Tank Missile"
+          },
+          "officialDesignation": {
+            "value": "HATM"
           },
           "Range": {
             "value": "12-36/72"
@@ -11214,6 +11223,9 @@
           },
           "Name": {
             "value": "Heavy Hand Grenades"
+          },
+          "officialDesignation": {
+            "value": "HHG"
           },
           "Range": {
             "value": "3-6/9"
@@ -11310,6 +11322,9 @@
           "Name": {
             "value": "Heavy Rocket Pack"
           },
+          "officialDesignation": {
+            "value": "HRP"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -11374,6 +11389,9 @@
           },
           "Name": {
             "value": "Light Anti-Air Missile"
+          },
+          "officialDesignation": {
+            "value": "LAAM"
           },
           "Range": {
             "value": "12-36/72"
@@ -11467,6 +11485,9 @@
           "Name": {
             "value": "Light Anti-Air Missile"
           },
+          "officialDesignation": {
+            "value": "LAAM"
+          },
           "Range": {
             "value": "12-36/72"
           },
@@ -11548,6 +11569,9 @@
           "Name": {
             "value": "Light Anti-Air Missile"
           },
+          "officialDesignation": {
+            "value": "LAAM"
+          },
           "Range": {
             "value": "12-36/72"
           },
@@ -11623,104 +11647,8 @@
           "Name": {
             "value": "Light Anti-Tank Missile"
           },
-          "Range": {
-            "value": "12-36/72"
-          },
-          "Swap to:": {
-            "ranks": {
-              "LAAM": {
-                "order": 0
-              },
-              "LATM": {
-                "order": 1
-              }
-            },
+          "officialDesignation": {
             "value": "LATM"
-          }
-        }
-      },
-      "Ranged Weapon, Direct or Indirect, Swappable§LATM (LA:2)": {
-        "assets": {
-          "traits": [
-            {
-              "item": "Model/Weapon Property, Variable§AP:X",
-              "stats": {
-                "NameVariable": {
-                  "value": 2
-                }
-              }
-            },
-            "Model/Weapon Property§Guided",
-            {
-              "item": "Model/Weapon Property, Variable§LA:X",
-              "stats": {
-                "NameVariable": {
-                  "value": 2
-                },
-                "Modified": {
-                  "value": "✓"
-                }
-              }
-            }
-          ]
-        },
-        "rules": {
-          "implementSwapTo": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
-                "paths": [
-                  [
-                    "{self}",
-                    "item"
-                  ]
-                ],
-                "value": "Ranged Weapon, Direct or Indirect, Swappable§LAAM (LA:2)"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Swap to:",
-                    "value"
-                  ]
-                ],
-                "value": "LAAM"
-              }
-            ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LATM"
-              }
-            ],
-            "evals": []
-          }
-        },
-        "stats": {
-          "Damage": {
-            "value": "8"
-          },
-          "Name": {
-            "value": "Light Anti-Tank Missile"
           },
           "Range": {
             "value": "12-36/72"
@@ -11810,6 +11738,9 @@
           "Name": {
             "value": "Light Anti-Tank Missile"
           },
+          "officialDesignation": {
+            "value": "LATM"
+          },
           "Range": {
             "value": "12-36/72"
           },
@@ -11892,6 +11823,9 @@
           },
           "Name": {
             "value": "Light Hand Grenades"
+          },
+          "officialDesignation": {
+            "value": "LHG"
           },
           "Range": {
             "value": "3-6/9"
@@ -11988,6 +11922,9 @@
           "Name": {
             "value": "Light Rocket Pack"
           },
+          "officialDesignation": {
+            "value": "LRP"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -12052,6 +11989,9 @@
           },
           "Name": {
             "value": "Medium Anti-Air Missile"
+          },
+          "officialDesignation": {
+            "value": "MAAM"
           },
           "Range": {
             "value": "12-36/72"
@@ -12134,6 +12074,9 @@
           "Name": {
             "value": "Medium Anti-Air Missile"
           },
+          "officialDesignation": {
+            "value": "MAAM"
+          },
           "Range": {
             "value": "12-36/72"
           },
@@ -12208,6 +12151,9 @@
           },
           "Name": {
             "value": "Medium Anti-Tank Missile"
+          },
+          "officialDesignation": {
+            "value": "MATM"
           },
           "Range": {
             "value": "12-36/72"
@@ -12297,6 +12243,9 @@
           "Name": {
             "value": "Medium Anti-Tank Missile"
           },
+          "officialDesignation": {
+            "value": "MATM"
+          },
           "Range": {
             "value": "12-36/72"
           },
@@ -12379,6 +12328,9 @@
           },
           "Name": {
             "value": "Medium Hand Grenades"
+          },
+          "officialDesignation": {
+            "value": "MHG"
           },
           "Range": {
             "value": "3-6/9"
@@ -12483,6 +12435,9 @@
           "Name": {
             "value": "Medium Rocket Pack"
           },
+          "officialDesignation": {
+            "value": "MRP"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -12578,6 +12533,9 @@
           "Name": {
             "value": "Medium Rocket Pack"
           },
+          "officialDesignation": {
+            "value": "MRP"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -12615,6 +12573,9 @@
           "Name": {
             "value": "Heavy Anti-Personnel Rocket"
           },
+          "officialDesignation": {
+            "value": "HAPR"
+          },
           "Range": {
             "value": "6-18/36"
           }
@@ -12648,6 +12609,9 @@
           "Name": {
             "value": "Heavy Artillery Rocket"
           },
+          "officialDesignation": {
+            "value": "HAR"
+          },
           "Range": {
             "value": "12-36/72"
           }
@@ -12673,6 +12637,9 @@
           },
           "Name": {
             "value": "Heavy Anti-Vehicle Missile"
+          },
+          "officialDesignation": {
+            "value": "HAVM"
           },
           "Range": {
             "value": "6-18/36"
@@ -12759,6 +12726,9 @@
           "Name": {
             "value": "Heavy Field Gun"
           },
+          "officialDesignation": {
+            "value": "HFG"
+          },
           "Range": {
             "value": "12-24/48"
           }
@@ -12801,6 +12771,9 @@
           "Name": {
             "value": "Heavy Grenade Launcher"
           },
+          "officialDesignation": {
+            "value": "HGL"
+          },
           "Range": {
             "value": "6-12/24"
           }
@@ -12836,30 +12809,15 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HGL"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "8"
           },
           "Name": {
             "value": "Heavy Grenade Launcher"
+          },
+          "officialDesignation": {
+            "value": "HGL"
           },
           "Range": {
             "value": "6-12/24"
@@ -12949,6 +12907,9 @@
           "Name": {
             "value": "Heavy Infantry Grenade Launcher"
           },
+          "officialDesignation": {
+            "value": "HIGL"
+          },
           "Range": {
             "value": "3-9/18"
           }
@@ -12981,6 +12942,9 @@
           },
           "Name": {
             "value": "Heavy Rocket Pack"
+          },
+          "officialDesignation": {
+            "value": "HRP"
           },
           "Range": {
             "value": "6-18/36"
@@ -13049,6 +13013,9 @@
           "Name": {
             "value": "Heavy Rocket Pack"
           },
+          "officialDesignation": {
+            "value": "HRP"
+          },
           "Range": {
             "value": "6-18/36"
           }
@@ -13100,6 +13067,9 @@
           "Name": {
             "value": "Heavy Rocket Pack"
           },
+          "officialDesignation": {
+            "value": "HRP"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -13129,60 +13099,8 @@
           "Name": {
             "value": "Light Anti-Personnel Rocket"
           },
-          "Range": {
-            "value": "6-18/36"
-          }
-        }
-      },
-      "Ranged Weapon, Direct or Indirect§LAPR (Fire:1)": {
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§AI",
-            {
-              "item": "Model/Weapon Property, Variable§AOE:X",
-              "stats": {
-                "NameVariable": {
-                  "value": 3
-                }
-              }
-            },
-            {
-              "item": "Model/Weapon Property, Variable§Fire:X",
-              "stats": {
-                "NameVariable": {
-                  "value": 1
-                },
-                "Modified": {
-                  "value": "✓"
-                }
-              }
-            }
-          ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LAPR"
-              }
-            ],
-            "evals": []
-          }
-        },
-        "stats": {
-          "Damage": {
-            "value": "6"
-          },
-          "Name": {
-            "value": "Light Anti-Personnel Rocket"
+          "officialDesignation": {
+            "value": "LAPR"
           },
           "Range": {
             "value": "6-18/36"
@@ -13215,7 +13133,10 @@
             "value": "7"
           },
           "Name": {
-            "value": "Light Artillery Rocket"
+            "value": "Light Artillery Rockets"
+          },
+          "officialDesignation": {
+            "value": "LAR"
           },
           "Range": {
             "value": "12-36/72"
@@ -13276,6 +13197,9 @@
           "Name": {
             "value": "Light Artillery Rocket"
           },
+          "officialDesignation": {
+            "value": "LAR"
+          },
           "Range": {
             "value": "12-36/72"
           }
@@ -13301,6 +13225,9 @@
           },
           "Name": {
             "value": "Light Anti-Vehicle Missile"
+          },
+          "officialDesignation": {
+            "value": "LAVM"
           },
           "Range": {
             "value": "6-18/36"
@@ -13387,6 +13314,9 @@
           "Name": {
             "value": "Light Field Gun"
           },
+          "officialDesignation": {
+            "value": "LFG"
+          },
           "Range": {
             "value": "12-24/48"
           }
@@ -13439,6 +13369,9 @@
           },
           "Name": {
             "value": "Light Field Gun"
+          },
+          "officialDesignation": {
+            "value": "LFG"
           },
           "Range": {
             "value": "12-24/48"
@@ -13502,6 +13435,9 @@
           },
           "Name": {
             "value": "Light Hand Grenades"
+          },
+          "officialDesignation": {
+            "value": "LHG"
           },
           "Range": {
             "value": "3-6/9"
@@ -13591,6 +13527,9 @@
           "Name": {
             "value": "Light Infantry Grenade Launcher"
           },
+          "officialDesignation": {
+            "value": "LIGL"
+          },
           "Range": {
             "value": "3-9/18"
           },
@@ -13626,6 +13565,9 @@
           },
           "Name": {
             "value": "Light Rocket Pack"
+          },
+          "officialDesignation": {
+            "value": "LRP"
           },
           "Range": {
             "value": "6-18/36"
@@ -13678,6 +13620,9 @@
           "Name": {
             "value": "Light Rocket Pack"
           },
+          "officialDesignation": {
+            "value": "LRP"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -13706,6 +13651,9 @@
           },
           "Name": {
             "value": "Medium Anti-Personnel Rocket"
+          },
+          "officialDesignation": {
+            "value": "MAPR"
           },
           "Range": {
             "value": "6-18/36"
@@ -13751,6 +13699,9 @@
           "Name": {
             "value": "Medium Anti-Personnel Rocket"
           },
+          "officialDesignation": {
+            "value": "MAPR"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -13787,6 +13738,9 @@
           "Name": {
             "value": "Medium Artillery Rocket"
           },
+          "officialDesignation": {
+            "value": "MAR"
+          },
           "Range": {
             "value": "12-36/72"
           }
@@ -13812,6 +13766,9 @@
           },
           "Name": {
             "value": "Medium Anti-Vehicle Missile"
+          },
+          "officialDesignation": {
+            "value": "MAVM"
           },
           "Range": {
             "value": "6-18/36"
@@ -13897,6 +13854,9 @@
           },
           "Name": {
             "value": "Medium Field Gun"
+          },
+          "officialDesignation": {
+            "value": "MFG"
           },
           "Range": {
             "value": "12-24/48"
@@ -13999,6 +13959,9 @@
           "Name": {
             "value": "Medium Field Gun"
           },
+          "officialDesignation": {
+            "value": "MFG"
+          },
           "Range": {
             "value": "12-24/48"
           },
@@ -14061,6 +14024,9 @@
           },
           "Name": {
             "value": "Medium Hand Grenades"
+          },
+          "officialDesignation": {
+            "value": "MHG"
           },
           "Range": {
             "value": "3-6/9"
@@ -14150,6 +14116,9 @@
           "Name": {
             "value": "Medium Infantry Grenade Launcher"
           },
+          "officialDesignation": {
+            "value": "MIGL"
+          },
           "Range": {
             "value": "3-9/18"
           },
@@ -14185,6 +14154,9 @@
           },
           "Name": {
             "value": "Medium Rocket Pack"
+          },
+          "officialDesignation": {
+            "value": "MRP"
           },
           "Range": {
             "value": "6-18/36"
@@ -14245,6 +14217,9 @@
           "Name": {
             "value": "Medium Rocket Pack"
           },
+          "officialDesignation": {
+            "value": "MRP"
+          },
           "Range": {
             "value": "6-18/36"
           }
@@ -14295,6 +14270,9 @@
           },
           "Name": {
             "value": "Medium Rocket Pack"
+          },
+          "officialDesignation": {
+            "value": "MRP"
           },
           "Range": {
             "value": "6-18/36"
@@ -14384,117 +14362,8 @@
           "Name": {
             "value": "Light Autocannon"
           },
-          "Range": {
-            "value": "6-18/36"
-          },
-          "StatColumn": {
-            "value": "React"
-          }
-        }
-      },
-      "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC (AA)": {
-        "assets": {
-          "traits": [
-            {
-              "item": "Model/Weapon Property, Variable§Burst:X",
-              "stats": {
-                "NameVariable": {
-                  "value": 1
-                }
-              }
-            },
-            "Model/Weapon Property§Split",
-            "Model/Weapon Property§(OR)",
-            "Model/Weapon Property§Precise",
-            {
-              "item": "Model/Weapon Property§AA",
-              "stats": {
-                "Modified": {
-                  "value": "✓"
-                }
-              }
-            }
-          ]
-        },
-        "rules": {
-          "overwriteTraitsAndOrClause": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...set the explicit value of the first clause of the Traits...",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Traits",
-                    "value"
-                  ]
-                ],
-                "value": "Burst:1, Split"
-              },
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...and set the explicit value of the second clause of the traits.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "OrClause",
-                    "value"
-                  ]
-                ],
-                "value": "Precise"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "min": 1,
-                "not": false,
-                "note": "If the model has an OR...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "(OR)"
-                  ]
-                ]
-              }
-            ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LAC"
-              }
-            ],
-            "evals": []
-          }
-        },
-        "stats": {
-          "AMSCapableGuns": {
-            "group": "Hidden",
-            "statType": "numeric",
-            "tracked": true,
-            "value": 1,
-            "visibility": "hidden"
-          },
-          "Damage": {
-            "value": "6"
-          },
-          "Name": {
-            "value": "Light Autocannon"
+          "officialDesignation": {
+            "value": "LAC"
           },
           "Range": {
             "value": "6-18/36"
@@ -14601,6 +14470,9 @@
           "Name": {
             "value": "Light Autocannon"
           },
+          "officialDesignation": {
+            "value": "LAC"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -14688,6 +14560,9 @@
           },
           "Name": {
             "value": "Medium Autocannon"
+          },
+          "officialDesignation": {
+            "value": "MAC"
           },
           "Range": {
             "value": "6-18/36"
@@ -14801,6 +14676,9 @@
           "Name": {
             "value": "Medium Autocannon"
           },
+          "officialDesignation": {
+            "value": "MAC"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -14912,6 +14790,9 @@
           },
           "Name": {
             "value": "Medium Autocannon"
+          },
+          "officialDesignation": {
+            "value": "MAC"
           },
           "Range": {
             "value": "6-18/36"
@@ -15025,6 +14906,9 @@
           "Name": {
             "value": "Medium Autocannon"
           },
+          "officialDesignation": {
+            "value": "MAC"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -15131,6 +15015,9 @@
           "Name": {
             "value": "Medium Autocannon"
           },
+          "officialDesignation": {
+            "value": "MAC"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -15214,6 +15101,9 @@
           },
           "Name": {
             "value": "Heavy Autocannon"
+          },
+          "officialDesignation": {
+            "value": "HAC"
           },
           "Range": {
             "value": "6-18/36"
@@ -15313,6 +15203,9 @@
           },
           "Name": {
             "value": "Heavy Autocannon"
+          },
+          "officialDesignation": {
+            "value": "HAC"
           },
           "Range": {
             "value": "6-18/36"
@@ -15415,6 +15308,9 @@
           "Name": {
             "value": "Heavy Autocannon"
           },
+          "officialDesignation": {
+            "value": "HAC"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -15436,6 +15332,9 @@
           },
           "Name": {
             "value": "Heavy Laser Cannon"
+          },
+          "officialDesignation": {
+            "value": "HLC"
           },
           "Range": {
             "value": "12-36/72"
@@ -15474,6 +15373,9 @@
           "Name": {
             "value": "Heavy Laser Cannon"
           },
+          "officialDesignation": {
+            "value": "HLC"
+          },
           "Range": {
             "value": "12-36/72"
           },
@@ -15502,6 +15404,9 @@
           },
           "Name": {
             "value": "Heavy Rotary Cannon"
+          },
+          "officialDesignation": {
+            "value": "HRC"
           },
           "Range": {
             "value": "6-18/36"
@@ -15556,6 +15461,9 @@
           "Name": {
             "value": "Heavy Rotary Cannon"
           },
+          "officialDesignation": {
+            "value": "HRC"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -15603,6 +15511,9 @@
           "Name": {
             "value": "Heavy Rotary Cannon"
           },
+          "officialDesignation": {
+            "value": "HRC"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -15632,6 +15543,9 @@
           },
           "Name": {
             "value": "Heavy Rotary Laser"
+          },
+          "officialDesignation": {
+            "value": "HRL"
           },
           "Range": {
             "value": "6-18/36"
@@ -15678,6 +15592,9 @@
           "Name": {
             "value": "Heavy Rotary Laser"
           },
+          "officialDesignation": {
+            "value": "HRL"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -15699,6 +15616,9 @@
           },
           "Name": {
             "value": "Light Laser Cannon"
+          },
+          "officialDesignation": {
+            "value": "LLC"
           },
           "Range": {
             "value": "12-36/72"
@@ -15728,6 +15648,9 @@
           },
           "Name": {
             "value": "Light Rotary Cannon"
+          },
+          "officialDesignation": {
+            "value": "LRC"
           },
           "Range": {
             "value": "6-18/36"
@@ -15773,6 +15696,9 @@
           "Name": {
             "value": "Light Rotary Cannon"
           },
+          "officialDesignation": {
+            "value": "LRC"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -15803,6 +15729,9 @@
           "Name": {
             "value": "Light Rotary Laser"
           },
+          "officialDesignation": {
+            "value": "LRL"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -15824,6 +15753,9 @@
           },
           "Name": {
             "value": "Medium Laser Cannon"
+          },
+          "officialDesignation": {
+            "value": "MLC"
           },
           "Range": {
             "value": "12-36/72"
@@ -15862,6 +15794,9 @@
           "Name": {
             "value": "Medium Laser Cannon"
           },
+          "officialDesignation": {
+            "value": "MLC"
+          },
           "Range": {
             "value": "12-36/72"
           },
@@ -15890,6 +15825,9 @@
           },
           "Name": {
             "value": "Medium Rotary Cannon"
+          },
+          "officialDesignation": {
+            "value": "MRC"
           },
           "Range": {
             "value": "6-18/36"
@@ -15959,6 +15897,9 @@
           "Name": {
             "value": "Medium Rotary Cannon"
           },
+          "officialDesignation": {
+            "value": "MRC"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -16006,6 +15947,9 @@
           "Name": {
             "value": "Medium Rotary Cannon"
           },
+          "officialDesignation": {
+            "value": "MRC"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -16035,6 +15979,9 @@
           },
           "Name": {
             "value": "Medium Rotary Laser"
+          },
+          "officialDesignation": {
+            "value": "MRL"
           },
           "Range": {
             "value": "6-18/36"
@@ -16080,6 +16027,9 @@
           },
           "Name": {
             "value": "Medium Rotary Laser"
+          },
+          "officialDesignation": {
+            "value": "MRL"
           },
           "Range": {
             "value": "6-18/36"
@@ -16169,6 +16119,9 @@
           },
           "Name": {
             "value": "Light Frag Cannon"
+          },
+          "officialDesignation": {
+            "value": "LFC"
           },
           "Range": {
             "value": "3-9/18"
@@ -16271,6 +16224,9 @@
           },
           "Name": {
             "value": "Light Frag Cannon"
+          },
+          "officialDesignation": {
+            "value": "LFC"
           },
           "Range": {
             "value": "3-9/18"
@@ -16377,6 +16333,9 @@
           "Name": {
             "value": "Light Frag Cannon"
           },
+          "officialDesignation": {
+            "value": "LFC"
+          },
           "Range": {
             "value": "3-9/18"
           },
@@ -16414,6 +16373,9 @@
           },
           "Name": {
             "value": "Light Flamer"
+          },
+          "officialDesignation": {
+            "value": "LFL"
           },
           "Range": {
             "value": "0-9/18"
@@ -16469,6 +16431,9 @@
           "Name": {
             "value": "Light Flamer"
           },
+          "officialDesignation": {
+            "value": "LFL"
+          },
           "Range": {
             "value": "0-9/18"
           }
@@ -16522,6 +16487,9 @@
           "Name": {
             "value": "Light Flamer"
           },
+          "officialDesignation": {
+            "value": "LFL"
+          },
           "Range": {
             "value": "0-9/18"
           }
@@ -16539,6 +16507,9 @@
           },
           "Name": {
             "value": "Light Pistol"
+          },
+          "officialDesignation": {
+            "value": "LP"
           },
           "Range": {
             "value": "0-12/24"
@@ -16587,6 +16558,9 @@
           "Name": {
             "value": "Light Pistol"
           },
+          "officialDesignation": {
+            "value": "LP"
+          },
           "Range": {
             "value": "0-12/24"
           },
@@ -16620,6 +16594,9 @@
           },
           "Name": {
             "value": "Light Submachine Gun"
+          },
+          "officialDesignation": {
+            "value": "LSMG"
           },
           "Range": {
             "value": "0-9/18"
@@ -16678,6 +16655,9 @@
           "Name": {
             "value": "Light Submachine Gun"
           },
+          "officialDesignation": {
+            "value": "LSMG"
+          },
           "Range": {
             "value": "0-9/18"
           },
@@ -16731,6 +16711,9 @@
           },
           "Name": {
             "value": "Light Submachine Gun"
+          },
+          "officialDesignation": {
+            "value": "LSMG"
           },
           "Range": {
             "value": "0-9/18"
@@ -16814,6 +16797,9 @@
           "Name": {
             "value": "Medium Frag Cannon"
           },
+          "officialDesignation": {
+            "value": "MFC"
+          },
           "Range": {
             "value": "3-9/18"
           }
@@ -16885,6 +16871,11 @@
             ],
             "evals": []
           }
+        },
+        "stats": {
+          "officialDesignation": {
+            "value": "MFC"
+          }
         }
       },
       "Ranged Weapon, Direct, Link-upgrade§MFL": {
@@ -16916,6 +16907,9 @@
           },
           "Name": {
             "value": "Medium Flamer"
+          },
+          "officialDesignation": {
+            "value": "MFL"
           },
           "Range": {
             "value": "0-9/18"
@@ -16974,6 +16968,9 @@
           "Name": {
             "value": "Medium Flamer"
           },
+          "officialDesignation": {
+            "value": "MFL"
+          },
           "Range": {
             "value": "0-9/18"
           },
@@ -16994,6 +16991,9 @@
           },
           "Name": {
             "value": "Medium Pistol"
+          },
+          "officialDesignation": {
+            "value": "MP"
           },
           "Range": {
             "value": "0-12/24"
@@ -17026,6 +17026,9 @@
           },
           "Name": {
             "value": "Medium Submachine Gun"
+          },
+          "officialDesignation": {
+            "value": "MSMG"
           },
           "Range": {
             "value": "0-9/18"
@@ -17078,6 +17081,9 @@
           },
           "Name": {
             "value": "Medium Submachine Gun"
+          },
+          "officialDesignation": {
+            "value": "MSMG"
           },
           "Range": {
             "value": "0-9/18"
@@ -17160,6 +17166,9 @@
           "Name": {
             "value": "Heavy Machine Gun"
           },
+          "officialDesignation": {
+            "value": "HMG"
+          },
           "Range": {
             "value": "3-9/18"
           },
@@ -17230,6 +17239,9 @@
           },
           "Name": {
             "value": "Heavy Panzerfaust"
+          },
+          "officialDesignation": {
+            "value": "HPZ"
           },
           "Range": {
             "value": "3-6/9"
@@ -17302,6 +17314,9 @@
           "Name": {
             "value": "Light Panzerfaust"
           },
+          "officialDesignation": {
+            "value": "LPZ"
+          },
           "Range": {
             "value": "3-6/9"
           },
@@ -17373,6 +17388,9 @@
           "Name": {
             "value": "Medium Panzerfaust"
           },
+          "officialDesignation": {
+            "value": "MPZ"
+          },
           "Range": {
             "value": "3-6/9"
           },
@@ -17408,6 +17426,9 @@
           },
           "Name": {
             "value": "Bomb"
+          },
+          "officialDesignation": {
+            "value": "BB"
           },
           "Range": {
             "value": "0/-"
@@ -17482,6 +17503,9 @@
           "Name": {
             "value": "Bomb"
           },
+          "officialDesignation": {
+            "value": "BB"
+          },
           "Range": {
             "value": "0/-"
           },
@@ -17550,6 +17574,9 @@
           "Name": {
             "value": "Bomb"
           },
+          "officialDesignation": {
+            "value": "BB"
+          },
           "Range": {
             "value": "0/-"
           },
@@ -17615,6 +17642,9 @@
           "Name": {
             "value": "Bomb"
           },
+          "officialDesignation": {
+            "value": "BB"
+          },
           "Range": {
             "value": "0/-"
           },
@@ -17637,6 +17667,9 @@
           },
           "Name": {
             "value": "Heavy Anti-Personnel Grenade Launchers"
+          },
+          "officialDesignation": {
+            "value": "HAPGL"
           },
           "Range": {
             "value": "0-3/-"
@@ -17679,6 +17712,9 @@
           "Name": {
             "value": "Heavy Anti-Personnel Grenade Launchers"
           },
+          "officialDesignation": {
+            "value": "HAPGL"
+          },
           "Range": {
             "value": "0-3/-"
           },
@@ -17709,6 +17745,9 @@
           },
           "Name": {
             "value": "Heavy Bazooka"
+          },
+          "officialDesignation": {
+            "value": "HBZ"
           },
           "Range": {
             "value": "6-12/24"
@@ -17801,6 +17840,9 @@
           },
           "Name": {
             "value": "Heavy Frag Cannon"
+          },
+          "officialDesignation": {
+            "value": "HFC"
           },
           "Range": {
             "value": "3-9/18"
@@ -17911,6 +17953,9 @@
           "Name": {
             "value": "Heavy Frag Cannon"
           },
+          "officialDesignation": {
+            "value": "HFC"
+          },
           "Range": {
             "value": "3-9/18"
           },
@@ -17951,6 +17996,9 @@
           },
           "Name": {
             "value": "Heavy Flamer"
+          },
+          "officialDesignation": {
+            "value": "HFL"
           },
           "Range": {
             "value": "0-9/18"
@@ -18008,6 +18056,9 @@
           "Name": {
             "value": "Heavy Flamer"
           },
+          "officialDesignation": {
+            "value": "HFL"
+          },
           "Range": {
             "value": "0-9/18"
           },
@@ -18041,6 +18092,9 @@
           "Name": {
             "value": "Heavy Infantry Laser"
           },
+          "officialDesignation": {
+            "value": "HIL"
+          },
           "Range": {
             "value": "6-18/36"
           },
@@ -18063,6 +18117,9 @@
           "Name": {
             "value": "Heavy Infantry Rifle"
           },
+          "officialDesignation": {
+            "value": "HIR"
+          },
           "Range": {
             "value": "6-24/48"
           },
@@ -18078,6 +18135,9 @@
           },
           "Name": {
             "value": "Heavy Infantry Support Weapon"
+          },
+          "officialDesignation": {
+            "value": "HIS"
           },
           "Range": {
             "value": "6-18/36"
@@ -18128,6 +18188,9 @@
           "Name": {
             "value": "Heavy Infantry Support Weapon"
           },
+          "officialDesignation": {
+            "value": "HIS"
+          },
           "Range": {
             "value": "6-18/36"
           }
@@ -18158,6 +18221,9 @@
           },
           "Name": {
             "value": "Heavy Infantry Support Weapon"
+          },
+          "officialDesignation": {
+            "value": "HIS"
           },
           "Range": {
             "value": "6-18/36"
@@ -18190,6 +18256,9 @@
           },
           "Name": {
             "value": "Heavy Infantry Weapon"
+          },
+          "officialDesignation": {
+            "value": "HIW"
           },
           "Range": {
             "value": "0-9/18"
@@ -18233,6 +18302,9 @@
           },
           "Name": {
             "value": "Heavy Machine Gun"
+          },
+          "officialDesignation": {
+            "value": "HMG"
           },
           "Range": {
             "value": "3-9/18"
@@ -18300,6 +18372,9 @@
           "Name": {
             "value": "Heavy Machine Gun"
           },
+          "officialDesignation": {
+            "value": "HMG"
+          },
           "Range": {
             "value": "3-9/18"
           },
@@ -18360,6 +18435,9 @@
           },
           "Name": {
             "value": "Heavy Machine Gun"
+          },
+          "officialDesignation": {
+            "value": "HMG"
           },
           "Range": {
             "value": "3-9/18"
@@ -18422,6 +18500,9 @@
           "Name": {
             "value": "Heavy Machine Gun"
           },
+          "officialDesignation": {
+            "value": "HMG"
+          },
           "Range": {
             "value": "3-9/18"
           },
@@ -18445,6 +18526,9 @@
           },
           "Name": {
             "value": "Heavy Pistol"
+          },
+          "officialDesignation": {
+            "value": "HP"
           },
           "Range": {
             "value": "0-12/24"
@@ -18470,6 +18554,9 @@
           },
           "Name": {
             "value": "Heavy Particle Accelerator"
+          },
+          "officialDesignation": {
+            "value": "HPA"
           },
           "Range": {
             "value": "6-24/48"
@@ -18510,6 +18597,9 @@
           },
           "Name": {
             "value": "Heavy Particle Accelerator"
+          },
+          "officialDesignation": {
+            "value": "HPA"
           },
           "Range": {
             "value": "6-24/48"
@@ -18603,6 +18693,9 @@
           "Name": {
             "value": "Heavy Pulse Laser"
           },
+          "officialDesignation": {
+            "value": "HPL"
+          },
           "Range": {
             "value": "6-24/48"
           },
@@ -18623,6 +18716,9 @@
           },
           "Name": {
             "value": "Heavy Rifle"
+          },
+          "officialDesignation": {
+            "value": "HRF"
           },
           "Range": {
             "value": "12-36/72"
@@ -18663,6 +18759,9 @@
           "Name": {
             "value": "Heavy Rifle"
           },
+          "officialDesignation": {
+            "value": "HRF"
+          },
           "Range": {
             "value": "12-36/72"
           },
@@ -18695,6 +18794,9 @@
           },
           "Name": {
             "value": "Heavy Railgun"
+          },
+          "officialDesignation": {
+            "value": "HRG"
           },
           "Range": {
             "value": "12-48/96"
@@ -18731,6 +18833,9 @@
           },
           "Name": {
             "value": "Heavy Snub Cannon"
+          },
+          "officialDesignation": {
+            "value": "HSC"
           },
           "Range": {
             "value": "3-9/18"
@@ -18769,6 +18874,9 @@
           },
           "Name": {
             "value": "Heavy Submachine Gun"
+          },
+          "officialDesignation": {
+            "value": "HSMG"
           },
           "Range": {
             "value": "0-9/18"
@@ -18826,6 +18934,9 @@
           "Name": {
             "value": "Heavy Submachine Gun"
           },
+          "officialDesignation": {
+            "value": "HSMG"
+          },
           "Range": {
             "value": "0-9/18"
           },
@@ -18865,6 +18976,9 @@
           "Name": {
             "value": "Heavy Tank Gun"
           },
+          "officialDesignation": {
+            "value": "HTG"
+          },
           "Range": {
             "value": "12-36/72"
           },
@@ -18887,6 +19001,9 @@
           },
           "Name": {
             "value": "Light Anti-Personnel Grenade Launchers"
+          },
+          "officialDesignation": {
+            "value": "LAPGL"
           },
           "Range": {
             "value": "0-3/-"
@@ -18931,6 +19048,9 @@
           "Name": {
             "value": "Light Anti-Personnel Grenade Launchers"
           },
+          "officialDesignation": {
+            "value": "LAPGL"
+          },
           "Range": {
             "value": "0-3/-"
           },
@@ -18958,6 +19078,9 @@
           },
           "Name": {
             "value": "Light Bazooka"
+          },
+          "officialDesignation": {
+            "value": "LBZ"
           },
           "Range": {
             "value": "6-12/24"
@@ -18989,6 +19112,9 @@
           "Name": {
             "value": "Light Infantry Laser"
           },
+          "officialDesignation": {
+            "value": "LIL"
+          },
           "Range": {
             "value": "6-18/36"
           }
@@ -19008,6 +19134,9 @@
           "Name": {
             "value": "Light Infantry Rifle"
           },
+          "officialDesignation": {
+            "value": "LIR"
+          },
           "Range": {
             "value": "6-24/48"
           }
@@ -19020,6 +19149,9 @@
           },
           "Name": {
             "value": "Light Infantry Support Weapon"
+          },
+          "officialDesignation": {
+            "value": "LIS"
           },
           "Range": {
             "value": "6-18/36"
@@ -19049,6 +19181,9 @@
           },
           "Name": {
             "value": "Light Infantry Weapon"
+          },
+          "officialDesignation": {
+            "value": "LIW"
           },
           "Range": {
             "value": "0-9/18"
@@ -19098,6 +19233,9 @@
           "Name": {
             "value": "Light Laser Cannon"
           },
+          "officialDesignation": {
+            "value": "LLC"
+          },
           "Range": {
             "value": "12-36/72"
           },
@@ -19137,6 +19275,9 @@
           },
           "Name": {
             "value": "Light Machine Gun"
+          },
+          "officialDesignation": {
+            "value": "LMG"
           },
           "Range": {
             "value": "3-9/18"
@@ -19201,6 +19342,9 @@
           "Name": {
             "value": "Light Machine Gun"
           },
+          "officialDesignation": {
+            "value": "LMG"
+          },
           "Range": {
             "value": "3-9/18"
           },
@@ -19259,6 +19403,9 @@
           "Name": {
             "value": "Light Machine Gun"
           },
+          "officialDesignation": {
+            "value": "LMG"
+          },
           "Range": {
             "value": "3-9/18"
           },
@@ -19280,6 +19427,9 @@
           },
           "Name": {
             "value": "Light Particle Accelerator"
+          },
+          "officialDesignation": {
+            "value": "LPA"
           },
           "Range": {
             "value": "6-24/48"
@@ -19370,6 +19520,9 @@
           "Name": {
             "value": "Light Pulse Laser"
           },
+          "officialDesignation": {
+            "value": "LPL"
+          },
           "Range": {
             "value": "6-24/48"
           },
@@ -19424,6 +19577,9 @@
           "Name": {
             "value": "Light Panzerfaust"
           },
+          "officialDesignation": {
+            "value": "LPZ"
+          },
           "Range": {
             "value": "3-6/9"
           },
@@ -19444,6 +19600,9 @@
           },
           "Name": {
             "value": "Light Rifle"
+          },
+          "officialDesignation": {
+            "value": "LRF"
           },
           "Range": {
             "value": "12-36/72"
@@ -19474,6 +19633,9 @@
           },
           "Name": {
             "value": "Light Railgun"
+          },
+          "officialDesignation": {
+            "value": "LRG"
           },
           "Range": {
             "value": "12-48/96"
@@ -19511,6 +19673,9 @@
           "Name": {
             "value": "Light Snub Cannon"
           },
+          "officialDesignation": {
+            "value": "LSC"
+          },
           "Range": {
             "value": "3-9/18"
           }
@@ -19544,6 +19709,9 @@
           "Name": {
             "value": "Light Tank Gun"
           },
+          "officialDesignation": {
+            "value": "LTG"
+          },
           "Range": {
             "value": "12-36/72"
           }
@@ -19563,6 +19731,9 @@
           },
           "Name": {
             "value": "Medium Anti-Personnel Grenade Launchers"
+          },
+          "officialDesignation": {
+            "value": "MAPGL"
           },
           "Range": {
             "value": "0-3/-"
@@ -19588,6 +19759,9 @@
           },
           "Name": {
             "value": "Medium Bazooka"
+          },
+          "officialDesignation": {
+            "value": "MBZ"
           },
           "Range": {
             "value": "6-12/24"
@@ -19619,6 +19793,9 @@
           "Name": {
             "value": "Medium Infantry Laser"
           },
+          "officialDesignation": {
+            "value": "MIL"
+          },
           "Range": {
             "value": "6-18/36"
           }
@@ -19637,6 +19814,9 @@
           },
           "Name": {
             "value": "Medium Infantry Rifle"
+          },
+          "officialDesignation": {
+            "value": "MIR"
           },
           "Range": {
             "value": "6-24/48"
@@ -19683,6 +19863,9 @@
           "Name": {
             "value": "Medium Infantry Rifle"
           },
+          "officialDesignation": {
+            "value": "MIR"
+          },
           "Range": {
             "value": "6-24/48"
           }
@@ -19695,6 +19878,9 @@
           },
           "Name": {
             "value": "Medium Infantry Support Weapon"
+          },
+          "officialDesignation": {
+            "value": "MIS"
           },
           "Range": {
             "value": "6-18/36"
@@ -19727,6 +19913,9 @@
           },
           "Name": {
             "value": "Medium Infantry Weapon"
+          },
+          "officialDesignation": {
+            "value": "MIW"
           },
           "Range": {
             "value": "0-9/18"
@@ -19767,6 +19956,9 @@
           },
           "Name": {
             "value": "Medium Machine Gun"
+          },
+          "officialDesignation": {
+            "value": "MMG"
           },
           "Range": {
             "value": "3-9/18"
@@ -19831,6 +20023,9 @@
           "Name": {
             "value": "Medium Machine Gun"
           },
+          "officialDesignation": {
+            "value": "MMG"
+          },
           "Range": {
             "value": "3-9/18"
           },
@@ -19889,6 +20084,9 @@
           "Name": {
             "value": "Medium Machine Gun"
           },
+          "officialDesignation": {
+            "value": "MMG"
+          },
           "Range": {
             "value": "3-9/18"
           },
@@ -19910,6 +20108,9 @@
           },
           "Name": {
             "value": "Medium Particle Accelerator"
+          },
+          "officialDesignation": {
+            "value": "MPA"
           },
           "Range": {
             "value": "6-24/48"
@@ -19947,6 +20148,9 @@
           },
           "Name": {
             "value": "Medium Particle Accelerator"
+          },
+          "officialDesignation": {
+            "value": "MPA"
           },
           "Range": {
             "value": "6-24/48"
@@ -20036,6 +20240,9 @@
           },
           "Name": {
             "value": "Medium Pulse Laser"
+          },
+          "officialDesignation": {
+            "value": "MPL"
           },
           "Range": {
             "value": "6-24/48"
@@ -20161,6 +20368,9 @@
           "Name": {
             "value": "Medium Pulse Laser"
           },
+          "officialDesignation": {
+            "value": "MPL"
+          },
           "Range": {
             "value": "6-24/48"
           },
@@ -20215,6 +20425,9 @@
           "Name": {
             "value": "Medium Panzerfaust"
           },
+          "officialDesignation": {
+            "value": "MPZ"
+          },
           "Range": {
             "value": "3-6/9"
           },
@@ -20235,6 +20448,9 @@
           },
           "Name": {
             "value": "Medium Rifle"
+          },
+          "officialDesignation": {
+            "value": "MRF"
           },
           "Range": {
             "value": "12-36/72"
@@ -20272,6 +20488,9 @@
           },
           "Name": {
             "value": "Medium Rifle"
+          },
+          "officialDesignation": {
+            "value": "MRF"
           },
           "Range": {
             "value": "12-36/72"
@@ -20312,6 +20531,9 @@
           "Name": {
             "value": "Medium Rifle"
           },
+          "officialDesignation": {
+            "value": "MRF"
+          },
           "Range": {
             "value": "12-36/72"
           },
@@ -20341,6 +20563,9 @@
           },
           "Name": {
             "value": "Medium Railgun"
+          },
+          "officialDesignation": {
+            "value": "MRG"
           },
           "Range": {
             "value": "12-48/96"
@@ -20377,6 +20602,9 @@
           },
           "Name": {
             "value": "Medium Snub Cannon"
+          },
+          "officialDesignation": {
+            "value": "MSC"
           },
           "Range": {
             "value": "3-9/18"
@@ -20440,6 +20668,9 @@
           "Name": {
             "value": "Medium Snub Cannon"
           },
+          "officialDesignation": {
+            "value": "MSC"
+          },
           "Range": {
             "value": "3-9/18"
           },
@@ -20475,6 +20706,9 @@
           },
           "Name": {
             "value": "Medium Tank Gun"
+          },
+          "officialDesignation": {
+            "value": "MTG"
           },
           "Range": {
             "value": "12-36/72"
@@ -20527,6 +20761,9 @@
           "Name": {
             "value": "Medium Tank Gun"
           },
+          "officialDesignation": {
+            "value": "MTG"
+          },
           "Range": {
             "value": "12-36/72"
           },
@@ -20560,6 +20797,9 @@
           },
           "Name": {
             "value": "Heavy Air Burst Missile"
+          },
+          "officialDesignation": {
+            "value": "HABM"
           },
           "Range": {
             "value": "24-48/96"
@@ -20603,6 +20843,9 @@
           "Name": {
             "value": "Heavy Artillery Gun"
           },
+          "officialDesignation": {
+            "value": "HAG"
+          },
           "Range": {
             "value": "24-48/96"
           }
@@ -20638,6 +20881,9 @@
           "Name": {
             "value": "Heavy Artillery Missile"
           },
+          "officialDesignation": {
+            "value": "HAM"
+          },
           "Range": {
             "value": "24-48/96"
           }
@@ -20663,6 +20909,9 @@
           },
           "Name": {
             "value": "Heavy Field Mortar"
+          },
+          "officialDesignation": {
+            "value": "HFM"
           },
           "Range": {
             "value": "18-36/72"
@@ -20691,6 +20940,9 @@
           "Name": {
             "value": "Heavy Guided Mortar"
           },
+          "officialDesignation": {
+            "value": "HGM"
+          },
           "Range": {
             "value": "18-36/72"
           }
@@ -20717,6 +20969,9 @@
           },
           "Name": {
             "value": "Heavy Infantry Mortar"
+          },
+          "officialDesignation": {
+            "value": "HIM"
           },
           "Range": {
             "value": "12-24/48"
@@ -20745,6 +21000,9 @@
           },
           "Name": {
             "value": "Light Air Burst Missile"
+          },
+          "officialDesignation": {
+            "value": "LABM"
           },
           "Range": {
             "value": "24-48/96"
@@ -20788,6 +21046,9 @@
           "Name": {
             "value": "Light Artillery Gun"
           },
+          "officialDesignation": {
+            "value": "LAG"
+          },
           "Range": {
             "value": "24-48/96"
           }
@@ -20823,6 +21084,9 @@
           "Name": {
             "value": "Light Artillery Missile"
           },
+          "officialDesignation": {
+            "value": "LAM"
+          },
           "Range": {
             "value": "24-48/96"
           }
@@ -20848,6 +21112,9 @@
           },
           "Name": {
             "value": "Light Field Mortar"
+          },
+          "officialDesignation": {
+            "value": "LFM"
           },
           "Range": {
             "value": "18-36/72"
@@ -20876,6 +21143,9 @@
           "Name": {
             "value": "Light Guided Mortar"
           },
+          "officialDesignation": {
+            "value": "LGM"
+          },
           "Range": {
             "value": "18-36/72"
           }
@@ -20902,6 +21172,9 @@
           },
           "Name": {
             "value": "Light Infantry Mortar"
+          },
+          "officialDesignation": {
+            "value": "LIM"
           },
           "Range": {
             "value": "12-24/48"
@@ -20930,6 +21203,9 @@
           },
           "Name": {
             "value": "Medium Air Burst Missile"
+          },
+          "officialDesignation": {
+            "value": "MABM"
           },
           "Range": {
             "value": "24-48/96"
@@ -20985,6 +21261,9 @@
           "Name": {
             "value": "Medium Air Burst Missile"
           },
+          "officialDesignation": {
+            "value": "MABM"
+          },
           "Range": {
             "value": "24-48/96"
           }
@@ -21027,6 +21306,9 @@
           "Name": {
             "value": "Medium Artillery Gun"
           },
+          "officialDesignation": {
+            "value": "MAG"
+          },
           "Range": {
             "value": "24-48/96"
           }
@@ -21062,6 +21344,9 @@
           "Name": {
             "value": "Medium Artillery Missile"
           },
+          "officialDesignation": {
+            "value": "MAM"
+          },
           "Range": {
             "value": "24-48/96"
           }
@@ -21087,6 +21372,9 @@
           },
           "Name": {
             "value": "Medium Field Mortar"
+          },
+          "officialDesignation": {
+            "value": "MFM"
           },
           "Range": {
             "value": "18-36/72"
@@ -21115,6 +21403,9 @@
           "Name": {
             "value": "Medium Guided Mortar"
           },
+          "officialDesignation": {
+            "value": "MGM"
+          },
           "Range": {
             "value": "18-36/72"
           }
@@ -21141,6 +21432,9 @@
           },
           "Name": {
             "value": "Medium Infantry Mortar"
+          },
+          "officialDesignation": {
+            "value": "MIM"
           },
           "Range": {
             "value": "12-24/48"
@@ -21194,6 +21488,9 @@
           },
           "Name": {
             "value": "Medium Infantry Mortar"
+          },
+          "officialDesignation": {
+            "value": "MIM"
           },
           "Range": {
             "value": "12-24/48"
@@ -21583,6 +21880,9 @@
           "Name": {
             "value": "Light Combat Weapon"
           },
+          "officialDesignation": {
+            "value": "LCW"
+          },
           "StatColumn": {
             "value": "React"
           }
@@ -21636,6 +21936,9 @@
           },
           "Name": {
             "value": "Light Vibro-Blade"
+          },
+          "officialDesignation": {
+            "value": "LVB"
           },
           "StatColumn": {
             "value": "React"

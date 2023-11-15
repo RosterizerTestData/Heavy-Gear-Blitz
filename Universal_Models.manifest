@@ -7,9 +7,10 @@
   "url": "https://www.dp9.com/",
   "notes": "",
   "wip": true,
+  "isModule": true,
   "dependencies": [
     {
-      "slug": "T4RZPB",
+      "slug": "VUGK7N",
       "name": "Core System",
       "game": "Heavy Gear Blitz! v3.1",
       "source": ""
