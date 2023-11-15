@@ -5425,14 +5425,6 @@
         "templateClass": "Upgrade"
       },
       "Veteran Upgrade Weapons": {
-        "rules": {
-          "stripModdedDesignation": {
-            "evals": [],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 141
-          }
-        },
         "stats": {
           "TV": {
             "value": 1
@@ -7386,22 +7378,6 @@
           ]
         },
         "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LCW"
-              }
-            ],
-            "evals": []
-          },
           "swapToLSG": {
             "actions": [
               {
@@ -7880,22 +7856,6 @@
           ]
         },
         "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MCW"
-              }
-            ],
-            "evals": []
-          },
           "swapToMSG": {
             "actions": [
               {
@@ -8034,22 +7994,6 @@
           ]
         },
         "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MCW"
-              }
-            ],
-            "evals": []
-          },
           "swapToMSG": {
             "actions": [
               {
@@ -8169,22 +8113,6 @@
           ]
         },
         "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MCW"
-              }
-            ],
-            "evals": []
-          },
           "swapToMSG": {
             "actions": [
               {
@@ -8315,22 +8243,6 @@
           ]
         },
         "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MCW"
-              }
-            ],
-            "evals": []
-          },
           "swapToMSG": {
             "actions": [
               {
@@ -8690,22 +8602,6 @@
           ]
         },
         "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MVB"
-              }
-            ],
-            "evals": []
-          },
           "swapToMCW": {
             "actions": [
               {
@@ -8846,24 +8742,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HCW"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "9"
@@ -8952,24 +8830,6 @@
             "Model/Weapon Property§/"
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HVB"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "9"
@@ -9033,24 +8893,6 @@
               }
             }
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LCW"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -9236,24 +9078,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MICW"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "5"
@@ -9277,24 +9101,6 @@
           "traits": [
             "Model/Weapon Property§AI"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MICW"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -9445,24 +9251,6 @@
             "Requires Hands or Infantry"
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LSE"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "8"
@@ -9507,24 +9295,6 @@
               }
             }
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MCW"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -9624,24 +9394,6 @@
           "Tags": [
             "Requires Hands or Infantry"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MSE"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -10655,24 +10407,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LAAM"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "7"
@@ -10804,24 +10538,6 @@
             "Model/Weapon Property§/"
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LGL"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "6"
@@ -10869,24 +10585,6 @@
               }
             }
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LGL"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -10980,24 +10678,6 @@
               }
             }
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MGL"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -11297,22 +10977,6 @@
                 "value": "HMG"
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HRP"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -11460,22 +11124,6 @@
                 "value": "LATM"
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LAAM"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -11544,22 +11192,6 @@
                 "value": "LATM"
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LAAM"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -11713,22 +11345,6 @@
                 "value": "LAAM"
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LATM"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -11897,22 +11513,6 @@
                 "value": "HMG"
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LRP"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -12049,22 +11649,6 @@
                 "value": "MATM"
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MAAM"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -12218,22 +11802,6 @@
                 "value": "MAAM"
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MATM"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -12410,22 +11978,6 @@
                 "value": "HMG"
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MRP"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -12508,22 +12060,6 @@
                 "value": "HMG"
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MRP"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -12988,24 +12524,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HRP"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "9"
@@ -13041,24 +12559,6 @@
               }
             }
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HRP"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -13171,24 +12671,6 @@
               }
             }
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LAR"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -13345,24 +12827,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LFG"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "9"
@@ -13410,24 +12874,6 @@
           "Tags": [
             "Requires Hands"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LHG"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -13595,24 +13041,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LRP"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "7"
@@ -13673,24 +13101,6 @@
               }
             }
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MAPR"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -13934,22 +13344,6 @@
                 ]
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MFG"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -13999,24 +13393,6 @@
           "Tags": [
             "Requires Hands"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MHG"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -14192,24 +13568,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MRP"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "8"
@@ -14245,24 +13603,6 @@
               }
             }
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MRP"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -14438,22 +13778,6 @@
                 ]
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LAC"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -14644,22 +13968,6 @@
                 ]
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MAC"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -14759,22 +14067,6 @@
                 ]
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MAC"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -14874,22 +14166,6 @@
                 ]
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MAC"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -14982,23 +14258,6 @@
                 ]
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "Rename MAC.",
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MAC"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -15175,23 +14434,6 @@
                 ]
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "Change the name from HAC, React to HAC.",
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HAC"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -15279,23 +14521,6 @@
                 ]
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "Change the name from HAC, React to HAC.",
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HAC"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -15347,24 +14572,6 @@
             "Model/Weapon Property§Precise",
             "Model/Weapon Property§Advanced"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HLC"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -15436,24 +14643,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HRC"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "7"
@@ -15485,24 +14674,6 @@
             },
             "Model/Weapon Property§Split"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HRC"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -15566,24 +14737,6 @@
             },
             "Model/Weapon Property§Split"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HRL"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -15671,24 +14824,6 @@
             "Model/Weapon Property§Split"
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LRC"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "5"
@@ -15768,24 +14903,6 @@
             "Model/Weapon Property§Precise",
             "Model/Weapon Property§Advanced"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MLC"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -15872,24 +14989,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MRC"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "6"
@@ -15921,24 +15020,6 @@
             },
             "Model/Weapon Property§Split"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MRC"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -16002,24 +15083,6 @@
             },
             "Model/Weapon Property§Split"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MRL"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -16193,22 +15256,6 @@
                 ]
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LFC"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -16301,22 +15348,6 @@
                 ]
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LFC"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -16406,24 +15437,6 @@
             "Model/Weapon Property§/"
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LFL"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "3"
@@ -16461,24 +15474,6 @@
             },
             "Model/Weapon Property§Spray"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LFL"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -16532,24 +15527,6 @@
           "Tags": [
             "Requires Hands"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LP"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -16627,24 +15604,6 @@
             "Requires Hands"
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LSMG"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "AMSCapableGuns": {
             "value": 1
@@ -16682,25 +15641,6 @@
             },
             "Model/Weapon Property§/"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "Rename to LSMG.",
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LSMG"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "AMSCapableGuns": {
@@ -16854,22 +15794,6 @@
                 ]
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MFC"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -16942,24 +15866,6 @@
             "Model/Weapon Property§Spray",
             "Model/Weapon Property§/"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MFL"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -17049,25 +15955,6 @@
             "Model/Weapon Property§/"
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "Rename MSMG.",
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MSMG"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "AMSCapableGuns": {
             "group": "Hidden",
@@ -17141,22 +16028,6 @@
                 "value": "Rocket Pack"
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HMG"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -17478,24 +16349,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "BB"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "8/-/-"
@@ -17549,24 +16402,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "BB"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "8/-/-"
@@ -17616,24 +16451,6 @@
               }
             }
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "BB"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -17686,24 +16503,6 @@
             "Model/Weapon Property§Frag",
             "Model/Weapon Property§Prox"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HAPGL"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -17921,22 +16720,6 @@
                 ]
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HFC"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -18030,24 +16813,6 @@
             },
             "Model/Weapon Property§Spray"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HFL"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -18163,24 +16928,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HIS"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "6"
@@ -18197,24 +16944,6 @@
         }
       },
       "Ranged Weapon, Direct§HIS, React": {
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HIS"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "6"
@@ -18337,24 +17066,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HMG"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "AMSCapableGuns": {
             "group": "Hidden",
@@ -18401,24 +17112,6 @@
             "Model/Weapon Property§Split"
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HMG"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "AMSCapableGuns": {
             "group": "Hidden",
@@ -18464,24 +17157,6 @@
             },
             "Model/Weapon Property§Split"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HMG"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "AMSCapableGuns": {
@@ -18572,24 +17247,6 @@
             "Model/Weapon Property§Haywire",
             "Model/Weapon Property§Advanced"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HPA"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -18733,24 +17390,6 @@
           "traits": [
             "Model/Weapon Property§Precise"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HRF"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -18902,24 +17541,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "HSMG"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "AMSCapableGuns": {
             "group": "Hidden",
@@ -19021,25 +17642,6 @@
             "Model/Weapon Property§Prox",
             "Model/Weapon Property§/"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "Rename LAPGL.",
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LAPGL"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -19208,24 +17810,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LLC"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "6"
@@ -19307,24 +17891,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LMG"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "AMSCapableGuns": {
             "group": "Hidden",
@@ -19367,24 +17933,6 @@
             },
             "Model/Weapon Property§Split"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LMG"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "AMSCapableGuns": {
@@ -19551,24 +18099,6 @@
           "Tags": [
             "Requires Hands"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LPZ"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -19838,24 +18368,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MIR"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "5"
@@ -19988,24 +18500,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MMG"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "AMSCapableGuns": {
             "group": "Hidden",
@@ -20048,24 +18542,6 @@
             },
             "Model/Weapon Property§Split"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MMG"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "AMSCapableGuns": {
@@ -20123,24 +18599,6 @@
             "Model/Weapon Property§Haywire",
             "Model/Weapon Property§Advanced"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MPA"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -20343,22 +18801,6 @@
                 ]
               }
             ]
-          },
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MPL"
-              }
-            ],
-            "evals": []
           }
         },
         "stats": {
@@ -20399,24 +18841,6 @@
           "Tags": [
             "Requires Hands"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MPZ"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -20464,24 +18888,6 @@
             "Model/Weapon Property§/"
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MRF"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "7"
@@ -20505,24 +18911,6 @@
           "traits": [
             "Model/Weapon Property§Precise"
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MRF"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -20643,24 +19031,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MSC"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "9"
@@ -20735,24 +19105,6 @@
               }
             }
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MTG"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -21236,24 +19588,6 @@
             }
           ]
         },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MAMB"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "7"
@@ -21463,24 +19797,6 @@
               }
             }
           ]
-        },
-        "rules": {
-          "setDesignationWithoutReact": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "MIM"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
@@ -21855,24 +20171,6 @@
             }
           ]
         },
-        "rules": {
-          "stripModdedDesignation": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LCW"
-              }
-            ],
-            "evals": []
-          }
-        },
         "stats": {
           "Damage": {
             "value": "7"
@@ -21911,24 +20209,6 @@
               }
             }
           ]
-        },
-        "rules": {
-          "stripModdedDesignation": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "value": "LVB"
-              }
-            ],
-            "evals": []
-          }
         },
         "stats": {
           "Damage": {
