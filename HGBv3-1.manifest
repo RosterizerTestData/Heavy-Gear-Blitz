@@ -1037,40 +1037,120 @@
           "doublePrimaryAvailability": {
             "actions": [
               {
-                "actionType": "modify",
+                "actionType": "set",
                 "iterations": 1,
-                "note": "A secondary unit gets one availability for each variant. If this model is in a Primary Unit, then that availability is increased by 1 (which is indistinguishable from double).",
+                "note": "...then double fireSupportMax...",
                 "paths": [
                   [
                     "{self}",
                     "stats",
                     "fireSupportMax",
                     "value"
-                  ],
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "rules",
+                  "doublePrimaryAvailability",
+                  "evals",
+                  "1",
+                  "result",
+                  "integer"
+                ]
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then double fortificationsMax...",
+                "paths": [
                   [
                     "{self}",
                     "stats",
                     "fortificationsMax",
                     "value"
-                  ],
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "rules",
+                  "doublePrimaryAvailability",
+                  "evals",
+                  "2",
+                  "result",
+                  "integer"
+                ]
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then double generalPurposeMax...",
+                "paths": [
                   [
                     "{self}",
                     "stats",
                     "generalPurposeMax",
                     "value"
-                  ],
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "rules",
+                  "doublePrimaryAvailability",
+                  "evals",
+                  "3",
+                  "result",
+                  "integer"
+                ]
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then double reconMax...",
+                "paths": [
                   [
                     "{self}",
                     "stats",
                     "reconMax",
                     "value"
-                  ],
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "rules",
+                  "doublePrimaryAvailability",
+                  "evals",
+                  "4",
+                  "result",
+                  "integer"
+                ]
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then double specialOperationsMax...",
+                "paths": [
                   [
                     "{self}",
                     "stats",
                     "specialOperationsMax",
                     "value"
-                  ],
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "rules",
+                  "doublePrimaryAvailability",
+                  "evals",
+                  "5",
+                  "result",
+                  "integer"
+                ]
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then double strikeMax.",
+                "paths": [
                   [
                     "{self}",
                     "stats",
@@ -1078,13 +1158,22 @@
                     "value"
                   ]
                 ],
-                "value": 1
+                "value": [
+                  "{self}",
+                  "rules",
+                  "doublePrimaryAvailability",
+                  "evals",
+                  "6",
+                  "result",
+                  "integer"
+                ]
               }
             ],
             "evals": [
               {
                 "actionable": true,
                 "not": false,
+                "note": "If the parent is a Primary Unit...",
                 "operator": "AND",
                 "paths": [
                   [
@@ -1093,6 +1182,114 @@
                   ]
                 ],
                 "value": "Unit§Primary Unit"
+              },
+              {
+                "actionable": false,
+                "equation": {
+                  "operator": "T*O",
+                  "value": 2
+                },
+                "not": false,
+                "note": "(multiply fireSupportMax by 2)",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "fireSupportMax",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "actionable": false,
+                "equation": {
+                  "operator": "T*O",
+                  "value": 2
+                },
+                "not": false,
+                "note": "(multiply fortificationsMax by 2)",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "fortificationsMax",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "actionable": false,
+                "equation": {
+                  "operator": "T*O",
+                  "value": 2
+                },
+                "not": false,
+                "note": "(multiply generalPurposeMax by 2)",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "generalPurposeMax",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "actionable": false,
+                "equation": {
+                  "operator": "T*O",
+                  "value": 2
+                },
+                "not": false,
+                "note": "(multiply reconMax by 2)",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "reconMax",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "actionable": false,
+                "equation": {
+                  "operator": "T*O",
+                  "value": 2
+                },
+                "not": false,
+                "note": "(multiply specialOperationsMax by 2)",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "specialOperationsMax",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "actionable": false,
+                "equation": {
+                  "operator": "T*O",
+                  "value": 2
+                },
+                "not": false,
+                "note": "(multiply strikeMax by 2)",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "strikeMax",
+                    "value"
+                  ]
+                ]
               }
             ],
             "evaluate": "AND",
@@ -2049,7 +2246,7 @@
               {
                 "actionType": "set",
                 "iterations": 1,
-                "note": "...and change the label of the SP stat to CP.",
+                "note": "...and change the label of the SP stat to CP...",
                 "paths": [
                   [
                     "{self}",
@@ -2059,6 +2256,20 @@
                   ]
                 ],
                 "value": "CP"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the Leader (Officer Ranks) stat min to 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Leader",
+                    "min"
+                  ]
+                ],
+                "value": 1
               }
             ],
             "evals": [
@@ -2357,8 +2568,7 @@
               }
             ],
             "evaluate": "AND",
-            "failState": "error",
-            "order": 122
+            "failState": "error"
           },
           "vetButNoAppropriateGunsLimitsAMS": {
             "actions": [
@@ -2652,18 +2862,21 @@
           "fireSupportMax": {
             "group": "Hidden",
             "statType": "numeric",
+            "tracked": true,
             "value": 0,
             "visibility": "hidden"
           },
           "fortificationsMax": {
             "group": "Hidden",
             "statType": "numeric",
+            "tracked": true,
             "value": 0,
             "visibility": "hidden"
           },
           "generalPurposeMax": {
             "group": "Hidden",
             "statType": "numeric",
+            "tracked": true,
             "value": 0,
             "visibility": "hidden"
           },
@@ -2769,6 +2982,7 @@
           "reconMax": {
             "group": "Hidden",
             "statType": "numeric",
+            "tracked": true,
             "value": 0,
             "visibility": "hidden"
           },
@@ -2792,12 +3006,14 @@
           "specialOperationsMax": {
             "group": "Hidden",
             "statType": "numeric",
+            "tracked": true,
             "value": 0,
             "visibility": "hidden"
           },
           "strikeMax": {
             "group": "Hidden",
             "statType": "numeric",
+            "tracked": true,
             "value": 0,
             "visibility": "hidden"
           },
@@ -7070,71 +7286,6 @@
           "Unique": true
         },
         "text": "- Once per round, for each duelist, whenever a duelist\ndamages an enemy model, give one SP to one model\nin formation with the duelist.\n- This SP does not convert to a CP. If not used, this SP\nis removed during cleanup."
-      },
-      "Gear§Example": {
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Hands"
-          ]
-        },
-        "stats": {
-          "Actions": {
-            "value": 1
-          },
-          "fireSupportMax": {
-            "value": 1
-          },
-          "generalPurposeMax": {
-            "value": 999
-          },
-          "strikeMax": {
-            "value": 1
-          }
-        }
-      },
-      "Gear§Example Heavy": {
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Hands",
-            "Ranged Weapon, Direct or Indirect, Swappable§HRP, Task Built"
-          ]
-        },
-        "stats": {
-          "Actions": {
-            "value": 1
-          },
-          "fireSupportMax": {
-            "value": 1
-          },
-          "generalPurposeMax": {
-            "value": 999
-          },
-          "strikeMax": {
-            "value": 1
-          }
-        }
-      },
-      "Gear§Example Medium": {
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Hands",
-            "Ranged Weapon, Direct or Indirect, Swappable§MRP (Link), Task Built"
-          ]
-        },
-        "stats": {
-          "Actions": {
-            "value": 1
-          },
-          "fireSupportMax": {
-            "value": 1
-          },
-          "generalPurposeMax": {
-            "value": 999
-          },
-          "strikeMax": {
-            "value": 1
-          }
-        }
       },
       "Leader§2iC": {
         "stats": {

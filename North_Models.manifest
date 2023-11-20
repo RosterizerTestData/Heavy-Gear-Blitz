@@ -57,7 +57,7 @@
               }
             },
             {
-              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
               "assets": {
                 "traits": [
                   {
@@ -254,7 +254,7 @@
               }
             },
             {
-              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
               "assets": {
                 "traits": [
                   {
@@ -956,6 +956,16 @@
             "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built"
           ]
         },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Strike",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
         "rules": {
           "renameCheetah": {
             "actions": [
@@ -1270,7 +1280,7 @@
             "Ranged Weapon, Combo§HAC/LGL",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MSG",
             {
-              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
               "assets": {
                 "traits": [
                   {
@@ -1379,7 +1389,7 @@
             "Ranged Weapon, Direct, AA-upgrade§HRC, React",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MSG",
             {
-              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
               "assets": {
                 "traits": [
                   {
@@ -1509,7 +1519,7 @@
             "Ranged Weapon, Direct§HBZ",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MSG",
             {
-              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
               "assets": {
                 "traits": [
                   {
@@ -1639,7 +1649,7 @@
             "Ranged Weapon, Direct or Indirect§LFG, React",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MSG",
             {
-              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
               "assets": {
                 "traits": [
                   {
@@ -2143,7 +2153,7 @@
             "Ranged Weapon, Direct, Link-upgrade§LSMG",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
             {
-              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
               "assets": {
                 "traits": [
                   {
@@ -2497,7 +2507,7 @@
             "Ranged Weapon, Direct, Link-upgrade§LSMG",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
             {
-              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
               "assets": {
                 "traits": [
                   {
@@ -2710,7 +2720,7 @@
             "Ranged Weapon, Direct, Link-upgrade§LSMG",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
             {
-              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
               "assets": {
                 "traits": [
                   {
@@ -2905,7 +2915,7 @@
             "Ranged Weapon, Direct, Link-upgrade§LSMG",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
             {
-              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
               "assets": {
                 "traits": [
                   {
@@ -9137,7 +9147,7 @@
             "Ranged Weapon, Combo§HAC/LGL",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MSG",
             {
-              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
               "assets": {
                 "traits": [
                   {
@@ -9575,7 +9585,7 @@
             },
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MSG",
             {
-              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
               "assets": {
                 "traits": [
                   {
@@ -9779,7 +9789,10 @@
         "removed": {
           "keywords": {
             "Tags": [
-              "UA: Fortifications"
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose"
             ]
           }
         },
@@ -9842,7 +9855,10 @@
         "removed": {
           "keywords": {
             "Tags": [
-              "UA: Fortifications"
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose"
             ]
           }
         },
@@ -9905,7 +9921,10 @@
         "removed": {
           "keywords": {
             "Tags": [
-              "UA: Fortifications"
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose"
             ]
           }
         },
@@ -9968,7 +9987,10 @@
         "removed": {
           "keywords": {
             "Tags": [
-              "UA: Fortifications"
+              "UA: Fortifications",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose"
             ]
           }
         },
@@ -10598,7 +10620,7 @@
             "Ranged Weapon, Direct, AA-upgrade§HAC, React",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
             {
-              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
               "assets": {
                 "traits": [
                   {
@@ -10714,7 +10736,7 @@
             "Ranged Weapon, Direct or Indirect§LFG, React",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
             {
-              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
               "assets": {
                 "traits": [
                   {
@@ -10982,6 +11004,11 @@
         }
       },
       "Gear§MP, Cheetah": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
         "assets": {
           "traits": [
             "Model/Weapon Property§Hands",
@@ -11161,6 +11188,11 @@
         }
       },
       "Gear§MP, Hunter": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
         "assets": {
           "traits": [
             "Model/Weapon Property§Hands",
@@ -11339,6 +11371,11 @@
         }
       },
       "Gear§MP, Jaguar": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
         "assets": {
           "traits": [
             "Model/Weapon Property§Hands",
@@ -12578,13 +12615,18 @@
         }
       },
       "Gear§Razorback, Chaingun": {
+        "allowed": {
+          "items": [
+            "Ranged Weapon, Direct§HMG +1TV"
+          ]
+        },
         "assets": {
           "traits": [
             "Model/Weapon Property§Hands",
             "Ranged Weapon, Direct, AA-upgrade§HRC, React",
             "Ranged Weapon, Direct, Link-upgrade§LSMG",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LSG",
-            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
+            "Ranged Weapon, Direct or Indirect§MAR",
             "Ranged Weapon, Direct§LMG",
             "Ranged Weapon, Direct§LAPGL"
           ]
@@ -14587,7 +14629,8 @@
             "Model/Weapon Property§Comms",
             "Model/Weapon Property§Field Armor",
             "Ranged Weapon, Direct or Indirect, Link-upgrade§LGL, React",
-            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built"
           ]
         },
         "removed": {
@@ -32441,6 +32484,3222 @@
           }
         }
       },
+      "Strider§Thunderhammer": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Lumbering",
+            "Model/Weapon Property§Stable",
+            "Ranged Weapon, Direct, AA-upgrade§MRC, React",
+            {
+              "item": "Ranged Weapon, Direct or Indirect§HFG",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§AOE:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 3
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Blast",
+                  "Model/Weapon Property§(OR)",
+                  {
+                    "item": "Model/Weapon Property, Variable§AP:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 5
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "Ranged Weapon, Direct or Indirect§MAPR",
+            "Ranged Weapon, Direct§HAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§MCW"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendBastionIfChecked": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then append Bastion...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Bastion"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Bastion"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Bastion Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Bastion Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 11
+          },
+          "Bastion Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable and Type§Transport:X",
+                      "stats": {
+                        "NameVariable": {
+                          "value": 2
+                        },
+                        "Type": {
+                          "value": "Squad(s)"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 3
+          },
+          "ModelName": {
+            "value": "Thunderhammer"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 6
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 27
+          }
+        }
+      },
+      "Strider§Thunderhammer Crossbow": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Lumbering",
+            "Model/Weapon Property§Stable",
+            "Model/Weapon Property§AMS",
+            "Ranged Weapon, Direct, AA-upgrade§MRC, React",
+            {
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§HATM",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§AP:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 4
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Guided",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              },
+              "quantity": 2
+            },
+            "Ranged Weapon, Direct or Indirect§MAPR",
+            "Ranged Weapon, Direct§HAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§MCW"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendBastionIfChecked": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then append Bastion...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Bastion"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Bastion"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Bastion Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Bastion Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 11
+          },
+          "Bastion Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable and Type§Transport:X",
+                      "stats": {
+                        "NameVariable": {
+                          "value": 2
+                        },
+                        "Type": {
+                          "value": "Squad(s)"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 3
+          },
+          "ModelName": {
+            "value": "Thunderhammer Crossbow"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 6
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 31
+          }
+        }
+      },
+      "Strider§Thunderhammer Flak": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Lumbering",
+            "Model/Weapon Property§Stable",
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade§HRC, React",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§AA",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Link",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§MRC, React",
+            "Ranged Weapon, Direct or Indirect§MAPR",
+            "Ranged Weapon, Direct§HAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§MCW"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendBastionIfChecked": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then append Bastion...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Bastion"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Bastion"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Bastion Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Bastion Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 11
+          },
+          "Bastion Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable and Type§Transport:X",
+                      "stats": {
+                        "NameVariable": {
+                          "value": 2
+                        },
+                        "Type": {
+                          "value": "Squad(s)"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 3
+          },
+          "ModelName": {
+            "value": "Thunderhammer Flak"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 6
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 27
+          }
+        }
+      },
+      "Strider§Thunderhammer Lightning": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Lumbering",
+            "Model/Weapon Property§Stable",
+            "Ranged Weapon, Direct, AA-upgrade§MRC, React",
+            {
+              "item": "Ranged Weapon, Direct§HRG",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§Precise",
+                  "Model/Weapon Property§Advanced",
+                  {
+                    "item": "Model/Weapon Property, Variable§AP:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 6
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "Ranged Weapon, Direct or Indirect§MAPR",
+            "Ranged Weapon, Direct§HAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§MCW"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendBastionIfChecked": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then append Bastion...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Bastion"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Bastion"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Bastion Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Bastion Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 11
+          },
+          "Bastion Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable and Type§Transport:X",
+                      "stats": {
+                        "NameVariable": {
+                          "value": 2
+                        },
+                        "Type": {
+                          "value": "Squad(s)"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 3
+          },
+          "ModelName": {
+            "value": "Thunderhammer Lightning"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 6
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 27
+          }
+        }
+      },
+      "Strider§Thunderhammer Storm": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Lumbering",
+            "Model/Weapon Property§Stable",
+            "Ranged Weapon, Direct, AA-upgrade§MRC, React",
+            {
+              "item": "Ranged Weapon, Indirect§HGM",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§AOE:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 3
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Blast",
+                  "Model/Weapon Property§Guided",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              },
+              "quantity": 2
+            },
+            "Ranged Weapon, Direct or Indirect§MAPR",
+            "Ranged Weapon, Direct§HAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§MCW"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendBastionIfChecked": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then append Bastion...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Bastion"
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...in both places.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Bastion"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Bastion Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Bastion Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 159
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 11
+          },
+          "Bastion Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable and Type§Transport:X",
+                      "stats": {
+                        "NameVariable": {
+                          "value": 2
+                        },
+                        "Type": {
+                          "value": "Squad(s)"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 3
+          },
+          "ModelName": {
+            "value": "Thunderhammer Storm"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 6
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 29
+          }
+        }
+      },
+      "Vehicle§Aller": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Offroad",
+            "Model/Weapon Property§Smoke",
+            "Model/Weapon Property§Field Armor",
+            {
+              "item": "Ranged Weapon, Direct§LPL",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 1
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Advanced",
+                  "Model/Weapon Property§(OR)",
+                  {
+                    "item": "Model/Weapon Property, Variable§AP:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Apex",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§AA",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 1
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  "Model/Weapon Property§(OR)",
+                  "Model/Weapon Property§Precise",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct§MMG, React",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§R",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct§MMG, React",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§L",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct§LMG, React",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct§HRG",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§Precise",
+                  "Model/Weapon Property§Advanced",
+                  {
+                    "item": "Model/Weapon Property, Variable§AP:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 6
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "Ranged Weapon, Direct§HAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 12
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Aller"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 4
+          },
+          "PI": {
+            "value": 6
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 34
+          }
+        }
+      },
+      "Vehicle§Aller, Hardy": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Offroad",
+            "Model/Weapon Property§Smoke",
+            "Model/Weapon Property§Field Armor",
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade§MRC, React",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§AA",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 1
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  "Model/Weapon Property§(OR)",
+                  "Model/Weapon Property§Precise",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct§MMG, React",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§R",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct§MMG, React",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§L",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct§LMG, React",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct§HTG",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§AP:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 5
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property, Variable§Demo:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Precise",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "Ranged Weapon, Direct§HAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "renameAller": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Hardy Aller"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 12
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Hardy Aller"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 4
+          },
+          "PI": {
+            "value": 6
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 34
+          }
+        }
+      },
+      "Vehicle§Aller, Naval Support": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Offroad",
+            "Model/Weapon Property§Smoke",
+            "Model/Weapon Property§Field Armor",
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade§MRC, React",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§AA",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 1
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  "Model/Weapon Property§(OR)",
+                  "Model/Weapon Property§Precise",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct§LMG, React",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct§HRG",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§Precise",
+                  "Model/Weapon Property§Advanced",
+                  {
+                    "item": "Model/Weapon Property, Variable§AP:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 6
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§HATM",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§AP:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 4
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Guided",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Aux",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "Ranged Weapon, Direct§HAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "renameAller": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Naval Support Aller"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 12
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Naval Support Aller"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 4
+          },
+          "PI": {
+            "value": 6
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 35
+          }
+        }
+      },
+      "Vehicle§Badger": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable and Type§Transport:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Type": {
+                  "value": "Squad(s)"
+                }
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 1
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  "Model/Weapon Property§(OR)",
+                  "Model/Weapon Property§Precise",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Link",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Badger"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 6
+          }
+        }
+      },
+      "Vehicle§Badger, Cavalry": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable and Type§Transport:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Type": {
+                  "value": "Squad(s)"
+                }
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§AOE:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 3
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property, Variable§AP:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 1
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Link",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "renameBadger": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Cavalry Badger"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Cavalry Badger"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Vehicle§Badger, Command": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable and Type§Transport:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Type": {
+                  "value": "Squad(s)"
+                }
+              }
+            },
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§SatUp",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 1
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  "Model/Weapon Property§(OR)",
+                  "Model/Weapon Property§Precise",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Link",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Recon",
+              "UA: Fortifications",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "renameBadger": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Command Badger"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Command Badger"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "specialOperationsMax": {},
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Vehicle§Badger, Covert": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable and Type§Transport:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Type": {
+                  "value": "Squad(s)"
+                }
+              }
+            },
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 1
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  "Model/Weapon Property§(OR)",
+                  "Model/Weapon Property§Precise",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Link",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Recon",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "renameBadger": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Covert Badger"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {},
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Covert Badger"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, SO"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
+      "Vehicle§Badger, Medical": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable and Type§Transport:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                },
+                "Type": {
+                  "value": "Squad(s)"
+                }
+              }
+            },
+            "Model/Weapon Property§Medic"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "renameBadger": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Medical Badger"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Medical Badger"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 5
+          }
+        }
+      },
+      "Vehicle§Badger, Rabid": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable and Type§Transport:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Type": {
+                  "value": "Squad(s)"
+                }
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§LATM",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§AP:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Guided",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "renameBadger": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Rabid Badger"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Rabid Badger"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
+      "Vehicle§Klemm": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Offroad",
+            "Model/Weapon Property§Smoke",
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 1
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  "Model/Weapon Property§(OR)",
+                  "Model/Weapon Property§Precise",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MATM",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§AP:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 3
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Guided",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  "Ranged Weapon, Direct§MAPGL"
+                ]
+              }
+            },
+            "Ranged Weapon, Direct§MAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Klemm"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
+      "Vehicle§Klemm (Jaxon)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Offroad",
+            "Model/Weapon Property§Smoke",
+            {
+              "item": "Ranged Weapon, Direct or Indirect§HAR",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§AOE:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 3
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property, Variable§Demo:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Link",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "Ranged Weapon, Direct§MAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "renameKlemm": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Jaxon"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Jaxon"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
+      "Vehicle§Klemm (Stormhammer)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Offroad",
+            "Model/Weapon Property§Smoke",
+            {
+              "item": "Ranged Weapon, Direct§HMG, React",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Indirect§HFM",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§AOE:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 4
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Blast",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property, Variable§Demo:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      },
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "Ranged Weapon, Direct§MAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "renameKlemm": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Stormhammer"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Stormhammer"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
+      "Vehicle§Klemm (Tyburr)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Offroad",
+            "Model/Weapon Property§Smoke",
+            {
+              "item": "Ranged Weapon, Direct§HMG, React",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct or Indirect§MFG",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§AOE:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 3
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Blast",
+                  "Model/Weapon Property§(OR)",
+                  {
+                    "item": "Model/Weapon Property, Variable§AP:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 4
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "Ranged Weapon, Direct§MAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "renameKlemm": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Tyburr"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Tyburr"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
+      "Vehicle§Klemm, Bandit Hunter": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Offroad",
+            "Model/Weapon Property§Smoke",
+            {
+              "item": "Ranged Weapon, Direct§HRF, React",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§Precise",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct§HMG, React",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§AOE:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 3
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property, Variable§AP:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 1
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "Ranged Weapon, Direct§MAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "renameKlemm": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Bandit Hunter Klemm"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Bandit Hunter Klemm"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
+      "Vehicle§Scorpion": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§TD",
+            "Model/Weapon Property§VTOL",
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property, Variable§Burst:X",
+                  "Model/Weapon Property§Split",
+                  "Model/Weapon Property§(OR)",
+                  "Model/Weapon Property§Precise",
+                  {
+                    "item": "Model/Weapon Property§AA",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MATM",
+              "quantity": 2
+            },
+            {
+              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "quantity": 2
+            }
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Scorpion"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 10
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 24
+          }
+        }
+      },
+      "Vehicle§Verder": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Offroad",
+            "Model/Weapon Property§Smoke",
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade§MLC, React",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§Precise",
+                  "Model/Weapon Property§Advanced",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§AA",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "Ranged Weapon, Indirect§HAG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Verder"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 4
+          },
+          "PI": {
+            "value": 6
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 24
+          }
+        }
+      },
       "Veteran Gear§Black Cat": {
         "assets": {
           "traits": [
@@ -32575,7 +35834,9 @@
                   }
                 ]
               }
-            }
+            },
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LRP, Task Built"
           ]
         },
         "removed": {
@@ -32968,7 +36229,7 @@
             "Model/Weapon Property§Hands",
             "Ranged Weapon, Direct§MPA, React",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
-            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
             {
               "item": "Ranged Weapon, Direct or Indirect, Swappable§LATM",
               "assets": {
@@ -33079,7 +36340,7 @@
             "Model/Weapon Property§Hands",
             "Ranged Weapon, Direct, AA-upgrade§HRC, React",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
-            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
             {
               "item": "Ranged Weapon, Direct or Indirect, Swappable§LATM",
               "assets": {
@@ -33211,7 +36472,7 @@
             "Model/Weapon Property§Hands",
             "Ranged Weapon, Direct§HBZ",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
-            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§MRP, Task Built",
             {
               "item": "Ranged Weapon, Direct or Indirect, Swappable§LATM",
               "assets": {
