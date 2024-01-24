@@ -5282,6 +5282,22 @@
         }
       },
       "Gear§MP (Mamba)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Shield",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            }
+          ]
+        },
         "removed": {
           "keywords": {
             "Tags": [
@@ -5315,14 +5331,70 @@
           }
         },
         "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "Command Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
           "generalPurposeMax": {
             "value": 999
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
           },
           "ModelName": {
             "value": "Mamba MP"
           },
           "MR": {
             "value": 7
+          },
+          "PI": {
+            "value": 3
           },
           "Roles": {
             "value": "GP+, SK"
