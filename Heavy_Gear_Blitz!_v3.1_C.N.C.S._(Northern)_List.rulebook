@@ -1,0 +1,1076 @@
+{
+  "name": "C.N.C.S. (Northern) List",
+  "revision": "0.0.1",
+  "game": "Heavy Gear Blitz! v3.1",
+  "genre": "sci-fi",
+  "publisher": "Dream Pod 9",
+  "url": "https://www.dp9.com/",
+  "notes": "Confederated Northern City-States, or \"The North\"; Sub-Lists are WIP",
+  "wip": true,
+  "dependencies": [
+    {
+      "slug": "VUGK7N",
+      "name": "Core System",
+      "game": "Heavy Gear Blitz! v3.1",
+      "source": ""
+    },
+    {
+      "slug": "2X6Q3R",
+      "name": "Universal Models",
+      "game": "Heavy Gear Blitz! v3.1",
+      "source": ""
+    },
+    {
+      "slug": "RPUQ9B",
+      "name": "North Models",
+      "game": "Heavy Gear Blitz! v3.1",
+      "source": ""
+    }
+  ],
+  "rulebook": {
+    "assetTaxonomy": {
+      "Gear": {
+        "rules": {
+          "preventProspectorIfNotClimber": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then uncheck Prospector...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Prospector",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and hide it.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Prospector",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": true,
+                "note": "If the model doesn't have the Climber trait...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "designation",
+                    "Climber",
+                    "quantity"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 65
+          }
+        },
+        "stats": {
+          "Prospector": {
+            "dynamic": true,
+            "group": "Model Options",
+            "groupOrder": 3,
+            "ranks": {
+              "-": {
+                "number": 0,
+                "order": 0
+              },
+              "✓": {
+                "number": 1,
+                "order": 1,
+                "tracking": {
+                  "fireSupportMax": 1,
+                  "generalPurposeMax": 1,
+                  "reconMax": 1,
+                  "specialOperationsMax": 1,
+                  "strikeMax": 1
+                }
+              }
+            },
+            "statOrder": 4,
+            "statType": "rank",
+            "tracked": true,
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Model": {
+        "rules": {
+          "preventVeteranUnlessTheseConditions": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the Veteran upgrade to hidden...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Veteran",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and uncheck the Veteran upgrade.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Veteran",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If the model is not a Duelist...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Duelist",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...or is not a member of a Veteran Group...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "{parent}",
+                    "stats",
+                    "Veteran Group",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "contains": true,
+                "not": true,
+                "note": "...or is not a Veteran Model...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "lineage"
+                  ]
+                ],
+                "value": "Veteran Model"
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...or is not an Officer...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Officer",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...or is not a member of a Dragoon Squad...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Dragoon Squad",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ]
+          }
+        }
+      },
+      "Unit": {
+        "constraints": {
+          "none": [
+            "Only available to Earth allies"
+          ]
+        },
+        "rules": {
+          "preventDragoonIfNotStrike": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then hide the Dragoon Squad stat...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dragoon Squad",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and deselect it.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Dragoon Squad",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If the Unit Type stat isn't Strike...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Unit Type",
+                    "value"
+                  ]
+                ],
+                "value": "Strike"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 41
+          }
+        },
+        "stats": {
+          "Dragoon Squad": {
+            "dynamic": true,
+            "group": "Unit Options",
+            "groupOrder": 2,
+            "ranks": {
+              "-": {
+                "number": 0,
+                "order": 0
+              },
+              "✓": {
+                "number": 1,
+                "order": 1
+              }
+            },
+            "statType": "rank",
+            "tracked": true,
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Prospector": {
+            "group": "Hidden",
+            "max": 2,
+            "statType": "numeric",
+            "tracked": true,
+            "value": 0,
+            "visibility": "hidden"
+          },
+          "TV": {
+            "groupOrder": 1
+          }
+        }
+      },
+      "Veteran Gear": {
+        "rules": {
+          "preventProspectorIfNotClimber": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then uncheck Prospector...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Prospector",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and hide it.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Prospector",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": true,
+                "note": "If the model doesn't have the Climber trait...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "designation",
+                    "Climber",
+                    "quantity"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 65
+          }
+        },
+        "stats": {
+          "Prospector": {
+            "dynamic": true,
+            "group": "Model Options",
+            "groupOrder": 3,
+            "ranks": {
+              "-": {
+                "number": 0,
+                "order": 0
+              },
+              "✓": {
+                "number": 1,
+                "order": 1,
+                "tracking": {
+                  "fireSupportMax": 1,
+                  "generalPurposeMax": 1,
+                  "reconMax": 1,
+                  "specialOperationsMax": 1,
+                  "strikeMax": 1
+                }
+              }
+            },
+            "statOrder": 4,
+            "statType": "rank",
+            "tracked": true,
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      }
+    },
+    "assetCatalog": {
+      "Gear§Bear": {
+        "keywords": {
+          "Tags": []
+        }
+      },
+      "Gear§Cheetah": {
+        "keywords": {
+          "Tags": [
+            "UA: Strike"
+          ],
+          "Keywords": []
+        },
+        "rules": {
+          "DragoonSquadThenOkayToStrike": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the max number in a secondary unit to 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "strikeMax",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If this is a member of a Dragoon Squad...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Dragoon Squad",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 40
+          }
+        }
+      },
+      "Gear§Cheetah (Metal Cat)": {
+        "keywords": {
+          "Tags": [
+            "UA: Strike"
+          ]
+        },
+        "rules": {
+          "DragoonSquadThenOkayToStrike": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the max number in a secondary unit to 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "strikeMax",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If this is a member of a Dragoon Squad...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Dragoon Squad",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 40
+          }
+        }
+      },
+      "Gear§Cheetah (White Cat)": {
+        "keywords": {
+          "Tags": [
+            "UA: Strike"
+          ]
+        },
+        "rules": {
+          "DragoonSquadThenOkayToStrike": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the max number in a secondary unit to 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "strikeMax",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If this is a member of a Dragoon Squad...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Dragoon Squad",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 40
+          }
+        }
+      },
+      "Gear§Cheetah, Sniper": {
+        "keywords": {
+          "Tags": [
+            "UA: Strike"
+          ]
+        },
+        "rules": {
+          "DragoonSquadThenOkayToStrike": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the max number in a secondary unit to 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "strikeMax",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If this is a member of a Dragoon Squad...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Dragoon Squad",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 40
+          }
+        }
+      },
+      "Gear§Cheetah, Strike": {
+        "keywords": {
+          "Tags": [
+            "UA: Strike"
+          ]
+        },
+        "rules": {
+          "DragoonSquadThenOkayToStrike": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the max number in a secondary unit to 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "strikeMax",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If this is a member of a Dragoon Squad...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Dragoon Squad",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 40
+          }
+        }
+      },
+      "Gear§Leopard": {
+        "keywords": {
+          "Tags": [
+            "UA: General Purpose",
+            "UA: Recon",
+            "UA: Special Operations"
+          ]
+        },
+        "stats": {
+          "Prospector": {
+            "ranks": {
+              "-": {
+                "number": 0,
+                "order": 0
+              },
+              "✓": {
+                "number": 1,
+                "order": 1,
+                "tracking": {
+                  "generalPurposeMax": 1,
+                  "reconMax": 1,
+                  "specialOperationsMax": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "Gear§Leopard Flash": {
+        "keywords": {
+          "Tags": [
+            "UA: General Purpose",
+            "UA: Recon",
+            "UA: Special Operations"
+          ]
+        },
+        "stats": {
+          "Prospector": {
+            "ranks": {
+              "-": {
+                "number": 0,
+                "order": 0
+              },
+              "✓": {
+                "number": 1,
+                "order": 1,
+                "tracking": {
+                  "generalPurposeMax": 1,
+                  "reconMax": 1,
+                  "specialOperationsMax": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "Gear§Leopard Grenadier": {
+        "keywords": {
+          "Tags": [
+            "UA: General Purpose",
+            "UA: Recon",
+            "UA: Special Operations"
+          ]
+        },
+        "stats": {
+          "Prospector": {
+            "ranks": {
+              "-": {
+                "number": 0,
+                "order": 0
+              },
+              "✓": {
+                "number": 1,
+                "order": 1,
+                "tracking": {
+                  "generalPurposeMax": 1,
+                  "reconMax": 1,
+                  "specialOperationsMax": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "Gear§Leopard Wildfire": {
+        "keywords": {
+          "Tags": [
+            "UA: General Purpose",
+            "UA: Recon",
+            "UA: Special Operations"
+          ]
+        }
+      },
+      "Gear§Lion": {
+        "keywords": {
+          "Tags": [
+            "UA: General Purpose",
+            "UA: Recon",
+            "UA: Special Operations"
+          ]
+        },
+        "stats": {
+          "Prospector": {
+            "ranks": {
+              "-": {
+                "number": 0,
+                "order": 0
+              },
+              "✓": {
+                "number": 1,
+                "order": 1,
+                "tracking": {
+                  "generalPurposeMax": 1,
+                  "reconMax": 1,
+                  "specialOperationsMax": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "Gear§Lion Initiate": {
+        "keywords": {
+          "Tags": [
+            "UA: General Purpose",
+            "UA: Recon",
+            "UA: Special Operations"
+          ]
+        },
+        "stats": {
+          "Prospector": {
+            "ranks": {
+              "-": {
+                "number": 0,
+                "order": 0
+              },
+              "✓": {
+                "number": 1,
+                "order": 1,
+                "tracking": {
+                  "generalPurposeMax": 1,
+                  "reconMax": 1,
+                  "specialOperationsMax": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "Gear§Lion, Lightning": {
+        "stats": {
+          "Prospector": {
+            "ranks": {
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "generalPurposeMax": 1,
+                  "reconMax": 1,
+                  "specialOperationsMax": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "Gear§Lion, Strike": {
+        "keywords": {
+          "Tags": [
+            "UA: General Purpose",
+            "UA: Recon",
+            "UA: Special Operations"
+          ]
+        },
+        "stats": {
+          "Prospector": {
+            "ranks": {
+              "-": {
+                "number": 0,
+                "order": 0
+              },
+              "✓": {
+                "number": 1,
+                "order": 1,
+                "tracking": {
+                  "generalPurposeMax": 1,
+                  "reconMax": 1,
+                  "specialOperationsMax": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "Gear§Para Cheetah": {
+        "keywords": {
+          "Tags": [
+            "UA: Strike"
+          ]
+        },
+        "rules": {
+          "DragoonSquadThenOkayToStrike": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the max number in a secondary unit to 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "strikeMax",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If this is a member of a Dragoon Squad...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Dragoon Squad",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 40
+          }
+        }
+      },
+      "Gear§Para Cheetah Grenadier": {
+        "keywords": {
+          "Tags": [
+            "UA: Strike"
+          ]
+        },
+        "rules": {
+          "DragoonSquadThenOkayToStrike": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the max number in a secondary unit to 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "strikeMax",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If this is a member of a Dragoon Squad...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Dragoon Squad",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 40
+          }
+        }
+      },
+      "Gear§Para Cheetah, Strike": {
+        "keywords": {
+          "Tags": [
+            "UA: Strike"
+          ]
+        },
+        "rules": {
+          "DragoonSquadThenOkayToStrike": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the max number in a secondary unit to 1.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "strikeMax",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If this is a member of a Dragoon Squad...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Dragoon Squad",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 40
+          }
+        }
+      },
+      "Ranged Weapon, Direct§HSC": {
+        "removed": {
+          "rules": {
+            "preventPreciseUpgradeForNonDuelists": {}
+          }
+        }
+      },
+      "Ranged Weapon, Direct§LSC": {
+        "removed": {
+          "rules": {
+            "preventPreciseUpgradeForNonDuelists": {}
+          }
+        }
+      },
+      "Ranged Weapon, Direct§MSC": {
+        "removed": {
+          "rules": {
+            "preventPreciseUpgradeForNonDuelists": {}
+          }
+        }
+      },
+      "Roster§Force": {
+        "stats": {
+          "Dragoon Squad": {
+            "group": "Hidden",
+            "max": 1,
+            "statType": "numeric",
+            "tracked": true,
+            "value": 0,
+            "visibility": "hidden"
+          },
+          "Sub-List": {
+            "dynamic": true,
+            "group": "Force Options",
+            "groupOrder": 2,
+            "ranks": {
+              "Generic": {
+                "order": 0
+              },
+              "Norguard (NG)": {
+                "order": 1
+              },
+              "Western Frontier Protectorate (WFP)": {
+                "order": 2
+              },
+              "United Mercantile Federation (UMF)": {
+                "order": 3
+              },
+              "Northern Lights Confederacy (NLC)": {
+                "order": 4
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "Generic",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Veteran Gear§Hunter, Mountain": {
+        "keywords": {
+          "Tags": [
+            "UA: Recon",
+            "UA: Special Operations"
+          ]
+        },
+        "stats": {
+          "Prospector": {
+            "ranks": {
+              "-": {
+                "number": 0,
+                "order": 0
+              },
+              "✓": {
+                "number": 1,
+                "order": 1,
+                "tracking": {
+                  "reconMax": 1,
+                  "specialOperationsMax": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "gameModes": {},
+    "theme": {}
+  }
+}
