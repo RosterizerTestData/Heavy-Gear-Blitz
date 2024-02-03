@@ -19,6 +19,60 @@
   "rulebook": {
     "assetTaxonomy": {},
     "assetCatalog": {
+      "Gear§Asp": {
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Asp"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 4
+          }
+        }
+      },
       "Gear§Black Adder": {
         "assets": {
           "traits": [
@@ -5281,6 +5335,788 @@
           }
         }
       },
+      "Gear§MP (Cobra, Brawler)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Shield",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§React+",
+            "Ranged Weapon, Combo§HAC/LGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW",
+            "Ranged Weapon, Indirect§HIM",
+            "Ranged Weapon, Direct§MMG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "renameCobraMP": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "prepend": " ",
+                "value": "Brawler Mamba MP"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "Command Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Brawler Cobra MP"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
+      "Gear§MP (Cobra, Hunting)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Shield",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§React+",
+            "Ranged Weapon, Direct§HRF, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW",
+            "Ranged Weapon, Indirect§HIM",
+            "Ranged Weapon, Direct§MMG"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "renameCobraMP": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "prepend": " ",
+                "value": "Hunting Cobra MP"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "Command Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Hunting Cobra MP"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
+      "Gear§MP (Cobra)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Shield",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§React+",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW",
+            "Ranged Weapon, Indirect§HIM",
+            "Ranged Weapon, Direct§MMG",
+            "Ranged Weapon, Direct, Swappable§HPZ"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "renameCobraMP": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "prepend": " ",
+                "value": "Cobra MP"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "Command Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Cobra MP"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 12
+          }
+        }
+      },
+      "Gear§MP (Iguana Gunner)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Shield",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW",
+            "Melee Weapon§MSE",
+            "Ranged Weapon, Direct, Swappable§LPZ",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "renameIguanaMP": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "prepend": " ",
+                "value": "Iguana MP"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Command Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Iguana MP Gunner"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§MP (Iguana)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Shield",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Direct, Link-upgrade§MFC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW",
+            "Ranged Weapon, Direct, Swappable§LPZ",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "renameIguanaMP": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "prepend": " ",
+                "value": "Iguana MP"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Command Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Iguana MP"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP+, SK"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§MP (Mamba, Brawler)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Shield",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Combo§MAC/LGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW",
+            "Ranged Weapon, Direct, Swappable§MPZ",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "renameMambaMP": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "prepend": " ",
+                "value": "Mamba MP"
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "Command Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Brawler Mamba MP"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 11
+          }
+        }
+      },
       "Gear§MP (Mamba)": {
         "assets": {
           "traits": [
@@ -5295,7 +6131,11 @@
                   "value": 1
                 }
               }
-            }
+            },
+            "Ranged Weapon, Direct, Link-upgrade§MFC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW",
+            "Ranged Weapon, Direct, Swappable§MPZ",
+            "Ranged Weapon, Direct§LAPGL"
           ]
         },
         "removed": {
@@ -5874,6 +6714,493 @@
           },
           "TV": {
             "value": 6
+          }
+        }
+      },
+      "Gear§Salamander": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Ranged Weapon, Combo§MAC/LFL",
+            {
+              "item": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Demo:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property, Variable§Brawl:X",
+                    "stats": {
+                      "meleeBrawlStat": {
+                        "value": 1
+                      },
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Salamander"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "Rugged Terrain Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Climber"
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Salamander Brawler": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Ranged Weapon, Combo§MAC/LGL",
+            {
+              "item": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Demo:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property, Variable§Brawl:X",
+                    "stats": {
+                      "meleeBrawlStat": {
+                        "value": 1
+                      },
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Salamander Brawler"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "Rugged Terrain Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Climber"
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Salamander Riotmaster": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Ranged Weapon, Combo§MAC/LFC",
+            {
+              "item": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Demo:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property, Variable§Brawl:X",
+                    "stats": {
+                      "meleeBrawlStat": {
+                        "value": 1
+                      },
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Salamander Riotmaster"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "Rugged Terrain Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Climber"
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Salamander, Hunting": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Ranged Weapon, Direct§HRF, React",
+            {
+              "item": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Demo:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 2
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property, Variable§Brawl:X",
+                    "stats": {
+                      "meleeBrawlStat": {
+                        "value": 1
+                      },
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "renameSalamander": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "prepend": " ",
+                "value": [
+                  "{self}",
+                  "stats",
+                  "Name",
+                  "value"
+                ]
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Hunting Salamander"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "Rugged Terrain Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Climber"
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW"
+                  }
+                ]
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
           }
         }
       },
@@ -6611,6 +7938,300 @@
           },
           "TV": {
             "value": 9
+          }
+        }
+      },
+      "Gear§Street Viper": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Direct§LRF",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct, Swappable§LPZ"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Street Viper"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Street Viper (Riotmaster Viper)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Direct, Link-upgrade§MFC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct, Swappable§MPZ"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "renameStreetViper": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "prepend": " ",
+                "value": [
+                  "{self}",
+                  "stats",
+                  "Name",
+                  "value"
+                ]
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Riotmaster Viper"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Street Viper (Viper Defender)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+              "assets": {
+                "traits": [
+                  {
+                    "item": "Model/Weapon Property, Variable§Burst:X",
+                    "stats": {
+                      "NameVariable": {
+                        "value": 1
+                      }
+                    }
+                  },
+                  "Model/Weapon Property§Split",
+                  "Model/Weapon Property§(OR)",
+                  "Model/Weapon Property§Precise",
+                  {
+                    "item": "Model/Weapon Property§AA",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "renameStreetViper": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "prepend": " ",
+                "value": [
+                  "{self}",
+                  "stats",
+                  "Name",
+                  "value"
+                ]
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Viper Defender"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
           }
         }
       },
