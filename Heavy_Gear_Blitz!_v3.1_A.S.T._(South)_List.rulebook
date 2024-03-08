@@ -1,0 +1,38 @@
+{
+  "name": "A.S.T. (South) List",
+  "revision": "0.0.1",
+  "game": "Heavy Gear Blitz! v3.1",
+  "genre": "sci-fi",
+  "publisher": "Dream Pod 9",
+  "url": "",
+  "notes": "Allied Southern Territories, or \"The South\"; Sub-Lists are WIP",
+  "wip": true,
+  "dependencies": [
+    {
+      "slug": "VUGK7N",
+      "name": "Core System",
+      "game": "Heavy Gear Blitz! v3.1",
+      "source": ""
+    },
+    {
+      "slug": "2X6Q3R",
+      "name": "Universal Models",
+      "game": "Heavy Gear Blitz! v3.1",
+      "source": ""
+    },
+    {
+      "slug": "82HEJ8",
+      "name": "South Models",
+      "game": "Heavy Gear Blitz! v3.1",
+      "source": ""
+    }
+  ],
+  "rulebook": {
+    "assetTaxonomy": {},
+    "assetCatalog": {
+      "Roster§Force": {}
+    },
+    "gameModes": {},
+    "theme": {}
+  }
+}
