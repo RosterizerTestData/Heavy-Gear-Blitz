@@ -2509,6 +2509,33 @@
             "failState": "pass",
             "order": 64
           },
+          "relabelFromModelName": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "Change asset label to match ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "aspects",
+                    "Label"
+                  ]
+                ],
+                "prepend": " ",
+                "value": [
+                  "{self}",
+                  "stats",
+                  "ModelName",
+                  "value"
+                ]
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 179
+          },
           "Too many of this model in this type of unit.": {
             "evals": [
               {
