@@ -1,0 +1,38 @@
+{
+  "name": "Peace River List",
+  "revision": "0.0.1",
+  "game": "Heavy Gear Blitz! v3.1",
+  "genre": "sci-fi",
+  "publisher": "Dream Pod 9",
+  "url": "",
+  "notes": "Peace River; Sub-Lists are WIP",
+  "wip": true,
+  "dependencies": [
+    {
+      "slug": "VUGK7N",
+      "name": "Core System",
+      "game": "Heavy Gear Blitz! v3.1",
+      "source": ""
+    },
+    {
+      "slug": "2X6Q3R",
+      "name": "Universal Models",
+      "game": "Heavy Gear Blitz! v3.1",
+      "source": ""
+    },
+    {
+      "slug": "32JDJ3",
+      "name": "Peace River Models",
+      "game": "Heavy Gear Blitz! v3.1",
+      "source": ""
+    }
+  ],
+  "rulebook": {
+    "assetTaxonomy": {},
+    "assetCatalog": {
+      "Roster§Force": {}
+    },
+    "gameModes": {},
+    "theme": {}
+  }
+}
