@@ -7,6 +7,7 @@
   "url": "https://www.dp9.com/",
   "notes": "",
   "wip": true,
+  "isModule": true,
   "dependencies": [],
   "rulebook": {
     "assetTaxonomy": {
@@ -291,7 +292,7 @@
             "failState": "pass",
             "order": 100
           },
-          "|** Rules that rename or edit designations **|": {
+          "|** Rules that rename or edit labels **|": {
             "evals": [],
             "evaluate": "AND",
             "failState": "pass",
@@ -302,6 +303,30 @@
             "evaluate": "AND",
             "failState": "pass",
             "order": 120
+          },
+          "setLabel": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "Set the Label to equal the asset's Designation.",
+                "paths": [
+                  [
+                    "{self}",
+                    "aspects",
+                    "Label"
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "designation"
+                ]
+              }
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 140
           }
         }
       },
@@ -2950,7 +2975,7 @@
             "groupOrder": 1,
             "statOrder": 11,
             "statType": "term",
-            "value": null,
+            "value": "",
             "visibility": "normal"
           },
           "MR": {
@@ -2995,7 +3020,7 @@
             "groupOrder": 1,
             "statOrder": 10,
             "statType": "term",
-            "value": null,
+            "value": "",
             "visibility": "normal"
           },
           "reconMax": {
@@ -3041,7 +3066,7 @@
             "groupOrder": 1,
             "statOrder": 12,
             "statType": "term",
-            "value": null,
+            "value": "",
             "visibility": "normal"
           },
           "TV": {
@@ -3130,15 +3155,17 @@
           "labelAuxSystems": {
             "actions": [
               {
-                "actionType": "modify",
+                "actionType": "set",
                 "iterations": 1,
-                "note": "...then append (Aux) to the designation.",
+                "note": "...then append (Aux) to the Label.",
                 "paths": [
                   [
                     "{self}",
-                    "designation"
+                    "aspects",
+                    "Label"
                   ]
                 ],
+                "prepend": " ",
                 "value": "(Aux)"
               }
             ],
@@ -3163,26 +3190,12 @@
             "failState": "pass",
             "order": 147
           },
-          "propertyAppendDesignationToParentModifications": {
+          "propertyAppendDesignationToModifiedParentModifications": {
             "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...then set the parent to modified...",
-                "paths": [
-                  [
-                    "{parent}",
-                    "stats",
-                    "Modified",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              },
               {
                 "actionType": "modify",
                 "iterations": 1,
-                "note": "...and append the asset's designation to the parent's Modifications stat.",
+                "note": "...then append the asset's Label to the parent's Modifications stat (with a \", \" separator).",
                 "paths": [
                   [
                     "{parent}",
@@ -3191,9 +3204,11 @@
                     "value"
                   ]
                 ],
+                "prepend": ", ",
                 "value": [
                   "{self}",
-                  "designation"
+                  "aspects",
+                  "Label"
                 ]
               }
             ],
@@ -3215,7 +3230,22 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "...and the asset is \"modified\"...",
+                "note": "...and the parent IS modified...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Modified",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and the asset IS modified...",
                 "operator": "AND",
                 "paths": [
                   [
@@ -3232,12 +3262,97 @@
             "failState": "pass",
             "order": 148
           },
-          "updateParentStatTraits": {
+          "propertyAppendDesignationToUnmodifiedParentModifications": {
             "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the parent to modified...",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Modified",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
               {
                 "actionType": "modify",
                 "iterations": 1,
-                "note": "Modify the parent's Traits stat with this asset's designation.",
+                "note": "...and append the asset's Label to the parent's Modifications stat.",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Modifications",
+                    "value"
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "aspects",
+                  "Label"
+                ]
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "contains": true,
+                "not": true,
+                "note": "If the parent is not a model...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "lineage"
+                  ]
+                ],
+                "value": "Model"
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...and the parent is Not modified...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Modified",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and the asset IS modified...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Modified",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 148
+          },
+          "updateParentStatTraitsIfEmpty": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the parent's Traits stat with this asset's Label....",
                 "paths": [
                   [
                     "{parent}",
@@ -3248,11 +3363,139 @@
                 ],
                 "value": [
                   "{self}",
-                  "designation"
+                  "aspects",
+                  "Label"
+                ]
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the value of parentUpdated to True.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "parentUpdated",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If the property's parent's stat hasn't yet been updated...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "parentUpdated",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "equation": {
+                  "operator": "T+O",
+                  "value": 0
+                },
+                "max": 0,
+                "min": 0,
+                "not": false,
+                "note": "..and if the parent's Traits stat is empty...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
                 ]
               }
             ],
-            "evals": [],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "updateParentStatTraitsIfNotEmpty": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then modify the parent's Traits stat with this asset's Label...",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "prepend": ", ",
+                "value": [
+                  "{self}",
+                  "aspects",
+                  "Label"
+                ]
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the value of parentUpdated to True.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "parentUpdated",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If the property's parent's stat hasn't yet been updated...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "parentUpdated",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "equation": {
+                  "operator": "T+O",
+                  "value": 0
+                },
+                "max": 0,
+                "min": 0,
+                "not": true,
+                "note": "...and if the parent's Traits stat is NOT empty...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ]
+              }
+            ],
             "evaluate": "AND",
             "failState": "pass",
             "order": 161
@@ -3285,6 +3528,20 @@
             "statType": "rank",
             "value": "-",
             "visibility": "hidden"
+          },
+          "parentUpdated": {
+            "group": "Hidden",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "hidden"
           }
         },
         "templateClass": "Grandparent"
@@ -3296,11 +3553,12 @@
               {
                 "actionType": "set",
                 "iterations": 1,
-                "note": "...change the designation of the asset to match that formatted value.",
+                "note": "...change the Label of the asset to match that formatted value.",
                 "paths": [
                   [
                     "{self}",
-                    "designation"
+                    "aspects",
+                    "Label"
                   ]
                 ],
                 "value": [
@@ -3317,7 +3575,7 @@
               {
                 "actionable": true,
                 "not": true,
-                "note": "If NameVariable is not 0...",
+                "note": "If NameVariable is not zero (0)...",
                 "operator": "AND",
                 "paths": [
                   [
@@ -3353,11 +3611,12 @@
               {
                 "actionType": "set",
                 "iterations": 1,
-                "note": "...change the designation of the asset to match that formatted value...",
+                "note": "...change the Label of the asset to match that formatted value...",
                 "paths": [
                   [
                     "{self}",
-                    "designation"
+                    "aspects",
+                    "Label"
                   ]
                 ],
                 "value": [
@@ -3376,7 +3635,8 @@
                 "paths": [
                   [
                     "{self}",
-                    "designation"
+                    "aspects",
+                    "Label"
                   ]
                 ],
                 "value": [
@@ -3392,7 +3652,7 @@
                 "actionable": true,
                 "min": 1,
                 "not": false,
-                "note": "If NameVariable is not 0...",
+                "note": "If NameVariable is not zero (0)...",
                 "operator": "AND",
                 "paths": [
                   [
@@ -5806,6 +6066,7 @@
               },
               {
                 "actionType": "modify",
+                "append": " ",
                 "iterations": 1,
                 "note": "...and append OR...",
                 "paths": [
@@ -5816,6 +6077,7 @@
                     "value"
                   ]
                 ],
+                "prepend": " ",
                 "value": "(OR)"
               },
               {
@@ -5959,6 +6221,7 @@
             "actions": [
               {
                 "actionType": "modify",
+                "append": " ",
                 "iterations": 1,
                 "note": "...append OR (to Traits)...",
                 "paths": [
@@ -5969,6 +6232,7 @@
                     "value"
                   ]
                 ],
+                "prepend": " ",
                 "value": "(OR)"
               },
               {
@@ -6446,6 +6710,186 @@
             "failState": "pass",
             "order": 142
           },
+          "updateEmptyStatMountedWeapons": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...add the name of the weapon to the parent's \"Mounted Weapons\" stat...",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Mounted Weapons",
+                    "value"
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "designation"
+                ]
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the value of parentUpdated to True.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "parentUpdated",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If the weapon's parent's stat hasn't yet been updated...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "parentUpdated",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and if StatColumn is set to Mounted...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "StatColumn",
+                    "value"
+                  ]
+                ],
+                "value": "Mounted"
+              },
+              {
+                "actionable": true,
+                "equation": {
+                  "operator": "T+O",
+                  "value": 0
+                },
+                "max": 0,
+                "min": 0,
+                "not": false,
+                "note": "...and the sum of the Mounted Weapons stat is 0 (zero)...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Mounted Weapons",
+                    "value"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          },
+          "updateEmptyStatReactWeapons": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...put the designation in the parent's React Weapons stat...",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "React Weapons",
+                    "value"
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "designation"
+                ]
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the value of parentUpdated to True.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "parentUpdated",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If the weapon's parent's stat hasn't yet been updated...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "parentUpdated",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and if StatColumn is set to React...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "StatColumn",
+                    "value"
+                  ]
+                ],
+                "value": "React"
+              },
+              {
+                "actionable": true,
+                "equation": {
+                  "operator": "T+O",
+                  "value": 0
+                },
+                "max": 0,
+                "min": 0,
+                "not": false,
+                "note": "...and the sum of the React Weapons stat is 0 (zero)...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "React Weapons",
+                    "value"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          },
           "updateFormattedCount": {
             "actions": [
               {
@@ -6471,12 +6915,12 @@
             "failState": "pass",
             "order": 142
           },
-          "updateStatMountedWeapons": {
+          "updateNonEmptyStatMountedWeapons": {
             "actions": [
               {
                 "actionType": "modify",
                 "iterations": 1,
-                "note": "...add the name of the weapon to the parent's \"Mounted Weapons\" stat.",
+                "note": "...add the (separated) name of the weapon to the parent's \"Mounted Weapons\" stat...",
                 "paths": [
                   [
                     "{parent}",
@@ -6485,17 +6929,47 @@
                     "value"
                   ]
                 ],
+                "prepend": ", ",
                 "value": [
                   "{self}",
                   "designation"
                 ]
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the value of parentUpdated to True.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "parentUpdated",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
               }
             ],
             "evals": [
               {
                 "actionable": true,
+                "not": true,
+                "note": "If the weapon's parent's stat hasn't yet been updated...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "parentUpdated",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
                 "not": false,
-                "note": "If StatColumn is set to Mounted...",
+                "note": "...and if StatColumn is set to Mounted...",
                 "operator": "AND",
                 "paths": [
                   [
@@ -6506,18 +6980,38 @@
                   ]
                 ],
                 "value": "Mounted"
+              },
+              {
+                "actionable": true,
+                "equation": {
+                  "operator": "T+O",
+                  "value": 0
+                },
+                "max": 0,
+                "min": 0,
+                "not": true,
+                "note": "...and the sum of the Mounted Weapons stat is NOT 0 (zero)...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Mounted Weapons",
+                    "value"
+                  ]
+                ]
               }
             ],
             "evaluate": "AND",
             "failState": "pass",
             "order": 163
           },
-          "updateStatReactWeapons": {
+          "updateNonEmptyStatReactWeapons": {
             "actions": [
               {
                 "actionType": "modify",
                 "iterations": 1,
-                "note": "...put the designation in the parent's React Weapons stat.",
+                "note": "...put the (separated) designation in the parent's React Weapons stat...",
                 "paths": [
                   [
                     "{parent}",
@@ -6526,17 +7020,47 @@
                     "value"
                   ]
                 ],
+                "prepend": ", ",
                 "value": [
                   "{self}",
                   "designation"
                 ]
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the value of parentUpdated to True.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "parentUpdated",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
               }
             ],
             "evals": [
               {
                 "actionable": true,
+                "not": true,
+                "note": "If the weapon's parent's stat hasn't yet been updated...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "parentUpdated",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
                 "not": false,
-                "note": "If StatColumn is set to React...",
+                "note": "...and if StatColumn is set to React...",
                 "operator": "AND",
                 "paths": [
                   [
@@ -6547,6 +7071,26 @@
                   ]
                 ],
                 "value": "React"
+              },
+              {
+                "actionable": true,
+                "equation": {
+                  "operator": "T+O",
+                  "value": 0
+                },
+                "max": 0,
+                "min": 0,
+                "not": true,
+                "note": "...and the sum of the React Weapons stat is NOT 0 (zero)...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "React Weapons",
+                    "value"
+                  ]
+                ]
               }
             ],
             "evaluate": "AND",
@@ -6663,6 +7207,20 @@
             "value": null,
             "visibility": "hidden"
           },
+          "parentUpdated": {
+            "group": "Hidden",
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1
+              }
+            },
+            "statType": "rank",
+            "value": "-",
+            "visibility": "hidden"
+          },
           "Precise +1TV": {
             "dynamic": true,
             "group": "Upgrades",
@@ -6714,7 +7272,7 @@
             "groupOrder": 1,
             "statOrder": 4,
             "statType": "term",
-            "value": null,
+            "value": "",
             "visibility": "normal"
           },
           "TV": {
@@ -6735,6 +7293,11 @@
         "allowed": {
           "classifications": [
             "Airstrike Counter"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Airstrikes"
           ]
         },
         "removed": {
@@ -6761,6 +7324,11 @@
         }
       },
       "Combat Group§Combat Group": {
+        "keywords": {
+          "Keywords": [
+            "Combat Groups"
+          ]
+        },
         "rules": {
           "This asset is the container for normal combat groups.": {
             "evals": [],
@@ -6820,6 +7388,11 @@
           "classifications": [
             "Gear",
             "Veteran Gear"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Duelists"
           ]
         },
         "removed": {
@@ -7854,6 +8427,129 @@
         "stats": {
           "Damage": {
             "value": "7"
+          },
+          "Name": {
+            "value": "Light Vibro-Blade"
+          },
+          "officialDesignation": {
+            "value": "LVB"
+          },
+          "StatColumn": {
+            "value": "React"
+          },
+          "Swap to:": {
+            "ranks": {
+              "LCW": {
+                "order": 0
+              },
+              "LSG": {
+                "order": 1
+              },
+              "LVB": {
+                "order": 2
+              }
+            },
+            "value": "LVB"
+          }
+        }
+      },
+      "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Precise"
+          ]
+        },
+        "rules": {
+          "swapToLCW": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then make it happen.",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If Swap To: is set to LCW...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LCW"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 81
+          },
+          "swapToLSG": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then make it be so.",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LSG"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If Swap To: is set to LSG...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LSG"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 81
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Modifications": {
+            "value": "Precise"
+          },
+          "Modified": {
+            "value": "✓"
           },
           "Name": {
             "value": "Light Vibro-Blade"
@@ -13881,6 +14577,90 @@
           }
         }
       },
+      "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC (Precise, Silent)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            "Model/Weapon Property§(OR)",
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§Silent"
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "Burst:1, Split"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
+          "Damage": {
+            "value": "6"
+          },
+          "Modifications": {
+            "value": "Precise, Silent"
+          },
+          "Modified": {
+            "value": "✓"
+          },
+          "Name": {
+            "value": "Light Autocannon"
+          },
+          "officialDesignation": {
+            "value": "LAC"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC, Combo Part": {
         "assets": {
           "traits": [
@@ -14253,6 +15033,90 @@
           },
           "officialDesignation": {
             "value": "MAC"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
+      "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC (Precise, Silent)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            "Model/Weapon Property§(OR)",
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§Silent"
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "Burst:1, Split"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
+          "Damage": {
+            "value": "7"
+          },
+          "Modifications": {
+            "value": "Precise, Silent"
+          },
+          "Modified": {
+            "value": "✓"
+          },
+          "Name": {
+            "value": "Medium Autocannon"
+          },
+          "officialDesignation": {
+            "value": "LAC"
           },
           "Range": {
             "value": "6-18/36"
@@ -15034,6 +15898,145 @@
           },
           "officialDesignation": {
             "value": "LRL"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
+      "Ranged Weapon, Direct, AA-upgrade§MAC (Link)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            "Model/Weapon Property§(OR)",
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§Link"
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "Burst:1, Split"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the explicit value of the second clause of the traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "OrClause",
+                    "value"
+                  ]
+                ],
+                "value": "Precise"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          },
+          "weaponAppendModificationsToDesignation": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then modify the designation with the contents of Modifications.",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "prepend": " ",
+                "value": [
+                  "{self}",
+                  "stats",
+                  "Modifications",
+                  "processed",
+                  "format",
+                  "current"
+                ]
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the weapon is Modified...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Modified",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ]
+          }
+        },
+        "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
+          "Damage": {
+            "value": "7"
+          },
+          "Modifications": {
+            "value": "Link"
+          },
+          "Modified": {
+            "value": "✓"
+          },
+          "Name": {
+            "value": "Medium Autocannon"
+          },
+          "officialDesignation": {
+            "value": "MAC"
           },
           "Range": {
             "value": "6-18/36"
@@ -17679,6 +18682,40 @@
           }
         }
       },
+      "Ranged Weapon, Direct§HRF, React (Silent)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§Silent"
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Modifications": {
+            "value": "Silent"
+          },
+          "Modified": {
+            "value": "✓"
+          },
+          "Name": {
+            "value": "Heavy Rifle"
+          },
+          "officialDesignation": {
+            "value": "HRF"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "StatColumn": {
+            "value": "React"
+          },
+          "Traits": {
+            "value": ""
+          }
+        }
+      },
       "Ranged Weapon, Direct§HRG": {
         "assets": {
           "traits": [
@@ -17895,9 +18932,36 @@
           },
           "Range": {
             "value": "0-3/-"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§LAPGL (Link)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§Frag",
+            "Model/Weapon Property§Prox",
+            "Model/Weapon Property§Link"
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "5"
           },
-          "Traits": {
-            "value": ""
+          "Modifications": {
+            "value": "Link"
+          },
+          "Modified": {
+            "value": "✓"
+          },
+          "Name": {
+            "value": "Light Anti-Personnel Grenade Launchers"
+          },
+          "officialDesignation": {
+            "value": "LAPGL"
+          },
+          "Range": {
+            "value": "0-3/-"
           }
         }
       },
@@ -17936,6 +19000,45 @@
               "stats": {
                 "NameVariable": {
                   "value": 2
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Light Bazooka"
+          },
+          "officialDesignation": {
+            "value": "LBZ"
+          },
+          "Range": {
+            "value": "6-12/24"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§LBZ (AP:1, Burst:1)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
                 }
               }
             }
@@ -18394,6 +19497,37 @@
         "stats": {
           "Damage": {
             "value": "6"
+          },
+          "Name": {
+            "value": "Light Rifle"
+          },
+          "officialDesignation": {
+            "value": "LRF"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§LRF (Silent)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§Silent"
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Modifications": {
+            "value": "Silent"
+          },
+          "Modified": {
+            "value": "✓"
           },
           "Name": {
             "value": "Light Rifle"
@@ -20306,6 +21440,14 @@
             "value": 0,
             "visibility": "hidden"
           }
+        }
+      },
+      "Roster§Roster": {
+        "allowed": {
+          "classifications": []
+        },
+        "assets": {
+          "included": []
         }
       },
       "Standard Upgrade§Smoke +1TV": {

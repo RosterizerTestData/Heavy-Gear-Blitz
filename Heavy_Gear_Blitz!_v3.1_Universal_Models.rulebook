@@ -81,6 +81,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Riding Beasts"
           ]
         },
         "removed": {
@@ -156,6 +159,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Riding Beasts"
           ]
         },
         "removed": {
@@ -223,6 +229,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Jackrabbit"
           ]
         },
         "removed": {
@@ -364,6 +373,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Jackrabbit"
           ]
         },
         "removed": {
@@ -504,6 +516,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Spitz"
           ]
         },
         "removed": {
@@ -645,6 +660,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Wallaby"
           ]
         },
         "removed": {
@@ -773,6 +791,27 @@
           }
         }
       },
+      "Combat Group§Airstrikes": {
+        "keywords": {
+          "Keywords": [
+            "Airstrike Counter"
+          ]
+        }
+      },
+      "Combat Group§Combat Group": {
+        "keywords": {
+          "Keywords": [
+            "Combat Group"
+          ]
+        }
+      },
+      "Combat Group§Duelist (Independent)": {
+        "keywords": {
+          "Keywords": [
+            "Duelist"
+          ]
+        }
+      },
       "Drone§Drone, Demo": {
         "assets": {
           "traits": [
@@ -785,6 +824,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Drone"
           ]
         },
         "removed": {
@@ -857,6 +899,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Drone"
           ]
         },
         "removed": {
@@ -934,6 +979,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Drone"
           ]
         },
         "removed": {
@@ -1025,6 +1073,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Bricklayer"
           ]
         },
         "removed": {
@@ -1146,6 +1197,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Bricklayer"
           ]
         },
         "removed": {
@@ -1268,6 +1322,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Bricklayer"
           ]
         },
         "removed": {
@@ -1407,6 +1464,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Chargeur"
           ]
         },
         "removed": {
@@ -1517,6 +1577,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Cobra"
           ]
         },
         "removed": {
@@ -1723,6 +1786,9 @@
         "keywords": {
           "Tags": [
             "Only available to Earth allies"
+          ],
+          "Keywords": [
+            "Druid"
           ]
         },
         "removed": {
@@ -1882,6 +1948,9 @@
         "keywords": {
           "Tags": [
             "Only available to Earth allies"
+          ],
+          "Keywords": [
+            "Druid"
           ]
         },
         "removed": {
@@ -2063,6 +2132,9 @@
         "keywords": {
           "Tags": [
             "Only available to Earth allies"
+          ],
+          "Keywords": [
+            "Druid"
           ]
         },
         "removed": {
@@ -2244,6 +2316,9 @@
         "keywords": {
           "Tags": [
             "Only available to Earth allies"
+          ],
+          "Keywords": [
+            "Druid"
           ]
         },
         "removed": {
@@ -2422,6 +2497,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Grizzly"
           ]
         },
         "removed": {
@@ -2620,6 +2698,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Python"
           ]
         },
         "removed": {
@@ -2718,6 +2799,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Sapeur"
           ]
         },
         "removed": {
@@ -2877,6 +2961,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Stonemason"
           ]
         },
         "removed": {
@@ -2998,6 +3085,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Stonemason"
           ]
         },
         "removed": {
@@ -3117,6 +3207,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Valence"
           ]
         },
         "removed": {
@@ -3234,6 +3327,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Valence"
           ]
         },
         "removed": {
@@ -3375,6 +3471,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Valence"
           ]
         },
         "removed": {
@@ -3515,6 +3614,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Valence"
           ]
         },
         "removed": {
@@ -3639,6 +3741,11 @@
             "Ranged Weapon, Direct or Indirect§LIGL",
             "Melee Weapon, Reach-upgrade§LICW",
             "Ranged Weapon, Direct§LIR"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Infantry"
           ]
         },
         "removed": {
@@ -3946,6 +4053,11 @@
             "Ranged Weapon, Direct§LIW",
             "Melee Weapon, Reach-upgrade§LICW",
             "Ranged Weapon, Direct or Indirect§MAVM"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Infantry"
           ]
         },
         "removed": {
@@ -4316,6 +4428,11 @@
             "Ranged Weapon, Direct§HIS (Burst:1)"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Infantry"
+          ]
+        },
         "removed": {
           "keywords": {
             "Tags": [
@@ -4682,6 +4799,11 @@
             "Ranged Weapon, Direct§LIW",
             "Melee Weapon, Reach-upgrade§LICW",
             "Model/Weapon Property§Comms"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Infantry"
           ]
         },
         "removed": {
@@ -5060,6 +5182,11 @@
             }
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Infantry"
+          ]
+        },
         "removed": {
           "keywords": {
             "Tags": [
@@ -5426,6 +5553,11 @@
             "Ranged Weapon, Direct§LIW",
             "Melee Weapon, Reach-upgrade§LICW",
             "Model/Weapon Property§Medic"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Infantry"
           ]
         },
         "removed": {
@@ -5796,6 +5928,11 @@
             "Ranged Weapon, Indirect§MIM (Brace)"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Infantry"
+          ]
+        },
         "removed": {
           "keywords": {
             "Tags": [
@@ -6164,6 +6301,11 @@
             "Model/Weapon Property§TD"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Infantry"
+          ]
+        },
         "removed": {
           "keywords": {
             "Tags": [
@@ -6530,6 +6672,11 @@
             "Ranged Weapon, Direct§LIW",
             "Melee Weapon, Reach-upgrade§LICW",
             "Ranged Weapon, Direct§MIR (Silent)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Infantry"
           ]
         },
         "removed": {
@@ -6910,6 +7057,11 @@
             "Model/Weapon Property§Stationary"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Light Structures"
+          ]
+        },
         "stats": {
           "Actions": {
             "value": 1
@@ -6962,6 +7114,11 @@
             "Ranged Weapon, Direct§HMG (T)"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Badlands Facilities"
+          ]
+        },
         "stats": {
           "Actions": {
             "value": 1
@@ -7005,6 +7162,11 @@
         "assets": {
           "traits": [
             "Model/Weapon Property§Stationary"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Containers"
           ]
         },
         "stats": {
@@ -7069,6 +7231,11 @@
             "Ranged Weapon, Direct§HMG (T)"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Outpost"
+          ]
+        },
         "stats": {
           "Actions": {
             "value": 1
@@ -7123,6 +7290,11 @@
             "Model/Weapon Property§Stationary"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Light Structures"
+          ]
+        },
         "stats": {
           "Actions": {
             "value": 1
@@ -7175,6 +7347,11 @@
             "Ranged Weapon, Direct§HMG (T)"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Badlands Facilities"
+          ]
+        },
         "stats": {
           "Actions": {
             "value": 1
@@ -7218,6 +7395,11 @@
         "assets": {
           "traits": [
             "Model/Weapon Property§Stationary"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Minefields and Trenches"
           ]
         },
         "stats": {
@@ -7309,6 +7491,11 @@
             "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC (B)"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Outpost"
+          ]
+        },
         "stats": {
           "Actions": {
             "value": 4
@@ -7364,6 +7551,11 @@
             "Model/Weapon Property§Stationary"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Containers"
+          ]
+        },
         "stats": {
           "Actions": {
             "value": 1
@@ -7413,6 +7605,11 @@
             "Model/Weapon Property§Stationary"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Badlands Ancillaries"
+          ]
+        },
         "stats": {
           "Actions": {
             "value": 1
@@ -7460,6 +7657,11 @@
         "assets": {
           "traits": [
             "Model/Weapon Property§Stationary"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Stoneheads"
           ]
         },
         "stats": {
@@ -7513,6 +7715,11 @@
             "Model/Weapon Property§Stationary"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Stoneheads"
+          ]
+        },
         "stats": {
           "Actions": {
             "value": 1
@@ -7562,6 +7769,11 @@
         "assets": {
           "traits": [
             "Model/Weapon Property§Stationary"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Minefields and Trenches"
           ]
         },
         "stats": {
@@ -7636,6 +7848,11 @@
             "Ranged Weapon, Direct or Indirect§HRP (T, Link)"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Outpost"
+          ]
+        },
         "stats": {
           "Actions": {
             "value": 1
@@ -7708,6 +7925,11 @@
             "Ranged Weapon, Direct, AA-upgrade§MRC (T, Link, AA)"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Outpost"
+          ]
+        },
         "stats": {
           "Actions": {
             "value": 1
@@ -7760,6 +7982,11 @@
             "Model/Weapon Property§Stationary"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Badlands Ancillaries"
+          ]
+        },
         "stats": {
           "Actions": {
             "value": 1
@@ -7809,6 +8036,11 @@
             "Model/Weapon Property§Stationary"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Badlands Ancillaries"
+          ]
+        },
         "stats": {
           "Actions": {
             "value": 1
@@ -7856,6 +8088,11 @@
         "assets": {
           "traits": [
             "Model/Weapon Property§Stationary"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Badlands Ancillaries"
           ]
         },
         "stats": {
@@ -7912,6 +8149,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Antelope"
           ]
         },
         "removed": {
@@ -7988,6 +8228,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Antelope"
           ]
         },
         "removed": {
@@ -8069,6 +8312,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Barnaby Transport"
           ]
         },
         "removed": {
@@ -8147,6 +8393,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Camel"
           ]
         },
         "removed": {
@@ -8257,6 +8506,11 @@
             "Ranged Weapon, Direct§LMG (T)"
           ]
         },
+        "keywords": {
+          "Keywords": [
+            "Camel"
+          ]
+        },
         "stats": {
           "Actions": {
             "value": 1
@@ -8326,6 +8580,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Dragonfly"
           ]
         },
         "removed": {
@@ -8441,6 +8698,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Elan"
           ]
         },
         "removed": {
@@ -8517,6 +8777,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Elan"
           ]
         },
         "removed": {
@@ -8586,6 +8849,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Field Gun"
           ]
         },
         "removed": {
@@ -8660,6 +8926,9 @@
         "keywords": {
           "Tags": [
             "Only available to Earth allies"
+          ],
+          "Keywords": [
+            "No Terrain, Area Terrain, Buildings, Infantry, Cavalry or Airstrike counters."
           ]
         },
         "removed": {
@@ -8814,6 +9083,9 @@
         "keywords": {
           "Tags": [
             "Only available to Earth allies"
+          ],
+          "Keywords": [
+            "Saker"
           ]
         },
         "removed": {
@@ -8978,6 +9250,9 @@
         "keywords": {
           "Tags": [
             "Only available to Earth allies"
+          ],
+          "Keywords": [
+            "Saker"
           ]
         },
         "removed": {
@@ -9135,6 +9410,9 @@
         "keywords": {
           "Tags": [
             "Only available to Terra Novans"
+          ],
+          "Keywords": [
+            "Varis"
           ]
         },
         "removed": {

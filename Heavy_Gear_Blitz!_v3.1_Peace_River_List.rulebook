@@ -9,12 +9,6 @@
   "wip": true,
   "dependencies": [
     {
-      "slug": "VUGK7N",
-      "name": "Core System",
-      "game": "Heavy Gear Blitz! v3.1",
-      "source": ""
-    },
-    {
       "slug": "2X6Q3R",
       "name": "Universal Models",
       "game": "Heavy Gear Blitz! v3.1",
@@ -28,9 +22,1929 @@
     }
   ],
   "rulebook": {
-    "assetTaxonomy": {},
+    "assetTaxonomy": {
+      "Combat Group": {},
+      "Model": {
+        "stats": {
+          "E-pex EW +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "E-pex Model": 1,
+                  "EW": -1,
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 10,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      }
+    },
     "assetCatalog": {
-      "Roster§Force": {}
+      "Combat Group§Combat Group": {
+        "stats": {
+          "E-pex Model": {
+            "dynamic": true,
+            "group": "Hidden",
+            "max": 1,
+            "statType": "numeric",
+            "tracked": true,
+            "value": 0,
+            "visibility": "hidden"
+          }
+        }
+      },
+      "Gear§Crossfire Warrior IV": {
+        "removed": {
+          "rules": {
+            "renameChieftainIfChecked": {}
+          }
+        },
+        "rules": {
+          "renameChieftanEliteIfBoth": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Crossfire Chieftain Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameChieftanIfNotElite": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain IV.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Crossfire Chieftain IV"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and it is not a Warrior Elite...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameEliteIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Warrior Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Crossfire Warrior Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...but the Chieftan Upgrade is not...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "warriorElitesGetBonuses": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the \"H/S\" stat to \"4/2\".",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 85
+          }
+        },
+        "stats": {
+          "Warrior Elite Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Agile"
+                  }
+                ]
+              }
+            },
+            "statOrder": 5,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Gear§Fusillade Warrior IV": {
+        "removed": {
+          "rules": {
+            "renameChieftainIfChecked": {}
+          }
+        },
+        "rules": {
+          "renameChieftanEliteIfBoth": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Fusillade Chieftain Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameChieftanIfNotElite": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain IV.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Fusillade Chieftain IV"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and it is not a Warrior Elite...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameEliteIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Warrior Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Fusillade Warrior Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...but the Chieftan Upgrade is not...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "warriorElitesGetBonuses": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the \"H/S\" stat to \"4/2\".",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 85
+          }
+        },
+        "stats": {
+          "Warrior Elite Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Agile"
+                  }
+                ]
+              }
+            },
+            "statOrder": 5,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Gear§Pilum Warrior IV": {
+        "removed": {
+          "rules": {
+            "renameChieftainIfChecked": {}
+          }
+        },
+        "rules": {
+          "renameChieftanEliteIfBoth": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Pilum Chieftain Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameChieftanIfNotElite": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain IV.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Pilum Chieftain IV"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and it is not a Warrior Elite...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameEliteIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Warrior Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Pilum Warrior Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...but the Chieftan Upgrade is not...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "warriorElitesGetBonuses": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the \"H/S\" stat to \"4/2\".",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 85
+          }
+        },
+        "stats": {
+          "Warrior Elite Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Agile"
+                  }
+                ]
+              }
+            },
+            "statOrder": 5,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Gear§Scourge Warrior IV": {
+        "removed": {
+          "rules": {
+            "renameChieftainIfChecked": {}
+          }
+        },
+        "rules": {
+          "renameChieftanEliteIfBoth": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Scourge Chieftain Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameChieftanIfNotElite": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain IV.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Scourge Chieftain IV"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and it is not a Warrior Elite...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameEliteIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Warrior Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Scourge Warrior Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...but the Chieftan Upgrade is not...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "warriorElitesGetBonuses": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the \"H/S\" stat to \"4/2\".",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 85
+          }
+        },
+        "stats": {
+          "Warrior Elite Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Agile"
+                  }
+                ]
+              }
+            },
+            "statOrder": 5,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Gear§Shamshir Warrior IV": {
+        "removed": {
+          "rules": {
+            "renameChieftainIfChecked": {}
+          }
+        },
+        "rules": {
+          "renameChieftanEliteIfBoth": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Shamshir Chieftain Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameChieftanIfNotElite": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain IV.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Shamshir Chieftain IV"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and it is not a Warrior Elite...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameEliteIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Warrior Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Shamshir Warrior Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...but the Chieftan Upgrade is not...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "warriorElitesGetBonuses": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the \"H/S\" stat to \"4/2\".",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 85
+          }
+        },
+        "stats": {
+          "Warrior Elite Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Agile"
+                  }
+                ]
+              }
+            },
+            "statOrder": 5,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Gear§Sweeper Warrior IV": {
+        "removed": {
+          "rules": {
+            "renameChieftainIfChecked": {}
+          }
+        },
+        "rules": {
+          "renameChieftanEliteIfBoth": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Sweeper Chieftain Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameChieftanIfNotElite": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain IV.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Sweeper Chieftain IV"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and it is not a Warrior Elite...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameEliteIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Warrior Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Sweeper Warrior Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...but the Chieftan Upgrade is not...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "warriorElitesGetBonuses": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the \"H/S\" stat to \"4/2\".",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 85
+          }
+        },
+        "stats": {
+          "Warrior Elite Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Agile"
+                  }
+                ]
+              }
+            },
+            "statOrder": 5,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Gear§Vanguard Warrior IV": {
+        "removed": {
+          "rules": {
+            "renameChieftainIfChecked": {}
+          }
+        },
+        "rules": {
+          "renameChieftanEliteIfBoth": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Vanguard Chieftain Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameChieftanIfNotElite": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain IV.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Vanguard Chieftain IV"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and it is not a Warrior Elite...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameEliteIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Warrior Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Vanguard Warrior Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...but the Chieftan Upgrade is not...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "warriorElitesGetBonuses": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the \"H/S\" stat to \"4/2\".",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 85
+          }
+        },
+        "stats": {
+          "Warrior Elite Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Agile"
+                  }
+                ]
+              }
+            },
+            "statOrder": 5,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Gear§Warrior IV": {
+        "removed": {
+          "rules": {
+            "renameChieftainIfChecked": {}
+          }
+        },
+        "rules": {
+          "renameChieftanEliteIfBoth": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Chieftain Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameChieftanIfNotElite": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain IV.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Chieftain IV"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...and it is not a Warrior Elite...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "renameEliteIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Warrior Elite.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Warrior Elite"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...but the Chieftan Upgrade is not...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          },
+          "warriorElitesGetBonuses": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the \"H/S\" stat to \"4/2\".",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Warrior Elite Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Warrior Elite Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 85
+          }
+        },
+        "stats": {
+          "Warrior Elite Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Agile"
+                  }
+                ]
+              }
+            },
+            "statOrder": 5,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Roster§Force": {},
+      "Roster§Roster": {
+        "allowed": {
+          "classifications": [
+            "Combat Group"
+          ]
+        }
+      }
     },
     "gameModes": {},
     "theme": {}
