@@ -13952,6 +13952,42 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§MAPR (Link)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property§Link"
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Modifications": {
+            "value": "Link"
+          },
+          "Modified": {
+            "value": "✓"
+          },
+          "Name": {
+            "value": "Medium Anti-Personnel Rocket"
+          },
+          "officialDesignation": {
+            "value": "MAPR"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§MAPR, React": {
         "assets": {
           "traits": [
