@@ -10536,6 +10536,97 @@
             "Cataphract"
           ]
         },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendLordIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": " Lord",
+                "iterations": 1,
+                "note": "...append \" Lord\" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Lord Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Lord Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          },
+          "prependSarisaIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Sarisa \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Sarisa",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Sarisa Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Sarisa Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          }
+        },
         "stats": {
           "Actions": {
             "value": 3
@@ -10545,6 +10636,9 @@
           },
           "EW": {
             "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
           },
           "GU": {
             "value": 4
