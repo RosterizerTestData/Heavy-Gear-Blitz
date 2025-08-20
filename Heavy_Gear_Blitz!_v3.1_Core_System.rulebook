@@ -13579,6 +13579,50 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§HRP (Link)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Heavy Rocket Pack"
+          },
+          "officialDesignation": {
+            "value": "HRP"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§HRP (T, Link)": {
         "assets": {
           "traits": [
@@ -15804,6 +15848,112 @@
             "Model/Weapon Property§Split",
             "Model/Weapon Property§(OR)",
             "Model/Weapon Property§Precise"
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "Burst:1, Split"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the explicit value of the second clause of the traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "OrClause",
+                    "value"
+                  ]
+                ],
+                "value": "Precise"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "AMSCapableGuns": {
+            "value": 1
+          },
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Heavy Autocannon"
+          },
+          "officialDesignation": {
+            "value": "HAC"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
+      "Ranged Weapon, Direct, AA-upgrade§HAC, React (Apex, AP:3)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            "Model/Weapon Property§(OR)",
+            "Model/Weapon Property§Precise",
+            {
+              "item": "Model/Weapon Property§Apex",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                },
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
           ]
         },
         "rules": {
@@ -19236,6 +19386,37 @@
           }
         }
       },
+      "Ranged Weapon, Direct§LAPGL (Auto)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            "Model/Weapon Property§Frag",
+            "Model/Weapon Property§Prox",
+            {
+              "item": "Model/Weapon Property§Auto",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "5"
+          },
+          "Name": {
+            "value": "Light Anti-Personnel Grenade Launchers"
+          },
+          "officialDesignation": {
+            "value": "LAPGL"
+          },
+          "Range": {
+            "value": "0-3/-"
+          }
+        }
+      },
       "Ranged Weapon, Direct§LAPGL (Link)": {
         "assets": {
           "traits": [
@@ -20826,6 +21007,50 @@
               "stats": {
                 "NameVariable": {
                   "value": 2
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "10"
+          },
+          "Name": {
+            "value": "Medium Tank Gun"
+          },
+          "officialDesignation": {
+            "value": "MTG"
+          },
+          "Range": {
+            "value": "12-36/72"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§MTG (Link)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 4
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Demo:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
                 }
               }
             }
