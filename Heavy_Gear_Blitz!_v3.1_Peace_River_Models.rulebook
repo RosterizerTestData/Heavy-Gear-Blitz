@@ -5746,2338 +5746,6 @@
           }
         }
       },
-      "Gear§Shinobi": {
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Hands",
-            "Model/Weapon Property§Agile",
-            "Model/Weapon Property§Airdrop",
-            "Model/Weapon Property§Vet",
-            "Model/Weapon Property§Comms",
-            {
-              "item": "Model/Weapon Property§Stealth",
-              "stats": {
-                "Aux_System": {
-                  "value": "✓"
-                }
-              }
-            },
-            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC (Precise, Silent)",
-            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
-            "Ranged Weapon, Direct or Indirect§LRP"
-          ]
-        },
-        "keywords": {
-          "Keywords": [
-            "Shinobi"
-          ]
-        },
-        "removed": {
-          "keywords": {
-            "Tags": [
-              "UA: Fire Support",
-              "UA: Fortifications",
-              "UA: General Purpose",
-              "UA: Recon"
-            ]
-          }
-        },
-        "rules": {
-          "prependSpectreIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...prepend \"Spectre \" to the ModelName.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "prepend": "Spectre ",
-                "value": null
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Spectre Upgrade is checked...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Spectre Upgrade +2TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 163
-          },
-          "renameChieftanIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...then set the ModelName to Chieftain Shinobi.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "value": "Chieftain Shinobi"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Chieftain Upgrade is selected...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Chieftain Upgrade +1TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 161
-          }
-        },
-        "stats": {
-          "Actions": {
-            "value": 1
-          },
-          "Arm": {
-            "value": 5
-          },
-          "Chieftain Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECCM"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§SatUp"
-                  }
-                ]
-              }
-            },
-            "statOrder": 3,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "EW": {
-            "value": 5
-          },
-          "GU": {
-            "value": 3
-          },
-          "H/S": {
-            "value": "3/3"
-          },
-          "HT": {
-            "value": 1.5
-          },
-          "Melee Specialist Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Brawl:X",
-                      "stats": {
-                        "NameVariable": {
-                          "value": 2
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
-                  }
-                ]
-              }
-            },
-            "statOrder": 2,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "ModelName": {
-            "value": "Shinobi"
-          },
-          "MR": {
-            "value": 8
-          },
-          "PI": {
-            "value": 3
-          },
-          "Roles": {
-            "value": "SO, SK"
-          },
-          "specialOperationsMax": {
-            "value": 1
-          },
-          "Spectre Upgrade +2TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "EW": -2,
-                  "TV": 2
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECM+"
-                  },
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Sensors:X",
-                      "stats": {
-                        "Aux_System": {
-                          "value": "✓"
-                        },
-                        "NameVariable": {
-                          "value": 24
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            "statOrder": 1,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "strikeMax": {
-            "value": 1
-          },
-          "TV": {
-            "value": 10
-          }
-        }
-      },
-      "Gear§Shinobi Assassin": {
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Hands",
-            "Model/Weapon Property§Agile",
-            "Model/Weapon Property§Airdrop",
-            "Model/Weapon Property§Vet",
-            "Model/Weapon Property§Comms",
-            {
-              "item": "Model/Weapon Property§Stealth",
-              "stats": {
-                "Aux_System": {
-                  "value": "✓"
-                }
-              }
-            },
-            "Ranged Weapon, Direct§HRF, React (Silent)",
-            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
-            "Ranged Weapon, Direct or Indirect§LRP"
-          ]
-        },
-        "keywords": {
-          "Keywords": [
-            "Shinobi"
-          ]
-        },
-        "removed": {
-          "keywords": {
-            "Tags": [
-              "UA: Fire Support",
-              "UA: Fortifications",
-              "UA: General Purpose",
-              "UA: Recon"
-            ]
-          }
-        },
-        "rules": {
-          "prependSpectreIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...prepend \"Spectre \" to the ModelName.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "prepend": "Spectre ",
-                "value": null
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Spectre Upgrade is checked...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Spectre Upgrade +2TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 163
-          },
-          "renameChieftanIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...then set the ModelName to Chieftain Shinobi.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "value": "Chieftain Shinobi Assassin"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Chieftain Upgrade is selected...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Chieftain Upgrade +1TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 161
-          }
-        },
-        "stats": {
-          "Actions": {
-            "value": 1
-          },
-          "Arm": {
-            "value": 5
-          },
-          "Chieftain Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECCM"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§SatUp"
-                  }
-                ]
-              }
-            },
-            "statOrder": 3,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "EW": {
-            "value": 5
-          },
-          "GU": {
-            "value": 3
-          },
-          "H/S": {
-            "value": "3/3"
-          },
-          "HT": {
-            "value": 1.5
-          },
-          "Melee Specialist Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Brawl:X",
-                      "stats": {
-                        "NameVariable": {
-                          "value": 2
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
-                  }
-                ]
-              }
-            },
-            "statOrder": 2,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "ModelName": {
-            "value": "Shinobi Assassin"
-          },
-          "MR": {
-            "value": 8
-          },
-          "PI": {
-            "value": 3
-          },
-          "Roles": {
-            "value": "SO, SK"
-          },
-          "specialOperationsMax": {
-            "value": 1
-          },
-          "Spectre Upgrade +2TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "EW": -2,
-                  "TV": 2
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECM+"
-                  },
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Sensors:X",
-                      "stats": {
-                        "Aux_System": {
-                          "value": "✓"
-                        },
-                        "NameVariable": {
-                          "value": 24
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            "statOrder": 1,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "strikeMax": {
-            "value": 1
-          },
-          "TV": {
-            "value": 12
-          }
-        }
-      },
-      "Gear§Shinobi Crossfire": {
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Hands",
-            "Model/Weapon Property§Agile",
-            "Model/Weapon Property§Airdrop",
-            "Model/Weapon Property§Vet",
-            "Model/Weapon Property§Comms",
-            {
-              "item": "Model/Weapon Property§Stealth",
-              "stats": {
-                "Aux_System": {
-                  "value": "✓"
-                }
-              }
-            },
-            "Ranged Weapon, Direct, AA-upgrade§LLC",
-            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
-            "Ranged Weapon, Direct or Indirect§LRP"
-          ]
-        },
-        "keywords": {
-          "Keywords": [
-            "Shinobi"
-          ]
-        },
-        "removed": {
-          "keywords": {
-            "Tags": [
-              "UA: Fire Support",
-              "UA: Fortifications",
-              "UA: General Purpose",
-              "UA: Recon"
-            ]
-          }
-        },
-        "rules": {
-          "prependSpectreIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...prepend \"Spectre \" to the ModelName.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "prepend": "Spectre ",
-                "value": null
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Spectre Upgrade is checked...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Spectre Upgrade +2TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 163
-          },
-          "renameChieftanIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...then set the ModelName to Chieftain Shinobi.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "value": "Chieftain Shinobi Crossfire"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Chieftain Upgrade is selected...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Chieftain Upgrade +1TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 161
-          }
-        },
-        "stats": {
-          "Actions": {
-            "value": 1
-          },
-          "Arm": {
-            "value": 5
-          },
-          "Chieftain Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECCM"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§SatUp"
-                  }
-                ]
-              }
-            },
-            "statOrder": 3,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "EW": {
-            "value": 5
-          },
-          "GU": {
-            "value": 3
-          },
-          "H/S": {
-            "value": "3/3"
-          },
-          "HT": {
-            "value": 1.5
-          },
-          "Melee Specialist Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Brawl:X",
-                      "stats": {
-                        "NameVariable": {
-                          "value": 2
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
-                  }
-                ]
-              }
-            },
-            "statOrder": 2,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "ModelName": {
-            "value": "Shinobi Crossfire"
-          },
-          "MR": {
-            "value": 8
-          },
-          "PI": {
-            "value": 3
-          },
-          "Roles": {
-            "value": "SO, SK"
-          },
-          "specialOperationsMax": {
-            "value": 1
-          },
-          "Spectre Upgrade +2TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "EW": -2,
-                  "TV": 2
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECM+"
-                  },
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Sensors:X",
-                      "stats": {
-                        "Aux_System": {
-                          "value": "✓"
-                        },
-                        "NameVariable": {
-                          "value": 24
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            "statOrder": 1,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "strikeMax": {
-            "value": 1
-          },
-          "TV": {
-            "value": 11
-          }
-        }
-      },
-      "Gear§Shinobi Enfilade": {
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Hands",
-            "Model/Weapon Property§Agile",
-            "Model/Weapon Property§Airdrop",
-            "Model/Weapon Property§Vet",
-            "Model/Weapon Property§Comms",
-            {
-              "item": "Model/Weapon Property§Stealth",
-              "stats": {
-                "Aux_System": {
-                  "value": "✓"
-                }
-              }
-            },
-            "Ranged Weapon, Direct§LPA",
-            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
-            "Ranged Weapon, Direct or Indirect§LRP"
-          ]
-        },
-        "keywords": {
-          "Keywords": [
-            "Shinobi"
-          ]
-        },
-        "removed": {
-          "keywords": {
-            "Tags": [
-              "UA: Fire Support",
-              "UA: Fortifications",
-              "UA: General Purpose",
-              "UA: Recon"
-            ]
-          }
-        },
-        "rules": {
-          "prependSpectreIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...prepend \"Spectre \" to the ModelName.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "prepend": "Spectre ",
-                "value": null
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Spectre Upgrade is checked...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Spectre Upgrade +2TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 163
-          },
-          "renameChieftanIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...then set the ModelName to Chieftain Shinobi.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "value": "Chieftain Shinobi Enfilade"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Chieftain Upgrade is selected...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Chieftain Upgrade +1TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 161
-          }
-        },
-        "stats": {
-          "Actions": {
-            "value": 1
-          },
-          "Arm": {
-            "value": 5
-          },
-          "Chieftain Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECCM"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§SatUp"
-                  }
-                ]
-              }
-            },
-            "statOrder": 3,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "EW": {
-            "value": 5
-          },
-          "GU": {
-            "value": 3
-          },
-          "H/S": {
-            "value": "3/3"
-          },
-          "HT": {
-            "value": 1.5
-          },
-          "Melee Specialist Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Brawl:X",
-                      "stats": {
-                        "NameVariable": {
-                          "value": 2
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
-                  }
-                ]
-              }
-            },
-            "statOrder": 2,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "ModelName": {
-            "value": "Shinobi Enfilade"
-          },
-          "MR": {
-            "value": 8
-          },
-          "PI": {
-            "value": 3
-          },
-          "Roles": {
-            "value": "SO, SK"
-          },
-          "specialOperationsMax": {
-            "value": 1
-          },
-          "Spectre Upgrade +2TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "EW": -2,
-                  "TV": 2
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECM+"
-                  },
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Sensors:X",
-                      "stats": {
-                        "Aux_System": {
-                          "value": "✓"
-                        },
-                        "NameVariable": {
-                          "value": 24
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            "statOrder": 1,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "strikeMax": {
-            "value": 1
-          },
-          "TV": {
-            "value": 11
-          }
-        }
-      },
-      "Gear§Shinobi Fusillade": {
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Hands",
-            "Model/Weapon Property§Agile",
-            "Model/Weapon Property§Airdrop",
-            "Model/Weapon Property§Vet",
-            "Model/Weapon Property§Comms",
-            {
-              "item": "Model/Weapon Property§Stealth",
-              "stats": {
-                "Aux_System": {
-                  "value": "✓"
-                }
-              }
-            },
-            "Ranged Weapon, Direct, AA-upgrade§MRL, React",
-            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
-            "Ranged Weapon, Direct or Indirect§LRP"
-          ]
-        },
-        "keywords": {
-          "Keywords": [
-            "Shinobi"
-          ]
-        },
-        "removed": {
-          "keywords": {
-            "Tags": [
-              "UA: Fire Support",
-              "UA: Fortifications",
-              "UA: General Purpose",
-              "UA: Recon"
-            ]
-          }
-        },
-        "rules": {
-          "prependSpectreIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...prepend \"Spectre \" to the ModelName.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "prepend": "Spectre ",
-                "value": null
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Spectre Upgrade is checked...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Spectre Upgrade +2TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 163
-          },
-          "renameChieftanIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...then set the ModelName to Chieftain Shinobi.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "value": "Chieftain Shinobi Fusillade"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Chieftain Upgrade is selected...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Chieftain Upgrade +1TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 161
-          }
-        },
-        "stats": {
-          "Actions": {
-            "value": 1
-          },
-          "Arm": {
-            "value": 5
-          },
-          "Chieftain Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECCM"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§SatUp"
-                  }
-                ]
-              }
-            },
-            "statOrder": 3,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "EW": {
-            "value": 5
-          },
-          "GU": {
-            "value": 3
-          },
-          "H/S": {
-            "value": "3/3"
-          },
-          "HT": {
-            "value": 1.5
-          },
-          "Melee Specialist Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Brawl:X",
-                      "stats": {
-                        "NameVariable": {
-                          "value": 2
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
-                  }
-                ]
-              }
-            },
-            "statOrder": 2,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "ModelName": {
-            "value": "Shinobi Fusillade"
-          },
-          "MR": {
-            "value": 8
-          },
-          "PI": {
-            "value": 3
-          },
-          "Roles": {
-            "value": "SO, SK"
-          },
-          "specialOperationsMax": {
-            "value": 1
-          },
-          "Spectre Upgrade +2TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "EW": -2,
-                  "TV": 2
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECM+"
-                  },
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Sensors:X",
-                      "stats": {
-                        "Aux_System": {
-                          "value": "✓"
-                        },
-                        "NameVariable": {
-                          "value": 24
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            "statOrder": 1,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "strikeMax": {
-            "value": 1
-          },
-          "TV": {
-            "value": 12
-          }
-        }
-      },
-      "Gear§Shinobi Lookout": {
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Hands",
-            "Model/Weapon Property§Agile",
-            "Model/Weapon Property§Airdrop",
-            "Model/Weapon Property§Vet",
-            "Model/Weapon Property§Comms",
-            {
-              "item": "Model/Weapon Property§Stealth",
-              "stats": {
-                "Aux_System": {
-                  "value": "✓"
-                }
-              }
-            },
-            "Ranged Weapon, Direct§LRF (Silent)",
-            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
-            "Ranged Weapon, Direct or Indirect§LRP"
-          ]
-        },
-        "keywords": {
-          "Keywords": [
-            "Shinobi"
-          ]
-        },
-        "removed": {
-          "keywords": {
-            "Tags": [
-              "UA: Fire Support",
-              "UA: Fortifications",
-              "UA: General Purpose",
-              "UA: Recon"
-            ]
-          }
-        },
-        "rules": {
-          "prependSpectreIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...prepend \"Spectre \" to the ModelName.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "prepend": "Spectre ",
-                "value": null
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Spectre Upgrade is checked...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Spectre Upgrade +2TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 163
-          },
-          "renameChieftanIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...then set the ModelName to Chieftain Shinobi.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "value": "Chieftain Shinobi Lookout"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Chieftain Upgrade is selected...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Chieftain Upgrade +1TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 161
-          }
-        },
-        "stats": {
-          "Actions": {
-            "value": 1
-          },
-          "Arm": {
-            "value": 5
-          },
-          "Chieftain Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECCM"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§SatUp"
-                  }
-                ]
-              }
-            },
-            "statOrder": 3,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "EW": {
-            "value": 5
-          },
-          "GU": {
-            "value": 3
-          },
-          "H/S": {
-            "value": "3/3"
-          },
-          "HT": {
-            "value": 1.5
-          },
-          "Melee Specialist Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Brawl:X",
-                      "stats": {
-                        "NameVariable": {
-                          "value": 2
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
-                  }
-                ]
-              }
-            },
-            "statOrder": 2,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "ModelName": {
-            "value": "Shinobi Lookout"
-          },
-          "MR": {
-            "value": 8
-          },
-          "PI": {
-            "value": 3
-          },
-          "Roles": {
-            "value": "SO, SK"
-          },
-          "specialOperationsMax": {
-            "value": 1
-          },
-          "Spectre Upgrade +2TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "EW": -2,
-                  "TV": 2
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECM+"
-                  },
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Sensors:X",
-                      "stats": {
-                        "Aux_System": {
-                          "value": "✓"
-                        },
-                        "NameVariable": {
-                          "value": 24
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            "statOrder": 1,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "strikeMax": {
-            "value": 1
-          },
-          "TV": {
-            "value": 10
-          }
-        }
-      },
-      "Gear§Shinobi Scourge": {
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Hands",
-            "Model/Weapon Property§Agile",
-            "Model/Weapon Property§Airdrop",
-            "Model/Weapon Property§Vet",
-            "Model/Weapon Property§Comms",
-            {
-              "item": "Model/Weapon Property§Stealth",
-              "stats": {
-                "Aux_System": {
-                  "value": "✓"
-                }
-              }
-            },
-            "Ranged Weapon, Direct§LBZ (AP:1, Burst:1)",
-            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
-            "Ranged Weapon, Direct or Indirect§LRP"
-          ]
-        },
-        "keywords": {
-          "Keywords": [
-            "Shinobi"
-          ]
-        },
-        "removed": {
-          "keywords": {
-            "Tags": [
-              "UA: Fire Support",
-              "UA: Fortifications",
-              "UA: General Purpose",
-              "UA: Recon"
-            ]
-          }
-        },
-        "rules": {
-          "prependSpectreIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...prepend \"Spectre \" to the ModelName.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "prepend": "Spectre ",
-                "value": null
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Spectre Upgrade is checked...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Spectre Upgrade +2TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 163
-          },
-          "renameChieftanIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...then set the ModelName to Chieftain Shinobi.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "value": "Chieftain Shinobi Scourge"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Chieftain Upgrade is selected...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Chieftain Upgrade +1TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 161
-          }
-        },
-        "stats": {
-          "Actions": {
-            "value": 1
-          },
-          "Arm": {
-            "value": 5
-          },
-          "Chieftain Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECCM"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§SatUp"
-                  }
-                ]
-              }
-            },
-            "statOrder": 3,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "EW": {
-            "value": 5
-          },
-          "GU": {
-            "value": 3
-          },
-          "H/S": {
-            "value": "3/3"
-          },
-          "HT": {
-            "value": 1.5
-          },
-          "Melee Specialist Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Brawl:X",
-                      "stats": {
-                        "NameVariable": {
-                          "value": 2
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
-                  }
-                ]
-              }
-            },
-            "statOrder": 2,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "ModelName": {
-            "value": "Shinobi Scourge"
-          },
-          "MR": {
-            "value": 8
-          },
-          "PI": {
-            "value": 3
-          },
-          "Roles": {
-            "value": "SO, SK"
-          },
-          "specialOperationsMax": {
-            "value": 1
-          },
-          "Spectre Upgrade +2TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "EW": -2,
-                  "TV": 2
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECM+"
-                  },
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Sensors:X",
-                      "stats": {
-                        "Aux_System": {
-                          "value": "✓"
-                        },
-                        "NameVariable": {
-                          "value": 24
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            "statOrder": 1,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "strikeMax": {
-            "value": 1
-          },
-          "TV": {
-            "value": 9
-          }
-        }
-      },
-      "Gear§Shinobi Sweeper": {
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Hands",
-            "Model/Weapon Property§Agile",
-            "Model/Weapon Property§Airdrop",
-            "Model/Weapon Property§Vet",
-            "Model/Weapon Property§Comms",
-            {
-              "item": "Model/Weapon Property§Stealth",
-              "stats": {
-                "Aux_System": {
-                  "value": "✓"
-                }
-              }
-            },
-            "Ranged Weapon, Direct, Link-upgrade§MFC, React",
-            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
-            "Ranged Weapon, Direct or Indirect§LRP",
-            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
-          ]
-        },
-        "keywords": {
-          "Keywords": [
-            "Shinobi"
-          ]
-        },
-        "removed": {
-          "keywords": {
-            "Tags": [
-              "UA: Fire Support",
-              "UA: Fortifications",
-              "UA: General Purpose",
-              "UA: Recon"
-            ]
-          }
-        },
-        "rules": {
-          "prependSpectreIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...prepend \"Spectre \" to the ModelName.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "prepend": "Spectre ",
-                "value": null
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Spectre Upgrade is checked...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Spectre Upgrade +2TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 163
-          },
-          "renameChieftanIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...then set the ModelName to Chieftain Shinobi.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "value": "Chieftain Shinobi Lookout"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Chieftain Upgrade is selected...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Chieftain Upgrade +1TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 161
-          }
-        },
-        "stats": {
-          "Actions": {
-            "value": 1
-          },
-          "Arm": {
-            "value": 5
-          },
-          "Chieftain Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECCM"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§SatUp"
-                  }
-                ]
-              }
-            },
-            "statOrder": 3,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "EW": {
-            "value": 5
-          },
-          "GU": {
-            "value": 3
-          },
-          "H/S": {
-            "value": "3/3"
-          },
-          "HT": {
-            "value": 1.5
-          },
-          "Melee Specialist Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Brawl:X",
-                      "stats": {
-                        "NameVariable": {
-                          "value": 2
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
-                  }
-                ]
-              }
-            },
-            "statOrder": 2,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "ModelName": {
-            "value": "Shinobi Sweeper"
-          },
-          "MR": {
-            "value": 8
-          },
-          "PI": {
-            "value": 3
-          },
-          "Roles": {
-            "value": "SO, SK"
-          },
-          "specialOperationsMax": {
-            "value": 1
-          },
-          "Spectre Upgrade +2TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "EW": -2,
-                  "TV": 2
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECM+"
-                  },
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Sensors:X",
-                      "stats": {
-                        "Aux_System": {
-                          "value": "✓"
-                        },
-                        "NameVariable": {
-                          "value": 24
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            "statOrder": 1,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "strikeMax": {
-            "value": 1
-          },
-          "TV": {
-            "value": 9
-          }
-        }
-      },
-      "Gear§Shinobi Vanguard": {
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Hands",
-            "Model/Weapon Property§Agile",
-            "Model/Weapon Property§Airdrop",
-            "Model/Weapon Property§Vet",
-            "Model/Weapon Property§Comms",
-            {
-              "item": "Model/Weapon Property§Stealth",
-              "stats": {
-                "Aux_System": {
-                  "value": "✓"
-                }
-              }
-            },
-            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC (Precise, Silent)",
-            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
-            "Ranged Weapon, Direct or Indirect§LRP"
-          ]
-        },
-        "keywords": {
-          "Keywords": [
-            "Shinobi"
-          ]
-        },
-        "removed": {
-          "keywords": {
-            "Tags": [
-              "UA: Fire Support",
-              "UA: Fortifications",
-              "UA: General Purpose",
-              "UA: Recon"
-            ]
-          }
-        },
-        "rules": {
-          "prependSpectreIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...prepend \"Spectre \" to the ModelName.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "prepend": "Spectre ",
-                "value": null
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Spectre Upgrade is checked...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Spectre Upgrade +2TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 163
-          },
-          "renameChieftanIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...then set the ModelName to Chieftain Shinobi.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "value": "Chieftain Shinobi Vanguard"
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Chieftain Upgrade is selected...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Chieftain Upgrade +1TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 161
-          }
-        },
-        "stats": {
-          "Actions": {
-            "value": 1
-          },
-          "Arm": {
-            "value": 5
-          },
-          "Chieftain Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECCM"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§SatUp"
-                  }
-                ]
-              }
-            },
-            "statOrder": 3,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "EW": {
-            "value": 5
-          },
-          "GU": {
-            "value": 3
-          },
-          "H/S": {
-            "value": "3/3"
-          },
-          "HT": {
-            "value": 1.5
-          },
-          "Melee Specialist Upgrade +1TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "TV": 1
-                },
-                "traits": [
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Brawl:X",
-                      "stats": {
-                        "NameVariable": {
-                          "value": 2
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
-                  }
-                ]
-              }
-            },
-            "statOrder": 2,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "ModelName": {
-            "value": "Shinobi Vanguard"
-          },
-          "MR": {
-            "value": 8
-          },
-          "PI": {
-            "value": 3
-          },
-          "Roles": {
-            "value": "SO, SK"
-          },
-          "specialOperationsMax": {
-            "value": 1
-          },
-          "Spectre Upgrade +2TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "EW": -2,
-                  "TV": 2
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§ECM+"
-                  },
-                  {
-                    "trait": {
-                      "item": "Model/Weapon Property, Variable§Sensors:X",
-                      "stats": {
-                        "Aux_System": {
-                          "value": "✓"
-                        },
-                        "NameVariable": {
-                          "value": 24
-                        }
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            "statOrder": 1,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "strikeMax": {
-            "value": 1
-          },
-          "TV": {
-            "value": 11
-          }
-        }
-      },
       "Gear§Skirmisher": {
         "assets": {
           "traits": [
@@ -11300,7 +8968,6 @@
             "Model/Weapon Property§Hands",
             "Model/Weapon Property§Agile",
             "Model/Weapon Property§Airdrop",
-            "Model/Weapon Property§Vet",
             "Model/Weapon Property§Comms",
             {
               "item": "Model/Weapon Property§Stealth",
@@ -11550,6 +9217,2072 @@
           },
           "TV": {
             "value": 10
+          }
+        }
+      },
+      "Veteran Gear§Shinobi Assassin": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct§HRF, React (Silent)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Shinobi"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fire Support",
+              "UA: Fortifications",
+              "UA: General Purpose",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "prependSpectreIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Spectre \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Spectre ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Spectre Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Spectre Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          },
+          "renameChieftanIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Shinobi.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Chieftain Shinobi Assassin"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Chieftain Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 3,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Specialist Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "NameVariable": {
+                          "value": 2
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Shinobi Assassin"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SO, SK"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "Spectre Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -2,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECM+"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Sensors:X",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        },
+                        "NameVariable": {
+                          "value": 24
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 12
+          },
+          "Veteran": {}
+        }
+      },
+      "Veteran Gear§Shinobi Crossfire": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§LLC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Shinobi"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fire Support",
+              "UA: Fortifications",
+              "UA: General Purpose",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "prependSpectreIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Spectre \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Spectre ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Spectre Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Spectre Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          },
+          "renameChieftanIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Shinobi.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Chieftain Shinobi Crossfire"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Chieftain Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 3,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Specialist Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "NameVariable": {
+                          "value": 2
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Shinobi Crossfire"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SO, SK"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "Spectre Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -2,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECM+"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Sensors:X",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        },
+                        "NameVariable": {
+                          "value": 24
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 11
+          }
+        }
+      },
+      "Veteran Gear§Shinobi Enfilade": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct§LPA",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Shinobi"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fire Support",
+              "UA: Fortifications",
+              "UA: General Purpose",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "prependSpectreIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Spectre \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Spectre ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Spectre Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Spectre Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          },
+          "renameChieftanIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Shinobi.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Chieftain Shinobi Enfilade"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Chieftain Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 3,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Specialist Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "NameVariable": {
+                          "value": 2
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Shinobi Enfilade"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SO, SK"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "Spectre Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -2,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECM+"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Sensors:X",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        },
+                        "NameVariable": {
+                          "value": 24
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 11
+          }
+        }
+      },
+      "Veteran Gear§Shinobi Fusillade": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§MRL, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Shinobi"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fire Support",
+              "UA: Fortifications",
+              "UA: General Purpose",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "prependSpectreIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Spectre \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Spectre ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Spectre Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Spectre Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          },
+          "renameChieftanIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Shinobi.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Chieftain Shinobi Fusillade"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Chieftain Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 3,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Specialist Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "NameVariable": {
+                          "value": 2
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Shinobi Fusillade"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SO, SK"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "Spectre Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -2,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECM+"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Sensors:X",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        },
+                        "NameVariable": {
+                          "value": 24
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 12
+          }
+        }
+      },
+      "Veteran Gear§Shinobi Lookout": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct§LRF (Silent)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Shinobi"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fire Support",
+              "UA: Fortifications",
+              "UA: General Purpose",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "prependSpectreIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Spectre \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Spectre ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Spectre Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Spectre Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          },
+          "renameChieftanIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Shinobi.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Chieftain Shinobi Lookout"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Chieftain Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 3,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Specialist Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "NameVariable": {
+                          "value": 2
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Shinobi Lookout"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SO, SK"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "Spectre Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -2,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECM+"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Sensors:X",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        },
+                        "NameVariable": {
+                          "value": 24
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
+      "Veteran Gear§Shinobi Scourge": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct§LBZ (AP:1, Burst:1)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Shinobi"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fire Support",
+              "UA: Fortifications",
+              "UA: General Purpose",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "prependSpectreIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Spectre \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Spectre ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Spectre Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Spectre Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          },
+          "renameChieftanIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Shinobi.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Chieftain Shinobi Scourge"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Chieftain Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 3,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Specialist Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "NameVariable": {
+                          "value": 2
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Shinobi Scourge"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SO, SK"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "Spectre Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -2,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECM+"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Sensors:X",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        },
+                        "NameVariable": {
+                          "value": 24
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
+      "Veteran Gear§Shinobi Sweeper": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, Link-upgrade§MFC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Shinobi"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fire Support",
+              "UA: Fortifications",
+              "UA: General Purpose",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "prependSpectreIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Spectre \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Spectre ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Spectre Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Spectre Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          },
+          "renameChieftanIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Shinobi.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Chieftain Shinobi Lookout"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Chieftain Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 3,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Specialist Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "NameVariable": {
+                          "value": 2
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Shinobi Sweeper"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SO, SK"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "Spectre Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -2,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECM+"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Sensors:X",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        },
+                        "NameVariable": {
+                          "value": 24
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
+      "Veteran Gear§Shinobi Vanguard": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC (Precise, Silent)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Shinobi"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fire Support",
+              "UA: Fortifications",
+              "UA: General Purpose",
+              "UA: Recon"
+            ]
+          }
+        },
+        "rules": {
+          "prependSpectreIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Spectre \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Spectre ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Spectre Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Spectre Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          },
+          "renameChieftanIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the ModelName to Chieftain Shinobi.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": "Chieftain Shinobi Vanguard"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Chieftain Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Chieftain Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 161
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Chieftain Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 3,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Melee Specialist Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "NameVariable": {
+                          "value": 2
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Shinobi Vanguard"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SO, SK"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "Spectre Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -2,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECM+"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Sensors:X",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        },
+                        "NameVariable": {
+                          "value": 24
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 11
           }
         }
       }
