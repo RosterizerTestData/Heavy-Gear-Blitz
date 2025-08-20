@@ -1221,6 +1221,82 @@
           }
         }
       },
+      "Gear§Demolisher Mustang": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 2
+                }
+              }
+            },
+            "Ranged Weapon, Direct§MSC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
+            "Ranged Weapon, Direct or Indirect§MAPR (Link)",
+            "Ranged Weapon, Indirect§LFM",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Mustang"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Demolisher Mustang"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
       "Gear§Enfilade Harrier": {
         "assets": {
           "traits": [
@@ -3199,6 +3275,82 @@
           },
           "TV": {
             "value": 7
+          }
+        }
+      },
+      "Gear§Mustang": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 2
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
+            "Ranged Weapon, Direct or Indirect§MAPR (Link)",
+            "Ranged Weapon, Indirect§LFM",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Mustang"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Mustang"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
           }
         }
       },
@@ -5400,6 +5552,82 @@
           }
         }
       },
+      "Gear§Shamshir Mustang": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 2
+                }
+              }
+            },
+            "Ranged Weapon, Direct§MBZ",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
+            "Ranged Weapon, Direct or Indirect§MAPR (Link)",
+            "Ranged Weapon, Indirect§LFM",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Mustang"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Shamshir Mustang"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
       "Gear§Shamshir Warrior IV": {
         "assets": {
           "traits": [
@@ -7419,6 +7647,82 @@
           },
           "TV": {
             "value": 8
+          }
+        }
+      },
+      "Gear§Vanguard Mustang": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 2
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§HAC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
+            "Ranged Weapon, Direct or Indirect§MAPR (Link)",
+            "Ranged Weapon, Indirect§LFM",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Mustang"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Vanguard Mustang"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
           }
         }
       },
