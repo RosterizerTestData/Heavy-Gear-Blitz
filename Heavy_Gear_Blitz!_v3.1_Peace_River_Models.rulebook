@@ -10728,6 +10728,657 @@
           }
         }
       },
+      "Strider§Scourge Cataphract": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§ECM",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Shield",
+            "Ranged Weapon, Direct§HBZ",
+            "Ranged Weapon, Direct§LMG, React (Link, Auto)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§HVB (Apex, Reach:2)",
+            "Ranged Weapon, Direct or Indirect, Swappable§HHG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Cataphract"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendLordIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": " Lord",
+                "iterations": 1,
+                "note": "...append \" Lord\" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Lord Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Lord Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          },
+          "prependSarisaIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Sarisa \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Sarisa",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Sarisa Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Sarisa Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 2.5
+          },
+          "Lord Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Scourge Cataphract"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "Sarisa Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Indirect§MFM"
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect, Link-upgrade§LATM (Precise)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 27
+          }
+        }
+      },
+      "Strider§Tank Hunter Cataphract": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§ECM",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Shield",
+            "Ranged Weapon, Direct§MTG, React",
+            "Ranged Weapon, Direct§LMG, React (Link, Auto)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§HVB (Apex, Reach:2)",
+            "Ranged Weapon, Direct or Indirect, Swappable§HHG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Cataphract"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendLordIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": " Lord",
+                "iterations": 1,
+                "note": "...append \" Lord\" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Lord Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Lord Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          },
+          "prependSarisaIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Sarisa \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Sarisa",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Sarisa Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Sarisa Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 2.5
+          },
+          "Lord Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Tank Hunter Cataphract"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "Sarisa Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Indirect§MFM"
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect, Link-upgrade§LATM (Precise)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 29
+          }
+        }
+      },
+      "Strider§Vanguard Cataphract": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§ECM",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Shield",
+            "Ranged Weapon, Direct, AA-upgrade§HRC, React",
+            "Ranged Weapon, Direct§LMG, React (Link, Auto)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§HVB (Apex, Reach:2)",
+            "Ranged Weapon, Direct or Indirect, Swappable§HHG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Cataphract"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendLordIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": " Lord",
+                "iterations": 1,
+                "note": "...append \" Lord\" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Lord Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Lord Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          },
+          "prependSarisaIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Sarisa \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Sarisa",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Sarisa Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Sarisa Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 2.5
+          },
+          "Lord Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Vanguard Cataphract"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "Sarisa Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Indirect§MFM"
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect, Link-upgrade§LATM (Precise)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 27
+          }
+        }
+      },
       "Veteran Gear§Argos": {
         "assets": {
           "traits": [
