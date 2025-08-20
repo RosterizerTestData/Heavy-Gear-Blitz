@@ -341,6 +341,48 @@
           }
         }
       },
+      "Gear§Demolisher Crusader IV": {
+        "rules": {
+          "crusaderVsGetCrisisResponders": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the Crisis Responders upgrade's visibility to Normal.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Crisis Responder Upgrade +1TV",
+                    "visibility"
+                  ]
+                ],
+                "value": "normal"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Crusader V Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Crusader V Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 84
+          }
+        }
+      },
       "Gear§Fusillade Warrior IV": {
         "removed": {
           "rules": {
@@ -806,6 +848,48 @@
             "statType": "rank",
             "value": "-",
             "visibility": "normal"
+          }
+        }
+      },
+      "Gear§Scourge Crusader IV": {
+        "rules": {
+          "crusaderVsGetCrisisResponders": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the Crisis Responders upgrade's visibility to Normal.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Crisis Responder Upgrade +1TV",
+                    "visibility"
+                  ]
+                ],
+                "value": "normal"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Crusader V Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Crusader V Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 84
           }
         }
       },
@@ -1976,6 +2060,48 @@
             "statType": "rank",
             "value": "-",
             "visibility": "normal"
+          }
+        }
+      },
+      "Gear§Xyston Crusader IV": {
+        "rules": {
+          "crusaderVsGetCrisisResponders": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the Crisis Responders upgrade's visibility to Normal.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Crisis Responder Upgrade +1TV",
+                    "visibility"
+                  ]
+                ],
+                "value": "normal"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Crusader V Upgrade is selected...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Crusader V Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 84
           }
         }
       },
