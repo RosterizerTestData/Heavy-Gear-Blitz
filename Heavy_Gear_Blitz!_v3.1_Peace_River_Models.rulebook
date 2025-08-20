@@ -10579,6 +10579,143 @@
           }
         }
       },
+      "Veteran Gear§Demolisher Argos": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Field Armor",
+            "Model/Weapon Property§Resist:H",
+            "Ranged Weapon, Direct§MSC (Precise)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)",
+            "Ranged Weapon, Direct or Indirect§MAPR (Fire:2)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MHG",
+            "Melee Weapon§MSE",
+            "Ranged Weapon, Direct§MAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Argos"
+          ]
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "5/1"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Demolisher Argos"
+          },
+          "MR": {
+            "value": 5
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 20
+          }
+        }
+      },
+      "Veteran Gear§Shamshir Argos": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Field Armor",
+            "Model/Weapon Property§Resist:H",
+            "Ranged Weapon, Direct§HBZ",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MATM",
+            "Ranged Weapon, Direct or Indirect, Swappable§MHG",
+            "Ranged Weapon, Direct§MAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Argos"
+          ]
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "5/1"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Shamshir Argos"
+          },
+          "MR": {
+            "value": 5
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 21
+          }
+        }
+      },
       "Veteran Gear§Shinobi": {
         "assets": {
           "traits": [
