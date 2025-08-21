@@ -2105,6 +2105,1939 @@
           }
         }
       },
+      "Infantry§Infantry Team": {},
+      "Ranged Weapon, Direct§HIR": {
+        "rules": {
+          "notVetNoLaserTech": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then hide the Laser Tech upgrade.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Laser Tech Upgrade +1TV",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If this weapon isn't wielded by a vet...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "2",
+                    "value"
+                  ]
+                ],
+                "value": true
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...or isn't wielded by Infantry/Spitz...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 115
+          },
+          "parentNotInfOrSpitz": {
+            "evals": [
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder Infantry?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry"
+              },
+              {
+                "actionable": false,
+                "contains": true,
+                "not": false,
+                "note": "Is the wielder a Spitz Monowheel?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Model",
+                    "value"
+                  ]
+                ],
+                "value": "Spitz"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder any of the above?",
+                "operator": "OR",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 16
+          }
+        },
+        "stats": {
+          "Laser Tech Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Advanced",
+                      "stats": {
+                        "Modified": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 9,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§HIS": {
+        "rules": {
+          "notVetNoLaserTech": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then hide the Laser Tech upgrade.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Laser Tech Upgrade +1TV",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If this weapon isn't wielded by a vet...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "2",
+                    "value"
+                  ]
+                ],
+                "value": true
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...or isn't wielded by Infantry/Spitz...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 115
+          },
+          "parentNotInfOrSpitz": {
+            "evals": [
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder Infantry?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry"
+              },
+              {
+                "actionable": false,
+                "contains": true,
+                "not": false,
+                "note": "Is the wielder a Spitz Monowheel?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Model",
+                    "value"
+                  ]
+                ],
+                "value": "Spitz"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder any of the above?",
+                "operator": "OR",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 16
+          }
+        },
+        "stats": {
+          "Laser Tech Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Advanced",
+                      "stats": {
+                        "Modified": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 9,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§HIS (Burst:1)": {
+        "rules": {
+          "notVetNoLaserTech": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then hide the Laser Tech upgrade.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Laser Tech Upgrade +1TV",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If this weapon isn't wielded by a vet...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "2",
+                    "value"
+                  ]
+                ],
+                "value": true
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...or isn't wielded by Infantry/Spitz...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 115
+          },
+          "parentNotInfOrSpitz": {
+            "evals": [
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder Infantry?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry"
+              },
+              {
+                "actionable": false,
+                "contains": true,
+                "not": false,
+                "note": "Is the wielder a Spitz Monowheel?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Model",
+                    "value"
+                  ]
+                ],
+                "value": "Spitz"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder any of the above?",
+                "operator": "OR",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 16
+          }
+        },
+        "stats": {
+          "Laser Tech Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Advanced",
+                      "stats": {
+                        "Modified": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 9,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§HIS, React": {
+        "rules": {
+          "notVetNoLaserTech": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then hide the Laser Tech upgrade.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Laser Tech Upgrade +1TV",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If this weapon isn't wielded by a vet...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "2",
+                    "value"
+                  ]
+                ],
+                "value": true
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...or isn't wielded by Infantry/Spitz...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 115
+          },
+          "parentNotInfOrSpitz": {
+            "evals": [
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder Infantry?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry"
+              },
+              {
+                "actionable": false,
+                "contains": true,
+                "not": false,
+                "note": "Is the wielder a Spitz Monowheel?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Model",
+                    "value"
+                  ]
+                ],
+                "value": "Spitz"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder any of the above?",
+                "operator": "OR",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 16
+          }
+        },
+        "stats": {
+          "Laser Tech Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Advanced",
+                      "stats": {
+                        "Modified": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 9,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§HIW": {
+        "rules": {
+          "notVetNoLaserTech": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then hide the Laser Tech upgrade.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Laser Tech Upgrade +1TV",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If this weapon isn't wielded by a vet...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "2",
+                    "value"
+                  ]
+                ],
+                "value": true
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...or isn't wielded by Infantry/Spitz...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 115
+          },
+          "parentNotInfOrSpitz": {
+            "evals": [
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder Infantry?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry"
+              },
+              {
+                "actionable": false,
+                "contains": true,
+                "not": false,
+                "note": "Is the wielder a Spitz Monowheel?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Model",
+                    "value"
+                  ]
+                ],
+                "value": "Spitz"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder any of the above?",
+                "operator": "OR",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 16
+          }
+        },
+        "stats": {
+          "Laser Tech Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Advanced",
+                      "stats": {
+                        "Modified": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 9,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§LIR": {
+        "rules": {
+          "notVetNoLaserTech": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then hide the Laser Tech upgrade.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Laser Tech Upgrade +1TV",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If this weapon isn't wielded by a vet...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "2",
+                    "value"
+                  ]
+                ],
+                "value": true
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...or isn't wielded by Infantry/Spitz...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 115
+          },
+          "parentNotInfOrSpitz": {
+            "evals": [
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder Infantry?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry"
+              },
+              {
+                "actionable": false,
+                "contains": true,
+                "not": false,
+                "note": "Is the wielder a Spitz Monowheel?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Model",
+                    "value"
+                  ]
+                ],
+                "value": "Spitz"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder any of the above?",
+                "operator": "OR",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 16
+          }
+        },
+        "stats": {
+          "Laser Tech Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Advanced",
+                      "stats": {
+                        "Modified": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 9,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§LIS": {
+        "rules": {
+          "notVetNoLaserTech": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then hide the Laser Tech upgrade.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Laser Tech Upgrade +1TV",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If this weapon isn't wielded by a vet...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "2",
+                    "value"
+                  ]
+                ],
+                "value": true
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...or isn't wielded by Infantry/Spitz...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 115
+          },
+          "parentNotInfOrSpitz": {
+            "evals": [
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder Infantry?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry"
+              },
+              {
+                "actionable": false,
+                "contains": true,
+                "not": false,
+                "note": "Is the wielder a Spitz Monowheel?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Model",
+                    "value"
+                  ]
+                ],
+                "value": "Spitz"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder any of the above?",
+                "operator": "OR",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 16
+          }
+        },
+        "stats": {
+          "Laser Tech Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Advanced",
+                      "stats": {
+                        "Modified": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 9,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§LIW": {
+        "rules": {
+          "notVetNoLaserTech": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then hide the Laser Tech upgrade.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Laser Tech Upgrade +1TV",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If this weapon isn't wielded by a vet...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "2",
+                    "value"
+                  ]
+                ],
+                "value": true
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...or isn't wielded by Infantry/Spitz...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 115
+          },
+          "parentNotInfOrSpitz": {
+            "evals": [
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder Infantry?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry"
+              },
+              {
+                "actionable": false,
+                "contains": true,
+                "not": false,
+                "note": "Is the wielder a Spitz Monowheel?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Model",
+                    "value"
+                  ]
+                ],
+                "value": "Spitz"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder any of the above?",
+                "operator": "OR",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 16
+          }
+        },
+        "stats": {
+          "Laser Tech Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Advanced",
+                      "stats": {
+                        "Modified": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 9,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§MIR": {
+        "rules": {
+          "notVetNoLaserTech": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then hide the Laser Tech upgrade.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Laser Tech Upgrade +1TV",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If this weapon isn't wielded by a vet...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "2",
+                    "value"
+                  ]
+                ],
+                "value": true
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...or isn't wielded by Infantry/Spitz...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 115
+          },
+          "parentNotInfOrSpitz": {
+            "evals": [
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder Infantry?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry"
+              },
+              {
+                "actionable": false,
+                "contains": true,
+                "not": false,
+                "note": "Is the wielder a Spitz Monowheel?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Model",
+                    "value"
+                  ]
+                ],
+                "value": "Spitz"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder any of the above?",
+                "operator": "OR",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 16
+          }
+        },
+        "stats": {
+          "Laser Tech Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Advanced",
+                      "stats": {
+                        "Modified": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 9,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§MIR (Silent)": {
+        "rules": {
+          "notVetNoLaserTech": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then hide the Laser Tech upgrade.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Laser Tech Upgrade +1TV",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If this weapon isn't wielded by a vet...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "2",
+                    "value"
+                  ]
+                ],
+                "value": true
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...or isn't wielded by Infantry/Spitz...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 115
+          },
+          "parentNotInfOrSpitz": {
+            "evals": [
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder Infantry?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry"
+              },
+              {
+                "actionable": false,
+                "contains": true,
+                "not": false,
+                "note": "Is the wielder a Spitz Monowheel?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Model",
+                    "value"
+                  ]
+                ],
+                "value": "Spitz"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder any of the above?",
+                "operator": "OR",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 16
+          }
+        },
+        "stats": {
+          "Laser Tech Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Advanced",
+                      "stats": {
+                        "Modified": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 9,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§MIS": {
+        "rules": {
+          "notVetNoLaserTech": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then hide the Laser Tech upgrade.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Laser Tech Upgrade +1TV",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If this weapon isn't wielded by a vet...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "2",
+                    "value"
+                  ]
+                ],
+                "value": true
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...or isn't wielded by Infantry/Spitz...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 115
+          },
+          "parentNotInfOrSpitz": {
+            "evals": [
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder Infantry?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry"
+              },
+              {
+                "actionable": false,
+                "contains": true,
+                "not": false,
+                "note": "Is the wielder a Spitz Monowheel?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Model",
+                    "value"
+                  ]
+                ],
+                "value": "Spitz"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder any of the above?",
+                "operator": "OR",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 16
+          }
+        },
+        "stats": {
+          "Laser Tech Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Advanced",
+                      "stats": {
+                        "Modified": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 9,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§MIW": {
+        "rules": {
+          "notVetNoLaserTech": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then hide the Laser Tech upgrade.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Laser Tech Upgrade +1TV",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "note": "If this weapon isn't wielded by a vet...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "isThisAVetsWeapon",
+                    "evals",
+                    "2",
+                    "value"
+                  ]
+                ],
+                "value": true
+              },
+              {
+                "actionable": true,
+                "not": true,
+                "note": "...or isn't wielded by Infantry/Spitz...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "2",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 115
+          },
+          "parentNotInfOrSpitz": {
+            "evals": [
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder Infantry?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Type",
+                    "value"
+                  ]
+                ],
+                "value": "Infantry"
+              },
+              {
+                "actionable": false,
+                "contains": true,
+                "not": false,
+                "note": "Is the wielder a Spitz Monowheel?",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "Model",
+                    "value"
+                  ]
+                ],
+                "value": "Spitz"
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "note": "Is the wielder any of the above?",
+                "operator": "OR",
+                "paths": [
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "0",
+                    "result",
+                    "truthy"
+                  ],
+                  [
+                    "{self}",
+                    "rules",
+                    "parentNotInfOrSpitz",
+                    "evals",
+                    "1",
+                    "result",
+                    "truthy"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 16
+          }
+        },
+        "stats": {
+          "Laser Tech Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Advanced",
+                      "stats": {
+                        "Modified": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 9,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          }
+        }
+      },
       "Roster§Force": {},
       "Roster§Roster": {
         "allowed": {

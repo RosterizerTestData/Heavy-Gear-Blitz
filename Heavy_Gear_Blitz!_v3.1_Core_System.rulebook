@@ -7297,7 +7297,7 @@
         },
         "keywords": {
           "Keywords": [
-            "Airstrikes"
+            "Airstrikes (Core)"
           ]
         },
         "removed": {
@@ -7326,7 +7326,7 @@
       "Combat Group§Combat Group": {
         "keywords": {
           "Keywords": [
-            "Combat Groups"
+            "Combat Groups (Core)"
           ]
         },
         "rules": {
@@ -7392,7 +7392,7 @@
         },
         "keywords": {
           "Keywords": [
-            "Duelists"
+            "Duelists (Core)"
           ]
         },
         "removed": {
