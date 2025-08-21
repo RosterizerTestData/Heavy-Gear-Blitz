@@ -10741,68 +10741,13 @@
                   "value": 24
                 }
               }
-            },
-            "Ranged Weapon, Direct§MRG (T)",
-            "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)",
-            "Ranged Weapon, Direct§MAPGL",
-            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+            }
           ]
         },
         "keywords": {
           "Keywords": [
             "Coyote"
           ]
-        },
-        "removed": {
-          "keywords": {
-            "Tags": [
-              "UA: Fortifications",
-              "UA: General Purpose",
-              "UA: Recon",
-              "UA: Special Operations"
-            ]
-          }
-        },
-        "rules": {
-          "prependAlphaDogUpgradeIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...prepend \"Alpha Dog \" to the ModelName.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "prepend": "Alpha Dog ",
-                "value": null
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Alpha Dog Upgrade is checked...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Alpha Dog Upgrade +3TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 163
-          }
         },
         "stats": {
           "Actions": {
@@ -10863,159 +10808,6 @@
           },
           "ModelName": {
             "value": "Coyote"
-          },
-          "MR": {
-            "value": 6
-          },
-          "PI": {
-            "value": 5
-          },
-          "Roles": {
-            "value": "SK, FS"
-          },
-          "strikeMax": {
-            "value": 1
-          },
-          "TV": {
-            "value": 22
-          }
-        }
-      },
-      "Strider§Crossfire Coyote": {
-        "assets": {
-          "traits": [
-            "Model/Weapon Property§Airdrop",
-            "Model/Weapon Property§Stable",
-            "Model/Weapon Property§ECM",
-            {
-              "item": "Model/Weapon Property, Variable§Sensors:X",
-              "stats": {
-                "NameVariable": {
-                  "value": 24
-                }
-              }
-            },
-            "Ranged Weapon, Direct, AA-upgrade§MLC, React (T)",
-            "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)",
-            "Ranged Weapon, Direct§MAPGL",
-            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
-          ]
-        },
-        "keywords": {
-          "Keywords": [
-            "Coyote"
-          ]
-        },
-        "removed": {
-          "keywords": {
-            "Tags": [
-              "UA: Fortifications",
-              "UA: General Purpose",
-              "UA: Recon",
-              "UA: Special Operations"
-            ]
-          }
-        },
-        "rules": {
-          "prependAlphaDogUpgradeIfChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "iterations": 1,
-                "note": "...prepend \"Alpha Dog \" to the ModelName.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "ModelName",
-                    "value"
-                  ]
-                ],
-                "prepend": "Alpha Dog ",
-                "value": null
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Alpha Dog Upgrade is checked...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Alpha Dog Upgrade +3TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 163
-          }
-        },
-        "stats": {
-          "Actions": {
-            "value": 2
-          },
-          "Alpha Dog Upgrade +3TV": {
-            "dynamic": true,
-            "group": "Upgrades",
-            "groupOrder": 4,
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "✓": {
-                "order": 1,
-                "tracking": {
-                  "EW": -1,
-                  "TV": 3
-                },
-                "traits": [
-                  {
-                    "trait": "Model/Weapon Property§SP:+1"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§ECCM"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§Comms"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§SatUp"
-                  }
-                ]
-              }
-            },
-            "statOrder": 1,
-            "statType": "rank",
-            "value": "-",
-            "visibility": "normal"
-          },
-          "Arm": {
-            "value": 9
-          },
-          "EW": {
-            "value": 5
-          },
-          "fireSupportMax": {
-            "value": 1
-          },
-          "GU": {
-            "value": 4
-          },
-          "H/S": {
-            "value": "4/4"
-          },
-          "HT": {
-            "value": 1.5
-          },
-          "ModelName": {
-            "value": "Crossfire Coyote"
           },
           "MR": {
             "value": 6
@@ -11740,48 +11532,52 @@
           }
         }
       },
-      "Strider§Pilum Coyote": {
+      "Strider§Red Bull MK2": {
         "assets": {
           "traits": [
-            "Model/Weapon Property§Airdrop",
             "Model/Weapon Property§Stable",
-            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§AMS",
+            "Model/Weapon Property§Lumbering",
             {
               "item": "Model/Weapon Property, Variable§Sensors:X",
               "stats": {
                 "NameVariable": {
                   "value": 24
+                },
+                "Aux_System": {
+                  "value": "✓"
                 }
               }
             },
-            "Ranged Weapon, Direct or Indirect, Swappable§MATM, React (T)",
-            "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)",
-            "Ranged Weapon, Direct§MAPGL",
-            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+            "Ranged Weapon, Direct, AA-upgrade§LRC, React",
+            "Ranged Weapon, Direct or Indirect§MFG (T, Link)",
+            "Ranged Weapon, Direct§HAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§MCW"
           ]
         },
         "keywords": {
           "Keywords": [
-            "Coyote"
+            "Red Bull MK2"
           ]
         },
         "removed": {
           "keywords": {
             "Tags": [
-              "UA: Fortifications",
-              "UA: General Purpose",
+              "UA: Strike",
+              "UA: Special Operations",
               "UA: Recon",
-              "UA: Special Operations"
+              "UA: General Purpose",
+              "UA: Fortifications"
             ]
           }
         },
         "rules": {
-          "prependAlphaDogUpgradeIfChecked": {
+          "prependArbalestIfChecked": {
             "actions": [
               {
                 "actionType": "set",
                 "iterations": 1,
-                "note": "...prepend \"Alpha Dog \" to the ModelName.",
+                "note": "...prepend \"Arbalest \" to the ModelName.",
                 "paths": [
                   [
                     "{self}",
@@ -11790,7 +11586,7 @@
                     "value"
                   ]
                 ],
-                "prepend": "Alpha Dog ",
+                "prepend": "Arbalest ",
                 "value": null
               }
             ],
@@ -11798,13 +11594,13 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "If the Alpha Dog Upgrade is checked...",
+                "note": "If the Arbalest Upgrade is checked...",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Alpha Dog Upgrade +3TV",
+                    "Arbalest Upgrade +2TV",
                     "value"
                   ]
                 ],
@@ -11818,34 +11614,32 @@
         },
         "stats": {
           "Actions": {
-            "value": 2
+            "value": 3
           },
-          "Alpha Dog Upgrade +3TV": {
+          "Arbalest Upgrade +2TV": {
             "dynamic": true,
             "group": "Upgrades",
             "groupOrder": 4,
             "ranks": {
               "-": {
-                "order": 0
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)"
+                  }
+                ]
               },
               "✓": {
                 "order": 1,
                 "tracking": {
-                  "EW": -1,
-                  "TV": 3
+                  "TV": 2
                 },
                 "traits": [
                   {
-                    "trait": "Model/Weapon Property§SP:+1"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§ECCM"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§Comms"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§SatUp"
+                    "trait": {
+                      "item": "Ranged Weapon, Direct or Indirect§HAR (T)",
+                      "quantity": 2
+                    }
                   }
                 ]
               }
@@ -11856,7 +11650,7 @@
             "visibility": "normal"
           },
           "Arm": {
-            "value": 9
+            "value": 12
           },
           "EW": {
             "value": 5
@@ -11871,25 +11665,177 @@
             "value": "4/4"
           },
           "HT": {
-            "value": 1.5
+            "value": 2
           },
           "ModelName": {
-            "value": "Pilum Coyote"
+            "value": "Red Bull MK2"
           },
           "MR": {
-            "value": 6
-          },
-          "PI": {
             "value": 5
           },
-          "Roles": {
-            "value": "SK, FS"
+          "PI": {
+            "value": 6
           },
-          "strikeMax": {
-            "value": 1
+          "Roles": {
+            "value": "FS"
           },
           "TV": {
-            "value": 23
+            "value": 28
+          }
+        }
+      },
+      "Strider§Sarisa Red Bull MK2": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Stable",
+            "Model/Weapon Property§AMS",
+            "Model/Weapon Property§Lumbering",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§LRC, React",
+            {
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§HATM (T)",
+              "quantity": 2
+            },
+            "Ranged Weapon, Direct§HAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§MCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Red Bull MK2"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "prependArbalestIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Arbalest \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Arbalest ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Arbalest Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Arbalest Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arbalest Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)"
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Ranged Weapon, Direct or Indirect§HAR (T)",
+                      "quantity": 2
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Arm": {
+            "value": 12
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Sarisa Red Bull MK2"
+          },
+          "MR": {
+            "value": 5
+          },
+          "PI": {
+            "value": 6
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 33
           }
         }
       },
@@ -12762,48 +12708,52 @@
           }
         }
       },
-      "Strider§Vanguard Coyote": {
+      "Strider§Xyston Red Bull MK2": {
         "assets": {
           "traits": [
-            "Model/Weapon Property§Airdrop",
             "Model/Weapon Property§Stable",
-            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§AMS",
+            "Model/Weapon Property§Lumbering",
             {
               "item": "Model/Weapon Property, Variable§Sensors:X",
               "stats": {
                 "NameVariable": {
                   "value": 24
+                },
+                "Aux_System": {
+                  "value": "✓"
                 }
               }
             },
-            "Ranged Weapon, Direct, AA-upgrade§HRC, React (T)",
-            "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)",
-            "Ranged Weapon, Direct§MAPGL",
-            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+            "Ranged Weapon, Direct, AA-upgrade§LRC, React",
+            "Ranged Weapon, Direct or Indirect§HFG (T)",
+            "Ranged Weapon, Direct§HAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§MCW"
           ]
         },
         "keywords": {
           "Keywords": [
-            "Coyote"
+            "Red Bull MK2"
           ]
         },
         "removed": {
           "keywords": {
             "Tags": [
-              "UA: Fortifications",
-              "UA: General Purpose",
+              "UA: Strike",
+              "UA: Special Operations",
               "UA: Recon",
-              "UA: Special Operations"
+              "UA: General Purpose",
+              "UA: Fortifications"
             ]
           }
         },
         "rules": {
-          "prependAlphaDogUpgradeIfChecked": {
+          "prependArbalestIfChecked": {
             "actions": [
               {
                 "actionType": "set",
                 "iterations": 1,
-                "note": "...prepend \"Alpha Dog \" to the ModelName.",
+                "note": "...prepend \"Arbalest \" to the ModelName.",
                 "paths": [
                   [
                     "{self}",
@@ -12812,7 +12762,7 @@
                     "value"
                   ]
                 ],
-                "prepend": "Alpha Dog ",
+                "prepend": "Arbalest ",
                 "value": null
               }
             ],
@@ -12820,13 +12770,13 @@
               {
                 "actionable": true,
                 "not": false,
-                "note": "If the Alpha Dog Upgrade is checked...",
+                "note": "If the Arbalest Upgrade is checked...",
                 "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Alpha Dog Upgrade +3TV",
+                    "Arbalest Upgrade +2TV",
                     "value"
                   ]
                 ],
@@ -12840,34 +12790,32 @@
         },
         "stats": {
           "Actions": {
-            "value": 2
+            "value": 3
           },
-          "Alpha Dog Upgrade +3TV": {
+          "Arbalest Upgrade +2TV": {
             "dynamic": true,
             "group": "Upgrades",
             "groupOrder": 4,
             "ranks": {
               "-": {
-                "order": 0
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)"
+                  }
+                ]
               },
               "✓": {
                 "order": 1,
                 "tracking": {
-                  "EW": -1,
-                  "TV": 3
+                  "TV": 2
                 },
                 "traits": [
                   {
-                    "trait": "Model/Weapon Property§SP:+1"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§ECCM"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§Comms"
-                  },
-                  {
-                    "trait": "Model/Weapon Property§SatUp"
+                    "trait": {
+                      "item": "Ranged Weapon, Direct or Indirect§HAR (T)",
+                      "quantity": 2
+                    }
                   }
                 ]
               }
@@ -12878,7 +12826,7 @@
             "visibility": "normal"
           },
           "Arm": {
-            "value": 9
+            "value": 12
           },
           "EW": {
             "value": 5
@@ -12893,25 +12841,22 @@
             "value": "4/4"
           },
           "HT": {
-            "value": 1.5
+            "value": 2
           },
           "ModelName": {
-            "value": "Vanguard Coyote"
+            "value": "Xyston Red Bull MK2"
           },
           "MR": {
-            "value": 6
-          },
-          "PI": {
             "value": 5
           },
-          "Roles": {
-            "value": "SK, FS"
+          "PI": {
+            "value": 6
           },
-          "strikeMax": {
-            "value": 1
+          "Roles": {
+            "value": "FS"
           },
           "TV": {
-            "value": 21
+            "value": 29
           }
         }
       },
