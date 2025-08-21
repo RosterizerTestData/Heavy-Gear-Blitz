@@ -20787,6 +20787,38 @@
           }
         }
       },
+      "Ranged Weapon, Direct§LRF (T)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Light Rifle"
+          },
+          "officialDesignation": {
+            "value": "LRF"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct§LRG": {
         "assets": {
           "traits": [
@@ -22237,6 +22269,43 @@
               }
             },
             "Model/Weapon Property§Blast"
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Light Field Mortar"
+          },
+          "officialDesignation": {
+            "value": "LFM"
+          },
+          "Range": {
+            "value": "18-36/72"
+          }
+        }
+      },
+      "Ranged Weapon, Indirect§LFM (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 4
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
           ]
         },
         "stats": {
