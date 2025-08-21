@@ -10728,6 +10728,141 @@
           }
         }
       },
+      "Strider§Hyena II": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Stable",
+            "Model/Weapon Property§React+",
+            "Ranged Weapon, Direct, AA-upgrade§MLC, React (Link, T)",
+            "Ranged Weapon, Direct§MMG, React (Advanced, Auto)",
+            "Ranged Weapon, Direct or Indirect§MRP (Guided, AP:2)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Hyena II"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: General Purpose",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "prependSpectreDogIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Spectre Dog \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Spectre Dog ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Spectre Dog Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Spectre Dog Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Hyena II"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "Spectre Dog Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECM+"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 20
+          }
+        }
+      },
       "Strider§Kestros Uhlan": {
         "assets": {
           "traits": [
