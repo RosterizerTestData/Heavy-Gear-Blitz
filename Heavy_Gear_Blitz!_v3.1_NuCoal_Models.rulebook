@@ -1,0 +1,1498 @@
+{
+  "name": "NuCoal Models",
+  "revision": "0.0.1",
+  "game": "Heavy Gear Blitz! v3.1",
+  "genre": "sci-fi",
+  "publisher": "Dream Pod 9",
+  "url": "https://www.dp9.com/",
+  "notes": "",
+  "wip": true,
+  "isModule": true,
+  "dependencies": [
+    {
+      "slug": "VUGK7N",
+      "name": "Core System",
+      "game": "Heavy Gear Blitz! v3.1",
+      "source": ""
+    }
+  ],
+  "rulebook": {
+    "assetTaxonomy": {},
+    "assetCatalog": {
+      "Gear§Chasseur": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Chasseur"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendCVIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": " CV",
+                "iterations": 1,
+                "note": "...then append \" CV\" to the model name.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the \"CV Upgrade\" is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "CV Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "CV Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Chasseur"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 9
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Chasseur Flechette": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct, Link-upgrade§MFC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Chasseur"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendCVIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": " CV",
+                "iterations": 1,
+                "note": "...then append \" CV\" to the model name.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the \"CV Upgrade\" is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "CV Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "CV Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Chasseur Flechette"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 9
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Chasseur Grenadier": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct or Indirect, Link-upgrade§LGL, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Chasseur"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendCVIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": " CV",
+                "iterations": 1,
+                "note": "...then append \" CV\" to the model name.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the \"CV Upgrade\" is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "CV Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "CV Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Chasseur Grenadier"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 9
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Chasseur Gunner": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Chasseur"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendCVIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": " CV",
+                "iterations": 1,
+                "note": "...then append \" CV\" to the model name.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the \"CV Upgrade\" is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "CV Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "CV Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Chasseur Gunner"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 9
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Chasseur Gunner Paratrooper": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LSG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Chasseur Paratrooper"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendCVIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": " CV",
+                "iterations": 1,
+                "note": "...then append \" CV\" to the model name.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the \"CV Upgrade\" is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "CV Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "CV Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Chasseur Gunner Paratrooper"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 9
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Chasseur Hellfire": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct§LBZ",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Chasseur"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendCVIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": " CV",
+                "iterations": 1,
+                "note": "...then append \" CV\" to the model name.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the \"CV Upgrade\" is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "CV Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "CV Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Chasseur Hellfire"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 9
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Chasseur Hellfire Paratrooper": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct§LBZ",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LSG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Chasseur Paratrooper"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendCVIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": " CV",
+                "iterations": 1,
+                "note": "...then append \" CV\" to the model name.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the \"CV Upgrade\" is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "CV Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "CV Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Chasseur Hellfire Paratrooper"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 9
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Chasseur Mortier": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Indirect§LFM",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Chasseur"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendCVIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": " CV",
+                "iterations": 1,
+                "note": "...then append \" CV\" to the model name.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the \"CV Upgrade\" is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "CV Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "CV Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Chasseur Mortier"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 9
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Chasseur Paratrooper": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Combo§LAC/LGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LSG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Chasseur Paratrooper"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendCVIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": " CV",
+                "iterations": 1,
+                "note": "...then append \" CV\" to the model name.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the \"CV Upgrade\" is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "CV Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "CV Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Chasseur Paratrooper"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 9
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Chasseur Torch": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Ranged Weapon, Direct, Link-upgrade§MFL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Chasseur"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "appendCVIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": " CV",
+                "iterations": 1,
+                "note": "...then append \" CV\" to the model name.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the \"CV Upgrade\" is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "CV Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "CV Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Chasseur Torch"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 9
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Roster§Roster": {}
+    },
+    "gameModes": {},
+    "theme": {}
+  }
+}
