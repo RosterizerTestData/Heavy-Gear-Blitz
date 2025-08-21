@@ -10728,6 +10728,312 @@
           }
         }
       },
+      "Strider§Coyote": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Stable",
+            "Model/Weapon Property§ECM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Ranged Weapon, Direct§MRG (T)",
+            "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)",
+            "Ranged Weapon, Direct§MAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Coyote"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: General Purpose",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "prependAlphaDogUpgradeIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Alpha Dog \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Alpha Dog ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Alpha Dog Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Alpha Dog Upgrade +3TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Alpha Dog Upgrade +3TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 3
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Coyote"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 22
+          }
+        }
+      },
+      "Strider§Crossfire Coyote": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Stable",
+            "Model/Weapon Property§ECM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§MLC, React (T)",
+            "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)",
+            "Ranged Weapon, Direct§MAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Coyote"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: General Purpose",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "prependAlphaDogUpgradeIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Alpha Dog \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Alpha Dog ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Alpha Dog Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Alpha Dog Upgrade +3TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Alpha Dog Upgrade +3TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 3
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Crossfire Coyote"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 22
+          }
+        }
+      },
       "Strider§Fusillade Hyena II": {
         "assets": {
           "traits": [
@@ -11431,6 +11737,159 @@
           },
           "TV": {
             "value": 33
+          }
+        }
+      },
+      "Strider§Pilum Coyote": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Stable",
+            "Model/Weapon Property§ECM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Ranged Weapon, Direct or Indirect, Swappable§MATM, React (T)",
+            "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)",
+            "Ranged Weapon, Direct§MAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Coyote"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: General Purpose",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "prependAlphaDogUpgradeIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Alpha Dog \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Alpha Dog ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Alpha Dog Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Alpha Dog Upgrade +3TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Alpha Dog Upgrade +3TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 3
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Pilum Coyote"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 23
           }
         }
       },
@@ -12300,6 +12759,159 @@
           },
           "TV": {
             "value": 27
+          }
+        }
+      },
+      "Strider§Vanguard Coyote": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Stable",
+            "Model/Weapon Property§ECM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§HRC, React (T)",
+            "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)",
+            "Ranged Weapon, Direct§MAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Coyote"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: General Purpose",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "prependAlphaDogUpgradeIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Alpha Dog \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Alpha Dog ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Alpha Dog Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Alpha Dog Upgrade +3TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Alpha Dog Upgrade +3TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 3
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Vanguard Coyote"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 21
           }
         }
       },

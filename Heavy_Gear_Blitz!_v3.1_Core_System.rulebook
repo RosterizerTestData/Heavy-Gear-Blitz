@@ -12925,6 +12925,85 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect, Swappable§MATM, React (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property§Guided",
+            "Model/Weapon Property§T"
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct or Indirect, Swappable§MAAM, React"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "MAAM"
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Medium Anti-Tank Missile"
+          },
+          "officialDesignation": {
+            "value": "MATM"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "StatColumn": {
+            "value": "React"
+          },
+          "Swap to:": {
+            "ranks": {
+              "MAAM": {
+                "order": 0
+              },
+              "MATM": {
+                "order": 1
+              }
+            },
+            "value": "MATM"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect, Swappable§MHG": {
         "assets": {
           "traits": [
@@ -16287,6 +16366,46 @@
           }
         }
       },
+      "Ranged Weapon, Direct, AA-upgrade§HRC, React (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Heavy Rotary Cannon"
+          },
+          "officialDesignation": {
+            "value": "HRC"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct, AA-upgrade§HRL": {
         "assets": {
           "traits": [
@@ -16630,11 +16749,27 @@
           }
         }
       },
-      "Ranged Weapon, Direct, AA-upgrade§MLC, React": {
+      "Ranged Weapon, Direct, AA-upgrade§MLC, React (Link, T)": {
         "assets": {
           "traits": [
             "Model/Weapon Property§Precise",
-            "Model/Weapon Property§Advanced"
+            "Model/Weapon Property§Advanced",
+            {
+              "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
           ]
         },
         "stats": {
@@ -16655,19 +16790,11 @@
           }
         }
       },
-      "Ranged Weapon, Direct, AA-upgrade§MLC, React (Link, T)": {
+      "Ranged Weapon, Direct, AA-upgrade§MLC, React (T)": {
         "assets": {
           "traits": [
             "Model/Weapon Property§Precise",
             "Model/Weapon Property§Advanced",
-            {
-              "item": "Model/Weapon Property§Link",
-              "stats": {
-                "Modified": {
-                  "value": "✓"
-                }
-              }
-            },
             {
               "item": "Model/Weapon Property§T",
               "stats": {
@@ -16722,6 +16849,54 @@
           },
           "Range": {
             "value": "6-18/36"
+          }
+        }
+      },
+      "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§AA",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Medium Rotary Cannon"
+          },
+          "officialDesignation": {
+            "value": "MRC"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
           }
         }
       },
@@ -21133,6 +21308,39 @@
         }
       },
       "Ranged Weapon, Direct§MRG": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§Advanced",
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 5
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "5"
+          },
+          "Name": {
+            "value": "Medium Railgun"
+          },
+          "officialDesignation": {
+            "value": "MRG"
+          },
+          "Range": {
+            "value": "12-48/96"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§MRG (T)": {
         "assets": {
           "traits": [
             "Model/Weapon Property§Precise",
