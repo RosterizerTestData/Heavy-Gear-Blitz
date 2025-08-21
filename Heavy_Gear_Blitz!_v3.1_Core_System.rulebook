@@ -11932,6 +11932,89 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect, Swappable§HATM (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 4
+                }
+              }
+            },
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct or Indirect, Swappable§HAAM"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "HAAM"
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "10"
+          },
+          "Name": {
+            "value": "Heavy Anti-Tank Missile"
+          },
+          "officialDesignation": {
+            "value": "HATM"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Swap to:": {
+            "ranks": {
+              "HAAM": {
+                "order": 0
+              },
+              "HATM": {
+                "order": 1
+              }
+            },
+            "value": "HATM"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect, Swappable§HHG": {
         "assets": {
           "traits": [
@@ -13324,6 +13407,50 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§HAR (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Demo:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Heavy Artillery Rocket"
+          },
+          "officialDesignation": {
+            "value": "HAR"
+          },
+          "Range": {
+            "value": "12-36/72"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§HAVM": {
         "assets": {
           "traits": [
@@ -13371,6 +13498,102 @@
               "stats": {
                 "NameVariable": {
                   "value": 5
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "AOE:3, Blast"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the explicit value of the second clause of the traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "OrClause",
+                    "value"
+                  ]
+                ],
+                "value": "AP:5"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "11"
+          },
+          "Name": {
+            "value": "Heavy Field Gun"
+          },
+          "officialDesignation": {
+            "value": "HFG"
+          },
+          "Range": {
+            "value": "12-24/48"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect§HFG (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§(OR)",
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 5
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
                 }
               }
             }
@@ -14547,6 +14770,110 @@
               "stats": {
                 "NameVariable": {
                   "value": 4
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "AOE:3, Blast"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the explicit value of the second clause of the traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "OrClause",
+                    "value"
+                  ]
+                ],
+                "value": "AP:4"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "10"
+          },
+          "Name": {
+            "value": "Medium Field Gun"
+          },
+          "officialDesignation": {
+            "value": "MFG"
+          },
+          "Range": {
+            "value": "12-24/48"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect§MFG (T, Link)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§(OR)",
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 4
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
                 }
               }
             }
