@@ -10960,7 +10960,7 @@
               }
             },
             "Model/Weapon Property§ECM",
-            "Ranged Weapon, Direct or Indirect§HGL, React (Apex)",
+            "Ranged Weapon, Direct§HPL (Apex)",
             "Ranged Weapon, Direct, AA-upgrade§MAC (Link)",
             "Ranged Weapon, Direct§LAPGL (Auto)",
             "Melee Weapon, Reach-upgrade, Dual-upgrade§HSG",
@@ -11160,7 +11160,7 @@
             "visibility": "normal"
           },
           "TV": {
-            "value": 32
+            "value": 33
           }
         }
       },
