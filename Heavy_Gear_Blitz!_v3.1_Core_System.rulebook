@@ -21864,6 +21864,46 @@
           }
         }
       },
+      "Ranged Weapon, Direct§MRF, React (AA, Silent)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            {
+              "item": "Model/Weapon Property§AA",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Silent",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Medium Rifle"
+          },
+          "officialDesignation": {
+            "value": "MRF"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct§MRF, React (T)": {
         "assets": {
           "traits": [
