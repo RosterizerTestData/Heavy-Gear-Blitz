@@ -13011,6 +13011,72 @@
           }
         }
       },
+      "Vehicle§Arbalest Mameluk": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct or Indirect§LRP, React (T)",
+            "Ranged Weapon, Direct§HMG (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Mameluk"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 0.5
+          },
+          "ModelName": {
+            "value": "Arbalest Mameluk"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 5
+          }
+        }
+      },
       "Vehicle§Herd Lord Mastiff": {
         "assets": {
           "traits": [
@@ -13467,6 +13533,72 @@
           },
           "TV": {
             "value": 9
+          }
+        }
+      },
+      "Vehicle§Mameluk": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC (T, AA)",
+            "Ranged Weapon, Direct§HMG (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Mameluk"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 0.5
+          },
+          "ModelName": {
+            "value": "Mameluk"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 5
           }
         }
       },

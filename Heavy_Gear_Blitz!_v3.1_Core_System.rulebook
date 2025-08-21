@@ -14553,6 +14553,53 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§LRP, React (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Light Rocket Pack"
+          },
+          "officialDesignation": {
+            "value": "LRP"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§MAPR": {
         "assets": {
           "traits": [
@@ -15552,6 +15599,113 @@
           },
           "Modified": {
             "value": "✓"
+          },
+          "Name": {
+            "value": "Light Autocannon"
+          },
+          "officialDesignation": {
+            "value": "LAC"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
+      "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC (T, AA)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            "Model/Weapon Property§(OR)",
+            "Model/Weapon Property§Precise",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§AA",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "Burst:1, Split"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the explicit value of the second clause of the traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "OrClause",
+                    "value"
+                  ]
+                ],
+                "value": "Precise"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
+          "Damage": {
+            "value": "6"
           },
           "Name": {
             "value": "Light Autocannon"
