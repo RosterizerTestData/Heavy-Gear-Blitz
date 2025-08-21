@@ -15309,6 +15309,50 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§MRP (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Medium Rocket Pack"
+          },
+          "officialDesignation": {
+            "value": "MRP"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§MRP, React": {
         "assets": {
           "traits": [
@@ -21666,6 +21710,38 @@
           }
         }
       },
+      "Ranged Weapon, Direct§MRF, React (T)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Medium Rifle"
+          },
+          "officialDesignation": {
+            "value": "MRF"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct§MRG": {
         "assets": {
           "traits": [
@@ -22578,6 +22654,44 @@
             },
             "Model/Weapon Property§Blast",
             "Model/Weapon Property§Guided"
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Medium Guided Mortar"
+          },
+          "officialDesignation": {
+            "value": "MGM"
+          },
+          "Range": {
+            "value": "18-36/72"
+          }
+        }
+      },
+      "Ranged Weapon, Indirect§MGM (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
           ]
         },
         "stats": {

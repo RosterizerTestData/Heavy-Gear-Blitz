@@ -12860,6 +12860,157 @@
           }
         }
       },
+      "Vehicle§Arbalest Hoplite": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable and Type§Transport:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Type": {
+                  "value": "Squad(s)"
+                }
+              }
+            },
+            "Model/Weapon Property§Smoke",
+            "Ranged Weapon, Direct or Indirect§MRP (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Hoplite"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "prependHerdLordIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Herd Lord \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Herd Lord ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Herd Lord Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Herd Lord Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "Herd Lord Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Arbalest Hoplite"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
       "Vehicle§Herd Lord Mastiff": {
         "assets": {
           "traits": [
@@ -12902,7 +13053,7 @@
             "value": 5
           },
           "EW": {
-            "value": 5
+            "value": 4
           },
           "fireSupportMax": {
             "value": 1
@@ -12937,6 +13088,157 @@
           },
           "TV": {
             "value": 6
+          }
+        }
+      },
+      "Vehicle§Hippeis Hoplite": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable and Type§Transport:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Type": {
+                  "value": "Squad(s)"
+                }
+              }
+            },
+            "Model/Weapon Property§Smoke",
+            "Ranged Weapon, Indirect§MGM (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Hoplite"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "prependHerdLordIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Herd Lord \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Herd Lord ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Herd Lord Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Herd Lord Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "Herd Lord Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Hippeis Hoplite"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
           }
         }
       },
@@ -13014,6 +13316,157 @@
           },
           "TV": {
             "value": 5
+          }
+        }
+      },
+      "Vehicle§Hoplite": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable and Type§Transport:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Type": {
+                  "value": "Squad(s)"
+                }
+              }
+            },
+            "Model/Weapon Property§Smoke",
+            "Ranged Weapon, Direct§MRF, React (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Hoplite"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "prependHerdLordIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Herd Lord \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Herd Lord ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Herd Lord Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Herd Lord Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "Herd Lord Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Hoplite"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
           }
         }
       },
@@ -13169,6 +13622,157 @@
           },
           "TV": {
             "value": 5
+          }
+        }
+      },
+      "Vehicle§Xyston Hoplite": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable and Type§Transport:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Type": {
+                  "value": "Squad(s)"
+                }
+              }
+            },
+            "Model/Weapon Property§Smoke",
+            "Ranged Weapon, Direct or Indirect§LFG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Hoplite"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "prependHerdLordIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...prepend \"Herd Lord \" to the ModelName.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "ModelName",
+                    "value"
+                  ]
+                ],
+                "prepend": "Herd Lord ",
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Herd Lord Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Herd Lord Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 163
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "Herd Lord Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Xyston Hoplite"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
           }
         }
       },
