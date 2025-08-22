@@ -96,6 +96,112 @@
           }
         }
       },
+      "Gear§Brawler Copperhead": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Combo§LAC/LGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Copperhead"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arena Pilot +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Shield"
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Brawler Copperhead"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
       "Gear§Chasseur": {
         "assets": {
           "traits": [
@@ -2510,6 +2616,218 @@
           }
         }
       },
+      "Gear§Copperhead": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Copperhead"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arena Pilot +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Shield"
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Copperhead"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 6
+          }
+        }
+      },
+      "Gear§Copperhead Gunner": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Copperhead"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arena Pilot +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Shield"
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Copperhead Gunner"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
       "Gear§Cuirassier": {
         "assets": {
           "traits": [
@@ -3411,6 +3729,112 @@
           }
         }
       },
+      "Gear§Flame Copperhead": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Direct, Link-upgrade§MFL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LAPR (Fire:1)",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Copperhead"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arena Pilot +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Shield"
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Flame Copperhead"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
       "Gear§Pathfinder Wildcat": {
         "assets": {
           "traits": [
@@ -3567,6 +3991,112 @@
           },
           "TV": {
             "value": 9
+          }
+        }
+      },
+      "Gear§Striking Copperhead": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Direct§LBZ",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Copperhead"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arena Pilot +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Shield"
+                  },
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Striking Copperhead"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 6
           }
         }
       },
