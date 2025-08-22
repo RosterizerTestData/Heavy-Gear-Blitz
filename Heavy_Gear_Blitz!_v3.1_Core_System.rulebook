@@ -10036,6 +10036,39 @@
           }
         }
       },
+      "Melee Weapon, Reach-upgrade, Dual-upgrade§MSG (Link)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 4
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Medium Spike Gun"
+          },
+          "officialDesignation": {
+            "value": "MSG"
+          }
+        }
+      },
       "Melee Weapon, Reach-upgrade§HICW": {
         "assets": {
           "traits": [
