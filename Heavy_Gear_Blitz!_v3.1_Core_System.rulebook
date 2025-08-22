@@ -14702,6 +14702,51 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§MAPR (Fire:2, Link)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Fire:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Medium Anti-Personnel Rocket"
+          },
+          "officialDesignation": {
+            "value": "MAPR"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§MAPR (Fire:2)": {
         "assets": {
           "traits": [
@@ -14823,6 +14868,53 @@
               "stats": {
                 "NameVariable": {
                   "value": 2
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Medium Artillery Rocket"
+          },
+          "officialDesignation": {
+            "value": "MAR"
+          },
+          "Range": {
+            "value": "12-36/72"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect§MAR (Fire:1)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Demo:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Fire:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                },
+                "Modified": {
+                  "value": "✓"
                 }
               }
             }
@@ -15363,6 +15455,50 @@
                 "NameVariable": {
                   "value": 2
                 },
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Medium Rocket Pack"
+          },
+          "officialDesignation": {
+            "value": "MRP"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect§MRP (Guided)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Guided",
+              "stats": {
                 "Modified": {
                   "value": "✓"
                 }
@@ -19708,6 +19844,57 @@
               }
             },
             "Model/Weapon Property§Split"
+          ]
+        },
+        "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
+          "Damage": {
+            "value": "5"
+          },
+          "Mode": {
+            "value": "Direct"
+          },
+          "Name": {
+            "value": "Heavy Machine Gun"
+          },
+          "officialDesignation": {
+            "value": "HMG"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "Traits": {
+            "value": ""
+          }
+        }
+      },
+      "Ranged Weapon, Direct§HMG (Link)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            {
+              "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
           ]
         },
         "stats": {
