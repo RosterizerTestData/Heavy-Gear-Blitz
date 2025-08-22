@@ -14101,6 +14101,46 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§LAPR (Fire:1)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Fire:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                },
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Light Anti-Personnel Rocket"
+          },
+          "officialDesignation": {
+            "value": "LAPR"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§LAR": {
         "assets": {
           "traits": [
