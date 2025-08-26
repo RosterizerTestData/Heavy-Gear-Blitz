@@ -14371,6 +14371,110 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§LFG (T, Link)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§(OR)",
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "AOE:3, Blast"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the explicit value of the second clause of the traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "OrClause",
+                    "value"
+                  ]
+                ],
+                "value": "AP:3"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Light Field Gun"
+          },
+          "officialDesignation": {
+            "value": "LFG"
+          },
+          "Range": {
+            "value": "12-24/48"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§LFG, React": {
         "assets": {
           "traits": [
@@ -17167,6 +17271,59 @@
           }
         }
       },
+      "Ranged Weapon, Direct, AA-upgrade§HRC (T, AA, Link)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§AA",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Heavy Rotary Cannon"
+          },
+          "officialDesignation": {
+            "value": "HRC"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
       "Ranged Weapon, Direct, AA-upgrade§HRC, React": {
         "assets": {
           "traits": [
@@ -19874,6 +20031,57 @@
           }
         }
       },
+      "Ranged Weapon, Direct§HMG (Auto)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            {
+              "item": "Model/Weapon Property§Auto",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
+          "Damage": {
+            "value": "5"
+          },
+          "Mode": {
+            "value": "Direct"
+          },
+          "Name": {
+            "value": "Heavy Machine Gun"
+          },
+          "officialDesignation": {
+            "value": "HMG"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "Traits": {
+            "value": ""
+          }
+        }
+      },
       "Ranged Weapon, Direct§HMG (Link)": {
         "assets": {
           "traits": [
@@ -20600,6 +20808,53 @@
               "stats": {
                 "NameVariable": {
                   "value": 2
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "11"
+          },
+          "Name": {
+            "value": "Heavy Tank Gun"
+          },
+          "officialDesignation": {
+            "value": "HTG"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Traits": {
+            "value": ""
+          }
+        }
+      },
+      "Ranged Weapon, Direct§HTG (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 5
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Demo:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
                 }
               }
             }
@@ -22615,6 +22870,53 @@
             },
             "Model/Weapon Property§Blast",
             "Model/Weapon Property§Guided"
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Heavy Air Burst Missile"
+          },
+          "officialDesignation": {
+            "value": "HABM"
+          },
+          "Range": {
+            "value": "24-48/96"
+          }
+        }
+      },
+      "Ranged Weapon, Indirect§HABM (T, Link)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
           ]
         },
         "stats": {
