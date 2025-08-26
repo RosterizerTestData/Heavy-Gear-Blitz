@@ -6613,51 +6613,8 @@
               }
             },
             "Ranged Weapon, Combo§HRC (Apex)/HVB",
-            {
-              "item": "Ranged Weapon, Direct§HMG",
-              "assets": {
-                "traits": [
-                  "Model/Weapon Property§AI",
-                  "Model/Weapon Property, Variable§Burst:X",
-                  "Model/Weapon Property§Split",
-                  {
-                    "item": "Model/Weapon Property§Auto",
-                    "stats": {
-                      "Modified": {
-                        "value": "✓"
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "item": "Ranged Weapon, Direct or Indirect§LFG",
-              "assets": {
-                "traits": [
-                  "Model/Weapon Property, Variable§AOE:X",
-                  "Model/Weapon Property§Blast",
-                  "Model/Weapon Property§(OR)",
-                  "Model/Weapon Property, Variable§AP:X",
-                  {
-                    "item": "Model/Weapon Property§T",
-                    "stats": {
-                      "Modified": {
-                        "value": "✓"
-                      }
-                    }
-                  },
-                  {
-                    "item": "Model/Weapon Property§Link",
-                    "stats": {
-                      "Modified": {
-                        "value": "✓"
-                      }
-                    }
-                  }
-                ]
-              }
-            }
+            "Ranged Weapon, Direct§HMG (Auto)",
+            "Ranged Weapon, Direct or Indirect§LFG (T, Link)"
           ]
         },
         "keywords": {
@@ -6715,6 +6672,78 @@
           }
         }
       },
+      "Strider§Hussar Hammer": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Combo§HRC (Apex)/HVB",
+            "Ranged Weapon, Direct§HMG (Auto)",
+            "Ranged Weapon, Direct§HTG (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Hussar"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 3
+          },
+          "ModelName": {
+            "value": "Hussar Hammer"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 26
+          }
+        }
+      },
       "Strider§Hussar Lance": {
         "assets": {
           "traits": [
@@ -6728,57 +6757,8 @@
               }
             },
             "Ranged Weapon, Combo§HRC (Apex)/HVB",
-            {
-              "item": "Ranged Weapon, Direct§HMG",
-              "assets": {
-                "traits": [
-                  "Model/Weapon Property§AI",
-                  "Model/Weapon Property, Variable§Burst:X",
-                  "Model/Weapon Property§Split",
-                  {
-                    "item": "Model/Weapon Property§Auto",
-                    "stats": {
-                      "Modified": {
-                        "value": "✓"
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "item": "Ranged Weapon, Direct, AA-upgrade§HRC",
-              "assets": {
-                "traits": [
-                  "Model/Weapon Property, Variable§Burst:X",
-                  "Model/Weapon Property§Split",
-                  {
-                    "item": "Model/Weapon Property§T",
-                    "stats": {
-                      "Modified": {
-                        "value": "✓"
-                      }
-                    }
-                  },
-                  {
-                    "item": "Model/Weapon Property§AA",
-                    "stats": {
-                      "Modified": {
-                        "value": "✓"
-                      }
-                    }
-                  },
-                  {
-                    "item": "Model/Weapon Property§Link",
-                    "stats": {
-                      "Modified": {
-                        "value": "✓"
-                      }
-                    }
-                  }
-                ]
-              }
-            }
+            "Ranged Weapon, Direct§HMG (Auto)",
+            "Ranged Weapon, Direct, AA-upgrade§HRC (T, AA, Link)"
           ]
         },
         "keywords": {
@@ -6849,51 +6829,8 @@
               }
             },
             "Ranged Weapon, Combo§HRC (Apex)/HVB",
-            {
-              "item": "Ranged Weapon, Direct§HMG",
-              "assets": {
-                "traits": [
-                  "Model/Weapon Property§AI",
-                  "Model/Weapon Property, Variable§Burst:X",
-                  "Model/Weapon Property§Split",
-                  {
-                    "item": "Model/Weapon Property§Auto",
-                    "stats": {
-                      "Modified": {
-                        "value": "✓"
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "item": "Ranged Weapon, Indirect§HABM",
-              "assets": {
-                "traits": [
-                  "Model/Weapon Property§AI",
-                  "Model/Weapon Property, Variable§AOE:X",
-                  "Model/Weapon Property§Blast",
-                  "Model/Weapon Property§Guided",
-                  {
-                    "item": "Model/Weapon Property§T",
-                    "stats": {
-                      "Modified": {
-                        "value": "✓"
-                      }
-                    }
-                  },
-                  {
-                    "item": "Model/Weapon Property§Link",
-                    "stats": {
-                      "Modified": {
-                        "value": "✓"
-                      }
-                    }
-                  }
-                ]
-              }
-            }
+            "Ranged Weapon, Direct§HMG (Auto)",
+            "Ranged Weapon, Indirect§HABM (T, Link)"
           ]
         },
         "keywords": {
@@ -6964,24 +6901,7 @@
               }
             },
             "Ranged Weapon, Combo§HRC (Apex)/HVB",
-            {
-              "item": "Ranged Weapon, Direct§HMG",
-              "assets": {
-                "traits": [
-                  "Model/Weapon Property§AI",
-                  "Model/Weapon Property, Variable§Burst:X",
-                  "Model/Weapon Property§Split",
-                  {
-                    "item": "Model/Weapon Property§Auto",
-                    "stats": {
-                      "Modified": {
-                        "value": "✓"
-                      }
-                    }
-                  }
-                ]
-              }
-            },
+            "Ranged Weapon, Direct§HMG (Auto)",
             "Ranged Weapon, Direct or Indirect§HRP (T, Link)"
           ]
         },
