@@ -6976,7 +6976,11 @@
                   "value": "✓"
                 }
               }
-            }
+            },
+            "Ranged Weapon, Direct§LLC (T, AA)",
+            "Ranged Weapon, Direct, AA-upgrade§HAC (T)",
+            "Ranged Weapon, Direct or Indirect§MRP (T)",
+            "Ranged Weapon, Direct§LAPGL"
           ]
         },
         "keywords": {
@@ -7018,6 +7022,168 @@
           },
           "ModelName": {
             "value": "Fusilier"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 10
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 17
+          }
+        }
+      },
+      "Vehicle§Fusilier Anvil": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§React+",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§HAC (T)",
+            "Ranged Weapon, Indirect§LGM (T)",
+            "Ranged Weapon, Direct or Indirect§MRP (T)",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Fusilier"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Fusilier Anvil"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 10
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 15
+          }
+        }
+      },
+      "Vehicle§Fusilier Javelin": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§React+",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct§LLC (T, AA)",
+            "Ranged Weapon, Direct, AA-upgrade§HAC (T)",
+            "Ranged Weapon, Direct or Indirect, Swappable§LATM (T)",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Fusilier"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Fusilier Javelin"
           },
           "MR": {
             "format": "H: {v}",
