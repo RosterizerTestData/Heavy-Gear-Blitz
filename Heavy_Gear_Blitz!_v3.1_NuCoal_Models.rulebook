@@ -7795,6 +7795,90 @@
           }
         }
       },
+      "Vehicle§Titan": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§TD",
+            "Model/Weapon Property§VTOL",
+            {
+              "item": "Model/Weapon Property, Variable and Type§Transport:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                },
+                "Type": {
+                  "value": "Squad(s)"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§LRC, React (AA)",
+            {
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MATM",
+              "quantity": 2
+            },
+            {
+              "item": "Ranged Weapon, Direct or Indirect§MRP",
+              "quantity": 2
+            }
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Titan (NuCoal)"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Titan"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 9
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 20
+          }
+        }
+      },
       "Vehicle§Voltigeur": {
         "assets": {
           "traits": [
