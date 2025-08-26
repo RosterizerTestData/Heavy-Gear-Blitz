@@ -10093,6 +10093,41 @@
           }
         }
       },
+      "Melee Weapon, Reach-upgrade§HICW (AP:1)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                },
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Heavy Infantry Combat Weapon"
+          },
+          "officialDesignation": {
+            "value": "HICW"
+          },
+          "StatColumn": {
+            "value": "React"
+          },
+          "Traits": {
+            "value": ""
+          }
+        }
+      },
       "Melee Weapon, Reach-upgrade§LICW": {
         "assets": {
           "traits": [
@@ -10161,6 +10196,41 @@
                 },
                 "Modified": {
                   "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "5"
+          },
+          "Name": {
+            "value": "Medium Infantry Combat Weapon"
+          },
+          "officialDesignation": {
+            "value": "MICW"
+          },
+          "StatColumn": {
+            "value": "React"
+          },
+          "Traits": {
+            "value": ""
+          }
+        }
+      },
+      "Melee Weapon, Reach-upgrade§MICW (AP:1)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                },
+                "NameVariable": {
+                  "value": 1
                 }
               }
             }
@@ -12506,6 +12576,89 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect, Swappable§LATM (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct or Indirect, Swappable§LAAM"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LAAM"
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Light Anti-Tank Missile"
+          },
+          "officialDesignation": {
+            "value": "LATM"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Swap to:": {
+            "ranks": {
+              "LAAM": {
+                "order": 0
+              },
+              "LATM": {
+                "order": 1
+              }
+            },
+            "value": "LATM"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect, Swappable§LATM, React": {
         "assets": {
           "traits": [
@@ -13934,6 +14087,102 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§HIGL (Corrosion)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§(OR)",
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Corrosion",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "AOE:2, Blast"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the explicit value of the second clause of the traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "OrClause",
+                    "value"
+                  ]
+                ],
+                "value": "AP:1"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Heavy Infantry Grenade Launcher"
+          },
+          "officialDesignation": {
+            "value": "HIGL"
+          },
+          "Range": {
+            "value": "3-9/18"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§HRP": {
         "assets": {
           "traits": [
@@ -14283,6 +14532,43 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§LAVM (Corrosion)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property§Corrosion",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "5"
+          },
+          "Name": {
+            "value": "Light Anti-Vehicle Missile"
+          },
+          "officialDesignation": {
+            "value": "LAVM"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§LFG": {
         "assets": {
           "traits": [
@@ -14301,6 +14587,118 @@
               "stats": {
                 "NameVariable": {
                   "value": 3
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "AOE:3, Blast"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the explicit value of the second clause of the traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "OrClause",
+                    "value"
+                  ]
+                ],
+                "value": "AP:3"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Light Field Gun"
+          },
+          "officialDesignation": {
+            "value": "LFG"
+          },
+          "Range": {
+            "value": "12-24/48"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect§LFG (T, Link, Precise)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§(OR)",
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Precise",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
                 }
               }
             }
@@ -14655,6 +15053,105 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§LIGL (Corrosion)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§(OR)",
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Corrosion",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "AOE:2, Blast"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the explicit value of the second clause of the traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "OrClause",
+                    "value"
+                  ]
+                ],
+                "value": "AP:1"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "5"
+          },
+          "Name": {
+            "value": "Light Infantry Grenade Launcher"
+          },
+          "officialDesignation": {
+            "value": "LIGL"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§LRP": {
         "assets": {
           "traits": [
@@ -14671,6 +15168,58 @@
               "stats": {
                 "NameVariable": {
                   "value": 1
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Light Rocket Pack"
+          },
+          "officialDesignation": {
+            "value": "LRP"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect§LRP (T, Link)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
                 }
               }
             }
@@ -15051,6 +15600,43 @@
               }
             },
             "Model/Weapon Property§Guided"
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Medium Anti-Vehicle Missile"
+          },
+          "officialDesignation": {
+            "value": "MAVM"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect§MAVM (Corrosion)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property§Corrosion",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
           ]
         },
         "stats": {
@@ -16034,6 +16620,113 @@
           }
         }
       },
+      "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC (T, Link)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            "Model/Weapon Property§(OR)",
+            "Model/Weapon Property§Precise",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "Burst:1, Split"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the explicit value of the second clause of the traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "OrClause",
+                    "value"
+                  ]
+                ],
+                "value": "Precise"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "AMSCapableGuns": {
+            "group": "Hidden",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
+          },
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Light Autocannon"
+          },
+          "officialDesignation": {
+            "value": "LAC"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC, Combo Part": {
         "assets": {
           "traits": [
@@ -16873,6 +17566,98 @@
           }
         }
       },
+      "Ranged Weapon, Direct, AA-upgrade§HAC (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            "Model/Weapon Property§(OR)",
+            "Model/Weapon Property§Precise",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "Burst:1, Split"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the explicit value of the second clause of the traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "OrClause",
+                    "value"
+                  ]
+                ],
+                "value": "Precise"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "AMSCapableGuns": {
+            "value": 1
+          },
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Heavy Autocannon"
+          },
+          "officialDesignation": {
+            "value": "HAC"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
       "Ranged Weapon, Direct, AA-upgrade§HAC, Combo Part": {
         "assets": {
           "traits": [
@@ -17525,6 +18310,46 @@
               }
             },
             "Model/Weapon Property§Split"
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "5"
+          },
+          "Name": {
+            "value": "Light Rotary Cannon"
+          },
+          "officialDesignation": {
+            "value": "LRC"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
+      "Ranged Weapon, Direct, AA-upgrade§LRC, React (AA)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            {
+              "item": "Model/Weapon Property§AA",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
           ]
         },
         "stats": {
@@ -19881,6 +20706,39 @@
           }
         }
       },
+      "Ranged Weapon, Direct§HIR (Silent)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property§Silent",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Heavy Infantry Rifle"
+          },
+          "officialDesignation": {
+            "value": "HIR"
+          },
+          "Range": {
+            "value": "6-24/48"
+          },
+          "Traits": {
+            "value": ""
+          }
+        }
+      },
       "Ranged Weapon, Direct§HIS": {
         "stats": {
           "Damage": {
@@ -19908,6 +20766,37 @@
               "stats": {
                 "NameVariable": {
                   "value": 1
+                },
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Heavy Infantry Support Weapon"
+          },
+          "officialDesignation": {
+            "value": "HIS"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§HIS (Burst:2)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
                 },
                 "Modified": {
                   "value": "✓"
@@ -20831,6 +21720,61 @@
           }
         }
       },
+      "Ranged Weapon, Direct§HTG (T, Precise)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 5
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Demo:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Precise",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "11"
+          },
+          "Name": {
+            "value": "Heavy Tank Gun"
+          },
+          "officialDesignation": {
+            "value": "HTG"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Traits": {
+            "value": ""
+          }
+        }
+      },
       "Ranged Weapon, Direct§HTG (T)": {
         "assets": {
           "traits": [
@@ -21167,6 +22111,47 @@
           "traits": [
             "Model/Weapon Property§Precise",
             "Model/Weapon Property§Advanced",
+            {
+              "item": "Model/Weapon Property§AA",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Light Laser Cannon"
+          },
+          "officialDesignation": {
+            "value": "LLC"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§LLC (T, AA)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§Advanced",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
             {
               "item": "Model/Weapon Property§AA",
               "stats": {
@@ -23316,6 +24301,44 @@
           }
         }
       },
+      "Ranged Weapon, Indirect§LGM (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Light Guided Mortar"
+          },
+          "officialDesignation": {
+            "value": "LGM"
+          },
+          "Range": {
+            "value": "18-36/72"
+          }
+        }
+      },
       "Ranged Weapon, Indirect§LIM": {
         "assets": {
           "traits": [
@@ -23609,6 +24632,52 @@
             },
             "Model/Weapon Property§Blast",
             "Model/Weapon Property§AI"
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "5"
+          },
+          "Name": {
+            "value": "Medium Infantry Mortar"
+          },
+          "officialDesignation": {
+            "value": "MIM"
+          },
+          "Range": {
+            "value": "12-24/48"
+          }
+        }
+      },
+      "Ranged Weapon, Indirect§MIM (Brace, Corrosion)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property§Brace",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Corrosion",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
           ]
         },
         "stats": {
