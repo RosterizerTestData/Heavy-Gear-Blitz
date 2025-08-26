@@ -6600,6 +6600,659 @@
         }
       },
       "Roster§Roster": {},
+      "Strider§Hussar": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Combo§HRC (Apex)/HVB",
+            {
+              "item": "Ranged Weapon, Direct§HMG",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  "Model/Weapon Property, Variable§Burst:X",
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct or Indirect§LFG",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property, Variable§AOE:X",
+                  "Model/Weapon Property§Blast",
+                  "Model/Weapon Property§(OR)",
+                  "Model/Weapon Property, Variable§AP:X",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Link",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Hussar"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 3
+          },
+          "ModelName": {
+            "value": "Hussar"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 24
+          }
+        }
+      },
+      "Strider§Hussar Lance": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Combo§HRC (Apex)/HVB",
+            {
+              "item": "Ranged Weapon, Direct§HMG",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  "Model/Weapon Property, Variable§Burst:X",
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade§HRC",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property, Variable§Burst:X",
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§AA",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Link",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Hussar"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 3
+          },
+          "ModelName": {
+            "value": "Hussar Lance"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 26
+          }
+        }
+      },
+      "Strider§Hussar Skyhammer": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Combo§HRC (Apex)/HVB",
+            {
+              "item": "Ranged Weapon, Direct§HMG",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  "Model/Weapon Property, Variable§Burst:X",
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "item": "Ranged Weapon, Indirect§HABM",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  "Model/Weapon Property, Variable§AOE:X",
+                  "Model/Weapon Property§Blast",
+                  "Model/Weapon Property§Guided",
+                  {
+                    "item": "Model/Weapon Property§T",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  },
+                  {
+                    "item": "Model/Weapon Property§Link",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Hussar"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 3
+          },
+          "ModelName": {
+            "value": "Hussar Skyhammer"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 25
+          }
+        }
+      },
+      "Strider§Hussar Spear": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Ranged Weapon, Combo§HRC (Apex)/HVB",
+            {
+              "item": "Ranged Weapon, Direct§HMG",
+              "assets": {
+                "traits": [
+                  "Model/Weapon Property§AI",
+                  "Model/Weapon Property, Variable§Burst:X",
+                  "Model/Weapon Property§Split",
+                  {
+                    "item": "Model/Weapon Property§Auto",
+                    "stats": {
+                      "Modified": {
+                        "value": "✓"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "Ranged Weapon, Direct or Indirect§HRP (T, Link)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Hussar"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 3
+          },
+          "ModelName": {
+            "value": "Hussar Spear"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 24
+          }
+        }
+      },
+      "Veteran Gear§Arbalestier": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct or Indirect§HRP, React",
+            "Ranged Weapon, Direct, Link-upgrade§MFC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
+            "Ranged Weapon, Direct, Swappable§HPZ",
+            "Ranged Weapon, Direct§LMG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Arbalestier"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Arbalestier"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 19
+          }
+        }
+      },
+      "Veteran Gear§Arbalestier Demolisher": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct or Indirect§HRP, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
+            "Ranged Weapon, Direct, Swappable§HPZ",
+            "Melee Weapon§HSE",
+            "Ranged Weapon, Direct§LMG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Arbalestier"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Arbalestier Demolisher"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 19
+          }
+        }
+      },
+      "Veteran Gear§Arbalestier Grenadier": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Ranged Weapon, Direct or Indirect§HRP, React",
+            "Ranged Weapon, Direct or Indirect, Link-upgrade§MGL, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB",
+            "Ranged Weapon, Direct, Swappable§HPZ",
+            "Ranged Weapon, Direct§LMG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Arbalestier"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Arbalestier Grenadier"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 20
+          }
+        }
+      },
       "Veteran Gear§Espion": {
         "assets": {
           "traits": [
