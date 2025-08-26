@@ -6960,6 +6960,83 @@
           }
         }
       },
+      "Vehicle§Fusilier": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§React+",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Fusilier"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Fusilier"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 10
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 17
+          }
+        }
+      },
       "Veteran Gear§Arbalestier": {
         "assets": {
           "traits": [
