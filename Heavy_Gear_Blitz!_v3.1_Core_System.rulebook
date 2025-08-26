@@ -24091,6 +24091,44 @@
           }
         }
       },
+      "Ranged Weapon, Indirect§HIM (Brace)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property§Brace",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Heavy Infantry Mortar"
+          },
+          "officialDesignation": {
+            "value": "HIM"
+          },
+          "Range": {
+            "value": "12-24/48"
+          }
+        }
+      },
       "Ranged Weapon, Indirect§LABM": {
         "assets": {
           "traits": [
