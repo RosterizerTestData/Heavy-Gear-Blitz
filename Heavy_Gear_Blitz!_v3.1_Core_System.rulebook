@@ -16076,6 +16076,105 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§MIGL (Corrosion)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§(OR)",
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Corrosion",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "AOE:2, Blast"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the explicit value of the second clause of the traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "OrClause",
+                    "value"
+                  ]
+                ],
+                "value": "AP:1"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Medium Infantry Grenade Launcher"
+          },
+          "officialDesignation": {
+            "value": "MIGL"
+          },
+          "Range": {
+            "value": "3-9/18"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§MRP": {
         "assets": {
           "traits": [
