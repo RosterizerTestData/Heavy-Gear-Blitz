@@ -8,15 +8,780 @@
   "notes": "",
   "wip": true,
   "isModule": true,
+  "dependencies": [
+    {
+      "slug": "VUGK7N",
+      "name": "Core System",
+      "game": "Heavy Gear Blitz! v3.1",
+      "source": ""
+    }
+  ],
   "rulebook": {
     "assetTaxonomy": {},
     "assetCatalog": {
       "Roster§Roster": {},
-      "Veteran Gear§Dark Warrior Gamma": {
+      "Veteran Gear§Dark Jaguar Alpha": {
         "assets": {
           "traits": [
             "Model/Weapon Property§Hands",
-            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct§HRF, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1, Reach:1)",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Jaguar"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "ifPsiOrPhiBetterEW": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then subtract 1 from the EW stat.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": -1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Psi Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Psi Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or if the Phi Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Phi Ugrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 99
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Jaguar Alpha"
+          },
+          "MR": {
+            "value": 7
+          },
+          "Phi Ugrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "PI": {
+            "value": 3
+          },
+          "Psi Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§SatUp",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 12
+          }
+        }
+      },
+      "Veteran Gear§Dark Jaguar Beta": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Combo§MAC/LGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1, Reach:1)",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Jaguar"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "ifPsiOrPhiBetterEW": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then subtract 1 from the EW stat.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": -1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Psi Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Psi Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or if the Phi Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Phi Ugrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 99
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Jaguar Beta"
+          },
+          "MR": {
+            "value": 7
+          },
+          "Phi Ugrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "PI": {
+            "value": 3
+          },
+          "Psi Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§SatUp",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 11
+          }
+        }
+      },
+      "Veteran Gear§Dark Jaguar Gamma": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Combo§MAC/LFC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1, Reach:1)",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct, Swappable§MPZ",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Jaguar"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "ifPsiOrPhiBetterEW": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then subtract 1 from the EW stat.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": -1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Psi Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Psi Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or if the Phi Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Phi Ugrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 99
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Jaguar Gamma"
+          },
+          "MR": {
+            "value": 7
+          },
+          "Phi Ugrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "PI": {
+            "value": 3
+          },
+          "Psi Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§SatUp",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 11
+          }
+        }
+      },
+      "Veteran Gear§Dark Jaguar Sigma": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct§MBZ",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1, Reach:1)",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Jaguar"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "ifPsiOrPhiBetterEW": {
+            "actions": [
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "note": "...then subtract 1 from the EW stat.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": -1
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Psi Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Psi Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              },
+              {
+                "actionable": true,
+                "not": false,
+                "note": "...or if the Phi Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Phi Ugrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 99
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Jaguar Sigma"
+          },
+          "MR": {
+            "value": 7
+          },
+          "Phi Ugrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "PI": {
+            "value": 3
+          },
+          "Psi Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§SatUp",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 11
+          }
+        }
+      },
+      "Veteran Gear§Dark Mamba Omicron": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
             "Model/Weapon Property§Airdrop",
             {
               "item": "Model/Weapon Property§Stealth",
@@ -30,8 +795,184 @@
         },
         "keywords": {
           "Keywords": [
+            "Dark Mamba"
+          ]
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Mamba Omicron"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
+      "Veteran Gear§Dark Warrior Beta": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Combo§MAC/LGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
             "Dark Warrior"
           ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Warrior Beta"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Psi Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
+      "Veteran Gear§Dark Warrior Gamma": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Combo§LAC/LFC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Warrior"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
         },
         "stats": {
           "Actions": {
@@ -103,17 +1044,219 @@
             "value": 8
           }
         }
+      },
+      "Veteran Gear§Dark Warrior Sigma": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct§LBZ (AP:1, Burst:1)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Warrior"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Warrior Sigma"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Psi Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
+      },
+      "Veteran Gear§Dark Warrior Tao": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct§MSC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Warrior"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Warrior Tao"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Psi Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 9
+          }
+        }
       }
     },
     "gameModes": {},
     "theme": {}
-  },
-  "dependencies": [
-    {
-      "slug": "VUGK7N",
-      "name": "Core System",
-      "game": "Heavy Gear Blitz! v3.1",
-      "source": ""
-    }
-  ]
+  }
 }
