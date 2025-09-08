@@ -8289,6 +8289,171 @@
           }
         }
       },
+      "Infantry§Sandrider Team": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Stealth",
+            "Ranged Weapon, Direct§MIW",
+            "Melee Weapon, Reach-upgrade§MICW, React"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Sandriders"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "changeToSquadIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the hull/structure to 3/3...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "3/3"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the designation to Sandrider Squad...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Sandrider Squad"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the name to Sandrider Squad as well.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Name",
+                    "value"
+                  ]
+                ],
+                "value": "Sandrider Squad"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Squad upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Squad +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 3
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {},
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "2/1"
+          },
+          "HT": {
+            "value": 0.5
+          },
+          "Koreshi Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -2,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Vet"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Sandrider Team"
+          },
+          "MR": {
+            "format": "I:{v}",
+            "value": 4
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP+, SK, SO"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "Squad +1TV": {
+            "statOrder": 1
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 4
+          }
+        }
+      },
       "Roster§Roster": {},
       "Strider§Hussar": {
         "assets": {
