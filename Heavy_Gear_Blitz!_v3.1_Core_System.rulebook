@@ -11445,6 +11445,23 @@
           }
         }
       },
+      "Ranged Weapon, Combo§LAC/LFC": {
+        "assets": {
+          "traits": [
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC, Combo Part",
+            "Model/Weapon Property§/",
+            "Ranged Weapon, Direct, Link-upgrade§LFC, Combo Part"
+          ]
+        },
+        "stats": {
+          "Name": {
+            "value": "Combo LAC & LFC"
+          },
+          "officialDesignation": {
+            "value": "LAC/LFC"
+          }
+        }
+      },
       "Ranged Weapon, Combo§LAC/LGL": {
         "assets": {
           "traits": [
