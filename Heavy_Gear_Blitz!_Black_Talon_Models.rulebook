@@ -1,0 +1,19 @@
+{
+  "name": "Black Talon Models",
+  "revision": "0.0.1",
+  "game": "Heavy Gear Blitz!",
+  "genre": "sci-fi",
+  "publisher": "Dream Pod 9",
+  "url": "",
+  "notes": "",
+  "wip": true,
+  "rulebook": {
+    "assetTaxonomy": {},
+    "assetCatalog": {
+      "Roster§Roster": {}
+    },
+    "gameModes": {},
+    "theme": {}
+  },
+  "isModule": true
+}
