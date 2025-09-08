@@ -19,6 +19,384 @@
   "rulebook": {
     "assetTaxonomy": {},
     "assetCatalog": {
+      "Cavalry§GREL Anti-Tank Hoverbike": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Ranged Weapon, Direct§HIW",
+            "Melee Weapon, Reach-upgrade§MICW, React",
+            "Ranged Weapon, Direct or Indirect§LAVM"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "GREL Hoverbike (NuCoal)"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "changeToTeamIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the hull/structure to 4/2...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              },
+              {
+                "actionType": "set",
+                "append": " Team",
+                "iterations": 1,
+                "note": "...append Team to the designation...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": ""
+              },
+              {
+                "actionType": "set",
+                "append": " Team",
+                "iterations": 1,
+                "note": "...and append Team to the name as well.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Name",
+                    "value"
+                  ]
+                ],
+                "value": ""
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Team upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Team Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 3
+          },
+          "EW": {
+            "value": 6
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "2/1"
+          },
+          "HT": {
+            "value": 1
+          },
+          "Jan Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "GREL Anti-Tank Hoverbike"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 12
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "Team Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 5
+          }
+        }
+      },
+      "Cavalry§GREL Hoverbike": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Ranged Weapon, Direct§HIW",
+            "Ranged Weapon, Direct or Indirect§LIGL",
+            "Melee Weapon, Reach-upgrade§MICW, React"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "GREL Hoverbike (NuCoal)"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "changeToTeamIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the hull/structure to 4/2...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              },
+              {
+                "actionType": "set",
+                "append": " Team",
+                "iterations": 1,
+                "note": "...append Team to the designation...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": ""
+              },
+              {
+                "actionType": "set",
+                "append": " Team",
+                "iterations": 1,
+                "note": "...and append Team to the name as well.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Name",
+                    "value"
+                  ]
+                ],
+                "value": ""
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Team upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Team Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 3
+          },
+          "EW": {
+            "value": 6
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "2/1"
+          },
+          "HT": {
+            "value": 1
+          },
+          "Jan Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "GREL Hoverbike"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 12
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "Team Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 4
+          }
+        }
+      },
       "Gear§Assault Wildcat": {
         "assets": {
           "traits": [
@@ -97,6 +475,15 @@
         }
       },
       "Gear§Boa": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§React+",
+            "Ranged Weapon, Direct, AA-upgrade§HAC, React",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct§HMG"
+          ]
+        },
         "keywords": {
           "Keywords": [
             "Boa (NuCoal)"
@@ -167,19 +554,30 @@
             "value": 2
           },
           "Melee Option": {
+            "dynamic": true,
             "group": "Upgrades",
             "groupOrder": 4,
             "ranks": {
-              "-": {
-                "order": 0
+              "Vibro-Blade": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)"
+                  }
+                ]
               },
-              "✓": {
-                "order": 1
+              "Hammer": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Reach:1, Demo:4)"
+                  }
+                ]
               }
             },
             "statOrder": 2,
             "statType": "rank",
-            "value": "-",
+            "value": "Vibro-Blade",
             "visibility": "normal"
           },
           "MFM Upgrade +1TV": {
@@ -4609,6 +5007,162 @@
           }
         }
       },
+      "Gear§Firestorm Boa": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§React+",
+            "Ranged Weapon, Direct, AA-upgrade§MRL, React",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct§HMG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Boa (NuCoal)"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arena Pilot +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "brawlStat": {
+                          "value": 2
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 3,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/1"
+          },
+          "HT": {
+            "value": 2
+          },
+          "Melee Option": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "Vibro-Blade": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)"
+                  }
+                ]
+              },
+              "Hammer": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Reach:1, Demo:4)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "Vibro-Blade",
+            "visibility": "normal"
+          },
+          "MFM Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Indirect§LGM"
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Indirect§MFM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Firestorm Boa"
+          },
+          "MR": {
+            "value": 5
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 15
+          }
+        }
+      },
       "Gear§Flame Copperhead": {
         "assets": {
           "traits": [
@@ -6180,6 +6734,162 @@
           }
         }
       },
+      "Gear§Striking Boa": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§React+",
+            "Ranged Weapon, Direct§MBZ",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct§HMG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Boa (NuCoal)"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arena Pilot +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Brawl:X",
+                      "stats": {
+                        "brawlStat": {
+                          "value": 2
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 3,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/1"
+          },
+          "HT": {
+            "value": 2
+          },
+          "Melee Option": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "Vibro-Blade": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)"
+                  }
+                ]
+              },
+              "Hammer": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW (Reach:1, Demo:4)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "Vibro-Blade",
+            "visibility": "normal"
+          },
+          "MFM Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Indirect§LGM"
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Indirect§MFM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Striking Boa"
+          },
+          "MR": {
+            "value": 5
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 15
+          }
+        }
+      },
       "Gear§Striking Copperhead": {
         "assets": {
           "traits": [
@@ -6609,7 +7319,7 @@
         },
         "keywords": {
           "Keywords": [
-            "GRELs"
+            "GRELs (NuCoal)"
           ]
         },
         "removed": {
@@ -6769,7 +7479,7 @@
         },
         "keywords": {
           "Keywords": [
-            "GRELs"
+            "GRELs (NuCoal)"
           ]
         },
         "removed": {
@@ -6929,7 +7639,7 @@
         },
         "keywords": {
           "Keywords": [
-            "GRELs"
+            "GRELs (NuCoal)"
           ]
         },
         "removed": {
@@ -7090,7 +7800,7 @@
         },
         "keywords": {
           "Keywords": [
-            "GRELs"
+            "GRELs (NuCoal)"
           ]
         },
         "removed": {
@@ -7259,7 +7969,7 @@
         },
         "keywords": {
           "Keywords": [
-            "GRELs"
+            "GRELs (NuCoal)"
           ]
         },
         "removed": {
@@ -7429,7 +8139,7 @@
         },
         "keywords": {
           "Keywords": [
-            "GRELs"
+            "GRELs (NuCoal)"
           ]
         },
         "removed": {
