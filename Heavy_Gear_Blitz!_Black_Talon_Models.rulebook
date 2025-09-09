@@ -1554,6 +1554,318 @@
           }
         }
       },
+      "Veteran Gear§Dark Kodiak Delta": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§HRC, React (Precise, AA)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Link-upgrade§LATM (Precise)",
+            "Ranged Weapon, Direct§HMG (Link)",
+            "Ranged Weapon, Direct§MAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Kodiak"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Dark Kodiak Delta"
+          },
+          "MR": {
+            "value": 5
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 21
+          }
+        }
+      },
+      "Veteran Gear§Dark Kodiak Epsilon": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct§MPA, React (Precise)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect§MAR",
+            "Ranged Weapon, Direct§HMG (Link)",
+            "Ranged Weapon, Direct§MAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Kodiak"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Dark Kodiak Epsilon"
+          },
+          "MR": {
+            "value": 5
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 21
+          }
+        }
+      },
+      "Veteran Gear§Dark Kodiak Sigma": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct§HBZ (Precise)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Link-upgrade§LATM (Precise)",
+            "Ranged Weapon, Direct§HMG (Link)",
+            "Ranged Weapon, Direct§MAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Kodiak"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Dark Kodiak Sigma"
+          },
+          "MR": {
+            "value": 5
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 20
+          }
+        }
+      },
+      "Veteran Gear§Dark Kodiak Xi": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§HRC, React (Precise, AA)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Indirect§MGM",
+            "Ranged Weapon, Direct§HMG (Link)",
+            "Ranged Weapon, Direct§MAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Kodiak"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Dark Kodiak Xi"
+          },
+          "MR": {
+            "value": 5
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 21
+          }
+        }
+      },
       "Veteran Gear§Dark Kodiak Zeta": {
         "assets": {
           "traits": [
@@ -1566,7 +1878,13 @@
                   "value": "✓"
                 }
               }
-            }
+            },
+            "Ranged Weapon, Direct§MPA, React (Precise)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Link-upgrade§LATM (Precise)",
+            "Ranged Weapon, Direct§HMG (Link)",
+            "Ranged Weapon, Direct§MAPGL"
           ]
         },
         "keywords": {
