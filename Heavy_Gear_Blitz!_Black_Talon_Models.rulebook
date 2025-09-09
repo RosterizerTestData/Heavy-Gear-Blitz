@@ -3343,6 +3343,94 @@
           }
         }
       },
+      "Veteran Gear§Delta Raptor": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 6
+                }
+              }
+            },
+            "Model/Weapon Property§Stealth",
+            "Ranged Weapon, Direct, AA-upgrade§HRC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect§MAPR",
+            "Ranged Weapon, Direct§MMG",
+            "Ranged Weapon, Direct, Swappable§HPZ",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Raptor"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Delta Raptor"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 17
+          }
+        }
+      },
       "Veteran Gear§Gamma Owl": {
         "assets": {
           "traits": [
@@ -3968,6 +4056,94 @@
           }
         }
       },
+      "Veteran Gear§Sigma Raptor": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 6
+                }
+              }
+            },
+            "Model/Weapon Property§Stealth",
+            "Ranged Weapon, Direct§HBZ (Precise)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect§MAPR",
+            "Ranged Weapon, Direct§MMG",
+            "Ranged Weapon, Direct, Swappable§HPZ",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Raptor"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Sigma Raptor"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 18
+          }
+        }
+      },
       "Veteran Gear§Sigma Raven": {
         "assets": {
           "traits": [
@@ -4057,6 +4233,94 @@
           },
           "TV": {
             "value": 15
+          }
+        }
+      },
+      "Veteran Gear§Zeta Raptor": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 6
+                }
+              }
+            },
+            "Model/Weapon Property§Stealth",
+            "Ranged Weapon, Direct§MPA, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MVB (Reach:1)",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect§MAPR",
+            "Ranged Weapon, Direct§MMG",
+            "Ranged Weapon, Direct, Swappable§HPZ",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Raptor"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Zeta Raptor"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 18
           }
         }
       }
