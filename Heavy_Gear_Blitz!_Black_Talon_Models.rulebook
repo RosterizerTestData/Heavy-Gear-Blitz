@@ -1663,6 +1663,255 @@
           }
         }
       },
+      "Veteran Gear§Dark Skirmisher Alpha": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§ECM+",
+            "Model/Weapon Property§ECCM",
+            "Model/Weapon Property§TD",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct§MRF, React (Silent)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1, Reach:1)",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct, Swappable§LPZ"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Skirmisher"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Skirmisher Alpha"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP, RC, FS"
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
+      "Veteran Gear§Dark Skirmisher Gamma": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§ECM+",
+            "Model/Weapon Property§ECCM",
+            "Model/Weapon Property§TD",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Combo§MAC/LFC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1, Reach:1)",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct, Swappable§LPZ"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Skirmisher"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Skirmisher Gamma"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP, RC, FS"
+          },
+          "TV": {
+            "value": 12
+          }
+        }
+      },
+      "Veteran Gear§Dark Skirmisher Sigma": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§ECM+",
+            "Model/Weapon Property§ECCM",
+            "Model/Weapon Property§TD",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct§LBZ (AP:1, Burst:1)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1, Reach:1)",
+            "Ranged Weapon, Direct or Indirect§LRP",
+            "Ranged Weapon, Direct, Swappable§LPZ"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Skirmisher"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Skirmisher Sigma"
+          },
+          "MR": {
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "GP, RC, FS"
+          },
+          "TV": {
+            "value": 12
+          }
+        }
+      },
       "Veteran Gear§Dark Warrior Beta": {
         "assets": {
           "traits": [
