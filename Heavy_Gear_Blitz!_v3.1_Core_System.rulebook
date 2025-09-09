@@ -18391,6 +18391,54 @@
           }
         }
       },
+      "Ranged Weapon, Direct, AA-upgrade§HRC, React (Precise, AA)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            {
+              "item": "Model/Weapon Property§Precise",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§AA",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Heavy Rotary Cannon"
+          },
+          "officialDesignation": {
+            "value": "HRC"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct, AA-upgrade§HRC, React (T)": {
         "assets": {
           "traits": [
@@ -20621,6 +20669,48 @@
               "stats": {
                 "NameVariable": {
                   "value": 4
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Heavy Bazooka"
+          },
+          "officialDesignation": {
+            "value": "HBZ"
+          },
+          "Range": {
+            "value": "6-12/24"
+          },
+          "StatColumn": {
+            "value": "React"
+          },
+          "Traits": {
+            "value": ""
+          }
+        }
+      },
+      "Ranged Weapon, Direct§HBZ (Precise)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 4
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Precise",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
                 }
               }
             }
@@ -23406,6 +23496,39 @@
           "traits": [
             "Model/Weapon Property§Haywire",
             "Model/Weapon Property§Advanced"
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Medium Particle Accelerator"
+          },
+          "officialDesignation": {
+            "value": "MPA"
+          },
+          "Range": {
+            "value": "6-24/48"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§MPA, React (Precise)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Haywire",
+            "Model/Weapon Property§Advanced",
+            {
+              "item": "Model/Weapon Property§Precise",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
           ]
         },
         "stats": {
