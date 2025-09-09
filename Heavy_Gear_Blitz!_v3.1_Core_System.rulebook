@@ -8597,6 +8597,140 @@
           }
         }
       },
+      "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise, Reach:1)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Precise",
+            {
+              "item": "Model/Weapon Property, Variable§Reach:X",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                },
+                "meleeReachStat": {
+                  "value": 1
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "swapToLCW": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then make it happen.",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If Swap To: is set to LCW...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LCW"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 81
+          },
+          "swapToLSG": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then make it be so.",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LSG"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If Swap To: is set to LSG...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LSG"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 81
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Modifications": {
+            "value": "Precise"
+          },
+          "Modified": {
+            "value": "✓"
+          },
+          "Name": {
+            "value": "Light Vibro-Blade"
+          },
+          "officialDesignation": {
+            "value": "LVB"
+          },
+          "StatColumn": {
+            "value": "React"
+          },
+          "Swap to:": {
+            "ranks": {
+              "LCW": {
+                "order": 0
+              },
+              "LSG": {
+                "order": 1
+              },
+              "LVB": {
+                "order": 2
+              }
+            },
+            "value": "LVB"
+          }
+        }
+      },
       "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise)": {
         "assets": {
           "traits": [
