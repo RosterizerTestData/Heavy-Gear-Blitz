@@ -20,6 +20,98 @@
     "assetTaxonomy": {},
     "assetCatalog": {
       "Roster§Roster": {},
+      "Veteran Gear§Alpha Raven": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§TD",
+            "Model/Weapon Property§ECM+",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 6
+                }
+              }
+            },
+            "Model/Weapon Property§Stealth",
+            "Ranged Weapon, Direct§MRF, React (Silent)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Raven"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 3
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Alpha Raven"
+          },
+          "MR": {
+            "value": 9
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "RC, FS"
+          },
+          "TV": {
+            "value": 16
+          }
+        }
+      },
       "Veteran Gear§Beta Eagle": {
         "assets": {
           "traits": [
@@ -121,6 +213,98 @@
           },
           "TV": {
             "value": 16
+          }
+        }
+      },
+      "Veteran Gear§Chi Raven": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§TD",
+            "Model/Weapon Property§ECM+",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 6
+                }
+              }
+            },
+            "Model/Weapon Property§Stealth",
+            "Ranged Weapon, Direct or Indirect, Link-upgrade§LGL, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Raven"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 3
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Chi Raven"
+          },
+          "MR": {
+            "value": 9
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "RC, FS"
+          },
+          "TV": {
+            "value": 15
           }
         }
       },
@@ -1900,6 +2084,98 @@
           }
         }
       },
+      "Veteran Gear§Gamma Raven": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§TD",
+            "Model/Weapon Property§ECM+",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 6
+                }
+              }
+            },
+            "Model/Weapon Property§Stealth",
+            "Ranged Weapon, Combo§MAC/LFC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Raven"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 3
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Gamma Raven"
+          },
+          "MR": {
+            "value": 9
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "RC, FS"
+          },
+          "TV": {
+            "value": 15
+          }
+        }
+      },
       "Veteran Gear§Nu Eagle": {
         "assets": {
           "traits": [
@@ -2106,6 +2382,98 @@
           },
           "TV": {
             "value": 16
+          }
+        }
+      },
+      "Veteran Gear§Sigma Raven": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§TD",
+            "Model/Weapon Property§ECM+",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 6
+                }
+              }
+            },
+            "Model/Weapon Property§Stealth",
+            "Ranged Weapon, Direct§LBZ (AP:1, Burst:1)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§LRP"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Raven"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 3
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Sigma Raven"
+          },
+          "MR": {
+            "value": 9
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "RC, FS"
+          },
+          "TV": {
+            "value": 15
           }
         }
       }
