@@ -39,7 +39,9 @@
               }
             },
             "Model/Weapon Property§Stealth",
-            "Ranged Weapon, Direct§MRF, React"
+            "Ranged Weapon, Direct§MRF, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise, Reach:1)",
+            "Ranged Weapon, Direct§LAPGL"
           ]
         },
         "keywords": {
@@ -319,6 +321,114 @@
           },
           "TV": {
             "value": 16
+          }
+        }
+      },
+      "Veteran Gear§Beta Owl": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§SP:+1",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§ECCM",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§SatUp",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 6
+                }
+              }
+            },
+            "Model/Weapon Property§Stealth",
+            "Ranged Weapon, Combo§MAC/LGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise, Reach:1)",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Owl"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Iota Upgrade": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§MRP"
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§LAPR"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Beta Owl"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 17
           }
         }
       },
@@ -2439,6 +2549,114 @@
           }
         }
       },
+      "Veteran Gear§Gamma Owl": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§SP:+1",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§ECCM",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§SatUp",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 6
+                }
+              }
+            },
+            "Model/Weapon Property§Stealth",
+            "Ranged Weapon, Combo§MAC/LFC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise, Reach:1)",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Owl"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Iota Upgrade": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§MRP"
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§LAPR"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Gamma Owl"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 17
+          }
+        }
+      },
       "Veteran Gear§Gamma Raven": {
         "assets": {
           "traits": [
@@ -2636,6 +2854,114 @@
           }
         }
       },
+      "Veteran Gear§Nu Owl": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§SP:+1",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§ECCM",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§SatUp",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 6
+                }
+              }
+            },
+            "Model/Weapon Property§Stealth",
+            "Ranged Weapon, Direct, AA-upgrade§MRL, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise, Reach:1)",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Owl"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Iota Upgrade": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§MRP"
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§LAPR"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Nu Owl"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 18
+          }
+        }
+      },
       "Veteran Gear§Sigma Eagle": {
         "assets": {
           "traits": [
@@ -2722,6 +3048,114 @@
           },
           "ModelName": {
             "value": "Sigma Eagle"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 16
+          }
+        }
+      },
+      "Veteran Gear§Sigma Owl": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§SP:+1",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§ECCM",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§SatUp",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 6
+                }
+              }
+            },
+            "Model/Weapon Property§Stealth",
+            "Ranged Weapon, Direct§LBZ (AP:1, Burst:1)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB (Precise, Reach:1)",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Owl"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "Iota Upgrade": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§MRP"
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§LAPR"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "Sigma Owl"
           },
           "MR": {
             "value": 7
