@@ -777,6 +777,223 @@
           }
         }
       },
+      "Veteran Gear§Dark Mamba Chi": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct or Indirect, Link-upgrade§MGL, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1, Reach:1)",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Mamba"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Mamba Chi"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Psi Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 12
+          }
+        }
+      },
+      "Veteran Gear§Dark Mamba Nu": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§MRL, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1, Reach:1)",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct, Swappable§MPZ",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Mamba"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Mamba Nu"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 3
+          },
+          "Psi Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
       "Veteran Gear§Dark Mamba Omicron": {
         "assets": {
           "traits": [
@@ -790,13 +1007,26 @@
                   "value": "✓"
                 }
               }
-            }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§MLC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LCW (Brawl:1, Reach:1)",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct§LAPGL"
           ]
         },
         "keywords": {
           "Keywords": [
             "Dark Mamba"
           ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
         },
         "stats": {
           "Actions": {
@@ -807,6 +1037,12 @@
           },
           "EW": {
             "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
           },
           "GU": {
             "value": 3
@@ -826,8 +1062,40 @@
           "PI": {
             "value": 3
           },
+          "Psi Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
           "Roles": {
             "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
           },
           "TV": {
             "value": 13
