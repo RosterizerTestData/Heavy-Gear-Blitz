@@ -4651,6 +4651,556 @@
           }
         }
       },
+      "Veteran Strider§Dark Coyote Delta": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Stable",
+            "Model/Weapon Property§ECM",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§HRC, React (T)",
+            "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)",
+            "Ranged Weapon, Direct§MAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Coyote"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Coyote Delta"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Psi Upgrade +3TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "ew": -1,
+                  "TV": 3
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 26
+          }
+        }
+      },
+      "Veteran Strider§Dark Coyote Omega": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Stable",
+            "Model/Weapon Property§ECM",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct§MRG (T)",
+            "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)",
+            "Ranged Weapon, Direct§MAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Coyote"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Coyote Omega"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Psi Upgrade +3TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "ew": -1,
+                  "TV": 3
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 27
+          }
+        }
+      },
+      "Veteran Strider§Dark Coyote Omicron": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Stable",
+            "Model/Weapon Property§ECM",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§MLC, React (T)",
+            "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)",
+            "Ranged Weapon, Direct§MAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Coyote"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Coyote Omicron"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Psi Upgrade +3TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "ew": -1,
+                  "TV": 3
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 27
+          }
+        }
+      },
+      "Veteran Strider§Dark Coyote Theta": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Stable",
+            "Model/Weapon Property§ECM",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct or Indirect, Swappable§MATM, React (T)",
+            "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)",
+            "Ranged Weapon, Direct§MAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Coyote"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Coyote Theta"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Psi Upgrade +3TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "ew": -1,
+                  "TV": 3
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 27
+          }
+        }
+      },
+      "Veteran Strider§Dark Coyote Zeta": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Stable",
+            "Model/Weapon Property§ECM",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§MLC, React (T)",
+            "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)",
+            "Ranged Weapon, Direct§MAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Coyote"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Coyote Zeta"
+          },
+          "MR": {
+            "value": 6
+          },
+          "PI": {
+            "value": 5
+          },
+          "Psi Upgrade +3TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "ew": -1,
+                  "TV": 3
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§Comms"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§SatUp"
+                  },
+                  {
+                    "trait": "Model/Weapon Property§ECCM"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 27
+          }
+        }
+      },
       "Veteran Strider§Dark Hyena": {
         "assets": {
           "traits": [
