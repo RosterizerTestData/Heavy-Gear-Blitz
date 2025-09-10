@@ -22655,6 +22655,36 @@
           }
         }
       },
+      "Ranged Weapon, Direct§LIR (Silent)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property§Silent",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "4"
+          },
+          "Name": {
+            "value": "Light Infantry Rifle"
+          },
+          "officialDesignation": {
+            "value": "LIR"
+          },
+          "Range": {
+            "value": "6-24/48"
+          }
+        }
+      },
       "Ranged Weapon, Direct§LIS": {
         "stats": {
           "Damage": {
@@ -22683,6 +22713,46 @@
               "stats": {
                 "NameVariable": {
                   "value": 1
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "3"
+          },
+          "Name": {
+            "value": "Light Infantry Weapon"
+          },
+          "officialDesignation": {
+            "value": "LIW"
+          },
+          "Range": {
+            "value": "0-9/18"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§LIW (Silent)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Silent",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
                 }
               }
             }
@@ -23488,6 +23558,46 @@
               "stats": {
                 "NameVariable": {
                   "value": 1
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "4"
+          },
+          "Name": {
+            "value": "Medium Infantry Weapon"
+          },
+          "officialDesignation": {
+            "value": "MIW"
+          },
+          "Range": {
+            "value": "0-9/18"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§MIW (Silent)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§AI",
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Silent",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
                 }
               }
             }
