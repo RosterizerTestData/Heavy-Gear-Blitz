@@ -7827,6 +7827,93 @@
           }
         }
       },
+      "Veteran Vehicle§Dark Hoplite Kappa": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable and Type§Transport:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Type": {
+                  "value": "Squad(s)"
+                }
+              }
+            },
+            "Model/Weapon Property§Smoke",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct or Indirect§LFG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Hoplite"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Dark Hoplite Kappa"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
       "Veteran Vehicle§Dark Hoplite Upsilon": {
         "assets": {
           "traits": [
@@ -7850,7 +7937,8 @@
                   "value": "✓"
                 }
               }
-            }
+            },
+            "Ranged Weapon, Direct or Indirect§MRP, React (T)"
           ]
         },
         "keywords": {
