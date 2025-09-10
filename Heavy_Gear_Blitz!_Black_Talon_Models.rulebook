@@ -4650,6 +4650,210 @@
             "value": 18
           }
         }
+      },
+      "Veteran Strider§Dark Hyena": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Stable",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§MLC, React (Link, T)",
+            "Ranged Weapon, Direct§MMG, React (Advanced, Auto)",
+            "Ranged Weapon, Direct or Indirect§MRP (Guided, AP:2)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Hyena II"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Hyena"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "Spectre Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -2,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECM+"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 22
+          }
+        }
+      },
+      "Veteran Strider§Dark Hyena Nu": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Stable",
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§MRL, React (Link, T)",
+            "Ranged Weapon, Direct§MMG, React (Advanced, Auto)",
+            "Ranged Weapon, Direct or Indirect§MRP (Guided, AP:2)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Hyena II"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Dark Hyena Nu"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "Spectre Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -2,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§ECM+"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 22
+          }
+        }
       }
     },
     "gameModes": {},
