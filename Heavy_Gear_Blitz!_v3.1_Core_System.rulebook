@@ -12812,6 +12812,92 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect, Swappable§LATM (LA:2)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property, Variable§LA:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct or Indirect, Swappable§LAAM"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LAAM"
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Light Anti-Tank Missile"
+          },
+          "officialDesignation": {
+            "value": "LATM"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Swap to:": {
+            "ranks": {
+              "LAAM": {
+                "order": 0
+              },
+              "LATM": {
+                "order": 1
+              }
+            },
+            "value": "LATM"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect, Swappable§LATM (T)": {
         "assets": {
           "traits": [
