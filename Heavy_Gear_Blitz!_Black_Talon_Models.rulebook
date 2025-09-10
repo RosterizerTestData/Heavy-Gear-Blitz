@@ -4651,6 +4651,148 @@
           }
         }
       },
+      "Veteran Infantry§Beta Team": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 4
+                }
+              }
+            },
+            "Model/Weapon Property§Stealth"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Talon Infantry"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Fortifications",
+              "UA: Recon",
+              "UA: Special Operations"
+            ]
+          }
+        },
+        "rules": {
+          "changeToSquadIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the hull/structure to 3/3...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "3/3"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the designation to (Whichever) Squad...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "Beta Squad"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the name to (Whichever) Squad as well.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Name",
+                    "value"
+                  ]
+                ],
+                "value": "Beta Squad"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Squad upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Squad +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 3
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "2/1"
+          },
+          "HT": {
+            "value": 0.5
+          },
+          "ModelName": {
+            "value": "Beta Team"
+          },
+          "MR": {
+            "format": "I:{v}",
+            "value": 3
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 4
+          }
+        }
+      },
       "Veteran Strider§Dark Coyote Delta": {
         "assets": {
           "traits": [
@@ -6532,7 +6674,7 @@
             "value": 6
           },
           "EW": {
-            "value": 6
+            "value": 5
           },
           "fireSupportMax": {
             "value": 1
