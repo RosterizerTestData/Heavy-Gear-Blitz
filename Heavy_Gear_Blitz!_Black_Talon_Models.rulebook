@@ -5105,7 +5105,7 @@
                 }
               }
             },
-            "Ranged Weapon, Direct, AA-upgrade§MLC, React (T)",
+            "Ranged Weapon, Direct§MPA, React (T)",
             "Ranged Weapon, Direct, AA-upgrade§MRC (T, AA)",
             "Ranged Weapon, Direct§MAPGL",
             "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
@@ -5197,7 +5197,7 @@
             "value": "FS"
           },
           "TV": {
-            "value": 27
+            "value": 28
           }
         }
       },
@@ -5402,6 +5402,106 @@
           },
           "TV": {
             "value": 22
+          }
+        }
+      },
+      "Veteran Strider§Dark Naga Theta": {
+        "keywords": {
+          "Keywords": [
+            "Dark Naga"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 10
+          },
+          "Chin Weapon Upgrade": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "No": {
+                "order": 0
+              },
+              "Omi Upgrade +1TV": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§LLC"
+                  }
+                ]
+              },
+              "Zeta Upgrade +1TV": {
+                "order": 2,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§LPA"
+                  }
+                ]
+              },
+              "Pur Upgrade": {
+                "order": 3,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, Link-upgrade§MFL"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "No",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Dark Naga Theta"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 27
           }
         }
       }
