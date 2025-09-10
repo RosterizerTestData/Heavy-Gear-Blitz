@@ -4,9 +4,10 @@
   "game": "Heavy Gear Blitz! v3.1",
   "genre": "sci-fi",
   "publisher": "Dream Pod 9",
-  "url": "",
+  "url": "https://www.dp9.com/",
   "notes": "",
   "wip": true,
+  "isModule": true,
   "rulebook": {
     "assetTaxonomy": {},
     "assetCatalog": {
@@ -15,5 +16,12 @@
     "gameModes": {},
     "theme": {}
   },
-  "isModule": true
+  "dependencies": [
+    {
+      "slug": "VUGK7N",
+      "name": "Core System",
+      "game": "Heavy Gear Blitz! v3.1",
+      "source": ""
+    }
+  ]
 }
