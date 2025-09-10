@@ -14808,6 +14808,102 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§LFG (Precise)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            "Model/Weapon Property§(OR)",
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Precise",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "AOE:3, Blast"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the explicit value of the second clause of the traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "OrClause",
+                    "value"
+                  ]
+                ],
+                "value": "AP:3"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Light Field Gun"
+          },
+          "officialDesignation": {
+            "value": "LFG"
+          },
+          "Range": {
+            "value": "12-24/48"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§LFG (T, Link, Precise)": {
         "assets": {
           "traits": [
