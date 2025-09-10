@@ -1,0 +1,19 @@
+{
+  "name": "CEF Models",
+  "revision": "0.0.1",
+  "game": "Heavy Gear Blitz! v3.1",
+  "genre": "sci-fi",
+  "publisher": "Dream Pod 9",
+  "url": "",
+  "notes": "",
+  "wip": true,
+  "rulebook": {
+    "assetTaxonomy": {},
+    "assetCatalog": {
+      "Roster§Roster": {}
+    },
+    "gameModes": {},
+    "theme": {}
+  },
+  "isModule": true
+}
