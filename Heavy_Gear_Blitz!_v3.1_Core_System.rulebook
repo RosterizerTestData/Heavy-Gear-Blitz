@@ -23645,6 +23645,39 @@
           }
         }
       },
+      "Ranged Weapon, Direct§MPA, React (T)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Haywire",
+            "Model/Weapon Property§Advanced",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Medium Particle Accelerator"
+          },
+          "officialDesignation": {
+            "value": "MPA"
+          },
+          "Range": {
+            "value": "6-24/48"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct§MPL": {
         "assets": {
           "traits": [
