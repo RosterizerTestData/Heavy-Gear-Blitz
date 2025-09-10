@@ -5405,7 +5405,42 @@
           }
         }
       },
-      "Veteran Strider§Dark Naga Theta": {
+      "Veteran Strider§Dark Naga Chi": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§React+",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§TD",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Sensor Boom",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct or Indirect§HGL",
+              "quantity": 2
+            },
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
         "keywords": {
           "Keywords": [
             "Dark Naga"
@@ -5429,13 +5464,18 @@
           "Arm": {
             "value": 10
           },
-          "Chin Weapon Upgrade": {
+          "Chin Weapon": {
             "dynamic": true,
             "group": "Upgrades",
             "groupOrder": 4,
             "ranks": {
-              "No": {
-                "order": 0
+              "HMG": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§HMG, React (Apex)"
+                  }
+                ]
               },
               "Omi Upgrade +1TV": {
                 "order": 1,
@@ -5470,7 +5510,856 @@
             },
             "statOrder": 1,
             "statType": "rank",
-            "value": "No",
+            "value": "HMG",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Dark Naga Chi"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 27
+          }
+        }
+      },
+      "Veteran Strider§Dark Naga Kappa": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§React+",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§TD",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Sensor Boom",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct or Indirect§LFG",
+              "quantity": 2
+            },
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Naga"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 10
+          },
+          "Chin Weapon": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "HMG": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§HMG, React (Apex)"
+                  }
+                ]
+              },
+              "Omi Upgrade +1TV": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§LLC"
+                  }
+                ]
+              },
+              "Zeta Upgrade +1TV": {
+                "order": 2,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§LPA"
+                  }
+                ]
+              },
+              "Pur Upgrade": {
+                "order": 3,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, Link-upgrade§MFL"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "HMG",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Dark Naga Kappa"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 25
+          }
+        }
+      },
+      "Veteran Strider§Dark Naga Nu": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§React+",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§TD",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Sensor Boom",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade§HRL",
+              "quantity": 2
+            },
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Naga"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 10
+          },
+          "Chin Weapon": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "HMG": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§HMG, React (Apex)"
+                  }
+                ]
+              },
+              "Omi Upgrade +1TV": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§LLC"
+                  }
+                ]
+              },
+              "Zeta Upgrade +1TV": {
+                "order": 2,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§LPA"
+                  }
+                ]
+              },
+              "Pur Upgrade": {
+                "order": 3,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, Link-upgrade§MFL"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "HMG",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Dark Naga Nu"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 29
+          }
+        }
+      },
+      "Veteran Strider§Dark Naga Omicron": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§React+",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§TD",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Sensor Boom",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade§MLC",
+              "quantity": 2
+            },
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Naga"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 10
+          },
+          "Chin Weapon": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "HMG": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§HMG, React (Apex)"
+                  }
+                ]
+              },
+              "Omi Upgrade +1TV": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§LLC"
+                  }
+                ]
+              },
+              "Zeta Upgrade +1TV": {
+                "order": 2,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§LPA"
+                  }
+                ]
+              },
+              "Pur Upgrade": {
+                "order": 3,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, Link-upgrade§MFL"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "HMG",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Dark Naga Omicron"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 27
+          }
+        }
+      },
+      "Veteran Strider§Dark Naga Pi": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§React+",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§TD",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Sensor Boom",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct or Indirect§HRP",
+              "quantity": 2
+            },
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Naga"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 10
+          },
+          "Chin Weapon": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "HMG": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§HMG, React (Apex)"
+                  }
+                ]
+              },
+              "Omi Upgrade +1TV": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§LLC"
+                  }
+                ]
+              },
+              "Zeta Upgrade +1TV": {
+                "order": 2,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§LPA"
+                  }
+                ]
+              },
+              "Pur Upgrade": {
+                "order": 3,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, Link-upgrade§MFL"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "HMG",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Dark Naga Pi"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 25
+          }
+        }
+      },
+      "Veteran Strider§Dark Naga Psi": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§SP:+1",
+            "Model/Weapon Property§React+",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§SatUp",
+            {
+              "item": "Model/Weapon Property§ECCM",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§TD",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Sensor Boom",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct or Indirect, Swappable§MATM",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Naga"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 10
+          },
+          "Chin Weapon": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "HMG": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§HMG, React (Apex)"
+                  }
+                ]
+              },
+              "Omi Upgrade +1TV": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§LLC"
+                  }
+                ]
+              },
+              "Zeta Upgrade +1TV": {
+                "order": 2,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§LPA"
+                  }
+                ]
+              },
+              "Pur Upgrade": {
+                "order": 3,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, Link-upgrade§MFL"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "HMG",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Dark Naga Psi"
+          },
+          "MR": {
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 29
+          }
+        }
+      },
+      "Veteran Strider§Dark Naga Theta": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§React+",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property§TD",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Stealth",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Sensor Boom",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Ranged Weapon, Direct or Indirect, Swappable§MATM",
+              "quantity": 2
+            },
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LCW"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Dark Naga"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 10
+          },
+          "Chin Weapon": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "HMG": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§HMG, React (Apex)"
+                  }
+                ]
+              },
+              "Omi Upgrade +1TV": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§LLC"
+                  }
+                ]
+              },
+              "Zeta Upgrade +1TV": {
+                "order": 2,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct§LPA"
+                  }
+                ]
+              },
+              "Pur Upgrade": {
+                "order": 3,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, Link-upgrade§MFL"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "HMG",
             "visibility": "normal"
           },
           "EW": {
