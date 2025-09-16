@@ -13438,6 +13438,92 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect, Swappable§MATM (LA:2)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property, Variable§LA:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct or Indirect, Swappable§MAAM"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "MAAM"
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Medium Anti-Tank Missile"
+          },
+          "officialDesignation": {
+            "value": "MATM"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Swap to:": {
+            "ranks": {
+              "MAAM": {
+                "order": 0
+              },
+              "MATM": {
+                "order": 1
+              }
+            },
+            "value": "MATM"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect, Swappable§MATM, React": {
         "assets": {
           "traits": [
