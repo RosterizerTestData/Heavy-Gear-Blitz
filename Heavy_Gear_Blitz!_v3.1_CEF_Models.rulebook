@@ -132,10 +132,10 @@
           "traits": [
             "Model/Weapon Property§Hands",
             "Model/Weapon Property§React+",
-            "Ranged Weapon, Direct, AA-upgrade§MLC, React",
+            "Ranged Weapon, Direct§MPA, React",
             "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW",
             "Ranged Weapon, Direct or Indirect§MRP",
-            "Ranged Weapon, Direct§MPA, React"
+            "Ranged Weapon, Direct or Indirect, Swappable§MATM (LA:2)"
           ]
         },
         "keywords": {
@@ -231,6 +231,353 @@
           },
           "TV": {
             "value": 15
+          }
+        }
+      },
+      "Gear§F2-19 Assault": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Shield",
+            "Model/Weapon Property§React+",
+            "Ranged Weapon, Direct, AA-upgrade§MRL, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LATM"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "F2-19"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 2
+          },
+          "Mobility Pack Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Airdrop"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Jetpack:X",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        },
+                        "NameVariable": {
+                          "value": 5
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "F2-19 Assault"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 15
+          }
+        }
+      },
+      "Gear§F2-19 Recon": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§React+",
+            "Model/Weapon Property§Comms",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§TD",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Sensor Boom",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§MLC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LATM"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "F2-19"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 2
+          },
+          "Mobility Pack Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Airdrop"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Jetpack:X",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        },
+                        "NameVariable": {
+                          "value": 5
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "F2-19 Recon"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 15
+          }
+        }
+      },
+      "Gear§F2-19 Striker": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§React+",
+            "Ranged Weapon, Direct, AA-upgrade§MLC, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§MCW",
+            "Ranged Weapon, Direct or Indirect, Swappable§LATM",
+            "Ranged Weapon, Indirect§MGM"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "F2-19"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 2
+          },
+          "Mobility Pack Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Airdrop"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property, Variable§Jetpack:X",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        },
+                        "NameVariable": {
+                          "value": 5
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "F2-19 Striker"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 14
           }
         }
       },
