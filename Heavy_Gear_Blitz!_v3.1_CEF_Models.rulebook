@@ -4259,6 +4259,273 @@
             "value": 28
           }
         }
+      },
+      "Vehicle§MHT-95": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property, Variable§Jump Jets:X",
+            "Model/Weapon Property, Variable§Sensors:X"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "MHT-95"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -2,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "MHT-95"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 22
+          }
+        }
+      },
+      "Vehicle§MHT-95 Assault": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property, Variable§Jump Jets:X",
+            "Model/Weapon Property, Variable§Sensors:X"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "MHT-95"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -2,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "MHT-95 Assault"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 22
+          }
+        }
+      },
+      "Vehicle§MHT-95 Striker": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property, Variable§Jump Jets:X",
+            "Model/Weapon Property, Variable§Sensors:X"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "MHT-95"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 9
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -2,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "MHT-95 Striker"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 22
+          }
+        }
       }
     },
     "gameModes": {},
