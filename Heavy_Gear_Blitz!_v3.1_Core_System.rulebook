@@ -13292,6 +13292,82 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect, Swappable§MAAM (T)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Flak",
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct or Indirect, Swappable§MATM"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "MATM"
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Medium Anti-Air Missile"
+          },
+          "officialDesignation": {
+            "value": "MAAM"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Swap to:": {
+            "ranks": {
+              "MAAM": {
+                "order": 0
+              },
+              "MATM": {
+                "order": 1
+              }
+            },
+            "value": "MAAM"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect, Swappable§MAAM, React": {
         "assets": {
           "traits": [
@@ -13456,6 +13532,89 @@
                 "NameVariable": {
                   "value": 2
                 },
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct or Indirect, Swappable§MAAM"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "MAAM"
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Medium Anti-Tank Missile"
+          },
+          "officialDesignation": {
+            "value": "MATM"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Swap to:": {
+            "ranks": {
+              "MAAM": {
+                "order": 0
+              },
+              "MATM": {
+                "order": 1
+              }
+            },
+            "value": "MATM"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect, Swappable§MATM (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
                 "Modified": {
                   "value": "✓"
                 }
@@ -18611,6 +18770,44 @@
           }
         }
       },
+      "Ranged Weapon, Direct, AA-upgrade§HLC (T, AA)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Precise",
+            "Model/Weapon Property§Advanced",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§AA",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Heavy Laser Cannon"
+          },
+          "officialDesignation": {
+            "value": "HLC"
+          },
+          "Range": {
+            "value": "12-36/72"
+          }
+        }
+      },
       "Ranged Weapon, Direct, AA-upgrade§HLC, React": {
         "assets": {
           "traits": [
@@ -18892,6 +19089,44 @@
               }
             },
             "Model/Weapon Property§Split"
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Heavy Rotary Laser"
+          },
+          "officialDesignation": {
+            "value": "HRL"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
+      "Ranged Weapon, Direct, AA-upgrade§HRL (T)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Advanced",
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
           ]
         },
         "stats": {
@@ -22244,6 +22479,39 @@
           }
         }
       },
+      "Ranged Weapon, Direct§HPA (T)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Haywire",
+            "Model/Weapon Property§Advanced",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Heavy Particle Accelerator"
+          },
+          "officialDesignation": {
+            "value": "HPA"
+          },
+          "Range": {
+            "value": "6-24/48"
+          },
+          "Traits": {
+            "value": ""
+          }
+        }
+      },
       "Ranged Weapon, Direct§HPA, React": {
         "assets": {
           "traits": [
@@ -24403,6 +24671,111 @@
               }
             },
             "Model/Weapon Property§Apex"
+          ]
+        },
+        "rules": {
+          "overwriteTraitsAndOrClause": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the explicit value of the first clause of the Traits...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Traits",
+                    "value"
+                  ]
+                ],
+                "value": "Burst:1, Advanced"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...and set the explicit value of the second clause of the traits.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "OrClause",
+                    "value"
+                  ]
+                ],
+                "value": "AP:3, Apex, Advanced"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "note": "If the model has an OR...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "(OR)"
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Medium Pulse Laser"
+          },
+          "officialDesignation": {
+            "value": "MPL"
+          },
+          "Range": {
+            "value": "6-24/48"
+          }
+        }
+      },
+      "Ranged Weapon, Direct§MPL (T, Link)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Advanced",
+            "Model/Weapon Property§(OR)",
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property§Apex",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
           ]
         },
         "rules": {
