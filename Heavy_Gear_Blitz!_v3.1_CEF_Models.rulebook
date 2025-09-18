@@ -2723,7 +2723,1543 @@
           }
         }
       },
-      "Roster§Roster": {}
+      "Roster§Roster": {},
+      "Vehicle§LHT-67": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct§MPA (T)",
+            "Ranged Weapon, Indirect§LABM (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "LHT-67"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "LHT-67"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 9
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "SK, RC, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 17
+          }
+        }
+      },
+      "Vehicle§LHT-67 AA": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct, AA-upgrade§MLC (T, AA)",
+            "Ranged Weapon, Direct or Indirect, Swappable§LATM (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "LHT-67"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "LHT-67 AA"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 9
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "SK, RC, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 17
+          }
+        }
+      },
+      "Vehicle§LHT-67 Assault": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct, Link-upgrade§MFC, React (T, Link)",
+            "Ranged Weapon, Direct, AA-upgrade§MRL (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "LHT-67"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "LHT-67 Assault"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 9
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "SK, RC, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 17
+          }
+        }
+      },
+      "Vehicle§LHT-71": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct§MPA (T)",
+            "Ranged Weapon, Indirect§LABM (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "LHT-71"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "LHT-71"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 10
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "SK, RC, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 18
+          }
+        }
+      },
+      "Vehicle§LHT-71 AA": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct, AA-upgrade§MLC (T, AA)",
+            "Ranged Weapon, Direct or Indirect, Swappable§LATM (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "LHT-71"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "LHT-71 AA"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 10
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "SK, RC, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 19
+          }
+        }
+      },
+      "Vehicle§LHT-71 Assault": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct, Link-upgrade§MFC, React (T, Link)",
+            "Ranged Weapon, Direct, AA-upgrade§MRL (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "LHT-71"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 2
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "LHT-71 Assault"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 10
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "SK, RC, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 18
+          }
+        }
+      },
+      "Vehicle§MHT-68": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct§HPA (T)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MATM (T)",
+            "Ranged Weapon, Indirect§MABM (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "MHT-68"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "MHT-68"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 27
+          }
+        }
+      },
+      "Vehicle§MHT-68 AA": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct, AA-upgrade§HLC (T, AA)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MATM (T)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MAAM (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "MHT-68"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "MHT-68 AA"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 27
+          }
+        }
+      },
+      "Vehicle§MHT-68 Assault": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct, Link-upgrade§MFC, React (T, Link)",
+            "Ranged Weapon, Direct, AA-upgrade§HRL (T)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MATM (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "MHT-68"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "MHT-68 Assault"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 26
+          }
+        }
+      },
+      "Vehicle§MHT-68 Raider": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct§MPL (T, Link)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MATM (T)",
+            "Ranged Weapon, Indirect§MABM (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "MHT-68"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "MHT-68 Raider"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 27
+          }
+        }
+      },
+      "Vehicle§MHT-72": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct§HPA (T)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MATM (T)",
+            "Ranged Weapon, Indirect§MABM (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "MHT-72"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "MHT-72"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 8
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 29
+          }
+        }
+      },
+      "Vehicle§MHT-72 AA": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct, AA-upgrade§HLC (T, AA)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MATM (T)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MAAM (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "MHT-72"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "MHT-72 AA"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 8
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 28
+          }
+        }
+      },
+      "Vehicle§MHT-72 Assault": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct, Link-upgrade§MFC, React (T, Link)",
+            "Ranged Weapon, Direct, AA-upgrade§HRL (T)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MATM (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "MHT-72"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "MHT-72 Assault"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 8
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 28
+          }
+        }
+      },
+      "Vehicle§MHT-72 Raider": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Airdrop",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct§MPL (T, Link)",
+            "Ranged Weapon, Direct or Indirect, Swappable§MATM (T)",
+            "Ranged Weapon, Indirect§MABM (T)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "MHT-72"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 10
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 2
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "MHT-72 Raider"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 8
+          },
+          "PI": {
+            "value": 5
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 28
+          }
+        }
+      }
     },
     "gameModes": {},
     "theme": {}
