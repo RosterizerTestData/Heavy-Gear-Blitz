@@ -3334,7 +3334,7 @@
             "value": 1
           },
           "TV": {
-            "value": 11
+            "value": 7
           }
         }
       },
@@ -5375,6 +5375,101 @@
           },
           "TV": {
             "value": 22
+          }
+        }
+      },
+      "Vehicle§Peregrine Gunship": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§VTOL",
+            "Model/Weapon Property§React+",
+            "Ranged Weapon, Direct, AA-upgrade§MRL, React (AA)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Peregrine"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Peregrine Gunship"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 12
+          },
+          "PI": {
+            "value": 3
+          },
+          "Roles": {
+            "value": "FS+"
+          },
+          "Tank Hunter Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§MRP (Link)"
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect, Link-upgrade§LATM (Link)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 15
           }
         }
       }
