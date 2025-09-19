@@ -12812,6 +12812,92 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect, Swappable§LATM (LA:1)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property, Variable§LA:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                },
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "rules": {
+          "implementSwapTo": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "|** This action must be edited; text to match SWAPPED weapon **|",
+                "paths": [
+                  [
+                    "{self}",
+                    "item"
+                  ]
+                ],
+                "value": "Ranged Weapon, Direct or Indirect, Swappable§LAAM"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "|** This eval must be edited; text to match SWAPPED weapon **|",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Swap to:",
+                    "value"
+                  ]
+                ],
+                "value": "LAAM"
+              }
+            ]
+          }
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Light Anti-Tank Missile"
+          },
+          "officialDesignation": {
+            "value": "LATM"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Swap to:": {
+            "ranks": {
+              "LAAM": {
+                "order": 0
+              },
+              "LATM": {
+                "order": 1
+              }
+            },
+            "value": "LATM"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect, Swappable§LATM (LA:2)": {
         "assets": {
           "traits": [
@@ -16304,6 +16390,50 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§MAR (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Demo:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "8"
+          },
+          "Name": {
+            "value": "Medium Artillery Rocket"
+          },
+          "officialDesignation": {
+            "value": "MAR"
+          },
+          "Range": {
+            "value": "12-36/72"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§MAVM": {
         "assets": {
           "traits": [
@@ -19441,6 +19571,47 @@
           }
         }
       },
+      "Ranged Weapon, Direct, AA-upgrade§LRL (T)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Advanced",
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "5"
+          },
+          "Name": {
+            "value": "Light Rotary Laser"
+          },
+          "officialDesignation": {
+            "value": "LRL"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct, AA-upgrade§MAC (Link)": {
         "assets": {
           "traits": [
@@ -20066,6 +20237,47 @@
               }
             },
             "Model/Weapon Property§Split"
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Medium Rotary Laser"
+          },
+          "officialDesignation": {
+            "value": "MRL"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
+      "Ranged Weapon, Direct, AA-upgrade§MRL, React (AA)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Advanced",
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            {
+              "item": "Model/Weapon Property§AA",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
           ]
         },
         "stats": {
