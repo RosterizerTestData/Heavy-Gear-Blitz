@@ -3145,6 +3145,24 @@
         },
         "templateClass": "Grandparent"
       },
+      "Model, Multi-Component": {
+        "removed": {
+          "stats": {
+            "HT": {},
+            "Type": {},
+            "Traits": {},
+            "Mounted Weapons": {},
+            "React Weapons": {},
+            "EW": {},
+            "PI": {},
+            "GU": {},
+            "H/S": {},
+            "Arm": {},
+            "MR": {}
+          }
+        },
+        "templateClass": "Model"
+      },
       "Model/Weapon Property": {
         "aspects": {
           "Order Traits A–Z": true,
