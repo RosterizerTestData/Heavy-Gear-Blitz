@@ -2724,6 +2724,245 @@
         }
       },
       "Roster§Roster": {},
+      "Vehicle§HC-3": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§TD",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§SatUp",
+            "Model/Weapon Property§Vuln:H",
+            "Model/Weapon Property§ECM+",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 36
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 4
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§LLC",
+            "Ranged Weapon, Direct or Indirect§LRP"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "HC-3"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +3TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 3
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§React+"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "HC-3"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 10
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 999
+          },
+          "Roles": {
+            "value": "RC+, FS"
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
+      "Vehicle§HC-3 Anti-Tank": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§TD",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§SatUp",
+            "Model/Weapon Property§Vuln:H",
+            "Model/Weapon Property§ECM+",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 36
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 4
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§LLC"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "HC-3"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GREL Crew Upgrade +3TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "EW": -1,
+                  "GU": -1,
+                  "PI": -1,
+                  "TV": 3
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§React+"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "HC-3 Anti-Tank"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 10
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 999
+          },
+          "Roles": {
+            "value": "RC+, FS"
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
       "Vehicle§LHT-67": {
         "assets": {
           "traits": [
@@ -4264,8 +4503,19 @@
         "assets": {
           "traits": [
             "Model/Weapon Property§Airdrop",
-            "Model/Weapon Property, Variable§Jump Jets:X",
-            "Model/Weapon Property, Variable§Sensors:X"
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property, Variable§Sensors:X",
+            "Ranged Weapon, Direct, AA-upgrade§MLC, React (T, AA)",
+            "Ranged Weapon, Direct§HMG, React (T, Auto)",
+            "Ranged Weapon, Direct§MRG (T)",
+            "Ranged Weapon, Direct or Indirect§MRP (T, Link)"
           ]
         },
         "keywords": {
@@ -4353,8 +4603,20 @@
         "assets": {
           "traits": [
             "Model/Weapon Property§Airdrop",
-            "Model/Weapon Property, Variable§Jump Jets:X",
-            "Model/Weapon Property, Variable§Sensors:X"
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property, Variable§Sensors:X",
+            "Ranged Weapon, Direct, AA-upgrade§MLC, React (T, AA)",
+            "Ranged Weapon, Direct, Link-upgrade§MFC, React (T)",
+            "Ranged Weapon, Direct§HMG, React (T, Auto)",
+            "Ranged Weapon, Direct or Indirect§HGL (T)",
+            "Ranged Weapon, Direct or Indirect§MRP (T, Link)"
           ]
         },
         "keywords": {
@@ -4442,8 +4704,19 @@
         "assets": {
           "traits": [
             "Model/Weapon Property§Airdrop",
-            "Model/Weapon Property, Variable§Jump Jets:X",
-            "Model/Weapon Property, Variable§Sensors:X"
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property, Variable§Sensors:X",
+            "Ranged Weapon, Direct, AA-upgrade§MLC, React (T, AA)",
+            "Ranged Weapon, Direct§HMG, React (T, Auto)",
+            "Ranged Weapon, Indirect§MAG (T)",
+            "Ranged Weapon, Direct or Indirect§MRP (T, Link)"
           ]
         },
         "keywords": {
