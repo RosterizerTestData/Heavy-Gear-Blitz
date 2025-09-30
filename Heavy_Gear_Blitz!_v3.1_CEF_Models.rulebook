@@ -2817,7 +2817,9 @@
           }
         },
         "stats": {
-          "Actions": {},
+          "Actions": {
+            "max": 6
+          },
           "ModelName": {
             "value": "HHT-90 Overlord"
           },
