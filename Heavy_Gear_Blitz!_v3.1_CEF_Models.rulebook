@@ -2779,6 +2779,12 @@
         }
       },
       "Model, Multi-Component§HHT-90 Overlord": {
+        "assets": {
+          "traits": [
+            "Veteran Vehicle§HHT-90 Body",
+            "Veteran Vehicle§HHT-90 Turret"
+          ]
+        },
         "keywords": {
           "Keywords": [
             "HHT-90"
@@ -2799,11 +2805,40 @@
               "Ranged Weapon, Direct or Indirect§MHG +1TV",
               "Ranged Weapon, Direct§LPZ +0.5TV"
             ]
+          },
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
           }
         },
         "stats": {
+          "Actions": {},
           "ModelName": {
             "value": "HHT-90 Overlord"
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "Veteran": {
+            "dynamic": false,
+            "ranks": {
+              "✓": {
+                "number": 1,
+                "order": 1,
+                "tracking": {},
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Vet"
+                  }
+                ]
+              }
+            },
+            "value": "✓"
           }
         }
       },
@@ -5526,7 +5561,18 @@
                 }
               }
             },
-            "Model/Weapon Property§Stable"
+            "Model/Weapon Property§Stable",
+            "Ranged Weapon, Direct, AA-upgrade§HRL, React (AA, Auto)",
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade§MRL, React (R)",
+              "quantity": 2
+            },
+            {
+              "item": "Ranged Weapon, Direct, AA-upgrade§MRL, React (L)",
+              "quantity": 2
+            },
+            "Ranged Weapon, Direct or Indirect§HRP (R)",
+            "Ranged Weapon, Direct or Indirect§HRP (L)"
           ]
         },
         "removed": {
@@ -5582,6 +5628,27 @@
         }
       },
       "Veteran Vehicle§HHT-90 Turret": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Stable",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§SatUp",
+            "Model/Weapon Property§CBS",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§Resist:H",
+            "Ranged Weapon, Direct§HPA, React (T, Auto)",
+            "Ranged Weapon, Direct§HTG (T, Apex, Precise)",
+            "Ranged Weapon, Indirect§HAM (T)",
+            "Ranged Weapon, Direct or Indirect, Swappable§HATM (T)"
+          ]
+        },
         "removed": {
           "keywords": {
             "Tags": [
