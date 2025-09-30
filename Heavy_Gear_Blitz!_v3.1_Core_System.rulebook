@@ -16216,6 +16216,53 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§LRP, React (Link)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Light Rocket Pack"
+          },
+          "officialDesignation": {
+            "value": "LRP"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§LRP, React (T)": {
         "assets": {
           "traits": [
