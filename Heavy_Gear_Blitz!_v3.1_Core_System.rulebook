@@ -14337,6 +14337,35 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§HAVM (AP:2)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Guided"
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Heavy Anti-Vehicle Missile"
+          },
+          "officialDesignation": {
+            "value": "HAVM"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§HFG": {
         "assets": {
           "traits": [
