@@ -1,0 +1,761 @@
+{
+  "name": "Caprice Models",
+  "revision": "0.0.1",
+  "game": "Heavy Gear Blitz! v3.1",
+  "genre": "sci-fi",
+  "publisher": "Dream Pod 9",
+  "url": "https://www.dp9.com/",
+  "notes": "",
+  "wip": true,
+  "isModule": true,
+  "dependencies": [
+    {
+      "slug": "VUGK7N",
+      "name": "Core System",
+      "game": "Heavy Gear Blitz! v3.1",
+      "source": ""
+    }
+  ],
+  "rulebook": {
+    "assetTaxonomy": {},
+    "assetCatalog": {
+      "Gear§Acco": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Climber",
+            "Model/Weapon Property§Stable",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§LAC",
+            "Ranged Weapon, Direct or Indirect§LRP, React",
+            "Ranged Weapon, Direct§MMG, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LSG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Acco"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Acco"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Pyro Acco": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Climber",
+            "Model/Weapon Property§Stable",
+            "Ranged Weapon, Direct, Link-upgrade§MFL",
+            "Ranged Weapon, Direct or Indirect§LRP, React",
+            "Ranged Weapon, Direct§MMG, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LSG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Acco"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Pyro Acco"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Sniper Acco": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Climber",
+            "Model/Weapon Property§Stable",
+            "Ranged Weapon, Direct§LRF",
+            "Ranged Weapon, Direct or Indirect§LRP, React",
+            "Ranged Weapon, Direct§MMG, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LSG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Acco"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Sniper Acco"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Gear§Stalker Acco": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Climber",
+            "Model/Weapon Property§Stable",
+            "Ranged Weapon, Direct, Link-upgrade§LFC, React",
+            "Ranged Weapon, Direct or Indirect§LRP, React",
+            "Ranged Weapon, Direct§MMG, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LSG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Acco"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Stalker Acco"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Roster§Roster": {},
+      "Strider§Aphek": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§React+",
+            "Model/Weapon Property§Stable",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Climber",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct, AA-upgrade§MRC, React",
+            "Ranged Weapon, Direct or Indirect§LRP, React",
+            "Ranged Weapon, Direct§HMG, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LSG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Aphek"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Aphek"
+          },
+          "Mortar Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Indirect§LGM (T)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
+      "Strider§Aphek Barrage": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§React+",
+            "Model/Weapon Property§Stable",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Climber",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct, AA-upgrade§MRC, React",
+            "Ranged Weapon, Direct or Indirect§LRP, React",
+            "Ranged Weapon, Direct§HMG, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LSG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Aphek"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Aphek Barrage"
+          },
+          "Mortar Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Indirect§LGM (T)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 13
+          }
+        }
+      },
+      "Strider§Bashan": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Model/Weapon Property§React+",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Climber",
+            "Model/Weapon Property§Stable",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Ranged Weapon, Direct§MMG, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LSG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Bashan"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "Command Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/5"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Bashan"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 999
+          },
+          "Roles": {
+            "value": "RC+, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 14
+          }
+        }
+      },
+      "Strider§Jammer Bashan": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§SatUp",
+            "Model/Weapon Property§ECM+",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§TD",
+            "Model/Weapon Property§React+",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Climber",
+            "Model/Weapon Property§Stable",
+            "Ranged Weapon, Direct, AA-upgrade, Link-upgrade§MAC",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LSG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Bashan"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "Command Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§SP:+1"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 5
+          },
+          "H/S": {
+            "value": "3/5"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Jammer Bashan"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 8
+          },
+          "PI": {
+            "value": 3
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "RC, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 15
+          }
+        }
+      }
+    },
+    "gameModes": {},
+    "theme": {}
+  }
+}
