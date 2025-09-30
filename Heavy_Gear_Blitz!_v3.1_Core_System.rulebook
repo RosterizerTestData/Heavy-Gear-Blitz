@@ -14943,6 +14943,50 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§HRP (L)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§L",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Heavy Rocket Pack"
+          },
+          "officialDesignation": {
+            "value": "HRP"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§HRP (Link)": {
         "assets": {
           "traits": [
@@ -14964,6 +15008,50 @@
             },
             {
               "item": "Model/Weapon Property§Link",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Heavy Rocket Pack"
+          },
+          "officialDesignation": {
+            "value": "HRP"
+          },
+          "Range": {
+            "value": "6-18/36"
+          }
+        }
+      },
+      "Ranged Weapon, Direct or Indirect§HRP (R)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§R",
               "stats": {
                 "Modified": {
                   "value": "✓"
@@ -19430,6 +19518,55 @@
           }
         }
       },
+      "Ranged Weapon, Direct, AA-upgrade§HRL, React (AA, Auto)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Advanced",
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            {
+              "item": "Model/Weapon Property§AA",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Auto",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "7"
+          },
+          "Name": {
+            "value": "Heavy Rotary Laser"
+          },
+          "officialDesignation": {
+            "value": "HRL"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct, AA-upgrade§LLC": {
         "assets": {
           "traits": [
@@ -20316,6 +20453,47 @@
           }
         }
       },
+      "Ranged Weapon, Direct, AA-upgrade§MRL, React (L)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Advanced",
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            {
+              "item": "Model/Weapon Property§L",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Medium Rotary Laser"
+          },
+          "officialDesignation": {
+            "value": "MRL"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct, AA-upgrade§MRL, React (Link, T)": {
         "assets": {
           "traits": [
@@ -20339,6 +20517,47 @@
             },
             {
               "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "6"
+          },
+          "Name": {
+            "value": "Medium Rotary Laser"
+          },
+          "officialDesignation": {
+            "value": "MRL"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
+      "Ranged Weapon, Direct, AA-upgrade§MRL, React (R)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Advanced",
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            {
+              "item": "Model/Weapon Property§R",
               "stats": {
                 "Modified": {
                   "value": "✓"
@@ -23111,6 +23330,50 @@
           }
         }
       },
+      "Ranged Weapon, Direct§HPA, React (T, Auto)": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Haywire",
+            "Model/Weapon Property§Advanced",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Auto",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Heavy Particle Accelerator"
+          },
+          "officialDesignation": {
+            "value": "HPA"
+          },
+          "Range": {
+            "value": "6-24/48"
+          },
+          "StatColumn": {
+            "value": "React"
+          },
+          "Traits": {
+            "value": ""
+          }
+        }
+      },
       "Ranged Weapon, Direct§HPL": {
         "assets": {
           "traits": [
@@ -23560,6 +23823,69 @@
               "stats": {
                 "NameVariable": {
                   "value": 2
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "11"
+          },
+          "Name": {
+            "value": "Heavy Tank Gun"
+          },
+          "officialDesignation": {
+            "value": "HTG"
+          },
+          "Range": {
+            "value": "12-36/72"
+          },
+          "Traits": {
+            "value": ""
+          }
+        }
+      },
+      "Ranged Weapon, Direct§HTG (T, Apex, Precise)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 5
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§Demo:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Apex",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Precise",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
                 }
               }
             }
@@ -26159,6 +26485,52 @@
               }
             },
             "Model/Weapon Property§Guided"
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Heavy Artillery Missile"
+          },
+          "officialDesignation": {
+            "value": "HAM"
+          },
+          "Range": {
+            "value": "24-48/96"
+          }
+        }
+      },
+      "Ranged Weapon, Indirect§HAM (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            "Model/Weapon Property§Blast",
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Guided",
+            {
+              "item": "Model/Weapon Property§T",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
           ]
         },
         "stats": {
