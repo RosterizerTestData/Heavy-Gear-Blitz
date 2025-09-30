@@ -431,8 +431,7 @@
             "Model/Weapon Property§Climber",
             "Model/Weapon Property§ECM",
             "Model/Weapon Property§TD",
-            "Ranged Weapon, Direct, AA-upgrade§MRC, React",
-            "Ranged Weapon, Direct or Indirect§LRP, React",
+            "Ranged Weapon, Direct or Indirect§LRP, React (Link)",
             "Ranged Weapon, Direct§HMG, React",
             "Melee Weapon, Reach-upgrade, Dual-upgrade§LSG"
           ]
@@ -519,6 +518,113 @@
           },
           "TV": {
             "value": 13
+          }
+        }
+      },
+      "Strider§Aphek Rex": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§React+",
+            "Model/Weapon Property§Stable",
+            {
+              "item": "Model/Weapon Property, Variable§Brawl:X",
+              "stats": {
+                "brawlStat": {
+                  "value": 1
+                }
+              }
+            },
+            "Model/Weapon Property§Climber",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct, AA-upgrade§MRC, React",
+            "Ranged Weapon, Direct or Indirect, Swappable§LATM, React",
+            "Ranged Weapon, Direct§HMG, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade§LSG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Aphek"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/4"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Aphek Rex"
+          },
+          "Mortar Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Indirect§LGM (T)"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 14
           }
         }
       },
