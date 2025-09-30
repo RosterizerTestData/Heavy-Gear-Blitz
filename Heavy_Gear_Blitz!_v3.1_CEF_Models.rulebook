@@ -2778,6 +2778,35 @@
           }
         }
       },
+      "Model, Multi-Component§HHT-90 Overlord": {
+        "keywords": {
+          "Keywords": [
+            "HHT-90"
+          ]
+        },
+        "removed": {
+          "allowed": {
+            "classifications": [
+              "Standard Upgrade"
+            ],
+            "items": [
+              "Ranged Weapon, Direct or Indirect§LHG +0.5TV",
+              "Melee Weapon§MSE +1TV",
+              "Melee Weapon§LSE +0.5TV",
+              "Ranged Weapon, Direct, Link-upgrade§LSMG +0.5TV",
+              "Ranged Weapon, Direct, Link-upgrade§LP +0.5TV",
+              "Ranged Weapon, Direct§MPZ +1TV",
+              "Ranged Weapon, Direct or Indirect§MHG +1TV",
+              "Ranged Weapon, Direct§LPZ +0.5TV"
+            ]
+          }
+        },
+        "stats": {
+          "ModelName": {
+            "value": "HHT-90 Overlord"
+          }
+        }
+      },
       "Roster§Roster": {},
       "Vehicle§HC-3": {
         "assets": {
@@ -5470,6 +5499,133 @@
           },
           "TV": {
             "value": 15
+          }
+        }
+      },
+      "Veteran Vehicle§HHT-90 Body": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable and Type§Transport:X",
+              "stats": {
+                "Type": {
+                  "value": "Squad(s)"
+                },
+                "NameVariable": {
+                  "value": 4
+                }
+              }
+            },
+            "Model/Weapon Property§CBS",
+            "Model/Weapon Property§Resist:H",
+            {
+              "item": "Model/Weapon Property, Variable§Jump Jets:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Stable"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 11
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/5"
+          },
+          "HT": {
+            "value": 2
+          },
+          "ModelName": {
+            "value": "Body"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 6
+          },
+          "Roles": {
+            "value": "FS"
+          },
+          "TV": {
+            "value": 35
+          }
+        }
+      },
+      "Veteran Vehicle§HHT-90 Turret": {
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 3
+          },
+          "Arm": {
+            "value": 11
+          },
+          "EW": {
+            "value": 5
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/3"
+          },
+          "HT": {
+            "value": 3
+          },
+          "ModelName": {
+            "value": "Turret"
+          },
+          "MR": {
+            "format": "-",
+            "statType": "term",
+            "value": "-"
+          },
+          "PI": {
+            "value": 6
+          },
+          "Roles": {
+            "value": "-"
           }
         }
       }
