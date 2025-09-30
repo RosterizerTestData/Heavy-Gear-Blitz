@@ -15195,6 +15195,53 @@
           }
         }
       },
+      "Ranged Weapon, Direct or Indirect§HRP, React (Guided)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§AOE:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 3
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property, Variable§AP:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 1
+                }
+              }
+            },
+            {
+              "item": "Model/Weapon Property§Guided",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "9"
+          },
+          "Name": {
+            "value": "Heavy Rocket Pack"
+          },
+          "officialDesignation": {
+            "value": "HRP"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
       "Ranged Weapon, Direct or Indirect§LAPR": {
         "assets": {
           "traits": [
@@ -19743,6 +19790,46 @@
             "Model/Weapon Property§Split",
             {
               "item": "Model/Weapon Property§AA",
+              "stats": {
+                "Modified": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "Damage": {
+            "value": "5"
+          },
+          "Name": {
+            "value": "Light Rotary Cannon"
+          },
+          "officialDesignation": {
+            "value": "LRC"
+          },
+          "Range": {
+            "value": "6-18/36"
+          },
+          "StatColumn": {
+            "value": "React"
+          }
+        }
+      },
+      "Ranged Weapon, Direct, AA-upgrade§LRC, React (T)": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Burst:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 2
+                }
+              }
+            },
+            "Model/Weapon Property§Split",
+            {
+              "item": "Model/Weapon Property§T",
               "stats": {
                 "Modified": {
                   "value": "✓"
