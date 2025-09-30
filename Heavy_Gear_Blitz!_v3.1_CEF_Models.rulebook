@@ -3156,6 +3156,585 @@
           }
         }
       },
+      "Infantry§FLAIL": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 4
+                }
+              }
+            },
+            "Ranged Weapon, Direct§HMG, React",
+            "Melee Weapon, Reach-upgrade§MICW, React",
+            "Ranged Weapon, Direct§HIL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "FLAILs"
+          ]
+        },
+        "removed": {
+          "stats": {
+            "Squad +1TV": {}
+          },
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "changeToTeamIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the hull/structure to 4/2...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              },
+              {
+                "actionType": "set",
+                "append": " Team",
+                "iterations": 1,
+                "note": "...set the designation to FLAIL Team...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": ""
+              },
+              {
+                "actionType": "set",
+                "append": " Team",
+                "iterations": 1,
+                "note": "...and set the name to GREL Squad as well.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Name",
+                    "value"
+                  ]
+                ],
+                "value": ""
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Squad upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Team Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "2/1"
+          },
+          "HT": {
+            "value": 1
+          },
+          "LPZ Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, Swappable§LPZ"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "FLAIL"
+          },
+          "MR": {
+            "format": "I/H:{v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "Team Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 6
+          }
+        },
+        "text": "For the Transport:X and Occupancy:X traits, use the below modifications in regard to FLAILs.\n- Individual FLAILs are equivalent to two infantry teams.\n- FLAIL Teams are equivalent to two infantry squads."
+      },
+      "Infantry§FLAIL Anti-Tank": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 4
+                }
+              }
+            },
+            "Ranged Weapon, Direct§HMG, React",
+            "Melee Weapon, Reach-upgrade§MICW, React",
+            "Ranged Weapon, Indirect§HIM"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "FLAILs"
+          ]
+        },
+        "removed": {
+          "stats": {
+            "Squad +1TV": {}
+          },
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "changeToTeamIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the hull/structure to 4/2...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              },
+              {
+                "actionType": "set",
+                "append": " Team",
+                "iterations": 1,
+                "note": "...set the designation to FLAIL Team...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": ""
+              },
+              {
+                "actionType": "set",
+                "append": " Team",
+                "iterations": 1,
+                "note": "...and set the name to GREL Squad as well.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Name",
+                    "value"
+                  ]
+                ],
+                "value": ""
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Squad upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Team Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "2/1"
+          },
+          "HT": {
+            "value": 1
+          },
+          "LPZ Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, Swappable§LPZ"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "FLAIL"
+          },
+          "MR": {
+            "format": "I/H:{v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "Team Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 7
+          }
+        },
+        "text": "For the Transport:X and Occupancy:X traits, use the below modifications in regard to FLAILs.\n- Individual FLAILs are equivalent to two infantry teams.\n- FLAIL Teams are equivalent to two infantry squads."
+      },
+      "Infantry§FLAIL Mortar": {
+        "assets": {
+          "traits": [
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 4
+                }
+              }
+            },
+            "Ranged Weapon, Direct§HMG, React",
+            "Melee Weapon, Reach-upgrade§MICW, React",
+            "Ranged Weapon, Indirect§HIM"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "FLAILs"
+          ]
+        },
+        "removed": {
+          "stats": {
+            "Squad +1TV": {}
+          },
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "changeToTeamIfChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the hull/structure to 4/2...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              },
+              {
+                "actionType": "set",
+                "append": " Team",
+                "iterations": 1,
+                "note": "...set the designation to FLAIL Team...",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": ""
+              },
+              {
+                "actionType": "set",
+                "append": " Team",
+                "iterations": 1,
+                "note": "...and set the name to GREL Squad as well.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Name",
+                    "value"
+                  ]
+                ],
+                "value": ""
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Squad upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Team Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 141
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 3
+          },
+          "H/S": {
+            "value": "2/1"
+          },
+          "HT": {
+            "value": 1
+          },
+          "LPZ Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, Swappable§LPZ"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "ModelName": {
+            "value": "FLAIL"
+          },
+          "MR": {
+            "format": "I/H:{v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "Team Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                }
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 6
+          }
+        },
+        "text": "For the Transport:X and Occupancy:X traits, use the below modifications in regard to FLAILs.\n- Individual FLAILs are equivalent to two infantry teams.\n- FLAIL Teams are equivalent to two infantry squads."
+      },
       "Infantry§GREL Anti-Tank Team": {
         "assets": {
           "traits": [
