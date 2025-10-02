@@ -610,6 +610,471 @@
             "value": 6
           }
         }
+      },
+      "Vehicle§ECM Commando N-KIDU": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Conscript",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§Stealth",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 6
+                }
+              }
+            },
+            "Ranged Weapon, Direct or Indirect§HAVM"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Commando N-KIDU"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Recon",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "upgradeToN-LILifChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the hull/structure to 4/2...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the N-LIL Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "N-LIL Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 5
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "ECM Commando N-KIDU"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 8
+          },
+          "N-LIL Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "MR": 2,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§VTOL"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "PI": {
+            "value": 4
+          },
+          "Rocket Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§LRP"
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§MRP"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "GP, SK, SO"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Vehicle§EMT Commando N-KIDU": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Conscript",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Repair",
+            "Model/Weapon Property§Stealth",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 6
+                }
+              }
+            },
+            "Ranged Weapon, Direct or Indirect§HAVM"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Commando N-KIDU"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Recon",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "upgradeToN-LILifChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the hull/structure to 4/2...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the N-LIL Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "N-LIL Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 5
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "EMT Commando N-KIDU"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 8
+          },
+          "N-LIL Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "MR": 2,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§VTOL"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, SO"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 6
+          }
+        }
+      },
+      "Vehicle§Pazu-Commando N-KIDU": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§Airdrop",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§SatUp",
+            "Model/Weapon Property§Stealth",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 6
+                }
+              }
+            },
+            "Ranged Weapon, Direct or Indirect§HAVM"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Commando N-KIDU"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Recon",
+              "UA: Fortifications",
+              "UA: Fire Support"
+            ]
+          }
+        },
+        "rules": {
+          "upgradeToN-LILifChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...set the hull/structure to 4/2...",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "H/S",
+                    "value"
+                  ]
+                ],
+                "value": "4/2"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the N-LIL Upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "N-LIL Upgrade +2TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 4
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Pazu-Commando N-KIDU"
+          },
+          "MR": {
+            "format": "H: {v}",
+            "value": 8
+          },
+          "N-LIL Upgrade +2TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "MR": 2,
+                  "TV": 2
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§VTOL"
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, SO"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
       }
     },
     "gameModes": {},
