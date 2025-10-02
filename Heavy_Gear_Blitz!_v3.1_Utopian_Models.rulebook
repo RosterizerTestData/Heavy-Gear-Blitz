@@ -297,6 +297,92 @@
           }
         }
       },
+      "Gear§Recce Armiger": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§ECM+",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§Stealth",
+            {
+              "item": "Model/Weapon Property§Comms",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            }
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Recce Armiger"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Recce Armiger"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "RC, FS, SO"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 14
+          }
+        }
+      },
       "Gear§Sniper Commando Armiger": {
         "assets": {
           "traits": [
