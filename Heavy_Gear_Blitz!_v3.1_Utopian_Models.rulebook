@@ -578,6 +578,107 @@
           }
         }
       },
+      "Gear§Missile Support Armiger": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§React+",
+            "Model/Weapon Property§Offroad",
+            "Model/Weapon Property§Comms",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§MATM",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Support Armiger"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/1"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Missile Support Armiger"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 5
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "Sniper Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§HRC, React"
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§MLC, React"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 14
+          }
+        }
+      },
       "Gear§Missile Support Recce Armiger": {
         "assets": {
           "traits": [
@@ -1180,6 +1281,107 @@
             "statType": "rank",
             "value": "-",
             "visibility": "normal"
+          }
+        }
+      },
+      "Gear§Support Armiger": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§React+",
+            "Model/Weapon Property§Offroad",
+            "Model/Weapon Property§Comms",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Indirect§MGM",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Support Armiger"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 8
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "5/1"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Support Armiger"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 5
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "SK, FS"
+          },
+          "Sniper Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0,
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§HRC, React"
+                  }
+                ]
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct, AA-upgrade§MLC, React"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 13
           }
         }
       },
