@@ -896,7 +896,7 @@
             "value": 5
           },
           "EW": {
-            "value": 5
+            "value": 4
           },
           "fireSupportMax": {
             "value": 1
@@ -1880,6 +1880,142 @@
           }
         }
       },
+      "Vehicle§Missile Support N-KIDU": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Conscript",
+            "Model/Weapon Property§Offroad",
+            "Ranged Weapon, Direct or Indirect, Swappable§LATM"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Support N-KIDU"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Missile Support N-KIDU"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Vehicle§Mortar Support N-KIDU": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Conscript",
+            "Model/Weapon Property§Offroad",
+            "Ranged Weapon, Indirect§LGM"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Support N-KIDU"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Mortar Support N-KIDU"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 5
+          }
+        }
+      },
       "Vehicle§Pazu-Commando N-KIDU": {
         "assets": {
           "traits": [
@@ -2022,6 +2158,143 @@
           },
           "TV": {
             "value": 8
+          }
+        }
+      },
+      "Vehicle§Pazu-Support N-KIDU": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§SatUp",
+            "Model/Weapon Property§Offroad",
+            "Ranged Weapon, Direct or Indirect§MRP"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Support N-KIDU"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Pazu-Support N-KIDU"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
+      "Vehicle§Support N-KIDU": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Conscript",
+            "Model/Weapon Property§Offroad",
+            "Ranged Weapon, Direct or Indirect§MRP"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Support N-KIDU"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Special Operations",
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Support N-KIDU"
+          },
+          "MR": {
+            "format": "G: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 5
           }
         }
       }
