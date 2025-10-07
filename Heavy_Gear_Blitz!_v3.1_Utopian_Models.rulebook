@@ -19,6 +19,97 @@
   "rulebook": {
     "assetTaxonomy": {},
     "assetCatalog": {
+      "Gear§Close Support Recce Armiger": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§ECM+",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§Stealth",
+            {
+              "item": "Model/Weapon Property§Comms",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§MRL, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§MHG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Recce Armiger"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Close Support Recce Armiger"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "RC, FS, SO"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 14
+          }
+        }
+      },
       "Gear§Commando Armiger": {
         "assets": {
           "traits": [
@@ -297,6 +388,97 @@
           }
         }
       },
+      "Gear§Missile Support Recce Armiger": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            "Model/Weapon Property§Agile",
+            "Model/Weapon Property§ECM+",
+            "Model/Weapon Property§ECCM",
+            {
+              "item": "Model/Weapon Property, Variable§Sensors:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 24
+                }
+              }
+            },
+            "Model/Weapon Property§Stealth",
+            {
+              "item": "Model/Weapon Property§Comms",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§LLC (Silent)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LATM",
+            "Ranged Weapon, Direct or Indirect, Swappable§MHG",
+            "Ranged Weapon, Direct§LAPGL"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Recce Armiger"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: General Purpose",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 7
+          },
+          "EW": {
+            "value": 4
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1.5
+          },
+          "ModelName": {
+            "value": "Missile Support Recce Armiger"
+          },
+          "MR": {
+            "format": "W/H: {v}",
+            "value": 8
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Roles": {
+            "value": "RC, FS, SO"
+          },
+          "specialOperationsMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 14
+          }
+        }
+      },
       "Gear§Recce Armiger": {
         "assets": {
           "traits": [
@@ -320,7 +502,12 @@
                   "value": "✓"
                 }
               }
-            }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§LLC (Silent)",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§MHG",
+            "Ranged Weapon, Direct§LAPGL"
           ]
         },
         "keywords": {
@@ -380,6 +567,100 @@
           },
           "TV": {
             "value": 14
+          }
+        }
+      },
+      "Gear§Recce N-KIDU": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Conscript",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§Stealth",
+            "Model/Weapon Property§TD"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Recce N-KIDU"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Recce N-KIDU"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Rocket Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§LRP"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "GP+, RC, FS"
+          },
+          "TV": {
+            "value": 4
           }
         }
       },
