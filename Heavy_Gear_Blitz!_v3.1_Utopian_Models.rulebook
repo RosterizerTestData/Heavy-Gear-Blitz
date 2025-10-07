@@ -249,6 +249,101 @@
           }
         }
       },
+      "Gear§ECM Recce N-KIDU": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Conscript",
+            "Model/Weapon Property§ECM",
+            "Model/Weapon Property§ECCM",
+            "Model/Weapon Property§Stealth",
+            "Ranged Weapon, Direct§HIL (Silent)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Recce N-KIDU"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "ECM Recce N-KIDU"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Rocket Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§LRP"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "GP, RC, FS"
+          },
+          "TV": {
+            "value": 4
+          }
+        }
+      },
       "Gear§Grenadier Commando Armiger": {
         "assets": {
           "traits": [
@@ -388,6 +483,101 @@
           }
         }
       },
+      "Gear§Hunter Recce N-KIDU": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Conscript",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§Stealth",
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct§HIS (AP:1, Silent)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Recce N-KIDU"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Hunter Recce N-KIDU"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Rocket Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§LRP"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "GP+, RC, FS"
+          },
+          "TV": {
+            "value": 4
+          }
+        }
+      },
       "Gear§Missile Support Recce Armiger": {
         "assets": {
           "traits": [
@@ -476,6 +666,195 @@
           },
           "TV": {
             "value": 14
+          }
+        }
+      },
+      "Gear§MP Recce N-KIDU": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Conscript",
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§Stealth",
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct, Link-upgrade§LFC (Silent)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Recce N-KIDU"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "MP Recce N-KIDU"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Rocket Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§LRP"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "GP+, RC, FS"
+          },
+          "TV": {
+            "value": 4
+          }
+        }
+      },
+      "Gear§Pazu-Recce N-KIDU": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§SatUp",
+            "Model/Weapon Property§Stealth",
+            "Ranged Weapon, Direct§HMG (Silent)"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Recce N-KIDU"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Strike",
+              "UA: Special Operations",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Pazu-Recce N-KIDU"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "reconMax": {
+            "value": 1
+          },
+          "Rocket Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Ranged Weapon, Direct or Indirect§LRP"
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Roles": {
+            "value": "GP, RC, FS"
+          },
+          "TV": {
+            "value": 5
           }
         }
       },
@@ -576,7 +955,8 @@
             "Model/Weapon Property§Conscript",
             "Model/Weapon Property§Comms",
             "Model/Weapon Property§Stealth",
-            "Model/Weapon Property§TD"
+            "Model/Weapon Property§TD",
+            "Ranged Weapon, Direct§HMG (Silent)"
           ]
         },
         "keywords": {
