@@ -344,6 +344,402 @@
           }
         }
       },
+      "Gear§Fire APE": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 8
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, Link-upgrade§MFL",
+            "Ranged Weapon, Direct or Indirect§LRP, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Trooper APE"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "betterEWifEdenWizard": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the EW to 4+.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": 4
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Eden Wizard upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Eden Wizard Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Eden Wizard Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Fire APE"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "Special Operations Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "specialOperationsMax": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Airdrop"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Stealth",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 6
+          }
+        }
+      },
+      "Gear§Grenadier APE": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 8
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct or Indirect, Link-upgrade§LGL, React",
+            "Ranged Weapon, Direct or Indirect§LRP, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Trooper APE"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "betterEWifEdenWizard": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the EW to 4+.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": 4
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Eden Wizard upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Eden Wizard Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Eden Wizard Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Grenadier APE"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "Special Operations Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "specialOperationsMax": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Airdrop"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Stealth",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 7
+          }
+        }
+      },
       "Gear§Grenadier Commando Armiger": {
         "assets": {
           "traits": [
@@ -865,6 +1261,205 @@
           }
         }
       },
+      "Gear§Node APE": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Comms",
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 8
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Combo§LSMG/LAPGL",
+            "Ranged Weapon, Direct or Indirect§LRP, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Trooper APE"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "betterEWifEdenWizard": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the EW to 4+.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": 4
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Eden Wizard upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Eden Wizard Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Eden Wizard Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Node APE"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "Special Operations Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "specialOperationsMax": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Airdrop"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Stealth",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 6
+          }
+        }
+      },
       "Gear§Pazu-Recce N-KIDU": {
         "assets": {
           "traits": [
@@ -1382,6 +1977,204 @@
           },
           "TV": {
             "value": 13
+          }
+        }
+      },
+      "Gear§Trooper APE": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "NameVariable": {
+                  "value": 8
+                },
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Combo§LSMG/LAPGL",
+            "Ranged Weapon, Direct or Indirect§LRP, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Trooper APE"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "betterEWifEdenWizard": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "note": "...then set the EW to 4+.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "EW",
+                    "value"
+                  ]
+                ],
+                "value": 4
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Eden Wizard upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Eden Wizard Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 165
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 5
+          },
+          "Eden Wizard Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§ECCM",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "EW": {
+            "value": 5
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "3/3"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Trooper APE"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 7
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP+, SK, FS"
+          },
+          "Special Operations Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "specialOperationsMax": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Airdrop"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Stealth",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 6
           }
         }
       },
