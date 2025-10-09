@@ -382,10 +382,10 @@
           "addSOifChecked": {
             "actions": [
               {
-                "actionType": "modify",
+                "actionType": "set",
                 "append": ", SO",
                 "iterations": 1,
-                "note": "...append SO to the roles list.",
+                "note": "...then add SO to the allowed roles.",
                 "paths": [
                   [
                     "{self}",
@@ -622,7 +622,7 @@
                 "actionType": "set",
                 "append": ", SO",
                 "iterations": 1,
-                "note": "...append SO to the roles list.",
+                "note": "...then add SO to the allowed roles.",
                 "paths": [
                   [
                     "{self}",
@@ -954,6 +954,109 @@
             "statType": "rank",
             "value": "-",
             "visibility": "normal"
+          }
+        }
+      },
+      "Gear§Gunner Support APE": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Combo§MSMG/LAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Support APE"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Gunner Support APE"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "Special Operations Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Airdrop"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Stealth",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "TV": {
+            "value": 8
           }
         }
       },
@@ -1381,7 +1484,7 @@
                 "actionType": "set",
                 "append": ", SO",
                 "iterations": 1,
-                "note": "...append SO to the roles list.",
+                "note": "...then add SO to the allowed roles.",
                 "paths": [
                   [
                     "{self}",
@@ -2000,7 +2103,18 @@
         "assets": {
           "traits": [
             "Model/Weapon Property§Hands",
-            "Model/Weapon Property, Variable§Jetpack:X"
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Combo§MRF/LAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
           ]
         },
         "keywords": {
@@ -2014,47 +2128,6 @@
               "UA: Recon",
               "UA: Fortifications"
             ]
-          }
-        },
-        "rules": {
-          "addSOifChecked": {
-            "actions": [
-              {
-                "actionType": "set",
-                "append": ", SO",
-                "iterations": 1,
-                "note": "...append SO to the roles list.",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Roles",
-                    "value"
-                  ]
-                ],
-                "value": null
-              }
-            ],
-            "evals": [
-              {
-                "actionable": true,
-                "not": false,
-                "note": "If the Special Operations upgrade is checked...",
-                "operator": "AND",
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Special Operations Upgrade +1TV",
-                    "value"
-                  ]
-                ],
-                "value": "✓"
-              }
-            ],
-            "evaluate": "AND",
-            "failState": "pass",
-            "order": 166
           }
         },
         "stats": {
@@ -2268,10 +2341,10 @@
           "addSOifChecked": {
             "actions": [
               {
-                "actionType": "set",
+                "actionType": "modify",
                 "append": ", SO",
                 "iterations": 1,
-                "note": "...append SO to the roles list.",
+                "note": "...then add SO to the allowed roles.",
                 "paths": [
                   [
                     "{self}",
