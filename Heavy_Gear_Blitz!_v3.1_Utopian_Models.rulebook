@@ -19,6 +19,314 @@
   "rulebook": {
     "assetTaxonomy": {},
     "assetCatalog": {
+      "Gear§Bazooka Support APE": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct§MBZ",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Support APE"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "addSOifChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": ", SO",
+                "iterations": 1,
+                "note": "...then add SO to the allowed roles.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Roles",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Special Operations upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Special Operations Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 166
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Bazooka Support APE"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "Special Operations Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "specialOperationsMax": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Airdrop"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Stealth",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Bulwark Support APE": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, AA-upgrade§MRL, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Support APE"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "addSOifChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": ", SO",
+                "iterations": 1,
+                "note": "...then add SO to the allowed roles.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Roles",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Special Operations upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Special Operations Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 166
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Bulwark Support APE"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "Special Operations Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "specialOperationsMax": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Airdrop"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Stealth",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 10
+          }
+        }
+      },
       "Gear§Close Support Recce Armiger": {
         "assets": {
           "traits": [
@@ -581,6 +889,160 @@
           }
         }
       },
+      "Gear§Fire Support APE": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct, Link-upgrade§MFL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Support APE"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "addSOifChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": ", SO",
+                "iterations": 1,
+                "note": "...then add SO to the allowed roles.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Roles",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Special Operations upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Special Operations Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 166
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Fire Support APE"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "Special Operations Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "specialOperationsMax": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Airdrop"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Stealth",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
       "Gear§Grenadier APE": {
         "assets": {
           "traits": [
@@ -954,6 +1416,314 @@
             "statType": "rank",
             "value": "-",
             "visibility": "normal"
+          }
+        }
+      },
+      "Gear§Grenadier Support APE": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Direct or Indirect, Link-upgrade§LGL, React",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Support APE"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "addSOifChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": ", SO",
+                "iterations": 1,
+                "note": "...then add SO to the allowed roles.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Roles",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Special Operations upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Special Operations Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 166
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Grenadier Support APE"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "Special Operations Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "specialOperationsMax": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Airdrop"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Stealth",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
+          }
+        }
+      },
+      "Gear§Gunner Support APE": {
+        "assets": {
+          "traits": [
+            "Model/Weapon Property§Hands",
+            {
+              "item": "Model/Weapon Property, Variable§Jetpack:X",
+              "stats": {
+                "Aux_System": {
+                  "value": "✓"
+                }
+              }
+            },
+            "Ranged Weapon, Combo§MSMG/LAPGL",
+            "Melee Weapon, Reach-upgrade, Dual-upgrade, Swappable§LVB",
+            "Ranged Weapon, Direct or Indirect§MRP",
+            "Ranged Weapon, Direct or Indirect, Swappable§LHG"
+          ]
+        },
+        "keywords": {
+          "Keywords": [
+            "Support APE"
+          ]
+        },
+        "removed": {
+          "keywords": {
+            "Tags": [
+              "UA: Recon",
+              "UA: Fortifications"
+            ]
+          }
+        },
+        "rules": {
+          "addSOifChecked": {
+            "actions": [
+              {
+                "actionType": "set",
+                "append": ", SO",
+                "iterations": 1,
+                "note": "...then add SO to the allowed roles.",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Roles",
+                    "value"
+                  ]
+                ],
+                "value": null
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "note": "If the Special Operations upgrade is checked...",
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Special Operations Upgrade +1TV",
+                    "value"
+                  ]
+                ],
+                "value": "✓"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 166
+          }
+        },
+        "stats": {
+          "Actions": {
+            "value": 1
+          },
+          "Arm": {
+            "value": 6
+          },
+          "EW": {
+            "value": 6
+          },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 1
+          },
+          "GU": {
+            "value": 4
+          },
+          "H/S": {
+            "value": "4/2"
+          },
+          "HT": {
+            "value": 1
+          },
+          "ModelName": {
+            "value": "Gunner Support APE"
+          },
+          "MR": {
+            "format": "W: {v}",
+            "value": 6
+          },
+          "PI": {
+            "value": 4
+          },
+          "Roles": {
+            "value": "GP, SK, FS"
+          },
+          "Special Operations Upgrade +1TV": {
+            "dynamic": true,
+            "group": "Upgrades",
+            "groupOrder": 4,
+            "ranks": {
+              "-": {
+                "order": 0
+              },
+              "✓": {
+                "order": 1,
+                "tracking": {
+                  "specialOperationsMax": 1,
+                  "TV": 1
+                },
+                "traits": [
+                  {
+                    "trait": "Model/Weapon Property§Airdrop"
+                  },
+                  {
+                    "trait": {
+                      "item": "Model/Weapon Property§Stealth",
+                      "stats": {
+                        "Aux_System": {
+                          "value": "✓"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "statOrder": 1,
+            "statType": "rank",
+            "value": "-",
+            "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
+          },
+          "TV": {
+            "value": 8
           }
         }
       },
@@ -2078,6 +2848,12 @@
           "EW": {
             "value": 6
           },
+          "fireSupportMax": {
+            "value": 1
+          },
+          "generalPurposeMax": {
+            "value": 999
+          },
           "GU": {
             "value": 4
           },
@@ -2135,6 +2911,9 @@
             "statType": "rank",
             "value": "-",
             "visibility": "normal"
+          },
+          "strikeMax": {
+            "value": 1
           },
           "TV": {
             "value": 8
